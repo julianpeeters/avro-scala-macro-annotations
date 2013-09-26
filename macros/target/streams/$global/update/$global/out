@@ -1,0 +1,264 @@
+[0m[[0minfo[0m] [0mUpdating {file:/home/julianpeeters/macro-annotation-example/}macros...[0m
+[0m[[0mdebug[0m] [0m:: resolving dependencies :: org.scala-lang.macroparadise#macros_2.10;1.0.0[0m
+[0m[[0mdebug[0m] [0m	confs: [compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool][0m
+[0m[[0mdebug[0m] [0m	validate = true[0m
+[0m[[0mdebug[0m] [0m	refresh = false[0m
+[0m[[0mdebug[0m] [0mresolving dependencies for configuration 'compile'[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-lang.macroparadise#macros_2.10;1.0.0 [compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.2 [compile->default(compile)][0m
+[0m[[0minfo[0m] [0mResolving org.scala-lang#scala-library;2.10.2 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@29ee9771[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-library;2.10.2[0m
+[0m[[0mdebug[0m] [0m	local: revision in cache: org.scala-lang#scala-library;2.10.2[0m
+[0m[[0mdebug[0m] [0m	found org.scala-lang#scala-library;2.10.2 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.2 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.2 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.2 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.2 [compile->default(compile)][0m
+[0m[[0minfo[0m] [0mResolving org.scala-lang#scala-reflect;2.10.2 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.scala-lang#scala-reflect;2.10.2 {compile=[default(compile)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-reflect;2.10.2[0m
+[0m[[0mdebug[0m] [0m	local: revision in cache: org.scala-lang#scala-reflect;2.10.2[0m
+[0m[[0mdebug[0m] [0m	found org.scala-lang#scala-reflect;2.10.2 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.2 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.2 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.2->org.scala-lang#scala-library;2.10.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.2->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.2->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.2->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.2 [compile->master][0m
+[0m[[0mdebug[0m] [0mresolving dependencies for configuration 'runtime'[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-lang.macroparadise#macros_2.10;1.0.0 [runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-lang.macroparadise#macros_2.10;1.0.0 [compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.2 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.2 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.2 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.2 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.2 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.2 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.2 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.2->org.scala-lang#scala-library;2.10.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.2->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.2->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.2->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.2 [compile->master][0m
+[0m[[0mdebug[0m] [0mresolving dependencies for configuration 'test'[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-lang.macroparadise#macros_2.10;1.0.0 [test][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-lang.macroparadise#macros_2.10;1.0.0 [runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-lang.macroparadise#macros_2.10;1.0.0 [compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.2 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.2 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.2 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.2 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.2 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.2 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.2 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.2->org.scala-lang#scala-library;2.10.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.2->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.2->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.2->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.2 [compile->master][0m
+[0m[[0mdebug[0m] [0mresolving dependencies for configuration 'provided'[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-lang.macroparadise#macros_2.10;1.0.0 [provided][0m
+[0m[[0mdebug[0m] [0mresolving dependencies for configuration 'optional'[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-lang.macroparadise#macros_2.10;1.0.0 [optional][0m
+[0m[[0mdebug[0m] [0mresolving dependencies for configuration 'compile-internal'[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-lang.macroparadise#macros_2.10;1.0.0 [compile-internal][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-lang.macroparadise#macros_2.10;1.0.0 [compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.2 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.2 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.2 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.2 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.2 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.2 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.2 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.2->org.scala-lang#scala-library;2.10.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.2->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.2->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.2->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.2 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-lang.macroparadise#macros_2.10;1.0.0 [optional][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-lang.macroparadise#macros_2.10;1.0.0 [provided][0m
+[0m[[0mdebug[0m] [0mresolving dependencies for configuration 'runtime-internal'[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-lang.macroparadise#macros_2.10;1.0.0 [runtime-internal][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-lang.macroparadise#macros_2.10;1.0.0 [runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-lang.macroparadise#macros_2.10;1.0.0 [compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.2 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.2 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.2 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.2 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.2 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.2 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.2 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.2->org.scala-lang#scala-library;2.10.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.2->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.2->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.2->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.2 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-lang.macroparadise#macros_2.10;1.0.0 [optional][0m
+[0m[[0mdebug[0m] [0mresolving dependencies for configuration 'test-internal'[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-lang.macroparadise#macros_2.10;1.0.0 [test-internal][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-lang.macroparadise#macros_2.10;1.0.0 [test][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-lang.macroparadise#macros_2.10;1.0.0 [runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-lang.macroparadise#macros_2.10;1.0.0 [compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.2 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.2 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.2 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.2 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.2 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.2 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.2 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.2->org.scala-lang#scala-library;2.10.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.2->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.2->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.2->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.2 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-lang.macroparadise#macros_2.10;1.0.0 [optional][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-lang.macroparadise#macros_2.10;1.0.0 [provided][0m
+[0m[[0mdebug[0m] [0mresolving dependencies for configuration 'plugin'[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-lang.macroparadise#macros_2.10;1.0.0 [plugin][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT [plugin->default(compile)][0m
+[0m[[0minfo[0m] [0mResolving org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT {plugin=[default(compile)]}[0m
+[0m[[0mdebug[0m] [0mdon't use cache for org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT: changing=true[0m
+[0m[[0mdebug[0m] [0mdon't use cache for org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT: changing=true[0m
+[0m[[0mdebug[0m] [0m		tried /home/julianpeeters/.ivy2/local/org.scala-lang.plugins/macro-paradise_2.10.2/2.0.0-SNAPSHOT/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m	local: no ivy file found for org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT[0m
+[0m[[0mdebug[0m] [0mdon't use cache for org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT: changing=true[0m
+[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo1.maven.org/maven2/org/scala-lang/plugins/macro-paradise_2.10.2/2.0.0-SNAPSHOT/maven-metadata.xml[0m
+[0m[[0mdebug[0m] [0m	maven-metadata not available: http://repo1.maven.org/maven2/org/scala-lang/plugins/macro-paradise_2.10.2/2.0.0-SNAPSHOT/maven-metadata.xml[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/scala-lang/plugins/macro-paradise_2.10.2/2.0.0-SNAPSHOT/macro-paradise_2.10.2-2.0.0-SNAPSHOT.pom[0m
+[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo1.maven.org/maven2/org/scala-lang/plugins/macro-paradise_2.10.2/2.0.0-SNAPSHOT/macro-paradise_2.10.2-2.0.0-SNAPSHOT.pom[0m
+[0m[[0mdebug[0m] [0m	public: no ivy file found for org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT[0m
+[0m[[0mdebug[0m] [0mdon't use cache for org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT: changing=true[0m
+[0m[[0mdebug[0m] [0m		tried https://oss.sonatype.org/content/repositories/snapshots/org/scala-lang/plugins/macro-paradise_2.10.2/2.0.0-SNAPSHOT/macro-paradise_2.10.2-2.0.0-SNAPSHOT.pom[0m
+[0m[[0mdebug[0m] [0m	sonatype-snapshots: found md file for org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT[0m
+[0m[[0mdebug[0m] [0m		=> https://oss.sonatype.org/content/repositories/snapshots/org/scala-lang/plugins/macro-paradise_2.10.2/2.0.0-SNAPSHOT/macro-paradise_2.10.2-2.0.0-SNAPSHOT.pom (2.0.0-SNAPSHOT)[0m
+[0m[[0mdebug[0m] [0mdownloading https://oss.sonatype.org/content/repositories/snapshots/org/scala-lang/plugins/macro-paradise_2.10.2/2.0.0-SNAPSHOT/macro-paradise_2.10.2-2.0.0-SNAPSHOT.pom ...[0m
+[0m[[0mdebug[0m] [0m	sonatype-snapshots: downloading https://oss.sonatype.org/content/repositories/snapshots/org/scala-lang/plugins/macro-paradise_2.10.2/2.0.0-SNAPSHOT/macro-paradise_2.10.2-2.0.0-SNAPSHOT.pom[0m
+[0m[[0mdebug[0m] [0m	sonatype-snapshots: downloading https://oss.sonatype.org/content/repositories/snapshots/org/scala-lang/plugins/macro-paradise_2.10.2/2.0.0-SNAPSHOT/macro-paradise_2.10.2-2.0.0-SNAPSHOT.pom.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for https://oss.sonatype.org/content/repositories/snapshots/org/scala-lang/plugins/macro-paradise_2.10.2/2.0.0-SNAPSHOT/macro-paradise_2.10.2-2.0.0-SNAPSHOT.pom[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT!macro-paradise_2.10.2.pom(pom.original) (1162ms)[0m
+[0m[[0mdebug[0m] [0m		tried /home/julianpeeters/.ivy2/local/org.scala-lang.plugins/macro-paradise_2.10.2/2.0.0-SNAPSHOT/jars/macro-paradise_2.10.2.jar[0m
+[0m[[0mdebug[0m] [0m	maven-metadata not available: http://repo1.maven.org/maven2/org/scala-lang/plugins/macro-paradise_2.10.2/2.0.0-SNAPSHOT/maven-metadata.xml[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/scala-lang/plugins/macro-paradise_2.10.2/2.0.0-SNAPSHOT/macro-paradise_2.10.2-2.0.0-SNAPSHOT.jar[0m
+[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo1.maven.org/maven2/org/scala-lang/plugins/macro-paradise_2.10.2/2.0.0-SNAPSHOT/macro-paradise_2.10.2-2.0.0-SNAPSHOT.jar[0m
+[0m[[0mdebug[0m] [0m		tried https://oss.sonatype.org/content/repositories/snapshots/org/scala-lang/plugins/macro-paradise_2.10.2/2.0.0-SNAPSHOT/macro-paradise_2.10.2-2.0.0-SNAPSHOT.jar[0m
+[0m[[0mdebug[0m] [0morg.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT is changing, but has not changed: will trust cached artifacts if any[0m
+[0m[[0mdebug[0m] [0mDeleting additional old artifacts from cache for changed module org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT:[0m
+[0m[[0mdebug[0m] [0m	[0m
+[0m[[0mdebug[0m] [0m	found org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT in sonatype-snapshots[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT [plugin->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT [plugin->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT->org.scala-lang#scala-compiler;2.10.2 [compile->master(*)][0m
+[0m[[0minfo[0m] [0mResolving org.scala-lang#scala-compiler;2.10.2 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.scala-lang#scala-compiler;2.10.2 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-compiler;2.10.2[0m
+[0m[[0mdebug[0m] [0m	local: revision in cache: org.scala-lang#scala-compiler;2.10.2[0m
+[0m[[0mdebug[0m] [0m	found org.scala-lang#scala-compiler;2.10.2 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT->org.scala-lang#scala-compiler;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#scala-library;2.10.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#scala-reflect;2.10.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#scala-reflect;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.2->org.scala-lang#scala-library;2.10.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.2->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#scala-reflect;2.10.2 [compile->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#scala-reflect;2.10.2 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.2->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.2->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT->org.scala-lang#scala-compiler;2.10.2 [compile->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT->org.scala-lang#scala-compiler;2.10.2 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#scala-reflect;2.10.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#scala-reflect;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT->org.scala-lang#scala-reflect;2.10.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT->org.scala-lang#scala-reflect;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT->org.scala-lang#scala-compiler;2.10.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT->org.scala-lang#scala-compiler;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT->org.scala-lang#scala-reflect;2.10.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT->org.scala-lang#scala-reflect;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT [plugin->master][0m
+[0m[[0mdebug[0m] [0mresolving dependencies for configuration 'sources'[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-lang.macroparadise#macros_2.10;1.0.0 [sources][0m
+[0m[[0mdebug[0m] [0mresolving dependencies for configuration 'docs'[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-lang.macroparadise#macros_2.10;1.0.0 [docs][0m
+[0m[[0mdebug[0m] [0mresolving dependencies for configuration 'pom'[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-lang.macroparadise#macros_2.10;1.0.0 [pom][0m
+[0m[[0mdebug[0m] [0mresolving dependencies for configuration 'scala-tool'[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-lang.macroparadise#macros_2.10;1.0.0 [scala-tool][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-compiler;2.10.2 [scala-tool->default][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-compiler;2.10.2 [scala-tool->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-compiler;2.10.2 [scala-tool->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#scala-library;2.10.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#scala-library;2.10.2 [compile->default][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#scala-library;2.10.2 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#scala-library;2.10.2 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#scala-library;2.10.2 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#scala-library;2.10.2 [compile->optional(default)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#scala-reflect;2.10.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#scala-reflect;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.2->org.scala-lang#scala-library;2.10.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.2->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#scala-reflect;2.10.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#scala-reflect;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.2->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.2->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-compiler;2.10.2 [scala-tool->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-compiler;2.10.2 [scala-tool->optional(default)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#jline;2.10.2 [optional->master(*)][0m
+[0m[[0minfo[0m] [0mResolving org.scala-lang#jline;2.10.2 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.scala-lang#jline;2.10.2 {optional=[compile(*), master(*)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#jline;2.10.2[0m
+[0m[[0mdebug[0m] [0m	local: revision in cache: org.scala-lang#jline;2.10.2[0m
+[0m[[0mdebug[0m] [0m	found org.scala-lang#jline;2.10.2 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#jline;2.10.2 [optional->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#jline;2.10.2->org.fusesource.jansi#jansi;1.4 [compile->master(*)][0m
+[0m[[0minfo[0m] [0mResolving org.fusesource.jansi#jansi;1.4 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.fusesource.jansi#jansi;1.4 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.fusesource.jansi#jansi;1.4[0m
+[0m[[0mdebug[0m] [0m	local: revision in cache: org.fusesource.jansi#jansi;1.4[0m
+[0m[[0mdebug[0m] [0m	found org.fusesource.jansi#jansi;1.4 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#jline;2.10.2->org.fusesource.jansi#jansi;1.4 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.2 [scala-tool->default][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.2 [scala-tool->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.2 [scala-tool->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.2 [scala-tool->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.2 [scala-tool->optional(default)][0m
+[0m[[0mdebug[0m] [0m	resolved ivy file produced in /home/julianpeeters/macro-annotation-example/macros/target/resolution-cache/org.scala-lang.macroparadise/macros_2.10/1.0.0/resolved.xml.xml[0m
+[0m[[0mdebug[0m] [0m:: downloading artifacts ::[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-library;2.10.2!scala-library.jar[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-reflect;2.10.2!scala-reflect.jar[0m
+[0m[[0mdebug[0m] [0m		tried https://oss.sonatype.org/content/repositories/snapshots/org/scala-lang/plugins/macro-paradise_2.10.2/2.0.0-SNAPSHOT/macro-paradise_2.10.2-2.0.0-SNAPSHOT.jar[0m
+[0m[[0minfo[0m] [0mdownloading https://oss.sonatype.org/content/repositories/snapshots/org/scala-lang/plugins/macro-paradise_2.10.2/2.0.0-SNAPSHOT/macro-paradise_2.10.2-2.0.0-SNAPSHOT.jar ...[0m
+[0m[[0mdebug[0m] [0m	sonatype-snapshots: downloading https://oss.sonatype.org/content/repositories/snapshots/org/scala-lang/plugins/macro-paradise_2.10.2/2.0.0-SNAPSHOT/macro-paradise_2.10.2-2.0.0-SNAPSHOT.jar[0m
+[0m[[0mdebug[0m] [0m	sonatype-snapshots: downloading https://oss.sonatype.org/content/repositories/snapshots/org/scala-lang/plugins/macro-paradise_2.10.2/2.0.0-SNAPSHOT/macro-paradise_2.10.2-2.0.0-SNAPSHOT.jar.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for https://oss.sonatype.org/content/repositories/snapshots/org/scala-lang/plugins/macro-paradise_2.10.2/2.0.0-SNAPSHOT/macro-paradise_2.10.2-2.0.0-SNAPSHOT.jar[0m
+[0m[[0minfo[0m] [0m	[SUCCESSFUL ] org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT!macro-paradise_2.10.2.jar (3632ms)[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-compiler;2.10.2!scala-compiler.jar[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#jline;2.10.2!jline.jar[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.fusesource.jansi#jansi;1.4!jansi.jar[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 5715ms :: artifacts dl 3647ms[0m
+[0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#macros_2.10;1.0.0 compile produced in /home/julianpeeters/macro-annotation-example/macros/target/resolution-cache/reports/org.scala-lang.macroparadise-macros_2.10-compile.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#macros_2.10;1.0.0 runtime produced in /home/julianpeeters/macro-annotation-example/macros/target/resolution-cache/reports/org.scala-lang.macroparadise-macros_2.10-runtime.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#macros_2.10;1.0.0 test produced in /home/julianpeeters/macro-annotation-example/macros/target/resolution-cache/reports/org.scala-lang.macroparadise-macros_2.10-test.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#macros_2.10;1.0.0 provided produced in /home/julianpeeters/macro-annotation-example/macros/target/resolution-cache/reports/org.scala-lang.macroparadise-macros_2.10-provided.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#macros_2.10;1.0.0 optional produced in /home/julianpeeters/macro-annotation-example/macros/target/resolution-cache/reports/org.scala-lang.macroparadise-macros_2.10-optional.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#macros_2.10;1.0.0 compile-internal produced in /home/julianpeeters/macro-annotation-example/macros/target/resolution-cache/reports/org.scala-lang.macroparadise-macros_2.10-compile-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#macros_2.10;1.0.0 runtime-internal produced in /home/julianpeeters/macro-annotation-example/macros/target/resolution-cache/reports/org.scala-lang.macroparadise-macros_2.10-runtime-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#macros_2.10;1.0.0 test-internal produced in /home/julianpeeters/macro-annotation-example/macros/target/resolution-cache/reports/org.scala-lang.macroparadise-macros_2.10-test-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#macros_2.10;1.0.0 plugin produced in /home/julianpeeters/macro-annotation-example/macros/target/resolution-cache/reports/org.scala-lang.macroparadise-macros_2.10-plugin.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#macros_2.10;1.0.0 sources produced in /home/julianpeeters/macro-annotation-example/macros/target/resolution-cache/reports/org.scala-lang.macroparadise-macros_2.10-sources.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#macros_2.10;1.0.0 docs produced in /home/julianpeeters/macro-annotation-example/macros/target/resolution-cache/reports/org.scala-lang.macroparadise-macros_2.10-docs.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#macros_2.10;1.0.0 pom produced in /home/julianpeeters/macro-annotation-example/macros/target/resolution-cache/reports/org.scala-lang.macroparadise-macros_2.10-pom.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#macros_2.10;1.0.0 scala-tool produced in /home/julianpeeters/macro-annotation-example/macros/target/resolution-cache/reports/org.scala-lang.macroparadise-macros_2.10-scala-tool.xml[0m
+[0m[[0mdebug[0m] [0m	resolve done (5715ms resolve - 3647ms download)[0m
+[0m[[0minfo[0m] [0mDone updating.[0m
