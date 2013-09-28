@@ -1,4 +1,9 @@
-@hello
+import models._
+
 object Test extends App {
-  println(this.hello)
+
+  println(MyRecord().x)
+
 }
+
+
