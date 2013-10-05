@@ -7,7 +7,20 @@
 [0m[[0mdebug[0m] [0m	/home/julianpeeters/macro-annotation-example/macros/target/scala-2.10/classes[0m
 [0m[[0mdebug[0m] [0m	/home/julianpeeters/.sbt/boot/scala-2.10.2/lib/scala-library.jar[0m
 [0m[[0mdebug[0m] [0m	/home/julianpeeters/.sbt/boot/scala-2.10.2/lib/scala-reflect.jar[0m
-[0m[[0mdebug[0m] [0m	Thread run-main exited.[0m
-[0m[[0mdebug[0m] [0mInterrupting remaining threads (should be all daemons).[0m
-[0m[[0mdebug[0m] [0mSandboxed run complete..[0m
-[0m[[0mdebug[0m] [0mExited with code 0[0m
+[0m[[0mdebug[0m] [0m	/home/julianpeeters/.ivy2/cache/com.novus/salat-util_2.10/jars/salat-util_2.10-1.9.2.jar[0m
+[0m[[0mdebug[0m] [0m	/home/julianpeeters/.ivy2/cache/org.scala-lang/scalap/jars/scalap-2.10.2.jar[0m
+[0m[[0mdebug[0m] [0m	/home/julianpeeters/.sbt/boot/scala-2.10.2/lib/scala-compiler.jar[0m
+[0m[[0mdebug[0m] [0m	/home/julianpeeters/.ivy2/cache/com.novus/salat-core_2.10/jars/salat-core_2.10-1.9.2.jar[0m
+[0m[[0mdebug[0m] [0m	/home/julianpeeters/.ivy2/cache/org.mongodb/casbah-core_2.10/jars/casbah-core_2.10-2.6.2.jar[0m
+[0m[[0mdebug[0m] [0m	/home/julianpeeters/.ivy2/cache/org.mongodb/casbah-commons_2.10/jars/casbah-commons_2.10-2.6.2.jar[0m
+[0m[[0mdebug[0m] [0m	/home/julianpeeters/.ivy2/cache/com.github.nscala-time/nscala-time_2.10/jars/nscala-time_2.10-0.2.0.jar[0m
+[0m[[0mdebug[0m] [0m	/home/julianpeeters/.ivy2/cache/joda-time/joda-time/jars/joda-time-2.1.jar[0m
+[0m[[0mdebug[0m] [0m	/home/julianpeeters/.ivy2/cache/org.joda/joda-convert/jars/joda-convert-1.2.jar[0m
+[0m[[0mdebug[0m] [0m	/home/julianpeeters/.ivy2/cache/org.mongodb/mongo-java-driver/jars/mongo-java-driver-2.11.2.jar[0m
+[0m[[0mdebug[0m] [0m	/home/julianpeeters/.ivy2/cache/org.mongodb/casbah-query_2.10/jars/casbah-query_2.10-2.6.2.jar[0m
+[0m[[0mdebug[0m] [0m	/home/julianpeeters/.ivy2/cache/org.json4s/json4s-native_2.10/jars/json4s-native_2.10-3.1.0.jar[0m
+[0m[[0mdebug[0m] [0m	/home/julianpeeters/.ivy2/cache/org.json4s/json4s-core_2.10/jars/json4s-core_2.10-3.1.0.jar[0m
+[0m[[0mdebug[0m] [0m	/home/julianpeeters/.ivy2/cache/org.json4s/json4s-ast_2.10/jars/json4s-ast_2.10-3.1.0.jar[0m
+[0m[[0mdebug[0m] [0m	/home/julianpeeters/.ivy2/cache/com.thoughtworks.paranamer/paranamer/jars/paranamer-2.5.2.jar[0m
+[0m[[0mdebug[0m] [0m	/home/julianpeeters/.ivy2/cache/org.slf4j/slf4j-simple/jars/slf4j-simple-1.7.5.jar[0m
+[0m[[0mdebug[0m] [0m	/home/julianpeeters/.ivy2/cache/org.slf4j/slf4j-api/jars/slf4j-api-1.7.5.jar[0m

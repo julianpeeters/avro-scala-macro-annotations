@@ -7,7 +7,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-lang.macroparadise#macros_2.10;1.0.0 [compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.2 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving org.scala-lang#scala-library;2.10.2 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@47004b78[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@50ba0dfc[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-library;2.10.2[0m
 [0m[[0mdebug[0m] [0m	local: revision in cache: org.scala-lang#scala-library;2.10.2[0m
 [0m[[0mdebug[0m] [0m	found org.scala-lang#scala-library;2.10.2 in sbt-chain[0m
@@ -134,16 +134,8 @@
 [0m[[0mdebug[0m] [0m		tried https://oss.sonatype.org/content/repositories/snapshots/org/scala-lang/plugins/macro-paradise_2.10.2/2.0.0-SNAPSHOT/macro-paradise_2.10.2-2.0.0-SNAPSHOT.pom[0m
 [0m[[0mdebug[0m] [0m	sonatype-snapshots: found md file for org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT[0m
 [0m[[0mdebug[0m] [0m		=> https://oss.sonatype.org/content/repositories/snapshots/org/scala-lang/plugins/macro-paradise_2.10.2/2.0.0-SNAPSHOT/macro-paradise_2.10.2-2.0.0-SNAPSHOT.pom (2.0.0-SNAPSHOT)[0m
-[0m[[0mdebug[0m] [0m	default-cache: revision in cache is not up to date: org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT[0m
-[0m[[0mdebug[0m] [0mdownloading https://oss.sonatype.org/content/repositories/snapshots/org/scala-lang/plugins/macro-paradise_2.10.2/2.0.0-SNAPSHOT/macro-paradise_2.10.2-2.0.0-SNAPSHOT.pom ...[0m
-[0m[[0mdebug[0m] [0m	sonatype-snapshots: downloading https://oss.sonatype.org/content/repositories/snapshots/org/scala-lang/plugins/macro-paradise_2.10.2/2.0.0-SNAPSHOT/macro-paradise_2.10.2-2.0.0-SNAPSHOT.pom[0m
-[0m[[0mdebug[0m] [0m	sonatype-snapshots: downloading https://oss.sonatype.org/content/repositories/snapshots/org/scala-lang/plugins/macro-paradise_2.10.2/2.0.0-SNAPSHOT/macro-paradise_2.10.2-2.0.0-SNAPSHOT.pom.sha1[0m
-[0m[[0mdebug[0m] [0msha1 OK for https://oss.sonatype.org/content/repositories/snapshots/org/scala-lang/plugins/macro-paradise_2.10.2/2.0.0-SNAPSHOT/macro-paradise_2.10.2-2.0.0-SNAPSHOT.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT!macro-paradise_2.10.2.pom(pom.original) (1141ms)[0m
-[0m[[0mdebug[0m] [0morg.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT has changed: deleting old artifacts[0m
-[0m[[0mdebug[0m] [0mDeleting additional old artifacts from cache for changed module org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT:[0m
-[0m[[0mdebug[0m] [0m	[0m
-[0m[[0mdebug[0m] [0m	found org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT in sonatype-snapshots[0m
+[0m[[0mdebug[0m] [0m	default-cache: revision in cache (not updated): org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT[0m
+[0m[[0mdebug[0m] [0m	found org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT in sbt-chain[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT [plugin->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT [plugin->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT->org.scala-lang#scala-compiler;2.10.2 [compile->master(*)][0m
@@ -233,16 +225,11 @@
 [0m[[0mdebug[0m] [0m:: downloading artifacts ::[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-library;2.10.2!scala-library.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-reflect;2.10.2!scala-reflect.jar[0m
-[0m[[0mdebug[0m] [0m		tried https://oss.sonatype.org/content/repositories/snapshots/org/scala-lang/plugins/macro-paradise_2.10.2/2.0.0-SNAPSHOT/macro-paradise_2.10.2-2.0.0-SNAPSHOT.jar[0m
-[0m[[0minfo[0m] [0mdownloading https://oss.sonatype.org/content/repositories/snapshots/org/scala-lang/plugins/macro-paradise_2.10.2/2.0.0-SNAPSHOT/macro-paradise_2.10.2-2.0.0-SNAPSHOT.jar ...[0m
-[0m[[0mdebug[0m] [0m	sonatype-snapshots: downloading https://oss.sonatype.org/content/repositories/snapshots/org/scala-lang/plugins/macro-paradise_2.10.2/2.0.0-SNAPSHOT/macro-paradise_2.10.2-2.0.0-SNAPSHOT.jar[0m
-[0m[[0mdebug[0m] [0m	sonatype-snapshots: downloading https://oss.sonatype.org/content/repositories/snapshots/org/scala-lang/plugins/macro-paradise_2.10.2/2.0.0-SNAPSHOT/macro-paradise_2.10.2-2.0.0-SNAPSHOT.jar.sha1[0m
-[0m[[0mdebug[0m] [0msha1 OK for https://oss.sonatype.org/content/repositories/snapshots/org/scala-lang/plugins/macro-paradise_2.10.2/2.0.0-SNAPSHOT/macro-paradise_2.10.2-2.0.0-SNAPSHOT.jar[0m
-[0m[[0minfo[0m] [0m	[SUCCESSFUL ] org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT!macro-paradise_2.10.2.jar (4038ms)[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT!macro-paradise_2.10.2.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-compiler;2.10.2!scala-compiler.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#jline;2.10.2!jline.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.fusesource.jansi#jansi;1.4!jansi.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 4534ms :: artifacts dl 4064ms[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 3172ms :: artifacts dl 49ms[0m
 [0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#macros_2.10;1.0.0 compile produced in /home/julianpeeters/macro-annotation-example/macros/target/resolution-cache/reports/org.scala-lang.macroparadise-macros_2.10-compile.xml[0m
 [0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#macros_2.10;1.0.0 runtime produced in /home/julianpeeters/macro-annotation-example/macros/target/resolution-cache/reports/org.scala-lang.macroparadise-macros_2.10-runtime.xml[0m
 [0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#macros_2.10;1.0.0 test produced in /home/julianpeeters/macro-annotation-example/macros/target/resolution-cache/reports/org.scala-lang.macroparadise-macros_2.10-test.xml[0m
@@ -256,5 +243,5 @@
 [0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#macros_2.10;1.0.0 docs produced in /home/julianpeeters/macro-annotation-example/macros/target/resolution-cache/reports/org.scala-lang.macroparadise-macros_2.10-docs.xml[0m
 [0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#macros_2.10;1.0.0 pom produced in /home/julianpeeters/macro-annotation-example/macros/target/resolution-cache/reports/org.scala-lang.macroparadise-macros_2.10-pom.xml[0m
 [0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#macros_2.10;1.0.0 scala-tool produced in /home/julianpeeters/macro-annotation-example/macros/target/resolution-cache/reports/org.scala-lang.macroparadise-macros_2.10-scala-tool.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (4534ms resolve - 4064ms download)[0m
+[0m[[0mdebug[0m] [0m	resolve done (3172ms resolve - 49ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m

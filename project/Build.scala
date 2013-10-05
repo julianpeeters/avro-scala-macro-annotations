@@ -33,6 +33,10 @@ object MyBuild extends Build {
   lazy val core: Project = Project(
     "core",
     file("core"),
-    settings = buildSettings
+    settings = buildSettings ++ Seq(
+      libraryDependencies ++=   Seq(
+        "com.novus" %% "salat" % "1.9.2",
+       // "com.julianpeeters" %% "artisinal-pickle-maker" % "0.1-SNAPSHOT",
+        "org.slf4j" % "slf4j-simple" % "1.7.5"))
   ) dependsOn(macros)
 }
