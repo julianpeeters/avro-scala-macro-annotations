@@ -4,16 +4,19 @@ import scala.reflect.macros.Context
 import scala.language.experimental.macros
 import scala.annotation.StaticAnnotation
 
+import scala.io._
 
 object helloMacro {
   def impl(c: Context)(annottees: c.Expr[Any]*): c.Expr[Any] = {
     import c.universe._
     import Flag._
+
+    val x = scala.io.Source.fromFile("input.txt").mkString
     val result = {
       annottees.map(_.tree).toList match {
 
         case ClassDef(mods, name, tparams, Template(parents, self, body)) :: Nil =>
-          val helloVal = ValDef(NoMods, newTermName("x"), TypeTree(), Literal(Constant("hello macro!")))
+          val helloVal = ValDef(NoMods, newTermName(x), TypeTree(), Literal(Constant("hello macro!")))
           ClassDef(mods, name, tparams, Template(parents, self, body :+ helloVal))
 
       }
