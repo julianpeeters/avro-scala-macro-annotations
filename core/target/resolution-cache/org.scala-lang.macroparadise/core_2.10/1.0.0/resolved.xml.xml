@@ -4,7 +4,7 @@
 		module="core_2.10"
 		revision="1.0.0"
 		status="integration"
-		publication="20131024030002"
+		publication="20131031002231"
 	>
 		<description>
 		core
@@ -39,6 +39,5 @@
 		<dependency org="com.gensler" name="scalavro_2.10" rev="0.4.0" conf="compile->default(compile)"/>
 		<dependency org="org.scala-lang.plugins" name="macro-paradise_2.10.2" rev="2.0.0-SNAPSHOT" conf="plugin->default(compile)"/>
 		<dependency org="com.novus" name="salat_2.10" rev="1.9.2" conf="compile->default(compile)"/>
-		<dependency org="org.slf4j" name="slf4j-simple" rev="1.7.5" conf="compile->default(compile)"/>
 	</dependencies>
 </ivy-module>

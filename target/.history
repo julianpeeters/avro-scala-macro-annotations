@@ -1,3 +1,10 @@
 run
 exit
 run
+~run
+clean
+exit
+~run
+exit
+~run
+exit

@@ -7,64 +7,10 @@
 		revision="1.0.0"
 		conf="test"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-		date="20131024030002"/>
+		date="20131031002231"/>
 	<dependencies>
-		<module organisation="org.slf4j" name="slf4j-simple">
-			<revision name="1.7.5" status="release" pubdate="20130325135226" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.slf4j.org" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="39">
-				<metadata-artifact status="no" details="" size="4507" time="0" location="/home/julian/.ivy2/cache/org.slf4j/slf4j-simple/ivy-1.7.5.xml" searched="false" origin-is-local="false" origin-location="https://oss.sonatype.org/content/repositories/releases/org/slf4j/slf4j-simple/1.7.5/slf4j-simple-1.7.5.pom"/>
-				<caller organisation="org.scala-lang.macroparadise" name="core_2.10" conf="test, compile, runtime" rev="1.7.5" rev-constraint-default="1.7.5" rev-constraint-dynamic="1.7.5" callerrev="1.0.0"/>
-				<artifacts>
-					<artifact name="slf4j-simple" type="jar" ext="jar" status="no" details="" size="10680" time="0" location="/home/julian/.ivy2/cache/org.slf4j/slf4j-simple/jars/slf4j-simple-1.7.5.jar">
-						<origin-location is-local="false" location="https://oss.sonatype.org/content/repositories/releases/org/slf4j/slf4j-simple/1.7.5/slf4j-simple-1.7.5.jar"/>
-					</artifact>
-				</artifacts>
-			</revision>
-		</module>
-		<module organisation="org.slf4j" name="slf4j-api">
-			<revision name="1.7.5" status="release" pubdate="20130325135215" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.slf4j.org" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="40">
-				<metadata-artifact status="no" details="" size="4469" time="0" location="/home/julian/.ivy2/cache/org.slf4j/slf4j-api/ivy-1.7.5.xml" searched="false" origin-is-local="false" origin-location="https://oss.sonatype.org/content/repositories/releases/org/slf4j/slf4j-api/1.7.5/slf4j-api-1.7.5.pom"/>
-				<caller organisation="org.apache.avro" name="avro" conf="compile, runtime" rev="1.6.4" rev-constraint-default="1.6.4" rev-constraint-dynamic="1.6.4" callerrev="1.7.5"/>
-				<caller organisation="org.mongodb" name="casbah-core_2.10" conf="compile, runtime" rev="1.6.0" rev-constraint-default="1.6.0" rev-constraint-dynamic="1.6.0" callerrev="2.6.2"/>
-				<caller organisation="org.mongodb" name="casbah-query_2.10" conf="compile, runtime" rev="1.6.0" rev-constraint-default="1.6.0" rev-constraint-dynamic="1.6.0" callerrev="2.6.2"/>
-				<caller organisation="org.mongodb" name="casbah-commons_2.10" conf="compile, runtime" rev="1.6.0" rev-constraint-default="1.6.0" rev-constraint-dynamic="1.6.0" callerrev="2.6.2"/>
-				<caller organisation="ch.qos.logback" name="logback-classic" conf="compile, runtime" rev="1.7.2" rev-constraint-default="1.7.2" rev-constraint-dynamic="1.7.2" callerrev="1.0.9"/>
-				<caller organisation="com.novus" name="salat-util_2.10" conf="compile, runtime" rev="1.7.2" rev-constraint-default="1.7.2" rev-constraint-dynamic="1.7.2" callerrev="1.9.2"/>
-				<caller organisation="org.slf4j" name="slf4j-simple" conf="default, compile, runtime, master" rev="1.7.5" rev-constraint-default="1.7.5" rev-constraint-dynamic="1.7.5" callerrev="1.7.5"/>
-				<artifacts>
-					<artifact name="slf4j-api" type="jar" ext="jar" status="no" details="" size="26084" time="0" location="/home/julian/.ivy2/cache/org.slf4j/slf4j-api/jars/slf4j-api-1.7.5.jar">
-						<origin-location is-local="false" location="https://oss.sonatype.org/content/repositories/releases/org/slf4j/slf4j-api/1.7.5/slf4j-api-1.7.5.jar"/>
-					</artifact>
-				</artifacts>
-			</revision>
-			<revision name="1.7.2" status="release" pubdate="20121011115524" resolver="sbt-chain" artresolver="sbt-chain" evicted="latest-revision" evicted-reason="" homepage="http://www.slf4j.org" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="-1">
-				<metadata-artifact status="no" details="" size="4469" time="0" location="/home/julian/.ivy2/cache/org.slf4j/slf4j-api/ivy-1.7.2.xml" searched="false" origin-is-local="false" origin-location="https://oss.sonatype.org/content/repositories/releases/org/slf4j/slf4j-api/1.7.2/slf4j-api-1.7.2.pom"/>
-				<evicted-by rev="1.7.5"/>
-				<caller organisation="org.apache.avro" name="avro" conf="compile, runtime" rev="1.6.4" rev-constraint-default="1.6.4" rev-constraint-dynamic="1.6.4" callerrev="1.7.5"/>
-				<caller organisation="org.mongodb" name="casbah-core_2.10" conf="compile, runtime" rev="1.6.0" rev-constraint-default="1.6.0" rev-constraint-dynamic="1.6.0" callerrev="2.6.2"/>
-				<caller organisation="org.mongodb" name="casbah-query_2.10" conf="compile, runtime" rev="1.6.0" rev-constraint-default="1.6.0" rev-constraint-dynamic="1.6.0" callerrev="2.6.2"/>
-				<caller organisation="org.mongodb" name="casbah-commons_2.10" conf="compile, runtime" rev="1.6.0" rev-constraint-default="1.6.0" rev-constraint-dynamic="1.6.0" callerrev="2.6.2"/>
-				<caller organisation="com.novus" name="salat-util_2.10" conf="compile, runtime" rev="1.7.2" rev-constraint-default="1.7.2" rev-constraint-dynamic="1.7.2" callerrev="1.9.2"/>
-				<caller organisation="ch.qos.logback" name="logback-classic" conf="compile, runtime" rev="1.7.2" rev-constraint-default="1.7.2" rev-constraint-dynamic="1.7.2" callerrev="1.0.9"/>
-				<artifacts>
-				</artifacts>
-			</revision>
-			<revision name="1.6.0" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="-1">
-				<evicted-by rev="1.7.2"/>
-				<caller organisation="org.mongodb" name="casbah-core_2.10" conf="compile, runtime" rev="1.6.0" rev-constraint-default="1.6.0" rev-constraint-dynamic="1.6.0" callerrev="2.6.2"/>
-				<caller organisation="org.mongodb" name="casbah-query_2.10" conf="compile, runtime" rev="1.6.0" rev-constraint-default="1.6.0" rev-constraint-dynamic="1.6.0" callerrev="2.6.2"/>
-				<caller organisation="org.mongodb" name="casbah-commons_2.10" conf="compile, runtime" rev="1.6.0" rev-constraint-default="1.6.0" rev-constraint-dynamic="1.6.0" callerrev="2.6.2"/>
-				<artifacts>
-				</artifacts>
-			</revision>
-			<revision name="1.6.4" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="-1">
-				<evicted-by rev="1.7.2"/>
-				<caller organisation="org.apache.avro" name="avro" conf="compile, runtime" rev="1.6.4" rev-constraint-default="1.6.4" rev-constraint-dynamic="1.6.4" callerrev="1.7.5"/>
-				<artifacts>
-				</artifacts>
-			</revision>
-		</module>
 		<module organisation="com.novus" name="salat_2.10">
-			<revision name="1.9.2" status="release" pubdate="20130819195649" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/novus/salat" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="23">
+			<revision name="1.9.2" status="release" pubdate="20130819195649" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/novus/salat" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="24">
 				<license name="Apache 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
 				<metadata-artifact status="no" details="" size="2705" time="0" location="/home/julian/.ivy2/cache/com.novus/salat_2.10/ivy-1.9.2.xml" searched="false" origin-is-local="false" origin-location="https://oss.sonatype.org/content/repositories/releases/com/novus/salat_2.10/1.9.2/salat_2.10-1.9.2.pom"/>
 				<caller organisation="org.scala-lang.macroparadise" name="core_2.10" conf="test, compile, runtime" rev="1.9.2" rev-constraint-default="1.9.2" rev-constraint-dynamic="1.9.2" callerrev="1.0.0"/>
@@ -73,7 +19,7 @@
 			</revision>
 		</module>
 		<module organisation="com.novus" name="salat-core_2.10">
-			<revision name="1.9.2" status="release" pubdate="20130819195705" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/novus/salat" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="27">
+			<revision name="1.9.2" status="release" pubdate="20130819195705" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/novus/salat" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="28">
 				<license name="Apache 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
 				<metadata-artifact status="no" details="" size="3735" time="0" location="/home/julian/.ivy2/cache/com.novus/salat-core_2.10/ivy-1.9.2.xml" searched="false" origin-is-local="false" origin-location="https://oss.sonatype.org/content/repositories/releases/com/novus/salat-core_2.10/1.9.2/salat-core_2.10-1.9.2.pom"/>
 				<caller organisation="com.novus" name="salat_2.10" conf="default, compile, runtime, master" rev="1.9.2" rev-constraint-default="1.9.2" rev-constraint-dynamic="1.9.2" callerrev="1.9.2"/>
@@ -85,7 +31,7 @@
 			</revision>
 		</module>
 		<module organisation="org.json4s" name="json4s-native_2.10">
-			<revision name="3.1.0" status="release" pubdate="20121229153402" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/json4s/json4s" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="35">
+			<revision name="3.1.0" status="release" pubdate="20121229153402" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/json4s/json4s" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="36">
 				<license name="ASL" url="http://github.com/json4s/json4s/raw/HEAD/LICENSE"/>
 				<metadata-artifact status="no" details="" size="2663" time="0" location="/home/julian/.ivy2/cache/org.json4s/json4s-native_2.10/ivy-3.1.0.xml" searched="false" origin-is-local="false" origin-location="https://oss.sonatype.org/content/repositories/releases/org/json4s/json4s-native_2.10/3.1.0/json4s-native_2.10-3.1.0.pom"/>
 				<caller organisation="com.novus" name="salat-core_2.10" conf="compile, runtime" rev="3.1.0" rev-constraint-default="3.1.0" rev-constraint-dynamic="3.1.0" callerrev="1.9.2"/>
@@ -97,7 +43,7 @@
 			</revision>
 		</module>
 		<module organisation="org.json4s" name="json4s-core_2.10">
-			<revision name="3.1.0" status="release" pubdate="20121229153430" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/json4s/json4s" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="36">
+			<revision name="3.1.0" status="release" pubdate="20121229153430" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/json4s/json4s" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="37">
 				<license name="ASL" url="http://github.com/json4s/json4s/raw/HEAD/LICENSE"/>
 				<metadata-artifact status="no" details="" size="2938" time="0" location="/home/julian/.ivy2/cache/org.json4s/json4s-core_2.10/ivy-3.1.0.xml" searched="false" origin-is-local="false" origin-location="https://oss.sonatype.org/content/repositories/releases/org/json4s/json4s-core_2.10/3.1.0/json4s-core_2.10-3.1.0.pom"/>
 				<caller organisation="org.json4s" name="json4s-native_2.10" conf="compile, runtime" rev="3.1.0" rev-constraint-default="3.1.0" rev-constraint-dynamic="3.1.0" callerrev="3.1.0"/>
@@ -109,7 +55,7 @@
 			</revision>
 		</module>
 		<module organisation="com.thoughtworks.paranamer" name="paranamer">
-			<revision name="2.5.2" status="release" pubdate="20121130070456" resolver="public" artresolver="public" homepage="" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="38">
+			<revision name="2.5.2" status="release" pubdate="20121130070456" resolver="public" artresolver="public" homepage="" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="39">
 				<metadata-artifact status="no" details="" size="3447" time="0" location="/home/julian/.ivy2/cache/com.thoughtworks.paranamer/paranamer/ivy-2.5.2.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/com/thoughtworks/paranamer/paranamer/2.5.2/paranamer-2.5.2.pom"/>
 				<caller organisation="org.apache.avro" name="avro" conf="compile, runtime" rev="2.3" rev-constraint-default="2.3" rev-constraint-dynamic="2.3" callerrev="1.7.5"/>
 				<caller organisation="org.json4s" name="json4s-core_2.10" conf="compile, runtime" rev="2.5.2" rev-constraint-default="2.5.2" rev-constraint-dynamic="2.5.2" callerrev="3.1.0"/>
@@ -128,7 +74,7 @@
 			</revision>
 		</module>
 		<module organisation="org.json4s" name="json4s-ast_2.10">
-			<revision name="3.1.0" status="release" pubdate="20121229153408" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/json4s/json4s" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="37">
+			<revision name="3.1.0" status="release" pubdate="20121229153408" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/json4s/json4s" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="38">
 				<license name="ASL" url="http://github.com/json4s/json4s/raw/HEAD/LICENSE"/>
 				<metadata-artifact status="no" details="" size="2515" time="0" location="/home/julian/.ivy2/cache/org.json4s/json4s-ast_2.10/ivy-3.1.0.xml" searched="false" origin-is-local="false" origin-location="https://oss.sonatype.org/content/repositories/releases/org/json4s/json4s-ast_2.10/3.1.0/json4s-ast_2.10-3.1.0.pom"/>
 				<caller organisation="org.json4s" name="json4s-core_2.10" conf="compile, runtime" rev="3.1.0" rev-constraint-default="3.1.0" rev-constraint-dynamic="3.1.0" callerrev="3.1.0"/>
@@ -140,7 +86,7 @@
 			</revision>
 		</module>
 		<module organisation="org.mongodb" name="casbah-core_2.10">
-			<revision name="2.6.2" status="release" pubdate="20130625033939" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://github.com/mongodb/casbah" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="28">
+			<revision name="2.6.2" status="release" pubdate="20130625033939" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://github.com/mongodb/casbah" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="29">
 				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
 				<metadata-artifact status="no" details="" size="3523" time="0" location="/home/julian/.ivy2/cache/org.mongodb/casbah-core_2.10/ivy-2.6.2.xml" searched="false" origin-is-local="false" origin-location="https://oss.sonatype.org/content/repositories/releases/org/mongodb/casbah-core_2.10/2.6.2/casbah-core_2.10-2.6.2.pom"/>
 				<caller organisation="com.novus" name="salat-core_2.10" conf="compile, runtime" rev="2.6.2" rev-constraint-default="2.6.2" rev-constraint-dynamic="2.6.2" callerrev="1.9.2"/>
@@ -152,7 +98,7 @@
 			</revision>
 		</module>
 		<module organisation="org.mongodb" name="casbah-query_2.10">
-			<revision name="2.6.2" status="release" pubdate="20130625033812" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://github.com/mongodb/casbah" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="34">
+			<revision name="2.6.2" status="release" pubdate="20130625033812" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://github.com/mongodb/casbah" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="35">
 				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
 				<metadata-artifact status="no" details="" size="3385" time="0" location="/home/julian/.ivy2/cache/org.mongodb/casbah-query_2.10/ivy-2.6.2.xml" searched="false" origin-is-local="false" origin-location="https://oss.sonatype.org/content/repositories/releases/org/mongodb/casbah-query_2.10/2.6.2/casbah-query_2.10-2.6.2.pom"/>
 				<caller organisation="org.mongodb" name="casbah-core_2.10" conf="compile, runtime" rev="2.6.2" rev-constraint-default="2.6.2" rev-constraint-dynamic="2.6.2" callerrev="2.6.2"/>
@@ -164,7 +110,7 @@
 			</revision>
 		</module>
 		<module organisation="com.novus" name="salat-util_2.10">
-			<revision name="1.9.2" status="release" pubdate="20130819195705" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/novus/salat" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="24">
+			<revision name="1.9.2" status="release" pubdate="20130819195705" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/novus/salat" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="25">
 				<license name="Apache 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
 				<metadata-artifact status="no" details="" size="3470" time="0" location="/home/julian/.ivy2/cache/com.novus/salat-util_2.10/ivy-1.9.2.xml" searched="false" origin-is-local="false" origin-location="https://oss.sonatype.org/content/repositories/releases/com/novus/salat-util_2.10/1.9.2/salat-util_2.10-1.9.2.pom"/>
 				<caller organisation="com.novus" name="salat_2.10" conf="default, compile, runtime, master" rev="1.9.2" rev-constraint-default="1.9.2" rev-constraint-dynamic="1.9.2" callerrev="1.9.2"/>
@@ -177,7 +123,7 @@
 			</revision>
 		</module>
 		<module organisation="org.scala-lang" name="scalap">
-			<revision name="2.10.2" status="release" pubdate="20130606110705" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="25">
+			<revision name="2.10.2" status="release" pubdate="20130606110705" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="26">
 				<license name="BSD-like" url="http://www.scala-lang.org/downloads/license.html    "/>
 				<metadata-artifact status="no" details="" size="2518" time="0" location="/home/julian/.ivy2/cache/org.scala-lang/scalap/ivy-2.10.2.xml" searched="false" origin-is-local="false" origin-location="https://oss.sonatype.org/content/repositories/releases/org/scala-lang/scalap/2.10.2/scalap-2.10.2.pom"/>
 				<caller organisation="com.novus" name="salat-util_2.10" conf="compile, runtime" rev="2.10.2" rev-constraint-default="2.10.2" rev-constraint-dynamic="2.10.2" callerrev="1.9.2"/>
@@ -196,7 +142,7 @@
 			</revision>
 		</module>
 		<module organisation="org.mongodb" name="casbah-commons_2.10">
-			<revision name="2.6.2" status="release" pubdate="20130625033818" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://github.com/mongodb/casbah" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="29">
+			<revision name="2.6.2" status="release" pubdate="20130625033818" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://github.com/mongodb/casbah" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="30">
 				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
 				<metadata-artifact status="no" details="" size="3390" time="0" location="/home/julian/.ivy2/cache/org.mongodb/casbah-commons_2.10/ivy-2.6.2.xml" searched="false" origin-is-local="false" origin-location="https://oss.sonatype.org/content/repositories/releases/org/mongodb/casbah-commons_2.10/2.6.2/casbah-commons_2.10-2.6.2.pom"/>
 				<caller organisation="org.mongodb" name="casbah-core_2.10" conf="compile, runtime" rev="2.6.2" rev-constraint-default="2.6.2" rev-constraint-dynamic="2.6.2" callerrev="2.6.2"/>
@@ -209,7 +155,7 @@
 			</revision>
 		</module>
 		<module organisation="org.mongodb" name="mongo-java-driver">
-			<revision name="2.11.2" status="release" pubdate="20130619035647" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.mongodb.org" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="33">
+			<revision name="2.11.2" status="release" pubdate="20130619035647" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.mongodb.org" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="34">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
 				<metadata-artifact status="no" details="" size="2385" time="0" location="/home/julian/.ivy2/cache/org.mongodb/mongo-java-driver/ivy-2.11.2.xml" searched="false" origin-is-local="false" origin-location="https://oss.sonatype.org/content/repositories/releases/org/mongodb/mongo-java-driver/2.11.2/mongo-java-driver-2.11.2.pom"/>
 				<caller organisation="org.mongodb" name="casbah-commons_2.10" conf="compile, runtime" rev="2.11.2" rev-constraint-default="2.11.2" rev-constraint-dynamic="2.11.2" callerrev="2.6.2"/>
@@ -221,7 +167,7 @@
 			</revision>
 		</module>
 		<module organisation="com.github.nscala-time" name="nscala-time_2.10">
-			<revision name="0.2.0" status="release" pubdate="20121225043952" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/nscala-time/nscala-time" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="30">
+			<revision name="0.2.0" status="release" pubdate="20121225043952" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/nscala-time/nscala-time" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="31">
 				<license name="Apache" url="http://www.opensource.org/licenses/Apache-2.0"/>
 				<metadata-artifact status="no" details="" size="3008" time="0" location="/home/julian/.ivy2/cache/com.github.nscala-time/nscala-time_2.10/ivy-0.2.0.xml" searched="false" origin-is-local="false" origin-location="https://oss.sonatype.org/content/repositories/releases/com/github/nscala-time/nscala-time_2.10/0.2.0/nscala-time_2.10-0.2.0.pom"/>
 				<caller organisation="org.mongodb" name="casbah-core_2.10" conf="compile, runtime" rev="0.2.0" rev-constraint-default="0.2.0" rev-constraint-dynamic="0.2.0" callerrev="2.6.2"/>
@@ -235,7 +181,7 @@
 			</revision>
 		</module>
 		<module organisation="joda-time" name="joda-time">
-			<revision name="2.1" status="release" pubdate="20120222082242" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://joda-time.sourceforge.net" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="31">
+			<revision name="2.1" status="release" pubdate="20120222082242" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://joda-time.sourceforge.net" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="32">
 				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
 				<metadata-artifact status="no" details="" size="3297" time="0" location="/home/julian/.ivy2/cache/joda-time/joda-time/ivy-2.1.xml" searched="false" origin-is-local="false" origin-location="https://oss.sonatype.org/content/repositories/releases/joda-time/joda-time/2.1/joda-time-2.1.pom"/>
 				<caller organisation="com.github.nscala-time" name="nscala-time_2.10" conf="compile, runtime" rev="2.1" rev-constraint-default="2.1" rev-constraint-dynamic="2.1" callerrev="0.2.0"/>
@@ -247,7 +193,7 @@
 			</revision>
 		</module>
 		<module organisation="org.joda" name="joda-convert">
-			<revision name="1.2" status="release" pubdate="20111027125117" resolver="public" artresolver="public" homepage="http://joda-convert.sourceforge.net" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="32">
+			<revision name="1.2" status="release" pubdate="20111027125117" resolver="public" artresolver="public" homepage="http://joda-convert.sourceforge.net" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="33">
 				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
 				<metadata-artifact status="no" details="" size="3114" time="0" location="/home/julian/.ivy2/cache/org.joda/joda-convert/ivy-1.2.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/joda/joda-convert/1.2/joda-convert-1.2.pom"/>
 				<caller organisation="com.github.nscala-time" name="nscala-time_2.10" conf="compile, runtime" rev="1.2" rev-constraint-default="1.2" rev-constraint-dynamic="1.2" callerrev="0.2.0"/>
@@ -259,7 +205,7 @@
 			</revision>
 		</module>
 		<module organisation="org.scala-lang.macroparadise" name="macros_2.10">
-			<revision name="1.0.0" status="integration" pubdate="20131024025949" resolver="inter-project" artresolver="inter-project" downloaded="false" searched="false" default="false" conf="default(compile), compile" position="1">
+			<revision name="1.0.0" status="integration" pubdate="20131031002220" resolver="inter-project" artresolver="inter-project" downloaded="false" searched="false" default="false" conf="default(compile), compile" position="1">
 				<metadata-artifact status="failed" details="" size="0" time="0" searched="false"/>
 				<caller organisation="org.scala-lang.macroparadise" name="core_2.10" conf="test, compile, runtime" rev="1.0.0" rev-constraint-default="1.0.0" rev-constraint-dynamic="1.0.0" callerrev="1.0.0"/>
 				<artifacts>
@@ -292,7 +238,7 @@
 			</revision>
 		</module>
 		<module organisation="org.apache.avro" name="avro">
-			<revision name="1.7.5" status="release" pubdate="20130808091651" resolver="public" artresolver="public" homepage="http://avro.apache.org" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="17">
+			<revision name="1.7.5" status="release" pubdate="20130808091651" resolver="public" artresolver="public" homepage="http://avro.apache.org" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="18">
 				<metadata-artifact status="no" details="" size="10374" time="0" location="/home/julian/.ivy2/cache/org.apache.avro/avro/ivy-1.7.5.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/apache/avro/avro/1.7.5/avro-1.7.5.pom"/>
 				<caller organisation="com.gensler" name="scalavro-core_2.10" conf="compile, runtime" rev="1.7.5" rev-constraint-default="1.7.5" rev-constraint-dynamic="1.7.5" callerrev="0.4.0"/>
 				<artifacts>
@@ -303,7 +249,7 @@
 			</revision>
 		</module>
 		<module organisation="org.apache.commons" name="commons-compress">
-			<revision name="1.4.1" status="release" pubdate="20120521215732" resolver="public" artresolver="public" homepage="http://commons.apache.org/compress/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="21">
+			<revision name="1.4.1" status="release" pubdate="20120521215732" resolver="public" artresolver="public" homepage="http://commons.apache.org/compress/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="22">
 				<metadata-artifact status="no" details="" size="7888" time="0" location="/home/julian/.ivy2/cache/org.apache.commons/commons-compress/ivy-1.4.1.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/apache/commons/commons-compress/1.4.1/commons-compress-1.4.1.pom"/>
 				<caller organisation="org.apache.avro" name="avro" conf="compile, runtime" rev="1.4.1" rev-constraint-default="1.4.1" rev-constraint-dynamic="1.4.1" callerrev="1.7.5"/>
 				<artifacts>
@@ -314,7 +260,7 @@
 			</revision>
 		</module>
 		<module organisation="org.tukaani" name="xz">
-			<revision name="1.0" status="release" pubdate="20111022024446" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://tukaani.org/xz/java.html" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="22">
+			<revision name="1.0" status="release" pubdate="20111022024446" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://tukaani.org/xz/java.html" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="23">
 				<license name="Public Domain"/>
 				<metadata-artifact status="no" details="" size="2277" time="0" location="/home/julian/.ivy2/cache/org.tukaani/xz/ivy-1.0.xml" searched="false" origin-is-local="false" origin-location="https://oss.sonatype.org/content/repositories/releases/org/tukaani/xz/1.0/xz-1.0.pom"/>
 				<caller organisation="org.apache.commons" name="commons-compress" conf="compile, runtime" rev="1.0" rev-constraint-default="1.0" rev-constraint-dynamic="1.0" callerrev="1.4.1"/>
@@ -326,7 +272,7 @@
 			</revision>
 		</module>
 		<module organisation="org.xerial.snappy" name="snappy-java">
-			<revision name="1.0.5" status="release" pubdate="20130516183557" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://github.com/xerial/snappy-java/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="20">
+			<revision name="1.0.5" status="release" pubdate="20130516183557" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://github.com/xerial/snappy-java/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="21">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
 				<metadata-artifact status="no" details="" size="3844" time="0" location="/home/julian/.ivy2/cache/org.xerial.snappy/snappy-java/ivy-1.0.5.xml" searched="false" origin-is-local="false" origin-location="https://oss.sonatype.org/content/repositories/releases/org/xerial/snappy/snappy-java/1.0.5/snappy-java-1.0.5.pom"/>
 				<caller organisation="org.apache.avro" name="avro" conf="compile, runtime" rev="1.0.5" rev-constraint-default="1.0.5" rev-constraint-dynamic="1.0.5" callerrev="1.7.5"/>
@@ -338,7 +284,7 @@
 			</revision>
 		</module>
 		<module organisation="org.codehaus.jackson" name="jackson-mapper-asl">
-			<revision name="1.9.13" status="release" pubdate="20130714200750" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://jackson.codehaus.org" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="19">
+			<revision name="1.9.13" status="release" pubdate="20130714200750" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://jackson.codehaus.org" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="20">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
 				<metadata-artifact status="no" details="" size="2655" time="0" location="/home/julian/.ivy2/cache/org.codehaus.jackson/jackson-mapper-asl/ivy-1.9.13.xml" searched="false" origin-is-local="false" origin-location="https://oss.sonatype.org/content/repositories/releases/org/codehaus/jackson/jackson-mapper-asl/1.9.13/jackson-mapper-asl-1.9.13.pom"/>
 				<caller organisation="org.apache.avro" name="avro" conf="compile, runtime" rev="1.9.13" rev-constraint-default="1.9.13" rev-constraint-dynamic="1.9.13" callerrev="1.7.5"/>
@@ -350,7 +296,7 @@
 			</revision>
 		</module>
 		<module organisation="org.codehaus.jackson" name="jackson-core-asl">
-			<revision name="1.9.13" status="release" pubdate="20130714200730" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://jackson.codehaus.org" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="18">
+			<revision name="1.9.13" status="release" pubdate="20130714200730" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://jackson.codehaus.org" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="19">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
 				<metadata-artifact status="no" details="" size="2438" time="0" location="/home/julian/.ivy2/cache/org.codehaus.jackson/jackson-core-asl/ivy-1.9.13.xml" searched="false" origin-is-local="false" origin-location="https://oss.sonatype.org/content/repositories/releases/org/codehaus/jackson/jackson-core-asl/1.9.13/jackson-core-asl-1.9.13.pom"/>
 				<caller organisation="org.codehaus.jackson" name="jackson-mapper-asl" conf="compile, runtime" rev="1.9.13" rev-constraint-default="1.9.13" rev-constraint-dynamic="1.9.13" callerrev="1.9.13"/>
@@ -376,7 +322,7 @@
 			</revision>
 		</module>
 		<module organisation="org.reflections" name="reflections">
-			<revision name="0.9.9-RC1" status="release" pubdate="20130323065936" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="11">
+			<revision name="0.9.9-RC1" status="release" pubdate="20130323065936" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="12">
 				<metadata-artifact status="no" details="" size="3761" time="0" location="/home/julian/.ivy2/cache/org.reflections/reflections/ivy-0.9.9-RC1.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/reflections/reflections/0.9.9-RC1/reflections-0.9.9-RC1.pom"/>
 				<caller organisation="com.gensler" name="scalavro-util_2.10" conf="compile, runtime" rev="0.9.9-RC1" rev-constraint-default="0.9.9-RC1" rev-constraint-dynamic="0.9.9-RC1" callerrev="0.4.0"/>
 				<artifacts>
@@ -387,7 +333,7 @@
 			</revision>
 		</module>
 		<module organisation="org.javassist" name="javassist">
-			<revision name="3.16.1-GA" status="release" pubdate="20120306073712" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.javassist.org/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="14">
+			<revision name="3.16.1-GA" status="release" pubdate="20120306073712" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.javassist.org/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="15">
 				<license name="MPL 1.1" url="http://www.mozilla.org/MPL/MPL-1.1.html"/>
 				<license name="LGPL 2.1" url="http://www.gnu.org/licenses/lgpl-2.1.html"/>
 				<license name="Apache License 2.0" url="http://www.apache.org/licenses/"/>
@@ -401,7 +347,7 @@
 			</revision>
 		</module>
 		<module organisation="com.google.guava" name="guava">
-			<revision name="11.0.2" status="release" pubdate="20120222060217" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="12">
+			<revision name="11.0.2" status="release" pubdate="20120222060217" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="13">
 				<metadata-artifact status="no" details="" size="3835" time="0" location="/home/julian/.ivy2/cache/com.google.guava/guava/ivy-11.0.2.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/com/google/guava/guava/11.0.2/guava-11.0.2.pom"/>
 				<caller organisation="org.reflections" name="reflections" conf="compile, runtime" rev="11.0.2" rev-constraint-default="11.0.2" rev-constraint-dynamic="11.0.2" callerrev="0.9.9-RC1"/>
 				<artifacts>
@@ -412,7 +358,7 @@
 			</revision>
 		</module>
 		<module organisation="com.google.code.findbugs" name="jsr305">
-			<revision name="1.3.9" status="release" pubdate="20090824152822" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://findbugs.sourceforge.net/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="13">
+			<revision name="1.3.9" status="release" pubdate="20090824152822" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://findbugs.sourceforge.net/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="14">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
 				<metadata-artifact status="no" details="" size="2393" time="0" location="/home/julian/.ivy2/cache/com.google.code.findbugs/jsr305/ivy-1.3.9.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.pom"/>
 				<caller organisation="com.google.guava" name="guava" conf="compile, runtime" rev="1.3.9" rev-constraint-default="1.3.9" rev-constraint-dynamic="1.3.9" callerrev="11.0.2"/>
@@ -439,7 +385,7 @@
 			</revision>
 		</module>
 		<module organisation="dom4j" name="dom4j">
-			<revision name="1.6.1" status="release" pubdate="20060210043318" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://dom4j.org" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="15">
+			<revision name="1.6.1" status="release" pubdate="20060210043318" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://dom4j.org" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="16">
 				<metadata-artifact status="no" details="" size="3653" time="0" location="/home/julian/.ivy2/cache/dom4j/dom4j/ivy-1.6.1.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/dom4j/dom4j/1.6.1/dom4j-1.6.1.pom"/>
 				<caller organisation="org.reflections" name="reflections" conf="compile, runtime" rev="1.6.1" rev-constraint-default="1.6.1" rev-constraint-dynamic="1.6.1" callerrev="0.9.9-RC1"/>
 				<artifacts>
@@ -450,7 +396,7 @@
 			</revision>
 		</module>
 		<module organisation="xml-apis" name="xml-apis">
-			<revision name="1.0.b2" status="release" pubdate="20070208163046" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://xml.apache.org/commons/#external" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="16">
+			<revision name="1.0.b2" status="release" pubdate="20070208163046" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://xml.apache.org/commons/#external" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="17">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
 				<metadata-artifact status="no" details="" size="2923" time="0" location="/home/julian/.ivy2/cache/xml-apis/xml-apis/ivy-1.0.b2.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2.pom"/>
 				<caller organisation="dom4j" name="dom4j" conf="compile, runtime" rev="1.0.b2" rev-constraint-default="1.0.b2" rev-constraint-dynamic="1.0.b2" callerrev="1.6.1"/>
@@ -458,6 +404,36 @@
 					<artifact name="xml-apis" type="jar" ext="jar" status="no" details="" size="109318" time="0" location="/home/julian/.ivy2/cache/xml-apis/xml-apis/jars/xml-apis-1.0.b2.jar">
 						<origin-location is-local="false" location="http://repo1.maven.org/maven2/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2.jar"/>
 					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.slf4j" name="slf4j-api">
+			<revision name="1.7.2" status="release" pubdate="20121011115524" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.slf4j.org" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="11">
+				<metadata-artifact status="no" details="" size="4469" time="0" location="/home/julian/.ivy2/cache/org.slf4j/slf4j-api/ivy-1.7.2.xml" searched="false" origin-is-local="false" origin-location="https://oss.sonatype.org/content/repositories/releases/org/slf4j/slf4j-api/1.7.2/slf4j-api-1.7.2.pom"/>
+				<caller organisation="org.apache.avro" name="avro" conf="compile, runtime" rev="1.6.4" rev-constraint-default="1.6.4" rev-constraint-dynamic="1.6.4" callerrev="1.7.5"/>
+				<caller organisation="org.mongodb" name="casbah-core_2.10" conf="compile, runtime" rev="1.6.0" rev-constraint-default="1.6.0" rev-constraint-dynamic="1.6.0" callerrev="2.6.2"/>
+				<caller organisation="org.mongodb" name="casbah-query_2.10" conf="compile, runtime" rev="1.6.0" rev-constraint-default="1.6.0" rev-constraint-dynamic="1.6.0" callerrev="2.6.2"/>
+				<caller organisation="org.mongodb" name="casbah-commons_2.10" conf="compile, runtime" rev="1.6.0" rev-constraint-default="1.6.0" rev-constraint-dynamic="1.6.0" callerrev="2.6.2"/>
+				<caller organisation="com.novus" name="salat-util_2.10" conf="compile, runtime" rev="1.7.2" rev-constraint-default="1.7.2" rev-constraint-dynamic="1.7.2" callerrev="1.9.2"/>
+				<caller organisation="ch.qos.logback" name="logback-classic" conf="compile, runtime" rev="1.7.2" rev-constraint-default="1.7.2" rev-constraint-dynamic="1.7.2" callerrev="1.0.9"/>
+				<artifacts>
+					<artifact name="slf4j-api" type="jar" ext="jar" status="no" details="" size="26083" time="0" location="/home/julian/.ivy2/cache/org.slf4j/slf4j-api/jars/slf4j-api-1.7.2.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/slf4j/slf4j-api/1.7.2/slf4j-api-1.7.2.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+			<revision name="1.6.0" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="-1">
+				<evicted-by rev="1.7.2"/>
+				<caller organisation="org.mongodb" name="casbah-core_2.10" conf="compile, runtime" rev="1.6.0" rev-constraint-default="1.6.0" rev-constraint-dynamic="1.6.0" callerrev="2.6.2"/>
+				<caller organisation="org.mongodb" name="casbah-query_2.10" conf="compile, runtime" rev="1.6.0" rev-constraint-default="1.6.0" rev-constraint-dynamic="1.6.0" callerrev="2.6.2"/>
+				<caller organisation="org.mongodb" name="casbah-commons_2.10" conf="compile, runtime" rev="1.6.0" rev-constraint-default="1.6.0" rev-constraint-dynamic="1.6.0" callerrev="2.6.2"/>
+				<artifacts>
+				</artifacts>
+			</revision>
+			<revision name="1.6.4" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="-1">
+				<evicted-by rev="1.7.2"/>
+				<caller organisation="org.apache.avro" name="avro" conf="compile, runtime" rev="1.6.4" rev-constraint-default="1.6.4" rev-constraint-dynamic="1.6.4" callerrev="1.7.5"/>
+				<artifacts>
 				</artifacts>
 			</revision>
 		</module>
@@ -513,7 +489,7 @@
 			</revision>
 		</module>
 		<module organisation="org.scala-lang" name="scala-compiler">
-			<revision name="2.10.2" status="release" pubdate="20130606110625" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="26">
+			<revision name="2.10.2" status="release" pubdate="20130606110625" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="27">
 				<license name="BSD-like" url="http://www.scala-lang.org/downloads/license.html    "/>
 				<metadata-artifact status="no" details="" size="2809" time="0" location="/home/julian/.ivy2/cache/org.scala-lang/scala-compiler/ivy-2.10.2.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.10.2/scala-compiler-2.10.2.pom"/>
 				<caller organisation="org.scala-lang" name="scalap" conf="compile, runtime" rev="2.10.2" rev-constraint-default="2.10.2" rev-constraint-dynamic="2.10.2" callerrev="2.10.2"/>

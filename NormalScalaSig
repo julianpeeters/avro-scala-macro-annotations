@@ -1,11 +1,4 @@
-[0m[[33mwarn[0m] [0mThe global sbt directory is now versioned and is located at /home/julianpeeters/.sbt/0.13.[0m
-[0m[[33mwarn[0m] [0m  You are seeing this warning because there is global configuration in /home/julianpeeters/.sbt but not in /home/julianpeeters/.sbt/0.13.[0m
-[0m[[33mwarn[0m] [0m  The global sbt directory may be changed via the sbt.global.base system property.[0m
-[0m[[0minfo[0m] [0mLoading project definition from /home/julianpeeters/macro-annotation-example/project[0m
-[0m[[0minfo[0m] [0mSet current project to root (in build file:/home/julianpeeters/macro-annotation-example/)[0m
-[0m[[0minfo[0m] [0mRunning Test [0m
-hello macro!
-parser: Some(ScalaSig version 5.0
+Some(ScalaSig version 5.0
 0:	ClassSymbol(MyRecord, owner=models, flags=40, info=5 ,None)
 1:	MyRecord
 2:	models
@@ -113,7 +106,3 @@ parser: Some(ScalaSig version 5.0
 104:	TypeRefType(ThisType(java.lang),java.lang.Object,List())
 105:	java.lang.Object
 106:	Object)
-{ }
-MyRecord()
-true
-[0m[[32msuccess[0m] [0mTotal time: 2 s, completed Sep 28, 2013 3:39:36 AM[0m

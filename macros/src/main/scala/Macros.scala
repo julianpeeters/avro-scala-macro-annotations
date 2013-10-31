@@ -11,7 +11,7 @@ object helloMacro {
     import c.universe._
     import Flag._
 
-    val x = scala.io.Source.fromFile("input.txt").mkString
+    val x = "x"//scala.io.Source.fromFile("input.txt").mkString
     val result = {
       annottees.map(_.tree).toList match {
 

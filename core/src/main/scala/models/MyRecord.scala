@@ -1,5 +1,5 @@
 package models
-
+case class MyRec(x: String)
 @hello
-case class MyRecord//(hello: String)
+case class MyRecord
 
