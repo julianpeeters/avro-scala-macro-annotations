@@ -7,7 +7,7 @@
 		revision="1.0.0"
 		conf="test-internal"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-		date="20131031205640"/>
+		date="20131031231331"/>
 	<dependencies>
 		<module organisation="com.gensler" name="scalavro_2.10">
 			<revision name="0.4.0" status="release" pubdate="20130918083738" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://genslerappspod.github.io/scalavro/" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="4">

@@ -11,7 +11,6 @@ object nestedInnerMacro {
     import c.universe._
     import Flag._
 
-    val x = "x"
     val result = {
       annottees.map(_.tree).toList match {
 
@@ -33,16 +32,15 @@ object nestedOuterMacro {
     import c.universe._
     import Flag._
 
-    val x = "myRec"
     val result = {
       annottees.map(_.tree).toList match {
 
         case q"$mods class $name[..$tparams](..$first)(...$rest) extends ..$parents { $self => ..$body }" :: Nil =>
           val CASEACCESSOR = (1 << 24).toLong.asInstanceOf[FlagSet]
           val PARAMACCESSOR = (1 << 29).toLong.asInstanceOf[FlagSet]
-          val nestedInnerMods = Modifiers(CASEACCESSOR | PARAMACCESSOR | DEFAULTPARAM)
-          val nestedInnerVal = q"""$nestedInnerMods val x: String = "hello macro!""""
-          q"$mods class $name[..$tparams](..$first, $nestedInnerVal)(...$rest) extends ..$parents { $self => ..$body }"
+          val nestedOuterMods = Modifiers(CASEACCESSOR | PARAMACCESSOR | DEFAULTPARAM)
+          val nestedOuterVal = q"""$nestedOuterMods val myRec: MyRec = MyRec("hello macro!")"""
+          q"$mods class $name[..$tparams](..$first, $nestedOuterVal)(...$rest) extends ..$parents { $self => ..$body }"
 
       }
     }

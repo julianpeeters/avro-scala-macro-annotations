@@ -15,23 +15,23 @@ import scala.tools.scalap.scalax.rules.scalasig._
 object Test extends App {
 
 //Macro Annotations works!
-  println(MyRec().x)
+  println(MyRecord())
 
 
 //Test as a type parameter in Salat
-  val myRec =  MyRec()
-  val dbo = grater[MyRec].asDBObject(myRec)
+  val myRecord =  MyRecord()
+  val dbo = grater[MyRecord].asDBObject(myRecord)
     println(dbo)//empty! because MyRec is too.  How do I get an updated consturctor?
 
-  val obj = grater[MyRec].asObject(dbo)
+  val obj = grater[MyRecord].asObject(dbo)
     println(obj)
 
-  println(myRec == obj)
+  println(myRecord == obj)
 
 
 //Test as type-parameter in Scalavro
-  val myRecType = AvroType[MyRec]
-    println("schema: " + myRecType.schema)//no fields! because the constructor hasn't yet been updated?  
+  val myRecordType = AvroType[MyRecord]
+    println("schema: " + myRecordType.schema)//no fields! because the constructor hasn't yet been updated?  
 
 }
 
