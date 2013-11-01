@@ -15,9 +15,12 @@ object helloMacro {
     val result = {
       annottees.map(_.tree).toList match {
 
-        case ClassDef(mods, name, tparams, Template(parents, self, body)) :: Nil =>
-          val helloVal = ValDef(NoMods, newTermName(x), TypeTree(), Literal(Constant("hello macro!")))
-          ClassDef(mods, name, tparams, Template(parents, self, body :+ helloVal))
+        case q"$mods class $name[..$tparams](..$first)(...$rest) extends ..$parents { $self => ..$body }" :: Nil =>
+          val CASEACCESSOR = (1 << 24).toLong.asInstanceOf[FlagSet]
+          val PARAMACCESSOR = (1 << 29).toLong.asInstanceOf[FlagSet]
+          val helloMods = Modifiers(CASEACCESSOR | PARAMACCESSOR | DEFAULTPARAM)
+          val helloVal = q"""$helloMods val x: String = "hello macro!""""
+          q"$mods class $name[..$tparams](..$first, $helloVal)(...$rest) extends ..$parents { $self => ..$body }"
 
       }
     }
