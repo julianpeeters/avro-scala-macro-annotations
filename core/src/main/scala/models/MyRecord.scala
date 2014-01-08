@@ -1,6 +1,8 @@
 package models
-@nestedInner
+
+@valProvider
 case class MyRec//(x: String)
-@nestedOuter
+
+@valProvider
 case class MyRecord//(myRec: MyRec)
 

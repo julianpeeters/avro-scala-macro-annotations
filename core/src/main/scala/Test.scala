@@ -21,8 +21,7 @@ object Test extends App {
 //Test as a type parameter in Salat
   val myRecord =  MyRecord()
   val dbo = grater[MyRecord].asDBObject(myRecord)
-    println(dbo)//empty! because MyRec is too.  How do I get an updated consturctor?
-
+    println(dbo)
   val obj = grater[MyRecord].asObject(dbo)
     println(obj)
 
@@ -31,8 +30,7 @@ object Test extends App {
 
 //Test as type-parameter in Scalavro
   val myRecordType = AvroType[MyRecord]
-    println("schema: " + myRecordType.schema)//no fields! because the constructor hasn't yet been updated?  
-
+    println("schema: " + myRecordType.schema)
 }
 
 

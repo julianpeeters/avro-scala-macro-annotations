@@ -1,4 +1,4 @@
-[0m[[0minfo[0m] [0mUpdating {file:/home/julian/Dropbox/macro-annotation-example/}macros...[0m
+[0m[[0minfo[0m] [0mUpdating {file:/home/julianpeeters/Dropbox/macro-annotation-example/}macros...[0m
 [0m[[0mdebug[0m] [0m:: resolving dependencies :: org.scala-lang.macroparadise#macros_2.10;1.0.0[0m
 [0m[[0mdebug[0m] [0m	confs: [compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool][0m
 [0m[[0mdebug[0m] [0m	validate = true[0m
@@ -7,7 +7,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-lang.macroparadise#macros_2.10;1.0.0 [compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.2 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving org.scala-lang#scala-library;2.10.2 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@11b9e38a[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@5bb5531c[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-library;2.10.2[0m
 [0m[[0mdebug[0m] [0m	local: revision in cache: org.scala-lang#scala-library;2.10.2[0m
 [0m[[0mdebug[0m] [0m	found org.scala-lang#scala-library;2.10.2 in sbt-chain[0m
@@ -17,9 +17,19 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->io.spray#spray-json_2.10;1.2.5 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving io.spray#spray-json_2.10;1.2.5 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: io.spray#spray-json_2.10;1.2.5 {compile=[default(compile)]}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: io.spray#spray-json_2.10;1.2.5[0m
-[0m[[0mdebug[0m] [0m	local: revision in cache: io.spray#spray-json_2.10;1.2.5[0m
-[0m[[0mdebug[0m] [0m	found io.spray#spray-json_2.10;1.2.5 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m		tried /home/julianpeeters/.ivy2/local/io.spray/spray-json_2.10/1.2.5/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m	local: no ivy file found for io.spray#spray-json_2.10;1.2.5[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/io/spray/spray-json_2.10/1.2.5/spray-json_2.10-1.2.5.pom[0m
+[0m[[0mdebug[0m] [0m	public: found md file for io.spray#spray-json_2.10;1.2.5[0m
+[0m[[0mdebug[0m] [0m		=> http://repo1.maven.org/maven2/io/spray/spray-json_2.10/1.2.5/spray-json_2.10-1.2.5.pom (1.2.5)[0m
+[0m[[0mdebug[0m] [0mdownloading http://repo1.maven.org/maven2/io/spray/spray-json_2.10/1.2.5/spray-json_2.10-1.2.5.pom ...[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/io/spray/spray-json_2.10/1.2.5/spray-json_2.10-1.2.5.pom[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/io/spray/spray-json_2.10/1.2.5/spray-json_2.10-1.2.5.pom.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/io/spray/spray-json_2.10/1.2.5/spray-json_2.10-1.2.5.pom[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] io.spray#spray-json_2.10;1.2.5!spray-json_2.10.pom(pom.original) (556ms)[0m
+[0m[[0mdebug[0m] [0m		tried /home/julianpeeters/.ivy2/local/io.spray/spray-json_2.10/1.2.5/jars/spray-json_2.10.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/io/spray/spray-json_2.10/1.2.5/spray-json_2.10-1.2.5.jar[0m
+[0m[[0mdebug[0m] [0m	found io.spray#spray-json_2.10;1.2.5 in public[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->io.spray#spray-json_2.10;1.2.5 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->io.spray#spray-json_2.10;1.2.5 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.scala-lang#scala-library;2.10.1 [compile->master(*)][0m
@@ -29,16 +39,36 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.parboiled#parboiled-scala_2.10;1.1.5 [compile->master(*)][0m
 [0m[[0minfo[0m] [0mResolving org.parboiled#parboiled-scala_2.10;1.1.5 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.parboiled#parboiled-scala_2.10;1.1.5 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.parboiled#parboiled-scala_2.10;1.1.5[0m
-[0m[[0mdebug[0m] [0m	local: revision in cache: org.parboiled#parboiled-scala_2.10;1.1.5[0m
-[0m[[0mdebug[0m] [0m	found org.parboiled#parboiled-scala_2.10;1.1.5 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m		tried /home/julianpeeters/.ivy2/local/org.parboiled/parboiled-scala_2.10/1.1.5/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m	local: no ivy file found for org.parboiled#parboiled-scala_2.10;1.1.5[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/parboiled/parboiled-scala_2.10/1.1.5/parboiled-scala_2.10-1.1.5.pom[0m
+[0m[[0mdebug[0m] [0m	public: found md file for org.parboiled#parboiled-scala_2.10;1.1.5[0m
+[0m[[0mdebug[0m] [0m		=> http://repo1.maven.org/maven2/org/parboiled/parboiled-scala_2.10/1.1.5/parboiled-scala_2.10-1.1.5.pom (1.1.5)[0m
+[0m[[0mdebug[0m] [0mdownloading http://repo1.maven.org/maven2/org/parboiled/parboiled-scala_2.10/1.1.5/parboiled-scala_2.10-1.1.5.pom ...[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/parboiled/parboiled-scala_2.10/1.1.5/parboiled-scala_2.10-1.1.5.pom[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/parboiled/parboiled-scala_2.10/1.1.5/parboiled-scala_2.10-1.1.5.pom.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/org/parboiled/parboiled-scala_2.10/1.1.5/parboiled-scala_2.10-1.1.5.pom[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.parboiled#parboiled-scala_2.10;1.1.5!parboiled-scala_2.10.pom(pom.original) (753ms)[0m
+[0m[[0mdebug[0m] [0m		tried /home/julianpeeters/.ivy2/local/org.parboiled/parboiled-scala_2.10/1.1.5/bundles/parboiled-scala_2.10.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/parboiled/parboiled-scala_2.10/1.1.5/parboiled-scala_2.10-1.1.5.jar[0m
+[0m[[0mdebug[0m] [0m	found org.parboiled#parboiled-scala_2.10;1.1.5 in public[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.parboiled#parboiled-scala_2.10;1.1.5 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.parboiled#parboiled-core;1.1.5 [compile->master(*)][0m
 [0m[[0minfo[0m] [0mResolving org.parboiled#parboiled-core;1.1.5 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.parboiled#parboiled-core;1.1.5 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.parboiled#parboiled-core;1.1.5[0m
-[0m[[0mdebug[0m] [0m	local: revision in cache: org.parboiled#parboiled-core;1.1.5[0m
-[0m[[0mdebug[0m] [0m	found org.parboiled#parboiled-core;1.1.5 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m		tried /home/julianpeeters/.ivy2/local/org.parboiled/parboiled-core/1.1.5/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m	local: no ivy file found for org.parboiled#parboiled-core;1.1.5[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/parboiled/parboiled-core/1.1.5/parboiled-core-1.1.5.pom[0m
+[0m[[0mdebug[0m] [0m	public: found md file for org.parboiled#parboiled-core;1.1.5[0m
+[0m[[0mdebug[0m] [0m		=> http://repo1.maven.org/maven2/org/parboiled/parboiled-core/1.1.5/parboiled-core-1.1.5.pom (1.1.5)[0m
+[0m[[0mdebug[0m] [0mdownloading http://repo1.maven.org/maven2/org/parboiled/parboiled-core/1.1.5/parboiled-core-1.1.5.pom ...[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/parboiled/parboiled-core/1.1.5/parboiled-core-1.1.5.pom[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/parboiled/parboiled-core/1.1.5/parboiled-core-1.1.5.pom.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/org/parboiled/parboiled-core/1.1.5/parboiled-core-1.1.5.pom[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.parboiled#parboiled-core;1.1.5!parboiled-core.pom(pom.original) (541ms)[0m
+[0m[[0mdebug[0m] [0m		tried /home/julianpeeters/.ivy2/local/org.parboiled/parboiled-core/1.1.5/bundles/parboiled-core.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/parboiled/parboiled-core/1.1.5/parboiled-core-1.1.5.jar[0m
+[0m[[0mdebug[0m] [0m	found org.parboiled#parboiled-core;1.1.5 in public[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.parboiled#parboiled-core;1.1.5 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.scala-lang#scala-library;2.10.1 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.scala-lang#scala-library;2.10.2 [compile->master(*)][0m
@@ -60,24 +90,54 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->com.gensler#scalavro_2.10;0.4.0 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving com.gensler#scalavro_2.10;0.4.0 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.gensler#scalavro_2.10;0.4.0 {compile=[default(compile)]}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.gensler#scalavro_2.10;0.4.0[0m
-[0m[[0mdebug[0m] [0m	local: revision in cache: com.gensler#scalavro_2.10;0.4.0[0m
-[0m[[0mdebug[0m] [0m	found com.gensler#scalavro_2.10;0.4.0 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m		tried /home/julianpeeters/.ivy2/local/com.gensler/scalavro_2.10/0.4.0/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m	local: no ivy file found for com.gensler#scalavro_2.10;0.4.0[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/com/gensler/scalavro_2.10/0.4.0/scalavro_2.10-0.4.0.pom[0m
+[0m[[0mdebug[0m] [0m	public: found md file for com.gensler#scalavro_2.10;0.4.0[0m
+[0m[[0mdebug[0m] [0m		=> http://repo1.maven.org/maven2/com/gensler/scalavro_2.10/0.4.0/scalavro_2.10-0.4.0.pom (0.4.0)[0m
+[0m[[0mdebug[0m] [0mdownloading http://repo1.maven.org/maven2/com/gensler/scalavro_2.10/0.4.0/scalavro_2.10-0.4.0.pom ...[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/gensler/scalavro_2.10/0.4.0/scalavro_2.10-0.4.0.pom[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/gensler/scalavro_2.10/0.4.0/scalavro_2.10-0.4.0.pom.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/com/gensler/scalavro_2.10/0.4.0/scalavro_2.10-0.4.0.pom[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.gensler#scalavro_2.10;0.4.0!scalavro_2.10.pom(pom.original) (855ms)[0m
+[0m[[0mdebug[0m] [0m		tried /home/julianpeeters/.ivy2/local/com.gensler/scalavro_2.10/0.4.0/jars/scalavro_2.10.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/com/gensler/scalavro_2.10/0.4.0/scalavro_2.10-0.4.0.jar[0m
+[0m[[0mdebug[0m] [0m	found com.gensler#scalavro_2.10;0.4.0 in public[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->com.gensler#scalavro_2.10;0.4.0 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->com.gensler#scalavro_2.10;0.4.0 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->com.gensler#scalavro-core_2.10;0.4.0 [compile->master(*)][0m
 [0m[[0minfo[0m] [0mResolving com.gensler#scalavro-core_2.10;0.4.0 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.gensler#scalavro-core_2.10;0.4.0 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.gensler#scalavro-core_2.10;0.4.0[0m
-[0m[[0mdebug[0m] [0m	local: revision in cache: com.gensler#scalavro-core_2.10;0.4.0[0m
-[0m[[0mdebug[0m] [0m	found com.gensler#scalavro-core_2.10;0.4.0 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m		tried /home/julianpeeters/.ivy2/local/com.gensler/scalavro-core_2.10/0.4.0/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m	local: no ivy file found for com.gensler#scalavro-core_2.10;0.4.0[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/com/gensler/scalavro-core_2.10/0.4.0/scalavro-core_2.10-0.4.0.pom[0m
+[0m[[0mdebug[0m] [0m	public: found md file for com.gensler#scalavro-core_2.10;0.4.0[0m
+[0m[[0mdebug[0m] [0m		=> http://repo1.maven.org/maven2/com/gensler/scalavro-core_2.10/0.4.0/scalavro-core_2.10-0.4.0.pom (0.4.0)[0m
+[0m[[0mdebug[0m] [0mdownloading http://repo1.maven.org/maven2/com/gensler/scalavro-core_2.10/0.4.0/scalavro-core_2.10-0.4.0.pom ...[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/gensler/scalavro-core_2.10/0.4.0/scalavro-core_2.10-0.4.0.pom[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/gensler/scalavro-core_2.10/0.4.0/scalavro-core_2.10-0.4.0.pom.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/com/gensler/scalavro-core_2.10/0.4.0/scalavro-core_2.10-0.4.0.pom[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.gensler#scalavro-core_2.10;0.4.0!scalavro-core_2.10.pom(pom.original) (900ms)[0m
+[0m[[0mdebug[0m] [0m		tried /home/julianpeeters/.ivy2/local/com.gensler/scalavro-core_2.10/0.4.0/jars/scalavro-core_2.10.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/com/gensler/scalavro-core_2.10/0.4.0/scalavro-core_2.10-0.4.0.jar[0m
+[0m[[0mdebug[0m] [0m	found com.gensler#scalavro-core_2.10;0.4.0 in public[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->com.gensler#scalavro-core_2.10;0.4.0 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->com.gensler#scalavro-util_2.10;0.4.0 [compile->master(*)][0m
 [0m[[0minfo[0m] [0mResolving com.gensler#scalavro-util_2.10;0.4.0 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.gensler#scalavro-util_2.10;0.4.0 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.gensler#scalavro-util_2.10;0.4.0[0m
-[0m[[0mdebug[0m] [0m	local: revision in cache: com.gensler#scalavro-util_2.10;0.4.0[0m
-[0m[[0mdebug[0m] [0m	found com.gensler#scalavro-util_2.10;0.4.0 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m		tried /home/julianpeeters/.ivy2/local/com.gensler/scalavro-util_2.10/0.4.0/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m	local: no ivy file found for com.gensler#scalavro-util_2.10;0.4.0[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/com/gensler/scalavro-util_2.10/0.4.0/scalavro-util_2.10-0.4.0.pom[0m
+[0m[[0mdebug[0m] [0m	public: found md file for com.gensler#scalavro-util_2.10;0.4.0[0m
+[0m[[0mdebug[0m] [0m		=> http://repo1.maven.org/maven2/com/gensler/scalavro-util_2.10/0.4.0/scalavro-util_2.10-0.4.0.pom (0.4.0)[0m
+[0m[[0mdebug[0m] [0mdownloading http://repo1.maven.org/maven2/com/gensler/scalavro-util_2.10/0.4.0/scalavro-util_2.10-0.4.0.pom ...[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/gensler/scalavro-util_2.10/0.4.0/scalavro-util_2.10-0.4.0.pom[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/gensler/scalavro-util_2.10/0.4.0/scalavro-util_2.10-0.4.0.pom.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/com/gensler/scalavro-util_2.10/0.4.0/scalavro-util_2.10-0.4.0.pom[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.gensler#scalavro-util_2.10;0.4.0!scalavro-util_2.10.pom(pom.original) (773ms)[0m
+[0m[[0mdebug[0m] [0m		tried /home/julianpeeters/.ivy2/local/com.gensler/scalavro-util_2.10/0.4.0/jars/scalavro-util_2.10.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/com/gensler/scalavro-util_2.10/0.4.0/scalavro-util_2.10-0.4.0.jar[0m
+[0m[[0mdebug[0m] [0m	found com.gensler#scalavro-util_2.10;0.4.0 in public[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->com.gensler#scalavro-util_2.10;0.4.0 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
@@ -101,23 +161,66 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [compile->master(*)][0m
 [0m[[0minfo[0m] [0mResolving ch.qos.logback#logback-classic;1.0.9 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: ch.qos.logback#logback-classic;1.0.9 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: ch.qos.logback#logback-classic;1.0.9[0m
-[0m[[0mdebug[0m] [0m	local: revision in cache: ch.qos.logback#logback-classic;1.0.9[0m
-[0m[[0mdebug[0m] [0m	found ch.qos.logback#logback-classic;1.0.9 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m		tried /home/julianpeeters/.ivy2/local/ch.qos.logback/logback-classic/1.0.9/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m	local: no ivy file found for ch.qos.logback#logback-classic;1.0.9[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/ch/qos/logback/logback-classic/1.0.9/logback-classic-1.0.9.pom[0m
+[0m[[0mdebug[0m] [0m	public: found md file for ch.qos.logback#logback-classic;1.0.9[0m
+[0m[[0mdebug[0m] [0m		=> http://repo1.maven.org/maven2/ch/qos/logback/logback-classic/1.0.9/logback-classic-1.0.9.pom (1.0.9)[0m
+[0m[[0mdebug[0m] [0mdownloading http://repo1.maven.org/maven2/ch/qos/logback/logback-classic/1.0.9/logback-classic-1.0.9.pom ...[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/ch/qos/logback/logback-classic/1.0.9/logback-classic-1.0.9.pom[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/ch/qos/logback/logback-classic/1.0.9/logback-classic-1.0.9.pom.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/ch/qos/logback/logback-classic/1.0.9/logback-classic-1.0.9.pom[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] ch.qos.logback#logback-classic;1.0.9!logback-classic.pom(pom.original) (640ms)[0m
+[0m[[0minfo[0m] [0mResolving ch.qos.logback#logback-parent;1.0.9 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: ch.qos.logback#logback-parent;1.0.9 {}[0m
+[0m[[0mdebug[0m] [0m		tried /home/julianpeeters/.ivy2/local/ch.qos.logback/logback-parent/1.0.9/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m	local: no ivy file found for ch.qos.logback#logback-parent;1.0.9[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/ch/qos/logback/logback-parent/1.0.9/logback-parent-1.0.9.pom[0m
+[0m[[0mdebug[0m] [0m	public: found md file for ch.qos.logback#logback-parent;1.0.9[0m
+[0m[[0mdebug[0m] [0m		=> http://repo1.maven.org/maven2/ch/qos/logback/logback-parent/1.0.9/logback-parent-1.0.9.pom (1.0.9)[0m
+[0m[[0mdebug[0m] [0mdownloading http://repo1.maven.org/maven2/ch/qos/logback/logback-parent/1.0.9/logback-parent-1.0.9.pom ...[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/ch/qos/logback/logback-parent/1.0.9/logback-parent-1.0.9.pom[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/ch/qos/logback/logback-parent/1.0.9/logback-parent-1.0.9.pom.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/ch/qos/logback/logback-parent/1.0.9/logback-parent-1.0.9.pom[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] ch.qos.logback#logback-parent;1.0.9!logback-parent.pom(pom.original) (512ms)[0m
+[0m[[0mdebug[0m] [0m		tried /home/julianpeeters/.ivy2/local/ch.qos.logback/logback-parent/1.0.9/jars/logback-parent.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/ch/qos/logback/logback-parent/1.0.9/logback-parent-1.0.9.jar[0m
+[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo1.maven.org/maven2/ch/qos/logback/logback-parent/1.0.9/logback-parent-1.0.9.jar[0m
+[0m[[0mdebug[0m] [0m		tried https://oss.sonatype.org/content/repositories/snapshots/ch/qos/logback/logback-parent/1.0.9/logback-parent-1.0.9.jar[0m
+[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=https://oss.sonatype.org/content/repositories/snapshots/ch/qos/logback/logback-parent/1.0.9/logback-parent-1.0.9.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo.spray.io/ch/qos/logback/logback-parent/1.0.9/logback-parent-1.0.9.jar[0m
+[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo.spray.io/ch/qos/logback/logback-parent/1.0.9/logback-parent-1.0.9.jar[0m
+[0m[[0mdebug[0m] [0m		tried /home/julianpeeters/.ivy2/local/ch.qos.logback/logback-classic/1.0.9/jars/logback-classic.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/ch/qos/logback/logback-classic/1.0.9/logback-classic-1.0.9.jar[0m
+[0m[[0mdebug[0m] [0m	found ch.qos.logback#logback-classic;1.0.9 in public[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.9->ch.qos.logback#logback-core;1.0.9 [compile->master(*)][0m
 [0m[[0minfo[0m] [0mResolving ch.qos.logback#logback-core;1.0.9 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: ch.qos.logback#logback-core;1.0.9 {compile=[compile(*), master(*)], runtime=[runtime(*)], test=[runtime(*), master(*)]}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: ch.qos.logback#logback-core;1.0.9[0m
-[0m[[0mdebug[0m] [0m	local: revision in cache: ch.qos.logback#logback-core;1.0.9[0m
-[0m[[0mdebug[0m] [0m	found ch.qos.logback#logback-core;1.0.9 in sbt-chain[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@6db3e2a2[0m
+[0m[[0mdebug[0m] [0m		tried /home/julianpeeters/.ivy2/local/ch.qos.logback/logback-core/1.0.9/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m	local: no ivy file found for ch.qos.logback#logback-core;1.0.9[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/ch/qos/logback/logback-core/1.0.9/logback-core-1.0.9.pom[0m
+[0m[[0mdebug[0m] [0m	public: found md file for ch.qos.logback#logback-core;1.0.9[0m
+[0m[[0mdebug[0m] [0m		=> http://repo1.maven.org/maven2/ch/qos/logback/logback-core/1.0.9/logback-core-1.0.9.pom (1.0.9)[0m
+[0m[[0mdebug[0m] [0mdownloading http://repo1.maven.org/maven2/ch/qos/logback/logback-core/1.0.9/logback-core-1.0.9.pom ...[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/ch/qos/logback/logback-core/1.0.9/logback-core-1.0.9.pom[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/ch/qos/logback/logback-core/1.0.9/logback-core-1.0.9.pom.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/ch/qos/logback/logback-core/1.0.9/logback-core-1.0.9.pom[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] ch.qos.logback#logback-core;1.0.9!logback-core.pom(pom.original) (433ms)[0m
+[0m[[0minfo[0m] [0mResolving ch.qos.logback#logback-parent;1.0.9 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: ch.qos.logback#logback-parent;1.0.9 {}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: ch.qos.logback#logback-parent;1.0.9[0m
+[0m[[0mdebug[0m] [0m	local: revision in cache: ch.qos.logback#logback-parent;1.0.9[0m
+[0m[[0mdebug[0m] [0m		tried /home/julianpeeters/.ivy2/local/ch.qos.logback/logback-core/1.0.9/jars/logback-core.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/ch/qos/logback/logback-core/1.0.9/logback-core-1.0.9.jar[0m
+[0m[[0mdebug[0m] [0m	found ch.qos.logback#logback-core;1.0.9 in public[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.9->ch.qos.logback#logback-core;1.0.9 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.9->org.slf4j#slf4j-api;1.7.2 [compile->master(*)][0m
 [0m[[0minfo[0m] [0mResolving org.slf4j#slf4j-api;1.7.2 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.slf4j#slf4j-api;1.7.2 {compile=[compile(*), master(*)], runtime=[runtime(*)], test=[runtime(*), master(*)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@aac831c[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.slf4j#slf4j-api;1.7.2[0m
 [0m[[0mdebug[0m] [0m	local: revision in cache: org.slf4j#slf4j-api;1.7.2[0m
-[0m[[0mdebug[0m] [0m	found org.slf4j#slf4j-api;1.7.2 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m	found org.slf4j#slf4j-api;1.7.2 in public[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.9->org.slf4j#slf4j-api;1.7.2 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [compile->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [compile->compile][0m
@@ -128,44 +231,146 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.reflections#reflections;0.9.9-RC1 [compile->master(*)][0m
 [0m[[0minfo[0m] [0mResolving org.reflections#reflections;0.9.9-RC1 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.reflections#reflections;0.9.9-RC1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.reflections#reflections;0.9.9-RC1[0m
-[0m[[0mdebug[0m] [0m	local: revision in cache: org.reflections#reflections;0.9.9-RC1[0m
-[0m[[0mdebug[0m] [0m	found org.reflections#reflections;0.9.9-RC1 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m		tried /home/julianpeeters/.ivy2/local/org.reflections/reflections/0.9.9-RC1/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m	local: no ivy file found for org.reflections#reflections;0.9.9-RC1[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/reflections/reflections/0.9.9-RC1/reflections-0.9.9-RC1.pom[0m
+[0m[[0mdebug[0m] [0m	public: found md file for org.reflections#reflections;0.9.9-RC1[0m
+[0m[[0mdebug[0m] [0m		=> http://repo1.maven.org/maven2/org/reflections/reflections/0.9.9-RC1/reflections-0.9.9-RC1.pom (0.9.9-RC1)[0m
+[0m[[0mdebug[0m] [0mdownloading http://repo1.maven.org/maven2/org/reflections/reflections/0.9.9-RC1/reflections-0.9.9-RC1.pom ...[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/reflections/reflections/0.9.9-RC1/reflections-0.9.9-RC1.pom[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/reflections/reflections/0.9.9-RC1/reflections-0.9.9-RC1.pom.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/org/reflections/reflections/0.9.9-RC1/reflections-0.9.9-RC1.pom[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.reflections#reflections;0.9.9-RC1!reflections.pom(pom.original) (787ms)[0m
+[0m[[0minfo[0m] [0mResolving org.reflections#reflections-parent;0.9.9-RC1 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.reflections#reflections-parent;0.9.9-RC1 {}[0m
+[0m[[0mdebug[0m] [0m		tried /home/julianpeeters/.ivy2/local/org.reflections/reflections-parent/0.9.9-RC1/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m	local: no ivy file found for org.reflections#reflections-parent;0.9.9-RC1[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/reflections/reflections-parent/0.9.9-RC1/reflections-parent-0.9.9-RC1.pom[0m
+[0m[[0mdebug[0m] [0m	public: found md file for org.reflections#reflections-parent;0.9.9-RC1[0m
+[0m[[0mdebug[0m] [0m		=> http://repo1.maven.org/maven2/org/reflections/reflections-parent/0.9.9-RC1/reflections-parent-0.9.9-RC1.pom (0.9.9-RC1)[0m
+[0m[[0mdebug[0m] [0mdownloading http://repo1.maven.org/maven2/org/reflections/reflections-parent/0.9.9-RC1/reflections-parent-0.9.9-RC1.pom ...[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/reflections/reflections-parent/0.9.9-RC1/reflections-parent-0.9.9-RC1.pom[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/reflections/reflections-parent/0.9.9-RC1/reflections-parent-0.9.9-RC1.pom.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/org/reflections/reflections-parent/0.9.9-RC1/reflections-parent-0.9.9-RC1.pom[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.reflections#reflections-parent;0.9.9-RC1!reflections-parent.pom(pom.original) (454ms)[0m
+[0m[[0mdebug[0m] [0m		tried /home/julianpeeters/.ivy2/local/org.reflections/reflections-parent/0.9.9-RC1/jars/reflections-parent.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/reflections/reflections-parent/0.9.9-RC1/reflections-parent-0.9.9-RC1.jar[0m
+[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo1.maven.org/maven2/org/reflections/reflections-parent/0.9.9-RC1/reflections-parent-0.9.9-RC1.jar[0m
+[0m[[0mdebug[0m] [0m		tried https://oss.sonatype.org/content/repositories/snapshots/org/reflections/reflections-parent/0.9.9-RC1/reflections-parent-0.9.9-RC1.jar[0m
+[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=https://oss.sonatype.org/content/repositories/snapshots/org/reflections/reflections-parent/0.9.9-RC1/reflections-parent-0.9.9-RC1.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo.spray.io/org/reflections/reflections-parent/0.9.9-RC1/reflections-parent-0.9.9-RC1.jar[0m
+[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo.spray.io/org/reflections/reflections-parent/0.9.9-RC1/reflections-parent-0.9.9-RC1.jar[0m
+[0m[[0mdebug[0m] [0m		tried /home/julianpeeters/.ivy2/local/org.reflections/reflections/0.9.9-RC1/jars/reflections.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/reflections/reflections/0.9.9-RC1/reflections-0.9.9-RC1.jar[0m
+[0m[[0mdebug[0m] [0m	found org.reflections#reflections;0.9.9-RC1 in public[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.reflections#reflections;0.9.9-RC1 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.reflections#reflections;0.9.9-RC1->com.google.guava#guava;11.0.2 [compile->master(*)][0m
 [0m[[0minfo[0m] [0mResolving com.google.guava#guava;11.0.2 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.google.guava#guava;11.0.2 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.google.guava#guava;11.0.2[0m
-[0m[[0mdebug[0m] [0m	local: revision in cache: com.google.guava#guava;11.0.2[0m
-[0m[[0mdebug[0m] [0m	found com.google.guava#guava;11.0.2 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m		tried /home/julianpeeters/.ivy2/local/com.google.guava/guava/11.0.2/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m	local: no ivy file found for com.google.guava#guava;11.0.2[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/com/google/guava/guava/11.0.2/guava-11.0.2.pom[0m
+[0m[[0mdebug[0m] [0m	public: found md file for com.google.guava#guava;11.0.2[0m
+[0m[[0mdebug[0m] [0m		=> http://repo1.maven.org/maven2/com/google/guava/guava/11.0.2/guava-11.0.2.pom (11.0.2)[0m
+[0m[[0mdebug[0m] [0mdownloading http://repo1.maven.org/maven2/com/google/guava/guava/11.0.2/guava-11.0.2.pom ...[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/google/guava/guava/11.0.2/guava-11.0.2.pom[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/google/guava/guava/11.0.2/guava-11.0.2.pom.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/com/google/guava/guava/11.0.2/guava-11.0.2.pom[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.google.guava#guava;11.0.2!guava.pom(pom.original) (717ms)[0m
+[0m[[0minfo[0m] [0mResolving com.google.guava#guava-parent;11.0.2 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.google.guava#guava-parent;11.0.2 {}[0m
+[0m[[0mdebug[0m] [0m		tried /home/julianpeeters/.ivy2/local/com.google.guava/guava-parent/11.0.2/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m	local: no ivy file found for com.google.guava#guava-parent;11.0.2[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/com/google/guava/guava-parent/11.0.2/guava-parent-11.0.2.pom[0m
+[0m[[0mdebug[0m] [0m	public: found md file for com.google.guava#guava-parent;11.0.2[0m
+[0m[[0mdebug[0m] [0m		=> http://repo1.maven.org/maven2/com/google/guava/guava-parent/11.0.2/guava-parent-11.0.2.pom (11.0.2)[0m
+[0m[[0mdebug[0m] [0mdownloading http://repo1.maven.org/maven2/com/google/guava/guava-parent/11.0.2/guava-parent-11.0.2.pom ...[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/google/guava/guava-parent/11.0.2/guava-parent-11.0.2.pom[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/google/guava/guava-parent/11.0.2/guava-parent-11.0.2.pom.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/com/google/guava/guava-parent/11.0.2/guava-parent-11.0.2.pom[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.google.guava#guava-parent;11.0.2!guava-parent.pom(pom.original) (666ms)[0m
+[0m[[0minfo[0m] [0mResolving org.sonatype.oss#oss-parent;7 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.sonatype.oss#oss-parent;7 {}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.sonatype.oss#oss-parent;7[0m
+[0m[[0mdebug[0m] [0m	local: revision in cache: org.sonatype.oss#oss-parent;7[0m
+[0m[[0mdebug[0m] [0m		tried /home/julianpeeters/.ivy2/local/com.google.guava/guava-parent/11.0.2/jars/guava-parent.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/com/google/guava/guava-parent/11.0.2/guava-parent-11.0.2.jar[0m
+[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo1.maven.org/maven2/com/google/guava/guava-parent/11.0.2/guava-parent-11.0.2.jar[0m
+[0m[[0mdebug[0m] [0m		tried https://oss.sonatype.org/content/repositories/snapshots/com/google/guava/guava-parent/11.0.2/guava-parent-11.0.2.jar[0m
+[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=https://oss.sonatype.org/content/repositories/snapshots/com/google/guava/guava-parent/11.0.2/guava-parent-11.0.2.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo.spray.io/com/google/guava/guava-parent/11.0.2/guava-parent-11.0.2.jar[0m
+[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo.spray.io/com/google/guava/guava-parent/11.0.2/guava-parent-11.0.2.jar[0m
+[0m[[0mdebug[0m] [0m		tried /home/julianpeeters/.ivy2/local/com.google.guava/guava/11.0.2/jars/guava.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/com/google/guava/guava/11.0.2/guava-11.0.2.jar[0m
+[0m[[0mdebug[0m] [0m	found com.google.guava#guava;11.0.2 in public[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.reflections#reflections;0.9.9-RC1->com.google.guava#guava;11.0.2 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.google.guava#guava;11.0.2->com.google.code.findbugs#jsr305;1.3.9 [compile->master(*)][0m
 [0m[[0minfo[0m] [0mResolving com.google.code.findbugs#jsr305;1.3.9 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.google.code.findbugs#jsr305;1.3.9 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.google.code.findbugs#jsr305;1.3.9[0m
-[0m[[0mdebug[0m] [0m	local: revision in cache: com.google.code.findbugs#jsr305;1.3.9[0m
-[0m[[0mdebug[0m] [0m	found com.google.code.findbugs#jsr305;1.3.9 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m		tried /home/julianpeeters/.ivy2/local/com.google.code.findbugs/jsr305/1.3.9/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m	local: no ivy file found for com.google.code.findbugs#jsr305;1.3.9[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.pom[0m
+[0m[[0mdebug[0m] [0m	public: found md file for com.google.code.findbugs#jsr305;1.3.9[0m
+[0m[[0mdebug[0m] [0m		=> http://repo1.maven.org/maven2/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.pom (1.3.9)[0m
+[0m[[0mdebug[0m] [0mdownloading http://repo1.maven.org/maven2/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.pom ...[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.pom[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.pom.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.pom[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.google.code.findbugs#jsr305;1.3.9!jsr305.pom(pom.original) (382ms)[0m
+[0m[[0mdebug[0m] [0m		tried /home/julianpeeters/.ivy2/local/com.google.code.findbugs/jsr305/1.3.9/jars/jsr305.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.jar[0m
+[0m[[0mdebug[0m] [0m	found com.google.code.findbugs#jsr305;1.3.9 in public[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.google.guava#guava;11.0.2->com.google.code.findbugs#jsr305;1.3.9 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.reflections#reflections;0.9.9-RC1->org.javassist#javassist;3.16.1-GA [compile->master(*)][0m
 [0m[[0minfo[0m] [0mResolving org.javassist#javassist;3.16.1-GA ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.javassist#javassist;3.16.1-GA {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.javassist#javassist;3.16.1-GA[0m
-[0m[[0mdebug[0m] [0m	local: revision in cache: org.javassist#javassist;3.16.1-GA[0m
-[0m[[0mdebug[0m] [0m	found org.javassist#javassist;3.16.1-GA in sbt-chain[0m
+[0m[[0mdebug[0m] [0m		tried /home/julianpeeters/.ivy2/local/org.javassist/javassist/3.16.1-GA/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m	local: no ivy file found for org.javassist#javassist;3.16.1-GA[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/javassist/javassist/3.16.1-GA/javassist-3.16.1-GA.pom[0m
+[0m[[0mdebug[0m] [0m	public: found md file for org.javassist#javassist;3.16.1-GA[0m
+[0m[[0mdebug[0m] [0m		=> http://repo1.maven.org/maven2/org/javassist/javassist/3.16.1-GA/javassist-3.16.1-GA.pom (3.16.1-GA)[0m
+[0m[[0mdebug[0m] [0mdownloading http://repo1.maven.org/maven2/org/javassist/javassist/3.16.1-GA/javassist-3.16.1-GA.pom ...[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/javassist/javassist/3.16.1-GA/javassist-3.16.1-GA.pom[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/javassist/javassist/3.16.1-GA/javassist-3.16.1-GA.pom.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/org/javassist/javassist/3.16.1-GA/javassist-3.16.1-GA.pom[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.javassist#javassist;3.16.1-GA!javassist.pom(pom.original) (588ms)[0m
+[0m[[0mdebug[0m] [0m		tried /home/julianpeeters/.ivy2/local/org.javassist/javassist/3.16.1-GA/jars/javassist.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/javassist/javassist/3.16.1-GA/javassist-3.16.1-GA.jar[0m
+[0m[[0mdebug[0m] [0m	found org.javassist#javassist;3.16.1-GA in public[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.reflections#reflections;0.9.9-RC1->org.javassist#javassist;3.16.1-GA [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.reflections#reflections;0.9.9-RC1->dom4j#dom4j;1.6.1 [compile->master(*)][0m
 [0m[[0minfo[0m] [0mResolving dom4j#dom4j;1.6.1 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: dom4j#dom4j;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: dom4j#dom4j;1.6.1[0m
-[0m[[0mdebug[0m] [0m	local: revision in cache: dom4j#dom4j;1.6.1[0m
-[0m[[0mdebug[0m] [0m	found dom4j#dom4j;1.6.1 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m		tried /home/julianpeeters/.ivy2/local/dom4j/dom4j/1.6.1/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m	local: no ivy file found for dom4j#dom4j;1.6.1[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/dom4j/dom4j/1.6.1/dom4j-1.6.1.pom[0m
+[0m[[0mdebug[0m] [0m	public: found md file for dom4j#dom4j;1.6.1[0m
+[0m[[0mdebug[0m] [0m		=> http://repo1.maven.org/maven2/dom4j/dom4j/1.6.1/dom4j-1.6.1.pom (1.6.1)[0m
+[0m[[0mdebug[0m] [0mdownloading http://repo1.maven.org/maven2/dom4j/dom4j/1.6.1/dom4j-1.6.1.pom ...[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/dom4j/dom4j/1.6.1/dom4j-1.6.1.pom[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/dom4j/dom4j/1.6.1/dom4j-1.6.1.pom.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/dom4j/dom4j/1.6.1/dom4j-1.6.1.pom[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] dom4j#dom4j;1.6.1!dom4j.pom(pom.original) (486ms)[0m
+[0m[[0mdebug[0m] [0m		tried /home/julianpeeters/.ivy2/local/dom4j/dom4j/1.6.1/jars/dom4j.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar[0m
+[0m[[0mdebug[0m] [0m	found dom4j#dom4j;1.6.1 in public[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.reflections#reflections;0.9.9-RC1->dom4j#dom4j;1.6.1 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies dom4j#dom4j;1.6.1->xml-apis#xml-apis;1.0.b2 [compile->master(*)][0m
 [0m[[0minfo[0m] [0mResolving xml-apis#xml-apis;1.0.b2 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: xml-apis#xml-apis;1.0.b2 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: xml-apis#xml-apis;1.0.b2[0m
-[0m[[0mdebug[0m] [0m	local: revision in cache: xml-apis#xml-apis;1.0.b2[0m
-[0m[[0mdebug[0m] [0m	found xml-apis#xml-apis;1.0.b2 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m		tried /home/julianpeeters/.ivy2/local/xml-apis/xml-apis/1.0.b2/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m	local: no ivy file found for xml-apis#xml-apis;1.0.b2[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2.pom[0m
+[0m[[0mdebug[0m] [0m	public: found md file for xml-apis#xml-apis;1.0.b2[0m
+[0m[[0mdebug[0m] [0m		=> http://repo1.maven.org/maven2/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2.pom (1.0.b2)[0m
+[0m[[0mdebug[0m] [0mdownloading http://repo1.maven.org/maven2/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2.pom ...[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2.pom[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2.pom.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2.pom[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] xml-apis#xml-apis;1.0.b2!xml-apis.pom(pom.original) (513ms)[0m
+[0m[[0mdebug[0m] [0m		tried /home/julianpeeters/.ivy2/local/xml-apis/xml-apis/1.0.b2/jars/xml-apis.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2.jar[0m
+[0m[[0mdebug[0m] [0m	found xml-apis#xml-apis;1.0.b2 in public[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies dom4j#dom4j;1.6.1->xml-apis#xml-apis;1.0.b2 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->com.gensler#scalavro-util_2.10;0.4.0 [compile->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->com.gensler#scalavro-util_2.10;0.4.0 [compile->compile][0m
@@ -207,14 +412,14 @@
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.codehaus.jackson#jackson-core-asl;1.9.13 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.codehaus.jackson#jackson-core-asl;1.9.13[0m
 [0m[[0mdebug[0m] [0m	local: revision in cache: org.codehaus.jackson#jackson-core-asl;1.9.13[0m
-[0m[[0mdebug[0m] [0m	found org.codehaus.jackson#jackson-core-asl;1.9.13 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m	found org.codehaus.jackson#jackson-core-asl;1.9.13 in public[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.avro#avro;1.7.5->org.codehaus.jackson#jackson-core-asl;1.9.13 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.avro#avro;1.7.5->org.codehaus.jackson#jackson-mapper-asl;1.9.13 [compile->master(*)][0m
 [0m[[0minfo[0m] [0mResolving org.codehaus.jackson#jackson-mapper-asl;1.9.13 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.codehaus.jackson#jackson-mapper-asl;1.9.13 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.codehaus.jackson#jackson-mapper-asl;1.9.13[0m
 [0m[[0mdebug[0m] [0m	local: revision in cache: org.codehaus.jackson#jackson-mapper-asl;1.9.13[0m
-[0m[[0mdebug[0m] [0m	found org.codehaus.jackson#jackson-mapper-asl;1.9.13 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m	found org.codehaus.jackson#jackson-mapper-asl;1.9.13 in public[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.avro#avro;1.7.5->org.codehaus.jackson#jackson-mapper-asl;1.9.13 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.codehaus.jackson#jackson-mapper-asl;1.9.13->org.codehaus.jackson#jackson-core-asl;1.9.13 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.codehaus.jackson#jackson-mapper-asl;1.9.13->org.codehaus.jackson#jackson-core-asl;1.9.13 [compile->compile(*)][0m
@@ -230,7 +435,7 @@
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.xerial.snappy#snappy-java;1.0.5 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.xerial.snappy#snappy-java;1.0.5[0m
 [0m[[0mdebug[0m] [0m	local: revision in cache: org.xerial.snappy#snappy-java;1.0.5[0m
-[0m[[0mdebug[0m] [0m	found org.xerial.snappy#snappy-java;1.0.5 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m	found org.xerial.snappy#snappy-java;1.0.5 in public[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.avro#avro;1.7.5->org.xerial.snappy#snappy-java;1.0.5 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.avro#avro;1.7.5->org.apache.commons#commons-compress;1.4.1 [compile->master(*)][0m
 [0m[[0minfo[0m] [0mResolving org.apache.commons#commons-compress;1.4.1 ...[0m
@@ -244,7 +449,7 @@
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.tukaani#xz;1.0 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.tukaani#xz;1.0[0m
 [0m[[0mdebug[0m] [0m	local: revision in cache: org.tukaani#xz;1.0[0m
-[0m[[0mdebug[0m] [0m	found org.tukaani#xz;1.0 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m	found org.tukaani#xz;1.0 in public[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.commons#commons-compress;1.4.1->org.tukaani#xz;1.0 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.avro#avro;1.7.5->org.slf4j#slf4j-api;1.6.4 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.avro#avro;1.7.5->org.slf4j#slf4j-api;1.7.2 [compile->master(*)][0m
@@ -1164,7 +1369,7 @@
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT {plugin=[default(compile)]}[0m
 [0m[[0mdebug[0m] [0mdon't use cache for org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT: changing=true[0m
 [0m[[0mdebug[0m] [0mdon't use cache for org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT: changing=true[0m
-[0m[[0mdebug[0m] [0m		tried /home/julian/.ivy2/local/org.scala-lang.plugins/macro-paradise_2.10.2/2.0.0-SNAPSHOT/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m		tried /home/julianpeeters/.ivy2/local/org.scala-lang.plugins/macro-paradise_2.10.2/2.0.0-SNAPSHOT/ivys/ivy.xml[0m
 [0m[[0mdebug[0m] [0m	local: no ivy file found for org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT[0m
 [0m[[0mdebug[0m] [0mdon't use cache for org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT: changing=true[0m
 [0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo1.maven.org/maven2/org/scala-lang/plugins/macro-paradise_2.10.2/2.0.0-SNAPSHOT/maven-metadata.xml[0m
@@ -1176,8 +1381,20 @@
 [0m[[0mdebug[0m] [0m		tried https://oss.sonatype.org/content/repositories/snapshots/org/scala-lang/plugins/macro-paradise_2.10.2/2.0.0-SNAPSHOT/macro-paradise_2.10.2-2.0.0-SNAPSHOT.pom[0m
 [0m[[0mdebug[0m] [0m	sonatype-snapshots: found md file for org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT[0m
 [0m[[0mdebug[0m] [0m		=> https://oss.sonatype.org/content/repositories/snapshots/org/scala-lang/plugins/macro-paradise_2.10.2/2.0.0-SNAPSHOT/macro-paradise_2.10.2-2.0.0-SNAPSHOT.pom (2.0.0-SNAPSHOT)[0m
-[0m[[0mdebug[0m] [0m	default-cache: revision in cache (not updated): org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT[0m
-[0m[[0mdebug[0m] [0m	found org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT in sbt-chain[0m
+[0m[[0mdebug[0m] [0mdownloading https://oss.sonatype.org/content/repositories/snapshots/org/scala-lang/plugins/macro-paradise_2.10.2/2.0.0-SNAPSHOT/macro-paradise_2.10.2-2.0.0-SNAPSHOT.pom ...[0m
+[0m[[0mdebug[0m] [0m	sonatype-snapshots: downloading https://oss.sonatype.org/content/repositories/snapshots/org/scala-lang/plugins/macro-paradise_2.10.2/2.0.0-SNAPSHOT/macro-paradise_2.10.2-2.0.0-SNAPSHOT.pom[0m
+[0m[[0mdebug[0m] [0m	sonatype-snapshots: downloading https://oss.sonatype.org/content/repositories/snapshots/org/scala-lang/plugins/macro-paradise_2.10.2/2.0.0-SNAPSHOT/macro-paradise_2.10.2-2.0.0-SNAPSHOT.pom.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for https://oss.sonatype.org/content/repositories/snapshots/org/scala-lang/plugins/macro-paradise_2.10.2/2.0.0-SNAPSHOT/macro-paradise_2.10.2-2.0.0-SNAPSHOT.pom[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT!macro-paradise_2.10.2.pom(pom.original) (1148ms)[0m
+[0m[[0mdebug[0m] [0m		tried /home/julianpeeters/.ivy2/local/org.scala-lang.plugins/macro-paradise_2.10.2/2.0.0-SNAPSHOT/jars/macro-paradise_2.10.2.jar[0m
+[0m[[0mdebug[0m] [0m	maven-metadata not available: http://repo1.maven.org/maven2/org/scala-lang/plugins/macro-paradise_2.10.2/2.0.0-SNAPSHOT/maven-metadata.xml[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/scala-lang/plugins/macro-paradise_2.10.2/2.0.0-SNAPSHOT/macro-paradise_2.10.2-2.0.0-SNAPSHOT.jar[0m
+[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo1.maven.org/maven2/org/scala-lang/plugins/macro-paradise_2.10.2/2.0.0-SNAPSHOT/macro-paradise_2.10.2-2.0.0-SNAPSHOT.jar[0m
+[0m[[0mdebug[0m] [0m		tried https://oss.sonatype.org/content/repositories/snapshots/org/scala-lang/plugins/macro-paradise_2.10.2/2.0.0-SNAPSHOT/macro-paradise_2.10.2-2.0.0-SNAPSHOT.jar[0m
+[0m[[0mdebug[0m] [0morg.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT is changing, but has not changed: will trust cached artifacts if any[0m
+[0m[[0mdebug[0m] [0mDeleting additional old artifacts from cache for changed module org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT:[0m
+[0m[[0mdebug[0m] [0m	[0m
+[0m[[0mdebug[0m] [0m	found org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT in sonatype-snapshots[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT [plugin->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT [plugin->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT->org.scala-lang#scala-compiler;2.10.2 [compile->master(*)][0m
@@ -1261,49 +1478,124 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.2 [scala-tool->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.2 [scala-tool->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.2 [scala-tool->optional(default)][0m
-[0m[[0mdebug[0m] [0m	resolved ivy file produced in /home/julian/Dropbox/macro-annotation-example/macros/target/resolution-cache/org.scala-lang.macroparadise/macros_2.10/1.0.0/resolved.xml.xml[0m
+[0m[[0mdebug[0m] [0m	resolved ivy file produced in /home/julianpeeters/Dropbox/macro-annotation-example/macros/target/resolution-cache/org.scala-lang.macroparadise/macros_2.10/1.0.0/resolved.xml.xml[0m
 [0m[[0mdebug[0m] [0m:: downloading artifacts ::[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-library;2.10.2!scala-library.jar[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] io.spray#spray-json_2.10;1.2.5!spray-json_2.10.jar[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.gensler#scalavro_2.10;0.4.0!scalavro_2.10.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/io/spray/spray-json_2.10/1.2.5/spray-json_2.10-1.2.5.jar[0m
+[0m[[0minfo[0m] [0mdownloading http://repo1.maven.org/maven2/io/spray/spray-json_2.10/1.2.5/spray-json_2.10-1.2.5.jar ...[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/io/spray/spray-json_2.10/1.2.5/spray-json_2.10-1.2.5.jar[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/io/spray/spray-json_2.10/1.2.5/spray-json_2.10-1.2.5.jar.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/io/spray/spray-json_2.10/1.2.5/spray-json_2.10-1.2.5.jar[0m
+[0m[[0minfo[0m] [0m	[SUCCESSFUL ] io.spray#spray-json_2.10;1.2.5!spray-json_2.10.jar (2153ms)[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/com/gensler/scalavro_2.10/0.4.0/scalavro_2.10-0.4.0.jar[0m
+[0m[[0minfo[0m] [0mdownloading http://repo1.maven.org/maven2/com/gensler/scalavro_2.10/0.4.0/scalavro_2.10-0.4.0.jar ...[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/gensler/scalavro_2.10/0.4.0/scalavro_2.10-0.4.0.jar[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/gensler/scalavro_2.10/0.4.0/scalavro_2.10-0.4.0.jar.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/com/gensler/scalavro_2.10/0.4.0/scalavro_2.10-0.4.0.jar[0m
+[0m[[0minfo[0m] [0m	[SUCCESSFUL ] com.gensler#scalavro_2.10;0.4.0!scalavro_2.10.jar (725ms)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-reflect;2.10.2!scala-reflect.jar[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.parboiled#parboiled-scala_2.10;1.1.5!parboiled-scala_2.10.jar(bundle)[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.parboiled#parboiled-core;1.1.5!parboiled-core.jar(bundle)[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.gensler#scalavro-core_2.10;0.4.0!scalavro-core_2.10.jar[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.gensler#scalavro-util_2.10;0.4.0!scalavro-util_2.10.jar[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] ch.qos.logback#logback-classic;1.0.9!logback-classic.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/parboiled/parboiled-scala_2.10/1.1.5/parboiled-scala_2.10-1.1.5.jar[0m
+[0m[[0minfo[0m] [0mdownloading http://repo1.maven.org/maven2/org/parboiled/parboiled-scala_2.10/1.1.5/parboiled-scala_2.10-1.1.5.jar ...[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/parboiled/parboiled-scala_2.10/1.1.5/parboiled-scala_2.10-1.1.5.jar[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/parboiled/parboiled-scala_2.10/1.1.5/parboiled-scala_2.10-1.1.5.jar.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/org/parboiled/parboiled-scala_2.10/1.1.5/parboiled-scala_2.10-1.1.5.jar[0m
+[0m[[0minfo[0m] [0m	[SUCCESSFUL ] org.parboiled#parboiled-scala_2.10;1.1.5!parboiled-scala_2.10.jar(bundle) (2118ms)[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/parboiled/parboiled-core/1.1.5/parboiled-core-1.1.5.jar[0m
+[0m[[0minfo[0m] [0mdownloading http://repo1.maven.org/maven2/org/parboiled/parboiled-core/1.1.5/parboiled-core-1.1.5.jar ...[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/parboiled/parboiled-core/1.1.5/parboiled-core-1.1.5.jar[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/parboiled/parboiled-core/1.1.5/parboiled-core-1.1.5.jar.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/org/parboiled/parboiled-core/1.1.5/parboiled-core-1.1.5.jar[0m
+[0m[[0minfo[0m] [0m	[SUCCESSFUL ] org.parboiled#parboiled-core;1.1.5!parboiled-core.jar(bundle) (1316ms)[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/com/gensler/scalavro-core_2.10/0.4.0/scalavro-core_2.10-0.4.0.jar[0m
+[0m[[0minfo[0m] [0mdownloading http://repo1.maven.org/maven2/com/gensler/scalavro-core_2.10/0.4.0/scalavro-core_2.10-0.4.0.jar ...[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/gensler/scalavro-core_2.10/0.4.0/scalavro-core_2.10-0.4.0.jar[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/gensler/scalavro-core_2.10/0.4.0/scalavro-core_2.10-0.4.0.jar.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/com/gensler/scalavro-core_2.10/0.4.0/scalavro-core_2.10-0.4.0.jar[0m
+[0m[[0minfo[0m] [0m	[SUCCESSFUL ] com.gensler#scalavro-core_2.10;0.4.0!scalavro-core_2.10.jar (5396ms)[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/com/gensler/scalavro-util_2.10/0.4.0/scalavro-util_2.10-0.4.0.jar[0m
+[0m[[0minfo[0m] [0mdownloading http://repo1.maven.org/maven2/com/gensler/scalavro-util_2.10/0.4.0/scalavro-util_2.10-0.4.0.jar ...[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/gensler/scalavro-util_2.10/0.4.0/scalavro-util_2.10-0.4.0.jar[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/gensler/scalavro-util_2.10/0.4.0/scalavro-util_2.10-0.4.0.jar.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/com/gensler/scalavro-util_2.10/0.4.0/scalavro-util_2.10-0.4.0.jar[0m
+[0m[[0minfo[0m] [0m	[SUCCESSFUL ] com.gensler#scalavro-util_2.10;0.4.0!scalavro-util_2.10.jar (1878ms)[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/ch/qos/logback/logback-classic/1.0.9/logback-classic-1.0.9.jar[0m
+[0m[[0minfo[0m] [0mdownloading http://repo1.maven.org/maven2/ch/qos/logback/logback-classic/1.0.9/logback-classic-1.0.9.jar ...[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/ch/qos/logback/logback-classic/1.0.9/logback-classic-1.0.9.jar[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/ch/qos/logback/logback-classic/1.0.9/logback-classic-1.0.9.jar.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/ch/qos/logback/logback-classic/1.0.9/logback-classic-1.0.9.jar[0m
+[0m[[0minfo[0m] [0m	[SUCCESSFUL ] ch.qos.logback#logback-classic;1.0.9!logback-classic.jar (1375ms)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.apache.avro#avro;1.7.5!avro.jar[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.reflections#reflections;0.9.9-RC1!reflections.jar[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] ch.qos.logback#logback-core;1.0.9!logback-core.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/reflections/reflections/0.9.9-RC1/reflections-0.9.9-RC1.jar[0m
+[0m[[0minfo[0m] [0mdownloading http://repo1.maven.org/maven2/org/reflections/reflections/0.9.9-RC1/reflections-0.9.9-RC1.jar ...[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/reflections/reflections/0.9.9-RC1/reflections-0.9.9-RC1.jar[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/reflections/reflections/0.9.9-RC1/reflections-0.9.9-RC1.jar.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/org/reflections/reflections/0.9.9-RC1/reflections-0.9.9-RC1.jar[0m
+[0m[[0minfo[0m] [0m	[SUCCESSFUL ] org.reflections#reflections;0.9.9-RC1!reflections.jar (1481ms)[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/ch/qos/logback/logback-core/1.0.9/logback-core-1.0.9.jar[0m
+[0m[[0minfo[0m] [0mdownloading http://repo1.maven.org/maven2/ch/qos/logback/logback-core/1.0.9/logback-core-1.0.9.jar ...[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/ch/qos/logback/logback-core/1.0.9/logback-core-1.0.9.jar[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/ch/qos/logback/logback-core/1.0.9/logback-core-1.0.9.jar.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/ch/qos/logback/logback-core/1.0.9/logback-core-1.0.9.jar[0m
+[0m[[0minfo[0m] [0m	[SUCCESSFUL ] ch.qos.logback#logback-core;1.0.9!logback-core.jar (2080ms)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.slf4j#slf4j-api;1.7.2!slf4j-api.jar[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.google.guava#guava;11.0.2!guava.jar[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.javassist#javassist;3.16.1-GA!javassist.jar[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] dom4j#dom4j;1.6.1!dom4j.jar[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.google.code.findbugs#jsr305;1.3.9!jsr305.jar[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] xml-apis#xml-apis;1.0.b2!xml-apis.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/com/google/guava/guava/11.0.2/guava-11.0.2.jar[0m
+[0m[[0minfo[0m] [0mdownloading http://repo1.maven.org/maven2/com/google/guava/guava/11.0.2/guava-11.0.2.jar ...[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/google/guava/guava/11.0.2/guava-11.0.2.jar[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/google/guava/guava/11.0.2/guava-11.0.2.jar.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/com/google/guava/guava/11.0.2/guava-11.0.2.jar[0m
+[0m[[0minfo[0m] [0m	[SUCCESSFUL ] com.google.guava#guava;11.0.2!guava.jar (5361ms)[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/javassist/javassist/3.16.1-GA/javassist-3.16.1-GA.jar[0m
+[0m[[0minfo[0m] [0mdownloading http://repo1.maven.org/maven2/org/javassist/javassist/3.16.1-GA/javassist-3.16.1-GA.jar ...[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/javassist/javassist/3.16.1-GA/javassist-3.16.1-GA.jar[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/javassist/javassist/3.16.1-GA/javassist-3.16.1-GA.jar.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/org/javassist/javassist/3.16.1-GA/javassist-3.16.1-GA.jar[0m
+[0m[[0minfo[0m] [0m	[SUCCESSFUL ] org.javassist#javassist;3.16.1-GA!javassist.jar (2871ms)[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar[0m
+[0m[[0minfo[0m] [0mdownloading http://repo1.maven.org/maven2/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar ...[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar[0m
+[0m[[0minfo[0m] [0m	[SUCCESSFUL ] dom4j#dom4j;1.6.1!dom4j.jar (1048ms)[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.jar[0m
+[0m[[0minfo[0m] [0mdownloading http://repo1.maven.org/maven2/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.jar ...[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.jar[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.jar.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.jar[0m
+[0m[[0minfo[0m] [0m	[SUCCESSFUL ] com.google.code.findbugs#jsr305;1.3.9!jsr305.jar (407ms)[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2.jar[0m
+[0m[[0minfo[0m] [0mdownloading http://repo1.maven.org/maven2/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2.jar ...[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2.jar[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2.jar.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2.jar[0m
+[0m[[0minfo[0m] [0m	[SUCCESSFUL ] xml-apis#xml-apis;1.0.b2!xml-apis.jar (567ms)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.codehaus.jackson#jackson-core-asl;1.9.13!jackson-core-asl.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.codehaus.jackson#jackson-mapper-asl;1.9.13!jackson-mapper-asl.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.thoughtworks.paranamer#paranamer;2.3!paranamer.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.xerial.snappy#snappy-java;1.0.5!snappy-java.jar(bundle)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.apache.commons#commons-compress;1.4.1!commons-compress.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.tukaani#xz;1.0!xz.jar[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT!macro-paradise_2.10.2.jar[0m
+[0m[[0mdebug[0m] [0m		tried https://oss.sonatype.org/content/repositories/snapshots/org/scala-lang/plugins/macro-paradise_2.10.2/2.0.0-SNAPSHOT/macro-paradise_2.10.2-2.0.0-SNAPSHOT.jar[0m
+[0m[[0minfo[0m] [0mdownloading https://oss.sonatype.org/content/repositories/snapshots/org/scala-lang/plugins/macro-paradise_2.10.2/2.0.0-SNAPSHOT/macro-paradise_2.10.2-2.0.0-SNAPSHOT.jar ...[0m
+[0m[[0mdebug[0m] [0m	sonatype-snapshots: downloading https://oss.sonatype.org/content/repositories/snapshots/org/scala-lang/plugins/macro-paradise_2.10.2/2.0.0-SNAPSHOT/macro-paradise_2.10.2-2.0.0-SNAPSHOT.jar[0m
+[0m[[0mdebug[0m] [0m	sonatype-snapshots: downloading https://oss.sonatype.org/content/repositories/snapshots/org/scala-lang/plugins/macro-paradise_2.10.2/2.0.0-SNAPSHOT/macro-paradise_2.10.2-2.0.0-SNAPSHOT.jar.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for https://oss.sonatype.org/content/repositories/snapshots/org/scala-lang/plugins/macro-paradise_2.10.2/2.0.0-SNAPSHOT/macro-paradise_2.10.2-2.0.0-SNAPSHOT.jar[0m
+[0m[[0minfo[0m] [0m	[SUCCESSFUL ] org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT!macro-paradise_2.10.2.jar (7499ms)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-compiler;2.10.2!scala-compiler.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#jline;2.10.2!jline.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.fusesource.jansi#jansi;1.4!jansi.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 13160ms :: artifacts dl 376ms[0m
-[0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#macros_2.10;1.0.0 compile produced in /home/julian/Dropbox/macro-annotation-example/macros/target/resolution-cache/reports/org.scala-lang.macroparadise-macros_2.10-compile.xml[0m
-[0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#macros_2.10;1.0.0 runtime produced in /home/julian/Dropbox/macro-annotation-example/macros/target/resolution-cache/reports/org.scala-lang.macroparadise-macros_2.10-runtime.xml[0m
-[0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#macros_2.10;1.0.0 test produced in /home/julian/Dropbox/macro-annotation-example/macros/target/resolution-cache/reports/org.scala-lang.macroparadise-macros_2.10-test.xml[0m
-[0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#macros_2.10;1.0.0 provided produced in /home/julian/Dropbox/macro-annotation-example/macros/target/resolution-cache/reports/org.scala-lang.macroparadise-macros_2.10-provided.xml[0m
-[0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#macros_2.10;1.0.0 optional produced in /home/julian/Dropbox/macro-annotation-example/macros/target/resolution-cache/reports/org.scala-lang.macroparadise-macros_2.10-optional.xml[0m
-[0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#macros_2.10;1.0.0 compile-internal produced in /home/julian/Dropbox/macro-annotation-example/macros/target/resolution-cache/reports/org.scala-lang.macroparadise-macros_2.10-compile-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#macros_2.10;1.0.0 runtime-internal produced in /home/julian/Dropbox/macro-annotation-example/macros/target/resolution-cache/reports/org.scala-lang.macroparadise-macros_2.10-runtime-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#macros_2.10;1.0.0 test-internal produced in /home/julian/Dropbox/macro-annotation-example/macros/target/resolution-cache/reports/org.scala-lang.macroparadise-macros_2.10-test-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#macros_2.10;1.0.0 plugin produced in /home/julian/Dropbox/macro-annotation-example/macros/target/resolution-cache/reports/org.scala-lang.macroparadise-macros_2.10-plugin.xml[0m
-[0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#macros_2.10;1.0.0 sources produced in /home/julian/Dropbox/macro-annotation-example/macros/target/resolution-cache/reports/org.scala-lang.macroparadise-macros_2.10-sources.xml[0m
-[0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#macros_2.10;1.0.0 docs produced in /home/julian/Dropbox/macro-annotation-example/macros/target/resolution-cache/reports/org.scala-lang.macroparadise-macros_2.10-docs.xml[0m
-[0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#macros_2.10;1.0.0 pom produced in /home/julian/Dropbox/macro-annotation-example/macros/target/resolution-cache/reports/org.scala-lang.macroparadise-macros_2.10-pom.xml[0m
-[0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#macros_2.10;1.0.0 scala-tool produced in /home/julian/Dropbox/macro-annotation-example/macros/target/resolution-cache/reports/org.scala-lang.macroparadise-macros_2.10-scala-tool.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (13160ms resolve - 376ms download)[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 28654ms :: artifacts dl 36311ms[0m
+[0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#macros_2.10;1.0.0 compile produced in /home/julianpeeters/Dropbox/macro-annotation-example/macros/target/resolution-cache/reports/org.scala-lang.macroparadise-macros_2.10-compile.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#macros_2.10;1.0.0 runtime produced in /home/julianpeeters/Dropbox/macro-annotation-example/macros/target/resolution-cache/reports/org.scala-lang.macroparadise-macros_2.10-runtime.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#macros_2.10;1.0.0 test produced in /home/julianpeeters/Dropbox/macro-annotation-example/macros/target/resolution-cache/reports/org.scala-lang.macroparadise-macros_2.10-test.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#macros_2.10;1.0.0 provided produced in /home/julianpeeters/Dropbox/macro-annotation-example/macros/target/resolution-cache/reports/org.scala-lang.macroparadise-macros_2.10-provided.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#macros_2.10;1.0.0 optional produced in /home/julianpeeters/Dropbox/macro-annotation-example/macros/target/resolution-cache/reports/org.scala-lang.macroparadise-macros_2.10-optional.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#macros_2.10;1.0.0 compile-internal produced in /home/julianpeeters/Dropbox/macro-annotation-example/macros/target/resolution-cache/reports/org.scala-lang.macroparadise-macros_2.10-compile-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#macros_2.10;1.0.0 runtime-internal produced in /home/julianpeeters/Dropbox/macro-annotation-example/macros/target/resolution-cache/reports/org.scala-lang.macroparadise-macros_2.10-runtime-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#macros_2.10;1.0.0 test-internal produced in /home/julianpeeters/Dropbox/macro-annotation-example/macros/target/resolution-cache/reports/org.scala-lang.macroparadise-macros_2.10-test-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#macros_2.10;1.0.0 plugin produced in /home/julianpeeters/Dropbox/macro-annotation-example/macros/target/resolution-cache/reports/org.scala-lang.macroparadise-macros_2.10-plugin.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#macros_2.10;1.0.0 sources produced in /home/julianpeeters/Dropbox/macro-annotation-example/macros/target/resolution-cache/reports/org.scala-lang.macroparadise-macros_2.10-sources.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#macros_2.10;1.0.0 docs produced in /home/julianpeeters/Dropbox/macro-annotation-example/macros/target/resolution-cache/reports/org.scala-lang.macroparadise-macros_2.10-docs.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#macros_2.10;1.0.0 pom produced in /home/julianpeeters/Dropbox/macro-annotation-example/macros/target/resolution-cache/reports/org.scala-lang.macroparadise-macros_2.10-pom.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#macros_2.10;1.0.0 scala-tool produced in /home/julianpeeters/Dropbox/macro-annotation-example/macros/target/resolution-cache/reports/org.scala-lang.macroparadise-macros_2.10-scala-tool.xml[0m
+[0m[[0mdebug[0m] [0m	resolve done (28654ms resolve - 36311ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m

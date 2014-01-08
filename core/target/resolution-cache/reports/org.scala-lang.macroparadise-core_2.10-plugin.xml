@@ -7,15 +7,15 @@
 		revision="1.0.0"
 		conf="plugin"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-		date="20131031231345"/>
+		date="20140108001836"/>
 	<dependencies>
 		<module organisation="org.scala-lang.plugins" name="macro-paradise_2.10.2">
 			<revision name="2.0.0-SNAPSHOT" status="integration" pubdate="20131002221627" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/scalamacros/paradise" downloaded="false" searched="true" default="false" conf="default(compile), default, compile, runtime, master" position="0">
 				<license name="BSD-like" url="http://www.scala-lang.org/downloads/license.html "/>
-				<metadata-artifact status="no" details="" size="2852" time="0" location="/home/julian/.ivy2/cache/org.scala-lang.plugins/macro-paradise_2.10.2/ivy-2.0.0-SNAPSHOT.xml" searched="true" origin-is-local="false" origin-location="https://oss.sonatype.org/content/repositories/snapshots/org/scala-lang/plugins/macro-paradise_2.10.2/2.0.0-SNAPSHOT/macro-paradise_2.10.2-2.0.0-SNAPSHOT.pom"/>
+				<metadata-artifact status="no" details="" size="2852" time="0" location="/home/julianpeeters/.ivy2/cache/org.scala-lang.plugins/macro-paradise_2.10.2/ivy-2.0.0-SNAPSHOT.xml" searched="true" origin-is-local="false" origin-location="https://oss.sonatype.org/content/repositories/snapshots/org/scala-lang/plugins/macro-paradise_2.10.2/2.0.0-SNAPSHOT/macro-paradise_2.10.2-2.0.0-SNAPSHOT.pom"/>
 				<caller organisation="org.scala-lang.macroparadise" name="core_2.10" conf="plugin" rev="2.0.0-SNAPSHOT" rev-constraint-default="2.0.0-SNAPSHOT" rev-constraint-dynamic="2.0.0-SNAPSHOT" callerrev="1.0.0"/>
 				<artifacts>
-					<artifact name="macro-paradise_2.10.2" type="jar" ext="jar" status="no" details="" size="950488" time="0" location="/home/julian/.ivy2/cache/org.scala-lang.plugins/macro-paradise_2.10.2/jars/macro-paradise_2.10.2-2.0.0-SNAPSHOT.jar">
+					<artifact name="macro-paradise_2.10.2" type="jar" ext="jar" status="no" details="" size="950488" time="0" location="/home/julianpeeters/.ivy2/cache/org.scala-lang.plugins/macro-paradise_2.10.2/jars/macro-paradise_2.10.2-2.0.0-SNAPSHOT.jar">
 						<origin-location is-local="false" location="https://oss.sonatype.org/content/repositories/snapshots/org/scala-lang/plugins/macro-paradise_2.10.2/2.0.0-SNAPSHOT/macro-paradise_2.10.2-2.0.0-SNAPSHOT.jar"/>
 					</artifact>
 				</artifacts>
@@ -24,10 +24,10 @@
 		<module organisation="org.scala-lang" name="scala-compiler">
 			<revision name="2.10.2" status="release" pubdate="20130606110625" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="1">
 				<license name="BSD-like" url="http://www.scala-lang.org/downloads/license.html    "/>
-				<metadata-artifact status="no" details="" size="2809" time="0" location="/home/julian/.ivy2/cache/org.scala-lang/scala-compiler/ivy-2.10.2.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.10.2/scala-compiler-2.10.2.pom"/>
+				<metadata-artifact status="no" details="" size="2809" time="0" location="/home/julianpeeters/.ivy2/cache/org.scala-lang/scala-compiler/ivy-2.10.2.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.10.2/scala-compiler-2.10.2.pom"/>
 				<caller organisation="org.scala-lang.plugins" name="macro-paradise_2.10.2" conf="default, compile, runtime, master" rev="2.10.2" rev-constraint-default="2.10.2" rev-constraint-dynamic="2.10.2" callerrev="2.0.0-SNAPSHOT"/>
 				<artifacts>
-					<artifact name="scala-compiler" type="jar" ext="jar" status="no" details="" size="14411577" time="0" location="/home/julian/.ivy2/cache/org.scala-lang/scala-compiler/jars/scala-compiler-2.10.2.jar">
+					<artifact name="scala-compiler" type="jar" ext="jar" status="no" details="" size="14411577" time="0" location="/home/julianpeeters/.ivy2/cache/org.scala-lang/scala-compiler/jars/scala-compiler-2.10.2.jar">
 						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.10.2/scala-compiler-2.10.2.jar"/>
 					</artifact>
 				</artifacts>
@@ -36,11 +36,11 @@
 		<module organisation="org.scala-lang" name="scala-reflect">
 			<revision name="2.10.2" status="release" pubdate="20130606110608" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="3">
 				<license name="BSD-like" url="http://www.scala-lang.org/downloads/license.html    "/>
-				<metadata-artifact status="no" details="" size="2647" time="0" location="/home/julian/.ivy2/cache/org.scala-lang/scala-reflect/ivy-2.10.2.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.10.2/scala-reflect-2.10.2.pom"/>
+				<metadata-artifact status="no" details="" size="2647" time="0" location="/home/julianpeeters/.ivy2/cache/org.scala-lang/scala-reflect/ivy-2.10.2.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.10.2/scala-reflect-2.10.2.pom"/>
 				<caller organisation="org.scala-lang" name="scala-compiler" conf="compile, runtime" rev="2.10.2" rev-constraint-default="2.10.2" rev-constraint-dynamic="2.10.2" callerrev="2.10.2"/>
 				<caller organisation="org.scala-lang.plugins" name="macro-paradise_2.10.2" conf="default, compile, runtime, master" rev="2.10.2" rev-constraint-default="2.10.2" rev-constraint-dynamic="2.10.2" callerrev="2.0.0-SNAPSHOT"/>
 				<artifacts>
-					<artifact name="scala-reflect" type="jar" ext="jar" status="no" details="" size="3171168" time="0" location="/home/julian/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.10.2.jar">
+					<artifact name="scala-reflect" type="jar" ext="jar" status="no" details="" size="3171168" time="0" location="/home/julianpeeters/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.10.2.jar">
 						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.10.2/scala-reflect-2.10.2.jar"/>
 					</artifact>
 				</artifacts>
@@ -49,12 +49,12 @@
 		<module organisation="org.scala-lang" name="scala-library">
 			<revision name="2.10.2" status="release" pubdate="20130606110543" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="2">
 				<license name="BSD-like" url="http://www.scala-lang.org/downloads/license.html          "/>
-				<metadata-artifact status="no" details="" size="2487" time="0" location="/home/julian/.ivy2/cache/org.scala-lang/scala-library/ivy-2.10.2.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/scala-lang/scala-library/2.10.2/scala-library-2.10.2.pom"/>
+				<metadata-artifact status="no" details="" size="2487" time="0" location="/home/julianpeeters/.ivy2/cache/org.scala-lang/scala-library/ivy-2.10.2.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/scala-lang/scala-library/2.10.2/scala-library-2.10.2.pom"/>
 				<caller organisation="org.scala-lang" name="scala-reflect" conf="compile, runtime" rev="2.10.2" rev-constraint-default="2.10.2" rev-constraint-dynamic="2.10.2" callerrev="2.10.2"/>
 				<caller organisation="org.scala-lang" name="scala-compiler" conf="compile, runtime" rev="2.10.2" rev-constraint-default="2.10.2" rev-constraint-dynamic="2.10.2" callerrev="2.10.2"/>
 				<caller organisation="org.scala-lang.plugins" name="macro-paradise_2.10.2" conf="default, compile, runtime, master" rev="2.10.2" rev-constraint-default="2.10.2" rev-constraint-dynamic="2.10.2" callerrev="2.0.0-SNAPSHOT"/>
 				<artifacts>
-					<artifact name="scala-library" type="jar" ext="jar" status="no" details="" size="7121818" time="0" location="/home/julian/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.10.2.jar">
+					<artifact name="scala-library" type="jar" ext="jar" status="no" details="" size="7121818" time="0" location="/home/julianpeeters/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.10.2.jar">
 						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/scala-lang/scala-library/2.10.2/scala-library-2.10.2.jar"/>
 					</artifact>
 				</artifacts>

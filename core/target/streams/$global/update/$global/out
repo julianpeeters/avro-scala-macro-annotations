@@ -1,4 +1,4 @@
-[0m[[0minfo[0m] [0mUpdating {file:/home/julian/Dropbox/macro-annotation-example/}core...[0m
+[0m[[0minfo[0m] [0mUpdating {file:/home/julianpeeters/Dropbox/macro-annotation-example/}core...[0m
 [0m[[0mdebug[0m] [0m:: resolving dependencies :: org.scala-lang.macroparadise#core_2.10;1.0.0[0m
 [0m[[0mdebug[0m] [0m	confs: [compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool][0m
 [0m[[0mdebug[0m] [0m	validate = true[0m
@@ -7,7 +7,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-lang.macroparadise#core_2.10;1.0.0 [compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#core_2.10;1.0.0->org.scala-lang#scala-library;2.10.2 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving org.scala-lang#scala-library;2.10.2 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@4e3eb297[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@5640a30b[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-library;2.10.2[0m
 [0m[[0mdebug[0m] [0m	local: revision in cache: org.scala-lang#scala-library;2.10.2[0m
 [0m[[0mdebug[0m] [0m	found org.scala-lang#scala-library;2.10.2 in sbt-chain[0m
@@ -125,7 +125,7 @@
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.slf4j#slf4j-api;1.7.2 {compile=[compile(*), master(*)], runtime=[runtime(*)], test=[runtime(*), master(*)]}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.slf4j#slf4j-api;1.7.2[0m
 [0m[[0mdebug[0m] [0m	local: revision in cache: org.slf4j#slf4j-api;1.7.2[0m
-[0m[[0mdebug[0m] [0m	found org.slf4j#slf4j-api;1.7.2 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m	found org.slf4j#slf4j-api;1.7.2 in public[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.9->org.slf4j#slf4j-api;1.7.2 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [compile->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [compile->compile][0m
@@ -215,14 +215,14 @@
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.codehaus.jackson#jackson-core-asl;1.9.13 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.codehaus.jackson#jackson-core-asl;1.9.13[0m
 [0m[[0mdebug[0m] [0m	local: revision in cache: org.codehaus.jackson#jackson-core-asl;1.9.13[0m
-[0m[[0mdebug[0m] [0m	found org.codehaus.jackson#jackson-core-asl;1.9.13 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m	found org.codehaus.jackson#jackson-core-asl;1.9.13 in public[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.avro#avro;1.7.5->org.codehaus.jackson#jackson-core-asl;1.9.13 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.avro#avro;1.7.5->org.codehaus.jackson#jackson-mapper-asl;1.9.13 [compile->master(*)][0m
 [0m[[0minfo[0m] [0mResolving org.codehaus.jackson#jackson-mapper-asl;1.9.13 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.codehaus.jackson#jackson-mapper-asl;1.9.13 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.codehaus.jackson#jackson-mapper-asl;1.9.13[0m
 [0m[[0mdebug[0m] [0m	local: revision in cache: org.codehaus.jackson#jackson-mapper-asl;1.9.13[0m
-[0m[[0mdebug[0m] [0m	found org.codehaus.jackson#jackson-mapper-asl;1.9.13 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m	found org.codehaus.jackson#jackson-mapper-asl;1.9.13 in public[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.avro#avro;1.7.5->org.codehaus.jackson#jackson-mapper-asl;1.9.13 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.codehaus.jackson#jackson-mapper-asl;1.9.13->org.codehaus.jackson#jackson-core-asl;1.9.13 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.codehaus.jackson#jackson-mapper-asl;1.9.13->org.codehaus.jackson#jackson-core-asl;1.9.13 [compile->compile(*)][0m
@@ -238,7 +238,7 @@
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.xerial.snappy#snappy-java;1.0.5 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.xerial.snappy#snappy-java;1.0.5[0m
 [0m[[0mdebug[0m] [0m	local: revision in cache: org.xerial.snappy#snappy-java;1.0.5[0m
-[0m[[0mdebug[0m] [0m	found org.xerial.snappy#snappy-java;1.0.5 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m	found org.xerial.snappy#snappy-java;1.0.5 in public[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.avro#avro;1.7.5->org.xerial.snappy#snappy-java;1.0.5 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.avro#avro;1.7.5->org.apache.commons#commons-compress;1.4.1 [compile->master(*)][0m
 [0m[[0minfo[0m] [0mResolving org.apache.commons#commons-compress;1.4.1 ...[0m
@@ -252,7 +252,7 @@
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.tukaani#xz;1.0 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.tukaani#xz;1.0[0m
 [0m[[0mdebug[0m] [0m	local: revision in cache: org.tukaani#xz;1.0[0m
-[0m[[0mdebug[0m] [0m	found org.tukaani#xz;1.0 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m	found org.tukaani#xz;1.0 in public[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.commons#commons-compress;1.4.1->org.tukaani#xz;1.0 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.avro#avro;1.7.5->org.slf4j#slf4j-api;1.6.4 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.avro#avro;1.7.5->org.slf4j#slf4j-api;1.7.2 [compile->master(*)][0m
@@ -405,7 +405,7 @@
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.github.nscala-time#nscala-time_2.10;0.2.0 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.github.nscala-time#nscala-time_2.10;0.2.0[0m
 [0m[[0mdebug[0m] [0m	local: revision in cache: com.github.nscala-time#nscala-time_2.10;0.2.0[0m
-[0m[[0mdebug[0m] [0m	found com.github.nscala-time#nscala-time_2.10;0.2.0 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m	found com.github.nscala-time#nscala-time_2.10;0.2.0 in public[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#casbah-commons_2.10;2.6.2->com.github.nscala-time#nscala-time_2.10;0.2.0 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.github.nscala-time#nscala-time_2.10;0.2.0->org.scala-lang#scala-library;2.10.0 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.github.nscala-time#nscala-time_2.10;0.2.0->org.scala-lang#scala-library;2.10.2 [compile->master(*)][0m
@@ -416,7 +416,7 @@
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: joda-time#joda-time;2.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: joda-time#joda-time;2.1[0m
 [0m[[0mdebug[0m] [0m	local: revision in cache: joda-time#joda-time;2.1[0m
-[0m[[0mdebug[0m] [0m	found joda-time#joda-time;2.1 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m	found joda-time#joda-time;2.1 in public[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.github.nscala-time#nscala-time_2.10;0.2.0->joda-time#joda-time;2.1 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.github.nscala-time#nscala-time_2.10;0.2.0->org.joda#joda-convert;1.2 [compile->master(*)][0m
 [0m[[0minfo[0m] [0mResolving org.joda#joda-convert;1.2 ...[0m
@@ -2417,7 +2417,7 @@
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT {plugin=[default(compile)]}[0m
 [0m[[0mdebug[0m] [0mdon't use cache for org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT: changing=true[0m
 [0m[[0mdebug[0m] [0mdon't use cache for org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT: changing=true[0m
-[0m[[0mdebug[0m] [0m		tried /home/julian/.ivy2/local/org.scala-lang.plugins/macro-paradise_2.10.2/2.0.0-SNAPSHOT/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m		tried /home/julianpeeters/.ivy2/local/org.scala-lang.plugins/macro-paradise_2.10.2/2.0.0-SNAPSHOT/ivys/ivy.xml[0m
 [0m[[0mdebug[0m] [0m	local: no ivy file found for org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT[0m
 [0m[[0mdebug[0m] [0mdon't use cache for org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT: changing=true[0m
 [0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo1.maven.org/maven2/org/scala-lang/plugins/macro-paradise_2.10.2/2.0.0-SNAPSHOT/maven-metadata.xml[0m
@@ -2507,7 +2507,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#core_2.10;1.0.0->org.scala-lang#scala-library;2.10.2 [scala-tool->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#core_2.10;1.0.0->org.scala-lang#scala-library;2.10.2 [scala-tool->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#core_2.10;1.0.0->org.scala-lang#scala-library;2.10.2 [scala-tool->optional(default)][0m
-[0m[[0mdebug[0m] [0m	resolved ivy file produced in /home/julian/Dropbox/macro-annotation-example/core/target/resolution-cache/org.scala-lang.macroparadise/core_2.10/1.0.0/resolved.xml.xml[0m
+[0m[[0mdebug[0m] [0m	resolved ivy file produced in /home/julianpeeters/Dropbox/macro-annotation-example/core/target/resolution-cache/org.scala-lang.macroparadise/core_2.10/1.0.0/resolved.xml.xml[0m
 [0m[[0mdebug[0m] [0m:: downloading artifacts ::[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-library;2.10.2!scala-library.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] io.spray#spray-json_2.10;1.2.5!spray-json_2.10.jar[0m
@@ -2550,19 +2550,19 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT!macro-paradise_2.10.2.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#jline;2.10.2!jline.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.fusesource.jansi#jansi;1.4!jansi.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 9129ms :: artifacts dl 229ms[0m
-[0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#core_2.10;1.0.0 compile produced in /home/julian/Dropbox/macro-annotation-example/core/target/resolution-cache/reports/org.scala-lang.macroparadise-core_2.10-compile.xml[0m
-[0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#core_2.10;1.0.0 runtime produced in /home/julian/Dropbox/macro-annotation-example/core/target/resolution-cache/reports/org.scala-lang.macroparadise-core_2.10-runtime.xml[0m
-[0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#core_2.10;1.0.0 test produced in /home/julian/Dropbox/macro-annotation-example/core/target/resolution-cache/reports/org.scala-lang.macroparadise-core_2.10-test.xml[0m
-[0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#core_2.10;1.0.0 provided produced in /home/julian/Dropbox/macro-annotation-example/core/target/resolution-cache/reports/org.scala-lang.macroparadise-core_2.10-provided.xml[0m
-[0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#core_2.10;1.0.0 optional produced in /home/julian/Dropbox/macro-annotation-example/core/target/resolution-cache/reports/org.scala-lang.macroparadise-core_2.10-optional.xml[0m
-[0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#core_2.10;1.0.0 compile-internal produced in /home/julian/Dropbox/macro-annotation-example/core/target/resolution-cache/reports/org.scala-lang.macroparadise-core_2.10-compile-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#core_2.10;1.0.0 runtime-internal produced in /home/julian/Dropbox/macro-annotation-example/core/target/resolution-cache/reports/org.scala-lang.macroparadise-core_2.10-runtime-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#core_2.10;1.0.0 test-internal produced in /home/julian/Dropbox/macro-annotation-example/core/target/resolution-cache/reports/org.scala-lang.macroparadise-core_2.10-test-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#core_2.10;1.0.0 plugin produced in /home/julian/Dropbox/macro-annotation-example/core/target/resolution-cache/reports/org.scala-lang.macroparadise-core_2.10-plugin.xml[0m
-[0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#core_2.10;1.0.0 sources produced in /home/julian/Dropbox/macro-annotation-example/core/target/resolution-cache/reports/org.scala-lang.macroparadise-core_2.10-sources.xml[0m
-[0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#core_2.10;1.0.0 docs produced in /home/julian/Dropbox/macro-annotation-example/core/target/resolution-cache/reports/org.scala-lang.macroparadise-core_2.10-docs.xml[0m
-[0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#core_2.10;1.0.0 pom produced in /home/julian/Dropbox/macro-annotation-example/core/target/resolution-cache/reports/org.scala-lang.macroparadise-core_2.10-pom.xml[0m
-[0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#core_2.10;1.0.0 scala-tool produced in /home/julian/Dropbox/macro-annotation-example/core/target/resolution-cache/reports/org.scala-lang.macroparadise-core_2.10-scala-tool.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (9129ms resolve - 229ms download)[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 3315ms :: artifacts dl 144ms[0m
+[0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#core_2.10;1.0.0 compile produced in /home/julianpeeters/Dropbox/macro-annotation-example/core/target/resolution-cache/reports/org.scala-lang.macroparadise-core_2.10-compile.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#core_2.10;1.0.0 runtime produced in /home/julianpeeters/Dropbox/macro-annotation-example/core/target/resolution-cache/reports/org.scala-lang.macroparadise-core_2.10-runtime.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#core_2.10;1.0.0 test produced in /home/julianpeeters/Dropbox/macro-annotation-example/core/target/resolution-cache/reports/org.scala-lang.macroparadise-core_2.10-test.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#core_2.10;1.0.0 provided produced in /home/julianpeeters/Dropbox/macro-annotation-example/core/target/resolution-cache/reports/org.scala-lang.macroparadise-core_2.10-provided.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#core_2.10;1.0.0 optional produced in /home/julianpeeters/Dropbox/macro-annotation-example/core/target/resolution-cache/reports/org.scala-lang.macroparadise-core_2.10-optional.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#core_2.10;1.0.0 compile-internal produced in /home/julianpeeters/Dropbox/macro-annotation-example/core/target/resolution-cache/reports/org.scala-lang.macroparadise-core_2.10-compile-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#core_2.10;1.0.0 runtime-internal produced in /home/julianpeeters/Dropbox/macro-annotation-example/core/target/resolution-cache/reports/org.scala-lang.macroparadise-core_2.10-runtime-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#core_2.10;1.0.0 test-internal produced in /home/julianpeeters/Dropbox/macro-annotation-example/core/target/resolution-cache/reports/org.scala-lang.macroparadise-core_2.10-test-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#core_2.10;1.0.0 plugin produced in /home/julianpeeters/Dropbox/macro-annotation-example/core/target/resolution-cache/reports/org.scala-lang.macroparadise-core_2.10-plugin.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#core_2.10;1.0.0 sources produced in /home/julianpeeters/Dropbox/macro-annotation-example/core/target/resolution-cache/reports/org.scala-lang.macroparadise-core_2.10-sources.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#core_2.10;1.0.0 docs produced in /home/julianpeeters/Dropbox/macro-annotation-example/core/target/resolution-cache/reports/org.scala-lang.macroparadise-core_2.10-docs.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#core_2.10;1.0.0 pom produced in /home/julianpeeters/Dropbox/macro-annotation-example/core/target/resolution-cache/reports/org.scala-lang.macroparadise-core_2.10-pom.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#core_2.10;1.0.0 scala-tool produced in /home/julianpeeters/Dropbox/macro-annotation-example/core/target/resolution-cache/reports/org.scala-lang.macroparadise-core_2.10-scala-tool.xml[0m
+[0m[[0mdebug[0m] [0m	resolve done (3315ms resolve - 144ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m
