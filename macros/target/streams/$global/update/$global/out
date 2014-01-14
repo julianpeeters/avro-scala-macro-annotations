@@ -5,15 +5,15 @@
 [0m[[0mdebug[0m] [0m	refresh = false[0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'compile'[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-lang.macroparadise#macros_2.10;1.0.0 [compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.2 [compile->default(compile)][0m
-[0m[[0minfo[0m] [0mResolving org.scala-lang#scala-library;2.10.2 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@69456250[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-library;2.10.2[0m
-[0m[[0mdebug[0m] [0m	local: revision in cache: org.scala-lang#scala-library;2.10.2[0m
-[0m[[0mdebug[0m] [0m	found org.scala-lang#scala-library;2.10.2 in sbt-chain[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.2 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.2 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.2 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.3 [compile->default(compile)][0m
+[0m[[0minfo[0m] [0mResolving org.scala-lang#scala-library;2.10.3 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@7e54e9c2[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-library;2.10.3[0m
+[0m[[0mdebug[0m] [0m	local: revision in cache: org.scala-lang#scala-library;2.10.3[0m
+[0m[[0mdebug[0m] [0m	found org.scala-lang#scala-library;2.10.3 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.3 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.3 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.3 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->io.spray#spray-json_2.10;1.2.5 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving io.spray#spray-json_2.10;1.2.5 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: io.spray#spray-json_2.10;1.2.5 {compile=[default(compile)]}[0m
@@ -23,9 +23,9 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->io.spray#spray-json_2.10;1.2.5 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->io.spray#spray-json_2.10;1.2.5 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.scala-lang#scala-library;2.10.1 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.scala-lang#scala-library;2.10.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.scala-lang#scala-library;2.10.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.parboiled#parboiled-scala_2.10;1.1.5 [compile->master(*)][0m
 [0m[[0minfo[0m] [0mResolving org.parboiled#parboiled-scala_2.10;1.1.5 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.parboiled#parboiled-scala_2.10;1.1.5 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
@@ -41,19 +41,19 @@
 [0m[[0mdebug[0m] [0m	found org.parboiled#parboiled-core;1.1.5 in sbt-chain[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.parboiled#parboiled-core;1.1.5 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.scala-lang#scala-library;2.10.1 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.scala-lang#scala-library;2.10.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.scala-lang#scala-library;2.10.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.parboiled#parboiled-scala_2.10;1.1.5 [compile->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.parboiled#parboiled-scala_2.10;1.1.5 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.parboiled#parboiled-core;1.1.5 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.parboiled#parboiled-core;1.1.5 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.scala-lang#scala-library;2.10.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.scala-lang#scala-library;2.10.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.parboiled#parboiled-scala_2.10;1.1.5 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.parboiled#parboiled-scala_2.10;1.1.5 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->io.spray#spray-json_2.10;1.2.5 [compile->master][0m
@@ -80,24 +80,11 @@
 [0m[[0mdebug[0m] [0m	found com.gensler#scalavro-util_2.10;0.4.0 in sbt-chain[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->com.gensler#scalavro-util_2.10;0.4.0 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [compile->master(*)][0m
-[0m[[0minfo[0m] [0mResolving org.scala-lang#scala-reflect;2.10.2 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.scala-lang#scala-reflect;2.10.2 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-reflect;2.10.2[0m
-[0m[[0mdebug[0m] [0m	local: revision in cache: org.scala-lang#scala-reflect;2.10.2[0m
-[0m[[0mdebug[0m] [0m	found org.scala-lang#scala-reflect;2.10.2 in sbt-chain[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.2->org.scala-lang#scala-library;2.10.2 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.2->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.2->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.2->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [compile->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [compile->master(*)][0m
 [0m[[0minfo[0m] [0mResolving ch.qos.logback#logback-classic;1.0.9 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: ch.qos.logback#logback-classic;1.0.9 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
@@ -170,9 +157,9 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->com.gensler#scalavro-util_2.10;0.4.0 [compile->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->com.gensler#scalavro-util_2.10;0.4.0 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.reflections#reflections;0.9.9-RC1 [runtime->runtime(*)][0m
@@ -188,7 +175,9 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies dom4j#dom4j;1.6.1->xml-apis#xml-apis;1.0.b2 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies dom4j#dom4j;1.6.1->xml-apis#xml-apis;1.0.b2 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [compile->master(*)][0m
@@ -255,9 +244,9 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->com.gensler#scalavro-util_2.10;0.4.0 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->com.gensler#scalavro-util_2.10;0.4.0 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->io.spray#spray-json_2.10;1.2.5 [runtime->runtime(*)][0m
@@ -284,7 +273,9 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->com.gensler#scalavro-util_2.10;0.4.0 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->com.gensler#scalavro-util_2.10;0.4.0 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [compile->master(*)][0m
@@ -294,48 +285,61 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->com.gensler#scalavro-util_2.10;0.4.0 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->com.gensler#scalavro-util_2.10;0.4.0 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->com.gensler#scalavro_2.10;0.4.0 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.2 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.2 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.2 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.2 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.3 [compile->default(compile)][0m
+[0m[[0minfo[0m] [0mResolving org.scala-lang#scala-reflect;2.10.3 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.scala-lang#scala-reflect;2.10.3 {compile=[default(compile)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-reflect;2.10.3[0m
+[0m[[0mdebug[0m] [0m	local: revision in cache: org.scala-lang#scala-reflect;2.10.3[0m
+[0m[[0mdebug[0m] [0m	found org.scala-lang#scala-reflect;2.10.3 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.3 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.3 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.3->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.3->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.3->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.3->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.3 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.3 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.3 [compile->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.3 [compile->compile][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'runtime'[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-lang.macroparadise#macros_2.10;1.0.0 [runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-lang.macroparadise#macros_2.10;1.0.0 [compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.2 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.2 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.2 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.2 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.3 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.3 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.3 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.3 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->io.spray#spray-json_2.10;1.2.5 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->io.spray#spray-json_2.10;1.2.5 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->io.spray#spray-json_2.10;1.2.5 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.scala-lang#scala-library;2.10.1 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.scala-lang#scala-library;2.10.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.scala-lang#scala-library;2.10.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.parboiled#parboiled-scala_2.10;1.1.5 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.parboiled#parboiled-scala_2.10;1.1.5 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.parboiled#parboiled-core;1.1.5 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.parboiled#parboiled-core;1.1.5 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.scala-lang#scala-library;2.10.1 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.scala-lang#scala-library;2.10.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.scala-lang#scala-library;2.10.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.scala-lang#scala-library;2.10.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.parboiled#parboiled-scala_2.10;1.1.5 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.parboiled#parboiled-scala_2.10;1.1.5 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.parboiled#parboiled-core;1.1.5 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.parboiled#parboiled-core;1.1.5 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.scala-lang#scala-library;2.10.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->io.spray#spray-json_2.10;1.2.5 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->com.gensler#scalavro_2.10;0.4.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->com.gensler#scalavro_2.10;0.4.0 [compile->runtime][0m
@@ -345,11 +349,15 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->com.gensler#scalavro-util_2.10;0.4.0 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->com.gensler#scalavro-util_2.10;0.4.0 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.3 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.2->org.scala-lang#scala-library;2.10.2 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.2->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.3->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.3->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.9->ch.qos.logback#logback-core;1.0.9 [compile->master(*)][0m
@@ -369,9 +377,13 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies dom4j#dom4j;1.6.1->xml-apis#xml-apis;1.0.b2 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies dom4j#dom4j;1.6.1->xml-apis#xml-apis;1.0.b2 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.3 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.3 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->io.spray#spray-json_2.10;1.2.5 [compile->master(*)][0m
@@ -399,9 +411,13 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->com.gensler#scalavro-util_2.10;0.4.0 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->com.gensler#scalavro-util_2.10;0.4.0 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.3 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.3 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->com.gensler#scalavro-core_2.10;0.4.0 [runtime->runtime(*)][0m
@@ -409,11 +425,13 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->com.gensler#scalavro-util_2.10;0.4.0 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->com.gensler#scalavro-util_2.10;0.4.0 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.2->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.2->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.3->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.3->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.9->ch.qos.logback#logback-core;1.0.9 [runtime->runtime(*)][0m
@@ -433,9 +451,11 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies dom4j#dom4j;1.6.1->xml-apis#xml-apis;1.0.b2 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies dom4j#dom4j;1.6.1->xml-apis#xml-apis;1.0.b2 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.3 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->io.spray#spray-json_2.10;1.2.5 [runtime->runtime(*)][0m
@@ -462,49 +482,51 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->com.gensler#scalavro-util_2.10;0.4.0 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->com.gensler#scalavro-util_2.10;0.4.0 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.3 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->com.gensler#scalavro_2.10;0.4.0 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.2 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.2 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.2 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.2 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.3 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.3 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.3 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.3 [compile->master][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'test'[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-lang.macroparadise#macros_2.10;1.0.0 [test][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-lang.macroparadise#macros_2.10;1.0.0 [runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-lang.macroparadise#macros_2.10;1.0.0 [compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.2 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.2 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.2 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.2 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.3 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.3 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.3 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.3 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->io.spray#spray-json_2.10;1.2.5 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->io.spray#spray-json_2.10;1.2.5 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->io.spray#spray-json_2.10;1.2.5 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.scala-lang#scala-library;2.10.1 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.scala-lang#scala-library;2.10.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.scala-lang#scala-library;2.10.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.parboiled#parboiled-scala_2.10;1.1.5 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.parboiled#parboiled-scala_2.10;1.1.5 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.parboiled#parboiled-core;1.1.5 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.parboiled#parboiled-core;1.1.5 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.scala-lang#scala-library;2.10.1 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.scala-lang#scala-library;2.10.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.scala-lang#scala-library;2.10.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.scala-lang#scala-library;2.10.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.parboiled#parboiled-scala_2.10;1.1.5 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.parboiled#parboiled-scala_2.10;1.1.5 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.parboiled#parboiled-core;1.1.5 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.parboiled#parboiled-core;1.1.5 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.scala-lang#scala-library;2.10.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->io.spray#spray-json_2.10;1.2.5 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->com.gensler#scalavro_2.10;0.4.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->com.gensler#scalavro_2.10;0.4.0 [compile->runtime][0m
@@ -514,11 +536,15 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->com.gensler#scalavro-util_2.10;0.4.0 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->com.gensler#scalavro-util_2.10;0.4.0 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.3 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.2->org.scala-lang#scala-library;2.10.2 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.2->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.3->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.3->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.9->ch.qos.logback#logback-core;1.0.9 [compile->master(*)][0m
@@ -538,9 +564,13 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies dom4j#dom4j;1.6.1->xml-apis#xml-apis;1.0.b2 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies dom4j#dom4j;1.6.1->xml-apis#xml-apis;1.0.b2 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.3 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.3 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->io.spray#spray-json_2.10;1.2.5 [compile->master(*)][0m
@@ -568,9 +598,13 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->com.gensler#scalavro-util_2.10;0.4.0 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->com.gensler#scalavro-util_2.10;0.4.0 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.3 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.3 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->com.gensler#scalavro-core_2.10;0.4.0 [runtime->runtime(*)][0m
@@ -578,11 +612,13 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->com.gensler#scalavro-util_2.10;0.4.0 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->com.gensler#scalavro-util_2.10;0.4.0 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.2->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.2->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.3->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.3->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.9->ch.qos.logback#logback-core;1.0.9 [runtime->runtime(*)][0m
@@ -602,9 +638,11 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies dom4j#dom4j;1.6.1->xml-apis#xml-apis;1.0.b2 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies dom4j#dom4j;1.6.1->xml-apis#xml-apis;1.0.b2 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.3 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->io.spray#spray-json_2.10;1.2.5 [runtime->runtime(*)][0m
@@ -631,16 +669,18 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->com.gensler#scalavro-util_2.10;0.4.0 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->com.gensler#scalavro-util_2.10;0.4.0 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.3 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->com.gensler#scalavro_2.10;0.4.0 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.2 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.2 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.2 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.2 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.3 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.3 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.3 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.3 [compile->master][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'provided'[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-lang.macroparadise#macros_2.10;1.0.0 [provided][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'optional'[0m
@@ -648,35 +688,35 @@
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'compile-internal'[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-lang.macroparadise#macros_2.10;1.0.0 [compile-internal][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-lang.macroparadise#macros_2.10;1.0.0 [compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.2 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.2 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.2 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.2 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.3 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.3 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.3 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.3 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->io.spray#spray-json_2.10;1.2.5 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->io.spray#spray-json_2.10;1.2.5 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->io.spray#spray-json_2.10;1.2.5 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.scala-lang#scala-library;2.10.1 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.scala-lang#scala-library;2.10.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.scala-lang#scala-library;2.10.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.parboiled#parboiled-scala_2.10;1.1.5 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.parboiled#parboiled-scala_2.10;1.1.5 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.parboiled#parboiled-core;1.1.5 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.parboiled#parboiled-core;1.1.5 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.scala-lang#scala-library;2.10.1 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.scala-lang#scala-library;2.10.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.scala-lang#scala-library;2.10.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.scala-lang#scala-library;2.10.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.parboiled#parboiled-scala_2.10;1.1.5 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.parboiled#parboiled-scala_2.10;1.1.5 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.parboiled#parboiled-core;1.1.5 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.parboiled#parboiled-core;1.1.5 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.scala-lang#scala-library;2.10.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->io.spray#spray-json_2.10;1.2.5 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->com.gensler#scalavro_2.10;0.4.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->com.gensler#scalavro_2.10;0.4.0 [compile->runtime][0m
@@ -686,11 +726,15 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->com.gensler#scalavro-util_2.10;0.4.0 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->com.gensler#scalavro-util_2.10;0.4.0 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.3 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.2->org.scala-lang#scala-library;2.10.2 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.2->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.3->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.3->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.9->ch.qos.logback#logback-core;1.0.9 [compile->master(*)][0m
@@ -710,9 +754,13 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies dom4j#dom4j;1.6.1->xml-apis#xml-apis;1.0.b2 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies dom4j#dom4j;1.6.1->xml-apis#xml-apis;1.0.b2 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.3 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.3 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->io.spray#spray-json_2.10;1.2.5 [compile->master(*)][0m
@@ -740,9 +788,13 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->com.gensler#scalavro-util_2.10;0.4.0 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->com.gensler#scalavro-util_2.10;0.4.0 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.3 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.3 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->com.gensler#scalavro-core_2.10;0.4.0 [runtime->runtime(*)][0m
@@ -750,11 +802,13 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->com.gensler#scalavro-util_2.10;0.4.0 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->com.gensler#scalavro-util_2.10;0.4.0 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.2->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.2->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.3->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.3->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.9->ch.qos.logback#logback-core;1.0.9 [runtime->runtime(*)][0m
@@ -774,9 +828,11 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies dom4j#dom4j;1.6.1->xml-apis#xml-apis;1.0.b2 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies dom4j#dom4j;1.6.1->xml-apis#xml-apis;1.0.b2 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.3 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->io.spray#spray-json_2.10;1.2.5 [runtime->runtime(*)][0m
@@ -803,51 +859,53 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->com.gensler#scalavro-util_2.10;0.4.0 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->com.gensler#scalavro-util_2.10;0.4.0 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.3 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->com.gensler#scalavro_2.10;0.4.0 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.2 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.2 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.2 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.2 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.3 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.3 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.3 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.3 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-lang.macroparadise#macros_2.10;1.0.0 [optional][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-lang.macroparadise#macros_2.10;1.0.0 [provided][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'runtime-internal'[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-lang.macroparadise#macros_2.10;1.0.0 [runtime-internal][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-lang.macroparadise#macros_2.10;1.0.0 [runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-lang.macroparadise#macros_2.10;1.0.0 [compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.2 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.2 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.2 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.2 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.3 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.3 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.3 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.3 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->io.spray#spray-json_2.10;1.2.5 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->io.spray#spray-json_2.10;1.2.5 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->io.spray#spray-json_2.10;1.2.5 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.scala-lang#scala-library;2.10.1 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.scala-lang#scala-library;2.10.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.scala-lang#scala-library;2.10.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.parboiled#parboiled-scala_2.10;1.1.5 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.parboiled#parboiled-scala_2.10;1.1.5 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.parboiled#parboiled-core;1.1.5 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.parboiled#parboiled-core;1.1.5 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.scala-lang#scala-library;2.10.1 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.scala-lang#scala-library;2.10.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.scala-lang#scala-library;2.10.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.scala-lang#scala-library;2.10.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.parboiled#parboiled-scala_2.10;1.1.5 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.parboiled#parboiled-scala_2.10;1.1.5 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.parboiled#parboiled-core;1.1.5 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.parboiled#parboiled-core;1.1.5 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.scala-lang#scala-library;2.10.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->io.spray#spray-json_2.10;1.2.5 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->com.gensler#scalavro_2.10;0.4.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->com.gensler#scalavro_2.10;0.4.0 [compile->runtime][0m
@@ -857,11 +915,15 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->com.gensler#scalavro-util_2.10;0.4.0 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->com.gensler#scalavro-util_2.10;0.4.0 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.3 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.2->org.scala-lang#scala-library;2.10.2 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.2->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.3->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.3->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.9->ch.qos.logback#logback-core;1.0.9 [compile->master(*)][0m
@@ -881,9 +943,13 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies dom4j#dom4j;1.6.1->xml-apis#xml-apis;1.0.b2 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies dom4j#dom4j;1.6.1->xml-apis#xml-apis;1.0.b2 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.3 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.3 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->io.spray#spray-json_2.10;1.2.5 [compile->master(*)][0m
@@ -911,9 +977,13 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->com.gensler#scalavro-util_2.10;0.4.0 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->com.gensler#scalavro-util_2.10;0.4.0 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.3 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.3 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->com.gensler#scalavro-core_2.10;0.4.0 [runtime->runtime(*)][0m
@@ -921,11 +991,13 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->com.gensler#scalavro-util_2.10;0.4.0 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->com.gensler#scalavro-util_2.10;0.4.0 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.2->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.2->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.3->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.3->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.9->ch.qos.logback#logback-core;1.0.9 [runtime->runtime(*)][0m
@@ -945,9 +1017,11 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies dom4j#dom4j;1.6.1->xml-apis#xml-apis;1.0.b2 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies dom4j#dom4j;1.6.1->xml-apis#xml-apis;1.0.b2 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.3 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->io.spray#spray-json_2.10;1.2.5 [runtime->runtime(*)][0m
@@ -974,51 +1048,53 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->com.gensler#scalavro-util_2.10;0.4.0 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->com.gensler#scalavro-util_2.10;0.4.0 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.3 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->com.gensler#scalavro_2.10;0.4.0 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.2 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.2 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.2 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.2 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.3 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.3 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.3 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.3 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-lang.macroparadise#macros_2.10;1.0.0 [optional][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'test-internal'[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-lang.macroparadise#macros_2.10;1.0.0 [test-internal][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-lang.macroparadise#macros_2.10;1.0.0 [test][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-lang.macroparadise#macros_2.10;1.0.0 [runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-lang.macroparadise#macros_2.10;1.0.0 [compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.2 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.2 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.2 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.2 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.3 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.3 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.3 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.3 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->io.spray#spray-json_2.10;1.2.5 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->io.spray#spray-json_2.10;1.2.5 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->io.spray#spray-json_2.10;1.2.5 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.scala-lang#scala-library;2.10.1 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.scala-lang#scala-library;2.10.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.scala-lang#scala-library;2.10.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.parboiled#parboiled-scala_2.10;1.1.5 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.parboiled#parboiled-scala_2.10;1.1.5 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.parboiled#parboiled-core;1.1.5 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.parboiled#parboiled-core;1.1.5 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.scala-lang#scala-library;2.10.1 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.scala-lang#scala-library;2.10.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.scala-lang#scala-library;2.10.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.scala-lang#scala-library;2.10.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.parboiled#parboiled-scala_2.10;1.1.5 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies io.spray#spray-json_2.10;1.2.5->org.parboiled#parboiled-scala_2.10;1.1.5 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.parboiled#parboiled-core;1.1.5 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.parboiled#parboiled-core;1.1.5 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.scala-lang#scala-library;2.10.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.parboiled#parboiled-scala_2.10;1.1.5->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->io.spray#spray-json_2.10;1.2.5 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->com.gensler#scalavro_2.10;0.4.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->com.gensler#scalavro_2.10;0.4.0 [compile->runtime][0m
@@ -1028,11 +1104,15 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->com.gensler#scalavro-util_2.10;0.4.0 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->com.gensler#scalavro-util_2.10;0.4.0 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.3 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.2->org.scala-lang#scala-library;2.10.2 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.2->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.3->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.3->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.9->ch.qos.logback#logback-core;1.0.9 [compile->master(*)][0m
@@ -1052,9 +1132,13 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies dom4j#dom4j;1.6.1->xml-apis#xml-apis;1.0.b2 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies dom4j#dom4j;1.6.1->xml-apis#xml-apis;1.0.b2 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.3 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.3 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->io.spray#spray-json_2.10;1.2.5 [compile->master(*)][0m
@@ -1082,9 +1166,13 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->com.gensler#scalavro-util_2.10;0.4.0 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->com.gensler#scalavro-util_2.10;0.4.0 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.3 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.3 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->com.gensler#scalavro-core_2.10;0.4.0 [runtime->runtime(*)][0m
@@ -1092,11 +1180,13 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->com.gensler#scalavro-util_2.10;0.4.0 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->com.gensler#scalavro-util_2.10;0.4.0 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.2->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.2->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.3->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.3->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-util_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies ch.qos.logback#logback-classic;1.0.9->ch.qos.logback#logback-core;1.0.9 [runtime->runtime(*)][0m
@@ -1116,9 +1206,11 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies dom4j#dom4j;1.6.1->xml-apis#xml-apis;1.0.b2 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies dom4j#dom4j;1.6.1->xml-apis#xml-apis;1.0.b2 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.3 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro-core_2.10;0.4.0->io.spray#spray-json_2.10;1.2.5 [runtime->runtime(*)][0m
@@ -1145,73 +1237,62 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->com.gensler#scalavro-util_2.10;0.4.0 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->com.gensler#scalavro-util_2.10;0.4.0 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->org.scala-lang#scala-reflect;2.10.3 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->com.gensler#scalavro_2.10;0.4.0 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.2 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.2 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.2 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.2 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.3 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.3 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.3 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.3 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-lang.macroparadise#macros_2.10;1.0.0 [optional][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-lang.macroparadise#macros_2.10;1.0.0 [provided][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'plugin'[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-lang.macroparadise#macros_2.10;1.0.0 [plugin][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT [plugin->default(compile)][0m
-[0m[[0minfo[0m] [0mResolving org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT {plugin=[default(compile)]}[0m
-[0m[[0mdebug[0m] [0mdon't use cache for org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT: changing=true[0m
-[0m[[0mdebug[0m] [0mdon't use cache for org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT: changing=true[0m
-[0m[[0mdebug[0m] [0m		tried /home/julianpeeters/.ivy2/local/org.scala-lang.plugins/macro-paradise_2.10.2/2.0.0-SNAPSHOT/ivys/ivy.xml[0m
-[0m[[0mdebug[0m] [0m	local: no ivy file found for org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT[0m
-[0m[[0mdebug[0m] [0mdon't use cache for org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT: changing=true[0m
-[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo1.maven.org/maven2/org/scala-lang/plugins/macro-paradise_2.10.2/2.0.0-SNAPSHOT/maven-metadata.xml[0m
-[0m[[0mdebug[0m] [0m	maven-metadata not available: http://repo1.maven.org/maven2/org/scala-lang/plugins/macro-paradise_2.10.2/2.0.0-SNAPSHOT/maven-metadata.xml[0m
-[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/scala-lang/plugins/macro-paradise_2.10.2/2.0.0-SNAPSHOT/macro-paradise_2.10.2-2.0.0-SNAPSHOT.pom[0m
-[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo1.maven.org/maven2/org/scala-lang/plugins/macro-paradise_2.10.2/2.0.0-SNAPSHOT/macro-paradise_2.10.2-2.0.0-SNAPSHOT.pom[0m
-[0m[[0mdebug[0m] [0m	public: no ivy file found for org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT[0m
-[0m[[0mdebug[0m] [0mdon't use cache for org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT: changing=true[0m
-[0m[[0mdebug[0m] [0m		tried https://oss.sonatype.org/content/repositories/snapshots/org/scala-lang/plugins/macro-paradise_2.10.2/2.0.0-SNAPSHOT/macro-paradise_2.10.2-2.0.0-SNAPSHOT.pom[0m
-[0m[[0mdebug[0m] [0m	sonatype-snapshots: found md file for org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT[0m
-[0m[[0mdebug[0m] [0m		=> https://oss.sonatype.org/content/repositories/snapshots/org/scala-lang/plugins/macro-paradise_2.10.2/2.0.0-SNAPSHOT/macro-paradise_2.10.2-2.0.0-SNAPSHOT.pom (2.0.0-SNAPSHOT)[0m
-[0m[[0mdebug[0m] [0m	default-cache: revision in cache (not updated): org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT[0m
-[0m[[0mdebug[0m] [0m	found org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT in sbt-chain[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT [plugin->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT [plugin->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT->org.scala-lang#scala-compiler;2.10.2 [compile->master(*)][0m
-[0m[[0minfo[0m] [0mResolving org.scala-lang#scala-compiler;2.10.2 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.scala-lang#scala-compiler;2.10.2 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-compiler;2.10.2[0m
-[0m[[0mdebug[0m] [0m	local: revision in cache: org.scala-lang#scala-compiler;2.10.2[0m
-[0m[[0mdebug[0m] [0m	found org.scala-lang#scala-compiler;2.10.2 in sbt-chain[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT->org.scala-lang#scala-compiler;2.10.2 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#scala-library;2.10.2 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#scala-reflect;2.10.2 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#scala-reflect;2.10.2 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.2->org.scala-lang#scala-library;2.10.2 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.2->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT->org.scala-lang#scala-compiler;2.10.2 [compile->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT->org.scala-lang#scala-compiler;2.10.2 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#scala-reflect;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#scala-reflect;2.10.2 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.2->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.2->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT->org.scala-lang#scala-reflect;2.10.2 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT->org.scala-lang#scala-reflect;2.10.2 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT->org.scala-lang#scala-compiler;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT->org.scala-lang#scala-compiler;2.10.2 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT->org.scala-lang#scala-reflect;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT->org.scala-lang#scala-reflect;2.10.2 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT [plugin->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scalamacros#paradise_2.10.3;2.0.0-M2 [plugin->default(compile)][0m
+[0m[[0minfo[0m] [0mResolving org.scalamacros#paradise_2.10.3;2.0.0-M2 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.scalamacros#paradise_2.10.3;2.0.0-M2 {plugin=[default(compile)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scalamacros#paradise_2.10.3;2.0.0-M2[0m
+[0m[[0mdebug[0m] [0m	local: revision in cache: org.scalamacros#paradise_2.10.3;2.0.0-M2[0m
+[0m[[0mdebug[0m] [0m	found org.scalamacros#paradise_2.10.3;2.0.0-M2 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scalamacros#paradise_2.10.3;2.0.0-M2 [plugin->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scalamacros#paradise_2.10.3;2.0.0-M2 [plugin->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#paradise_2.10.3;2.0.0-M2->org.scala-lang#scala-compiler;2.10.3 [compile->master(*)][0m
+[0m[[0minfo[0m] [0mResolving org.scala-lang#scala-compiler;2.10.3 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.scala-lang#scala-compiler;2.10.3 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-compiler;2.10.3[0m
+[0m[[0mdebug[0m] [0m	local: revision in cache: org.scala-lang#scala-compiler;2.10.3[0m
+[0m[[0mdebug[0m] [0m	found org.scala-lang#scala-compiler;2.10.3 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#paradise_2.10.3;2.0.0-M2->org.scala-lang#scala-compiler;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.3->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.3->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.3->org.scala-lang#scala-reflect;2.10.3 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.3->org.scala-lang#scala-reflect;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.3->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.3->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#paradise_2.10.3;2.0.0-M2->org.scala-lang#scala-compiler;2.10.3 [compile->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#paradise_2.10.3;2.0.0-M2->org.scala-lang#scala-compiler;2.10.3 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.3->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.3->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.3->org.scala-lang#scala-reflect;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.3->org.scala-lang#scala-reflect;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.3->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.3->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#paradise_2.10.3;2.0.0-M2->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#paradise_2.10.3;2.0.0-M2->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#paradise_2.10.3;2.0.0-M2->org.scala-lang#scala-reflect;2.10.3 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#paradise_2.10.3;2.0.0-M2->org.scala-lang#scala-reflect;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#paradise_2.10.3;2.0.0-M2->org.scala-lang#scala-compiler;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#paradise_2.10.3;2.0.0-M2->org.scala-lang#scala-compiler;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#paradise_2.10.3;2.0.0-M2->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#paradise_2.10.3;2.0.0-M2->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#paradise_2.10.3;2.0.0-M2->org.scala-lang#scala-reflect;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#paradise_2.10.3;2.0.0-M2->org.scala-lang#scala-reflect;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scalamacros#paradise_2.10.3;2.0.0-M2 [plugin->master][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'sources'[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-lang.macroparadise#macros_2.10;1.0.0 [sources][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'docs'[0m
@@ -1220,53 +1301,53 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-lang.macroparadise#macros_2.10;1.0.0 [pom][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'scala-tool'[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-lang.macroparadise#macros_2.10;1.0.0 [scala-tool][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-compiler;2.10.2 [scala-tool->default][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-compiler;2.10.2 [scala-tool->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-compiler;2.10.2 [scala-tool->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#scala-library;2.10.2 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#scala-library;2.10.2 [compile->default][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#scala-library;2.10.2 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#scala-library;2.10.2 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#scala-library;2.10.2 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#scala-library;2.10.2 [compile->optional(default)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#scala-reflect;2.10.2 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#scala-reflect;2.10.2 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.2->org.scala-lang#scala-library;2.10.2 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.2->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#scala-reflect;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#scala-reflect;2.10.2 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.2->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.2->org.scala-lang#scala-library;2.10.2 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-compiler;2.10.2 [scala-tool->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-compiler;2.10.2 [scala-tool->optional(default)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#jline;2.10.2 [optional->master(*)][0m
-[0m[[0minfo[0m] [0mResolving org.scala-lang#jline;2.10.2 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.scala-lang#jline;2.10.2 {optional=[compile(*), master(*)]}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#jline;2.10.2[0m
-[0m[[0mdebug[0m] [0m	local: revision in cache: org.scala-lang#jline;2.10.2[0m
-[0m[[0mdebug[0m] [0m	found org.scala-lang#jline;2.10.2 in sbt-chain[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#jline;2.10.2 [optional->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#jline;2.10.2->org.fusesource.jansi#jansi;1.4 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-compiler;2.10.3 [scala-tool->default][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-compiler;2.10.3 [scala-tool->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-compiler;2.10.3 [scala-tool->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.3->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.3->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.3->org.scala-lang#scala-library;2.10.3 [compile->default][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.3->org.scala-lang#scala-library;2.10.3 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.3->org.scala-lang#scala-library;2.10.3 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.3->org.scala-lang#scala-library;2.10.3 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.3->org.scala-lang#scala-library;2.10.3 [compile->optional(default)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.3->org.scala-lang#scala-reflect;2.10.3 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.3->org.scala-lang#scala-reflect;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.3->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.3->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.3->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.3->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.3->org.scala-lang#scala-reflect;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.3->org.scala-lang#scala-reflect;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.3->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.3->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-compiler;2.10.3 [scala-tool->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-compiler;2.10.3 [scala-tool->optional(default)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.3->org.scala-lang#jline;2.10.3 [optional->master(*)][0m
+[0m[[0minfo[0m] [0mResolving org.scala-lang#jline;2.10.3 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.scala-lang#jline;2.10.3 {optional=[compile(*), master(*)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#jline;2.10.3[0m
+[0m[[0mdebug[0m] [0m	local: revision in cache: org.scala-lang#jline;2.10.3[0m
+[0m[[0mdebug[0m] [0m	found org.scala-lang#jline;2.10.3 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.3->org.scala-lang#jline;2.10.3 [optional->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#jline;2.10.3->org.fusesource.jansi#jansi;1.4 [compile->master(*)][0m
 [0m[[0minfo[0m] [0mResolving org.fusesource.jansi#jansi;1.4 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.fusesource.jansi#jansi;1.4 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.fusesource.jansi#jansi;1.4[0m
 [0m[[0mdebug[0m] [0m	local: revision in cache: org.fusesource.jansi#jansi;1.4[0m
 [0m[[0mdebug[0m] [0m	found org.fusesource.jansi#jansi;1.4 in sbt-chain[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#jline;2.10.2->org.fusesource.jansi#jansi;1.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.2 [scala-tool->default][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.2 [scala-tool->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.2 [scala-tool->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.2 [scala-tool->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.2 [scala-tool->optional(default)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#jline;2.10.3->org.fusesource.jansi#jansi;1.4 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.3 [scala-tool->default][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.3 [scala-tool->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.3 [scala-tool->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.3 [scala-tool->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.3 [scala-tool->optional(default)][0m
 [0m[[0mdebug[0m] [0m	resolved ivy file produced in /home/julianpeeters/Dropbox/macro-annotation-example/macros/target/resolution-cache/org.scala-lang.macroparadise/macros_2.10/1.0.0/resolved.xml.xml[0m
 [0m[[0mdebug[0m] [0m:: downloading artifacts ::[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-library;2.10.2!scala-library.jar[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-library;2.10.3!scala-library.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] io.spray#spray-json_2.10;1.2.5!spray-json_2.10.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.gensler#scalavro_2.10;0.4.0!scalavro_2.10.jar[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-reflect;2.10.2!scala-reflect.jar[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-reflect;2.10.3!scala-reflect.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.parboiled#parboiled-scala_2.10;1.1.5!parboiled-scala_2.10.jar(bundle)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.parboiled#parboiled-core;1.1.5!parboiled-core.jar(bundle)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.gensler#scalavro-core_2.10;0.4.0!scalavro-core_2.10.jar[0m
@@ -1287,11 +1368,11 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.xerial.snappy#snappy-java;1.0.5!snappy-java.jar(bundle)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.apache.commons#commons-compress;1.4.1!commons-compress.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.tukaani#xz;1.0!xz.jar[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang.plugins#macro-paradise_2.10.2;2.0.0-SNAPSHOT!macro-paradise_2.10.2.jar[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-compiler;2.10.2!scala-compiler.jar[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#jline;2.10.2!jline.jar[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scalamacros#paradise_2.10.3;2.0.0-M2!paradise_2.10.3.jar[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-compiler;2.10.3!scala-compiler.jar[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#jline;2.10.3!jline.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.fusesource.jansi#jansi;1.4!jansi.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 2495ms :: artifacts dl 23ms[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 1970ms :: artifacts dl 63ms[0m
 [0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#macros_2.10;1.0.0 compile produced in /home/julianpeeters/Dropbox/macro-annotation-example/macros/target/resolution-cache/reports/org.scala-lang.macroparadise-macros_2.10-compile.xml[0m
 [0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#macros_2.10;1.0.0 runtime produced in /home/julianpeeters/Dropbox/macro-annotation-example/macros/target/resolution-cache/reports/org.scala-lang.macroparadise-macros_2.10-runtime.xml[0m
 [0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#macros_2.10;1.0.0 test produced in /home/julianpeeters/Dropbox/macro-annotation-example/macros/target/resolution-cache/reports/org.scala-lang.macroparadise-macros_2.10-test.xml[0m
@@ -1305,5 +1386,5 @@
 [0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#macros_2.10;1.0.0 docs produced in /home/julianpeeters/Dropbox/macro-annotation-example/macros/target/resolution-cache/reports/org.scala-lang.macroparadise-macros_2.10-docs.xml[0m
 [0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#macros_2.10;1.0.0 pom produced in /home/julianpeeters/Dropbox/macro-annotation-example/macros/target/resolution-cache/reports/org.scala-lang.macroparadise-macros_2.10-pom.xml[0m
 [0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#macros_2.10;1.0.0 scala-tool produced in /home/julianpeeters/Dropbox/macro-annotation-example/macros/target/resolution-cache/reports/org.scala-lang.macroparadise-macros_2.10-scala-tool.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (2495ms resolve - 23ms download)[0m
+[0m[[0mdebug[0m] [0m	resolve done (1970ms resolve - 63ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m

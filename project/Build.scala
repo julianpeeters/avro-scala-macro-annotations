@@ -6,12 +6,12 @@ object BuildSettings {
     organization := "org.scala-lang.macroparadise",
     version := "1.0.0",
     scalacOptions ++= Seq(),
-    scalaVersion := "2.10.2",
+    scalaVersion := "2.10.3",
     resolvers += Resolver.sonatypeRepo("snapshots"),
     libraryDependencies += "io.spray" %%  "spray-json" % "1.2.5",
     libraryDependencies += "com.gensler" %% "scalavro" % "0.4.0",
     resolvers += "spray" at "http://repo.spray.io/",
-    addCompilerPlugin("org.scala-lang.plugins" % "macro-paradise" % "2.0.0-SNAPSHOT" cross CrossVersion.full)
+    addCompilerPlugin("org.scalamacros" % "paradise" % "2.0.0-M2" cross CrossVersion.full)
   )
 }
 
