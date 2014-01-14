@@ -7,7 +7,7 @@
 		revision="1.0.0"
 		conf="runtime-internal"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-		date="20140108001836"/>
+		date="20140113213451"/>
 	<dependencies>
 		<module organisation="com.novus" name="salat_2.10">
 			<revision name="1.9.2" status="release" pubdate="20130819195649" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/novus/salat" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="24">
@@ -205,7 +205,7 @@
 			</revision>
 		</module>
 		<module organisation="org.scala-lang.macroparadise" name="macros_2.10">
-			<revision name="1.0.0" status="integration" pubdate="20140108001731" resolver="inter-project" artresolver="inter-project" downloaded="false" searched="false" default="false" conf="default(compile), compile" position="1">
+			<revision name="1.0.0" status="integration" pubdate="20140113213449" resolver="inter-project" artresolver="inter-project" downloaded="false" searched="false" default="false" conf="default(compile), compile" position="1">
 				<metadata-artifact status="failed" details="" size="0" time="0" searched="false"/>
 				<caller organisation="org.scala-lang.macroparadise" name="core_2.10" conf="optional, compile, runtime, runtime-internal" rev="1.0.0" rev-constraint-default="1.0.0" rev-constraint-dynamic="1.0.0" callerrev="1.0.0"/>
 				<artifacts>

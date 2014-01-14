@@ -7,7 +7,7 @@
 		revision="1.0.0"
 		conf="plugin"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-		date="20140108001836"/>
+		date="20140113213451"/>
 	<dependencies>
 		<module organisation="org.scala-lang.plugins" name="macro-paradise_2.10.2">
 			<revision name="2.0.0-SNAPSHOT" status="integration" pubdate="20131002221627" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/scalamacros/paradise" downloaded="false" searched="true" default="false" conf="default(compile), default, compile, runtime, master" position="0">
