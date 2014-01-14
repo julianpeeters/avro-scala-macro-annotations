@@ -7,7 +7,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-lang.macroparadise#macros_2.10;1.0.0 [compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.2 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving org.scala-lang#scala-library;2.10.2 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@4aa35fe9[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@69456250[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-library;2.10.2[0m
 [0m[[0mdebug[0m] [0m	local: revision in cache: org.scala-lang#scala-library;2.10.2[0m
 [0m[[0mdebug[0m] [0m	found org.scala-lang#scala-library;2.10.2 in sbt-chain[0m
@@ -1291,7 +1291,7 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-compiler;2.10.2!scala-compiler.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#jline;2.10.2!jline.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.fusesource.jansi#jansi;1.4!jansi.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 2255ms :: artifacts dl 37ms[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 2495ms :: artifacts dl 23ms[0m
 [0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#macros_2.10;1.0.0 compile produced in /home/julianpeeters/Dropbox/macro-annotation-example/macros/target/resolution-cache/reports/org.scala-lang.macroparadise-macros_2.10-compile.xml[0m
 [0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#macros_2.10;1.0.0 runtime produced in /home/julianpeeters/Dropbox/macro-annotation-example/macros/target/resolution-cache/reports/org.scala-lang.macroparadise-macros_2.10-runtime.xml[0m
 [0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#macros_2.10;1.0.0 test produced in /home/julianpeeters/Dropbox/macro-annotation-example/macros/target/resolution-cache/reports/org.scala-lang.macroparadise-macros_2.10-test.xml[0m
@@ -1305,5 +1305,5 @@
 [0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#macros_2.10;1.0.0 docs produced in /home/julianpeeters/Dropbox/macro-annotation-example/macros/target/resolution-cache/reports/org.scala-lang.macroparadise-macros_2.10-docs.xml[0m
 [0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#macros_2.10;1.0.0 pom produced in /home/julianpeeters/Dropbox/macro-annotation-example/macros/target/resolution-cache/reports/org.scala-lang.macroparadise-macros_2.10-pom.xml[0m
 [0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#macros_2.10;1.0.0 scala-tool produced in /home/julianpeeters/Dropbox/macro-annotation-example/macros/target/resolution-cache/reports/org.scala-lang.macroparadise-macros_2.10-scala-tool.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (2255ms resolve - 37ms download)[0m
+[0m[[0mdebug[0m] [0m	resolve done (2495ms resolve - 23ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m

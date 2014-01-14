@@ -20,11 +20,11 @@ object valProviderMacro {
     val fieldData = List(("x", "String"), ("myRec", "MyRec"))
     def asParam(fieldTypeName: Name) = {
 println(fieldTypeName)
-val h = "myRec"
+
 val g = q""""hello macro""""
-val i = newTypeName("MyRec")
+val i = newTermName("MyRec")
       fieldTypeName.toString match {
-        case "String" =>   {println("asPAram " ); q""" $h """}
+        case "String" =>   {println("asPAram " ); q""" $g """}
         case x  =>{   println("asPAram x " ); q"""$i($g)"""}//"MyRec(hello macro)" // x+ """(hello macro)"""
       }
     }
@@ -37,16 +37,16 @@ val i = newTypeName("MyRec")
           val PARAMACCESSOR = (1 << 29).toLong.asInstanceOf[FlagSet]
           val valProviderMods = Modifiers(CASEACCESSOR | PARAMACCESSOR | DEFAULTPARAM)
 if (name.toString == "MyRec") { println("MyRec")
-          val fieldTermName = newTermName(fieldData(1)._1)
-          val fieldTypeName = newTypeName(fieldData(1)._2)
+          val fieldTermName = newTermName(fieldData(0)._1)
+          val fieldTypeName = newTypeName(fieldData(0)._2)
 println(fieldTypeName)
           val param = asParam(fieldTypeName)
           val valProviderVal = q"""$valProviderMods val $fieldTermName: $fieldTypeName = $param"""
           q"$mods class $name[..$tparams](..$first, $valProviderVal)(...$rest) extends ..$parents { $self => ..$body }"
 }
 else { println("not my rec")
-          val fieldTermName = newTermName(fieldData(0)._1)
-          val fieldTypeName = newTypeName(fieldData(0)._2)
+          val fieldTermName = newTermName(fieldData(1)._1)
+          val fieldTypeName = newTypeName(fieldData(1)._2)
 
 println(fieldTypeName)
           val param = asParam(fieldTypeName)
