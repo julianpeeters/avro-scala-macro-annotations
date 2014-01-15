@@ -13,7 +13,7 @@ object valProviderMacro {
     import c.universe._
     import Flag._
 
-    val fieldData = List(("x", "String"), ("myRec", "MyRec"))
+//    val fieldData = List(("x", "String"), ("myRec", "MyRec"))
 
     def asDefaultParam(fieldTypeName: Name) = {
 
@@ -27,22 +27,18 @@ object valProviderMacro {
       }
     }
 
-
-    val m = Map("MyRec" -> newTermName("x"), "MyRecord" -> newTermName("myRec"))
-    val n = Map("MyRec" -> newTypeName("String"), "MyRecord" -> newTypeName("MyRec"))
+    val l = Map("MyRec" -> FieldData("x", "String"), "MyRecord" -> FieldData("myRec", "MyRec"))
 
 
     val result = {
       annottees.map(_.tree).toList match {
 
         case q"$mods class $name[..$tparams](..$first)(...$rest) extends ..$parents { $self => ..$body }" :: Nil => {
-          val valProviderMods = Modifiers( DEFAULTPARAM )
-          
           val className = name.toString
-          val fieldTermName = if(m.get(className).isDefined) m.get(className).get; else newTermName(fieldData(1)._1)
-          val fieldTypeName = if(n.get(className).isDefined) n.get(className).get; else newTypeName(fieldData(1)._2)
+          val fieldTermName = newTermName(if(l.get(className).isDefined) l.get(className).get.fieldName; else error("not found"))
+          val fieldTypeName = newTypeName(if(l.get(className).isDefined) l.get(className).get.fieldType; else error("not found"))
           val defaultParam = asDefaultParam(fieldTypeName)
-
+          val valProviderMods = Modifiers( DEFAULTPARAM )
           val valProviderVal = q"""$valProviderMods val $fieldTermName: $fieldTypeName = $defaultParam"""
           val vals = List(valProviderVal)
 
