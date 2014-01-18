@@ -1,8 +1,8 @@
 package models
 
 @valProvider
-case class MyRec//(x: String)
+case class rec//(i: Int)
 
 @valProvider
-case class MyRecord//(myRec: MyRec)
+case class MyRecord//(x: rec)
 

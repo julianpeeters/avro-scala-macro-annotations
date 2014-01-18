@@ -4,8 +4,11 @@ import scala.reflect.macros.Context
 import scala.language.experimental.macros
 import scala.annotation.StaticAnnotation
 
-//import scala.io._
+import java.io.File
+import org.apache.avro.Schema
 
+import org.json4s._
+import org.json4s.native.JsonMethods._
 
 object valProviderMacro {
 
@@ -13,21 +16,78 @@ object valProviderMacro {
     import c.universe._
     import Flag._
 
-//    val fieldData = List(("x", "String"), ("myRec", "MyRec"))
 
-    def asDefaultParam(fieldTypeName: Name) = {
+    def getSchemaAsString(infile: java.io.File): String = {
+      val bufferedInfile = scala.io.Source.fromFile(infile, "iso-8859-1")
+      val parsable = new String(bufferedInfile.getLines.mkString.dropWhile(_ != '{').toCharArray)
+      val avroSchema = new Schema.Parser().parse(parsable)
+      avroSchema.toString
+    }
 
-      val g = q""" "hello macro" """
-      val h = "MyRec"
-      val i = newTermName(h)
+    //val infile = new File("enron_head.avro")
+    val infile = new File("input.avro")
+    //val infile = new File("input2.avro")
+    //val infile = new File("input3.avro")
+    //val infile = new File("twitter.avro")
+    val outfile = new File("output.avro")
 
-      fieldTypeName.toString match {
-        case "String" => q""" $g """
-        case x        => q"""$i($g)"""//"MyRec(hello macro)" // x+ """(hello macro)"""
+
+    val jsonSchema: String = getSchemaAsString(infile)
+  println("json " + jsonSchema)
+
+
+case class AvroRecord(namespace: Option[String], name: String, fields: List[AvroField])
+case class AvroField(name: String, `type`: Either[String, AvroRecord])
+
+implicit val formats = org.json4s.DefaultFormats
+
+val json = parse(jsonSchema).extract[AvroRecord]
+println("json " + json)
+
+
+ for {
+         JObject(e) <- parse(jsonSchema)
+         val entry = e.toMap
+         if ( entry("type") == JString("record") )
+         val cls = JObject(e).extract[AvroRecord]
+         val clsFields = cls.fields.map(f => f.`type` match { 
+           case Left(typeName) => FieldData(f.name, avroToScalaType(typeName)) 
+           case Right(record)  => FieldData(f.name, record.name) //if the field type is a record, change it to the record's name
+         })
+       } FieldStore.fields += (cls.name -> clsFields)//Map( cls.name -> ClassData(cls.namespace, cls.name, clsFields) )
+
+
+println("_________________________")
+
+
+
+    def avroToScalaType(fieldType: String): String = {
+      fieldType match {
+      //Thanks to @ConnorDoyle for the mapping: https://github.com/GenslerAppsPod/scalavro
+      case "null"    => "Unit"
+      case "boolean" => "Boolean"
+      case "int"     => "Int"
+      case "long"    => "Long"
+      case "float"   => "Float"
+      case "double"  => "Double"
+      case "string"  => "String"
+      case x: String => x
+      case _         => error("JSON parser found an unsupported type")
       }
     }
 
-    val l = Map("MyRec" -> FieldData("x", "String"), "MyRecord" -> FieldData("myRec", "MyRec"))
+
+    def asDefaultParam(fieldTypeName: Name) = {
+
+      val g = q""" 1 """
+      val h = "rec"
+      val i = newTermName(h)
+
+      fieldTypeName.toString match {
+        case "Int" => q""" $g """
+        case x        => q"""$i($g)"""//"MyRec(hello macro)" // x+ """(hello macro)"""
+      }
+    }
 
 
     val result = {
@@ -35,13 +95,13 @@ object valProviderMacro {
 
         case q"$mods class $name[..$tparams](..$first)(...$rest) extends ..$parents { $self => ..$body }" :: Nil => {
           val className = name.toString
-          val fieldTermName = newTermName(if(l.get(className).isDefined) l.get(className).get.fieldName; else error("not found"))
-          val fieldTypeName = newTypeName(if(l.get(className).isDefined) l.get(className).get.fieldType; else error("not found"))
-          val defaultParam = asDefaultParam(fieldTypeName)
-          val valProviderMods = Modifiers( DEFAULTPARAM )
-          val valProviderVal = q"""$valProviderMods val $fieldTermName: $fieldTypeName = $defaultParam"""
-          val vals = List(valProviderVal)
-
+          val vals = FieldStore.fields.get(className).get.map(field => {
+            val valProviderMods = Modifiers(DEFAULTPARAM)
+            val fieldTermName = newTermName(field.fieldName)
+            val fieldTypeName = newTypeName(field.fieldType)
+            val defaultParam = asDefaultParam(fieldTypeName)
+            q"""$valProviderMods val $fieldTermName: $fieldTypeName = $defaultParam"""
+          })
           q"$mods class $name[..$tparams](..$vals)(...$rest) extends ..$parents { $self => ..$body }"
         }
       }

@@ -7,7 +7,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-lang.macroparadise#core_2.10;1.0.0 [compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#core_2.10;1.0.0->org.scala-lang#scala-library;2.10.3 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving org.scala-lang#scala-library;2.10.3 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@14e6155c[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@48852aa4[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-library;2.10.3[0m
 [0m[[0mdebug[0m] [0m	local: revision in cache: org.scala-lang#scala-library;2.10.3[0m
 [0m[[0mdebug[0m] [0m	found org.scala-lang#scala-library;2.10.3 in sbt-chain[0m
@@ -299,6 +299,95 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->com.gensler#scalavro_2.10;0.4.0 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.json4s#json4s-native_2.10;3.2.6 [compile->default(compile)][0m
+[0m[[0minfo[0m] [0mResolving org.json4s#json4s-native_2.10;3.2.6 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.json4s#json4s-native_2.10;3.2.6 {compile=[default(compile)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.json4s#json4s-native_2.10;3.2.6[0m
+[0m[[0mdebug[0m] [0m	local: revision in cache: org.json4s#json4s-native_2.10;3.2.6[0m
+[0m[[0mdebug[0m] [0m	found org.json4s#json4s-native_2.10;3.2.6 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.json4s#json4s-native_2.10;3.2.6 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.json4s#json4s-native_2.10;3.2.6 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.2.6->org.scala-lang#scala-library;2.10.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.2.6->org.scala-lang#scala-library;2.10.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.2.6->org.json4s#json4s-core_2.10;3.2.6 [compile->master(*)][0m
+[0m[[0minfo[0m] [0mResolving org.json4s#json4s-core_2.10;3.2.6 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.json4s#json4s-core_2.10;3.2.6 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.json4s#json4s-core_2.10;3.2.6[0m
+[0m[[0mdebug[0m] [0m	local: revision in cache: org.json4s#json4s-core_2.10;3.2.6[0m
+[0m[[0mdebug[0m] [0m	found org.json4s#json4s-core_2.10;3.2.6 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.2.6->org.json4s#json4s-core_2.10;3.2.6 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.scala-lang#scala-library;2.10.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.scala-lang#scala-library;2.10.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.json4s#json4s-ast_2.10;3.2.6 [compile->master(*)][0m
+[0m[[0minfo[0m] [0mResolving org.json4s#json4s-ast_2.10;3.2.6 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.json4s#json4s-ast_2.10;3.2.6 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.json4s#json4s-ast_2.10;3.2.6[0m
+[0m[[0mdebug[0m] [0m	local: revision in cache: org.json4s#json4s-ast_2.10;3.2.6[0m
+[0m[[0mdebug[0m] [0m	found org.json4s#json4s-ast_2.10;3.2.6 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.json4s#json4s-ast_2.10;3.2.6 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.2.6->org.scala-lang#scala-library;2.10.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.2.6->org.scala-lang#scala-library;2.10.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->com.thoughtworks.paranamer#paranamer;2.6 [compile->master(*)][0m
+[0m[[0minfo[0m] [0mResolving com.thoughtworks.paranamer#paranamer;2.6 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.thoughtworks.paranamer#paranamer;2.6 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.thoughtworks.paranamer#paranamer;2.6[0m
+[0m[[0mdebug[0m] [0m	local: revision in cache: com.thoughtworks.paranamer#paranamer;2.6[0m
+[0m[[0mdebug[0m] [0m	found com.thoughtworks.paranamer#paranamer;2.6 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->com.thoughtworks.paranamer#paranamer;2.6 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->com.thoughtworks.paranamer#paranamer;2.6 [compile->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->com.thoughtworks.paranamer#paranamer;2.6 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.scala-lang#scalap;2.10.0 [compile->master(*)][0m
+[0m[[0minfo[0m] [0mResolving org.scala-lang#scalap;2.10.0 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.scala-lang#scalap;2.10.0 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scalap;2.10.0[0m
+[0m[[0mdebug[0m] [0m	local: revision in cache: org.scala-lang#scalap;2.10.0[0m
+[0m[[0mdebug[0m] [0m	found org.scala-lang#scalap;2.10.0 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.scala-lang#scalap;2.10.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scalap;2.10.0->org.scala-lang#scala-compiler;2.10.0 [compile->master(*)][0m
+[0m[[0minfo[0m] [0mResolving org.scala-lang#scala-compiler;2.10.0 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.scala-lang#scala-compiler;2.10.0 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-compiler;2.10.0[0m
+[0m[[0mdebug[0m] [0m	local: revision in cache: org.scala-lang#scala-compiler;2.10.0[0m
+[0m[[0mdebug[0m] [0m	found org.scala-lang#scala-compiler;2.10.0 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scalap;2.10.0->org.scala-lang#scala-compiler;2.10.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-library;2.10.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-library;2.10.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-reflect;2.10.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-reflect;2.10.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.2.6->org.json4s#json4s-core_2.10;3.2.6 [compile->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.2.6->org.json4s#json4s-core_2.10;3.2.6 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.scala-lang#scala-library;2.10.0 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.json4s#json4s-ast_2.10;3.2.6 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.json4s#json4s-ast_2.10;3.2.6 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.2.6->org.scala-lang#scala-library;2.10.0 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->com.thoughtworks.paranamer#paranamer;2.6 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->com.thoughtworks.paranamer#paranamer;2.6 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.scala-lang#scalap;2.10.0 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.scala-lang#scalap;2.10.0 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scalap;2.10.0->org.scala-lang#scala-compiler;2.10.0 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scalap;2.10.0->org.scala-lang#scala-compiler;2.10.0 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-library;2.10.0 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-reflect;2.10.0 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.2.6->org.scala-lang#scala-library;2.10.0 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.2.6->org.json4s#json4s-core_2.10;3.2.6 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.2.6->org.json4s#json4s-core_2.10;3.2.6 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.json4s#json4s-native_2.10;3.2.6 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.3 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving org.scala-lang#scala-reflect;2.10.3 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.scala-lang#scala-reflect;2.10.3 {compile=[default(compile)]}[0m
@@ -324,6 +413,10 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#core_2.10;1.0.0->com.gensler#scalavro_2.10;0.4.0 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#core_2.10;1.0.0->com.gensler#scalavro_2.10;0.4.0 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#core_2.10;1.0.0->com.gensler#scalavro_2.10;0.4.0 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#core_2.10;1.0.0->org.json4s#json4s-native_2.10;3.2.6 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#core_2.10;1.0.0->org.json4s#json4s-native_2.10;3.2.6 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#core_2.10;1.0.0->org.json4s#json4s-native_2.10;3.2.6 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#core_2.10;1.0.0->org.json4s#json4s-native_2.10;3.2.6 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#core_2.10;1.0.0->com.novus#salat_2.10;1.9.2 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving com.novus#salat_2.10;1.9.2 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.novus#salat_2.10;1.9.2 {compile=[default(compile)]}[0m
@@ -367,6 +460,18 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#scala-reflect;2.10.3 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#scala-reflect;2.10.2 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#scala-reflect;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scalap;2.10.2->org.scala-lang#scala-compiler;2.10.2 [compile->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scalap;2.10.2->org.scala-lang#scala-compiler;2.10.2 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#scala-reflect;2.10.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#scala-reflect;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#scala-reflect;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat-util_2.10;1.9.2->org.scala-lang#scalap;2.10.2 [compile->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat-util_2.10;1.9.2->org.scala-lang#scalap;2.10.2 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scalap;2.10.2->org.scala-lang#scala-compiler;2.10.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scalap;2.10.2->org.scala-lang#scala-compiler;2.10.2 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat_2.10;1.9.2->com.novus#salat-util_2.10;1.9.2 [compile->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat_2.10;1.9.2->com.novus#salat-util_2.10;1.9.2 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat-util_2.10;1.9.2->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
@@ -376,14 +481,6 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat-util_2.10;1.9.2->org.slf4j#slf4j-api;1.7.2 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat-util_2.10;1.9.2->org.scala-lang#scalap;2.10.2 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat-util_2.10;1.9.2->org.scala-lang#scalap;2.10.2 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scalap;2.10.2->org.scala-lang#scala-compiler;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scalap;2.10.2->org.scala-lang#scala-compiler;2.10.2 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#scala-reflect;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#scala-reflect;2.10.3 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.2->org.scala-lang#scala-reflect;2.10.3 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat_2.10;1.9.2->com.novus#salat-core_2.10;1.9.2 [compile->master(*)][0m
 [0m[[0minfo[0m] [0mResolving com.novus#salat-core_2.10;1.9.2 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.novus#salat-core_2.10;1.9.2 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
@@ -480,51 +577,9 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#casbah-core_2.10;2.6.2->org.slf4j#slf4j-api;1.6.0 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#casbah-core_2.10;2.6.2->org.slf4j#slf4j-api;1.7.2 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat-core_2.10;1.9.2->org.json4s#json4s-native_2.10;3.1.0 [compile->master(*)][0m
-[0m[[0minfo[0m] [0mResolving org.json4s#json4s-native_2.10;3.1.0 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.json4s#json4s-native_2.10;3.1.0 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.json4s#json4s-native_2.10;3.1.0[0m
-[0m[[0mdebug[0m] [0m	local: revision in cache: org.json4s#json4s-native_2.10;3.1.0[0m
-[0m[[0mdebug[0m] [0m	found org.json4s#json4s-native_2.10;3.1.0 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat-core_2.10;1.9.2->org.json4s#json4s-native_2.10;3.2.6 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat-core_2.10;1.9.2->org.json4s#json4s-native_2.10;3.1.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.1.0->org.json4s#json4s-core_2.10;3.1.0 [compile->master(*)][0m
-[0m[[0minfo[0m] [0mResolving org.json4s#json4s-core_2.10;3.1.0 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.json4s#json4s-core_2.10;3.1.0 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.json4s#json4s-core_2.10;3.1.0[0m
-[0m[[0mdebug[0m] [0m	local: revision in cache: org.json4s#json4s-core_2.10;3.1.0[0m
-[0m[[0mdebug[0m] [0m	found org.json4s#json4s-core_2.10;3.1.0 in sbt-chain[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.1.0->org.json4s#json4s-core_2.10;3.1.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.json4s#json4s-ast_2.10;3.1.0 [compile->master(*)][0m
-[0m[[0minfo[0m] [0mResolving org.json4s#json4s-ast_2.10;3.1.0 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.json4s#json4s-ast_2.10;3.1.0 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.json4s#json4s-ast_2.10;3.1.0[0m
-[0m[[0mdebug[0m] [0m	local: revision in cache: org.json4s#json4s-ast_2.10;3.1.0[0m
-[0m[[0mdebug[0m] [0m	found org.json4s#json4s-ast_2.10;3.1.0 in sbt-chain[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.json4s#json4s-ast_2.10;3.1.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.1.0->org.scala-lang#scala-library;2.10.0 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.1.0->org.scala-lang#scala-library;2.10.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scala-library;2.10.0 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scala-library;2.10.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->com.thoughtworks.paranamer#paranamer;2.5.2 [compile->master(*)][0m
-[0m[[0minfo[0m] [0mResolving com.thoughtworks.paranamer#paranamer;2.5.2 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.thoughtworks.paranamer#paranamer;2.5.2 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.thoughtworks.paranamer#paranamer;2.5.2[0m
-[0m[[0mdebug[0m] [0m	local: revision in cache: com.thoughtworks.paranamer#paranamer;2.5.2[0m
-[0m[[0mdebug[0m] [0m	found com.thoughtworks.paranamer#paranamer;2.5.2 in public[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->com.thoughtworks.paranamer#paranamer;2.5.2 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->com.thoughtworks.paranamer#paranamer;2.5.2 [compile->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->com.thoughtworks.paranamer#paranamer;2.5.2 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scalap;2.10.0 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scalap;2.10.2 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scalap;2.10.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scalap;2.10.2 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.1.0->org.scala-lang#scala-library;2.10.0 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.1.0->org.scala-lang#scala-library;2.10.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat-core_2.10;1.9.2->org.json4s#json4s-native_2.10;3.2.6 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat_2.10;1.9.2->com.novus#salat-core_2.10;1.9.2 [compile->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat_2.10;1.9.2->com.novus#salat-core_2.10;1.9.2 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat-core_2.10;1.9.2->com.novus#salat-util_2.10;1.9.2 [runtime->runtime(*)][0m
@@ -574,25 +629,8 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#casbah-core_2.10;2.6.2->org.slf4j#slf4j-api;1.7.2 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#casbah-core_2.10;2.6.2->org.slf4j#slf4j-api;1.7.2 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat-core_2.10;1.9.2->org.json4s#json4s-native_2.10;3.1.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat-core_2.10;1.9.2->org.json4s#json4s-native_2.10;3.1.0 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.1.0->org.json4s#json4s-core_2.10;3.1.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.1.0->org.json4s#json4s-core_2.10;3.1.0 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.json4s#json4s-ast_2.10;3.1.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.json4s#json4s-ast_2.10;3.1.0 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.1.0->org.scala-lang#scala-library;2.10.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scala-library;2.10.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->com.thoughtworks.paranamer#paranamer;2.5.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->com.thoughtworks.paranamer#paranamer;2.5.2 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scalap;2.10.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scalap;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scalap;2.10.2 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.1.0->org.scala-lang#scala-library;2.10.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat-core_2.10;1.9.2->org.json4s#json4s-native_2.10;3.2.6 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat-core_2.10;1.9.2->org.json4s#json4s-native_2.10;3.2.6 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat_2.10;1.9.2->org.scala-lang#scala-library;2.10.2 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat_2.10;1.9.2->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat_2.10;1.9.2->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
@@ -792,6 +830,65 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->com.gensler#scalavro_2.10;0.4.0 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.json4s#json4s-native_2.10;3.2.6 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.json4s#json4s-native_2.10;3.2.6 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.json4s#json4s-native_2.10;3.2.6 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.2.6->org.scala-lang#scala-library;2.10.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.2.6->org.scala-lang#scala-library;2.10.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.2.6->org.json4s#json4s-core_2.10;3.2.6 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.2.6->org.json4s#json4s-core_2.10;3.2.6 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.scala-lang#scala-library;2.10.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.scala-lang#scala-library;2.10.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.json4s#json4s-ast_2.10;3.2.6 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.json4s#json4s-ast_2.10;3.2.6 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.2.6->org.scala-lang#scala-library;2.10.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.2.6->org.scala-lang#scala-library;2.10.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->com.thoughtworks.paranamer#paranamer;2.6 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->com.thoughtworks.paranamer#paranamer;2.6 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.scala-lang#scalap;2.10.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.scala-lang#scalap;2.10.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scalap;2.10.0->org.scala-lang#scala-compiler;2.10.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scalap;2.10.0->org.scala-lang#scala-compiler;2.10.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-library;2.10.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-library;2.10.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-reflect;2.10.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-reflect;2.10.3 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-reflect;2.10.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-reflect;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.2.6->org.scala-lang#scala-library;2.10.0 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.2.6->org.json4s#json4s-core_2.10;3.2.6 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.2.6->org.json4s#json4s-core_2.10;3.2.6 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.scala-lang#scala-library;2.10.0 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.json4s#json4s-ast_2.10;3.2.6 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.json4s#json4s-ast_2.10;3.2.6 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.2.6->org.scala-lang#scala-library;2.10.0 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->com.thoughtworks.paranamer#paranamer;2.6 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->com.thoughtworks.paranamer#paranamer;2.6 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.scala-lang#scalap;2.10.0 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.scala-lang#scalap;2.10.0 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scalap;2.10.0->org.scala-lang#scala-compiler;2.10.0 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scalap;2.10.0->org.scala-lang#scala-compiler;2.10.0 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-library;2.10.0 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-reflect;2.10.0 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-reflect;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-reflect;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.json4s#json4s-native_2.10;3.2.6 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.3 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.3 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.3 [compile->compile][0m
@@ -804,6 +901,10 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#core_2.10;1.0.0->com.gensler#scalavro_2.10;0.4.0 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#core_2.10;1.0.0->com.gensler#scalavro_2.10;0.4.0 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#core_2.10;1.0.0->com.gensler#scalavro_2.10;0.4.0 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#core_2.10;1.0.0->org.json4s#json4s-native_2.10;3.2.6 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#core_2.10;1.0.0->org.json4s#json4s-native_2.10;3.2.6 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#core_2.10;1.0.0->org.json4s#json4s-native_2.10;3.2.6 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#core_2.10;1.0.0->org.json4s#json4s-native_2.10;3.2.6 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#core_2.10;1.0.0->com.novus#salat_2.10;1.9.2 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#core_2.10;1.0.0->com.novus#salat_2.10;1.9.2 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#core_2.10;1.0.0->com.novus#salat_2.10;1.9.2 [compile->compile][0m
@@ -883,29 +984,9 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#casbah-core_2.10;2.6.2->org.slf4j#slf4j-api;1.6.0 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#casbah-core_2.10;2.6.2->org.slf4j#slf4j-api;1.7.2 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat-core_2.10;1.9.2->org.json4s#json4s-native_2.10;3.1.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat-core_2.10;1.9.2->org.json4s#json4s-native_2.10;3.2.6 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat-core_2.10;1.9.2->org.json4s#json4s-native_2.10;3.1.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.1.0->org.json4s#json4s-core_2.10;3.1.0 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.1.0->org.json4s#json4s-core_2.10;3.1.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.json4s#json4s-ast_2.10;3.1.0 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.json4s#json4s-ast_2.10;3.1.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.1.0->org.scala-lang#scala-library;2.10.0 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.1.0->org.scala-lang#scala-library;2.10.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scala-library;2.10.0 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scala-library;2.10.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->com.thoughtworks.paranamer#paranamer;2.5.2 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->com.thoughtworks.paranamer#paranamer;2.5.2 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scalap;2.10.0 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scalap;2.10.2 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scalap;2.10.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scalap;2.10.2 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.1.0->org.scala-lang#scala-library;2.10.0 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.1.0->org.scala-lang#scala-library;2.10.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat-core_2.10;1.9.2->org.json4s#json4s-native_2.10;3.2.6 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat_2.10;1.9.2->org.scala-lang#scala-library;2.10.2 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat_2.10;1.9.2->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat_2.10;1.9.2->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
@@ -976,25 +1057,8 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#casbah-core_2.10;2.6.2->org.slf4j#slf4j-api;1.7.2 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#casbah-core_2.10;2.6.2->org.slf4j#slf4j-api;1.7.2 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat-core_2.10;1.9.2->org.json4s#json4s-native_2.10;3.1.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat-core_2.10;1.9.2->org.json4s#json4s-native_2.10;3.1.0 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.1.0->org.json4s#json4s-core_2.10;3.1.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.1.0->org.json4s#json4s-core_2.10;3.1.0 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.json4s#json4s-ast_2.10;3.1.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.json4s#json4s-ast_2.10;3.1.0 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.1.0->org.scala-lang#scala-library;2.10.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scala-library;2.10.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->com.thoughtworks.paranamer#paranamer;2.5.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->com.thoughtworks.paranamer#paranamer;2.5.2 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scalap;2.10.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scalap;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scalap;2.10.2 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.1.0->org.scala-lang#scala-library;2.10.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat-core_2.10;1.9.2->org.json4s#json4s-native_2.10;3.2.6 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat-core_2.10;1.9.2->org.json4s#json4s-native_2.10;3.2.6 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat_2.10;1.9.2->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat_2.10;1.9.2->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat_2.10;1.9.2->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
@@ -1187,6 +1251,65 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->com.gensler#scalavro_2.10;0.4.0 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.json4s#json4s-native_2.10;3.2.6 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.json4s#json4s-native_2.10;3.2.6 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.json4s#json4s-native_2.10;3.2.6 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.2.6->org.scala-lang#scala-library;2.10.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.2.6->org.scala-lang#scala-library;2.10.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.2.6->org.json4s#json4s-core_2.10;3.2.6 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.2.6->org.json4s#json4s-core_2.10;3.2.6 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.scala-lang#scala-library;2.10.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.scala-lang#scala-library;2.10.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.json4s#json4s-ast_2.10;3.2.6 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.json4s#json4s-ast_2.10;3.2.6 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.2.6->org.scala-lang#scala-library;2.10.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.2.6->org.scala-lang#scala-library;2.10.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->com.thoughtworks.paranamer#paranamer;2.6 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->com.thoughtworks.paranamer#paranamer;2.6 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.scala-lang#scalap;2.10.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.scala-lang#scalap;2.10.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scalap;2.10.0->org.scala-lang#scala-compiler;2.10.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scalap;2.10.0->org.scala-lang#scala-compiler;2.10.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-library;2.10.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-library;2.10.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-reflect;2.10.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-reflect;2.10.3 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-reflect;2.10.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-reflect;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.2.6->org.scala-lang#scala-library;2.10.0 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.2.6->org.json4s#json4s-core_2.10;3.2.6 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.2.6->org.json4s#json4s-core_2.10;3.2.6 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.scala-lang#scala-library;2.10.0 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.json4s#json4s-ast_2.10;3.2.6 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.json4s#json4s-ast_2.10;3.2.6 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.2.6->org.scala-lang#scala-library;2.10.0 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->com.thoughtworks.paranamer#paranamer;2.6 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->com.thoughtworks.paranamer#paranamer;2.6 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.scala-lang#scalap;2.10.0 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.scala-lang#scalap;2.10.0 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scalap;2.10.0->org.scala-lang#scala-compiler;2.10.0 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scalap;2.10.0->org.scala-lang#scala-compiler;2.10.0 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-library;2.10.0 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-reflect;2.10.0 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-reflect;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-reflect;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.json4s#json4s-native_2.10;3.2.6 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.3 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.3 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.3 [compile->compile][0m
@@ -1199,6 +1322,10 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#core_2.10;1.0.0->com.gensler#scalavro_2.10;0.4.0 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#core_2.10;1.0.0->com.gensler#scalavro_2.10;0.4.0 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#core_2.10;1.0.0->com.gensler#scalavro_2.10;0.4.0 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#core_2.10;1.0.0->org.json4s#json4s-native_2.10;3.2.6 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#core_2.10;1.0.0->org.json4s#json4s-native_2.10;3.2.6 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#core_2.10;1.0.0->org.json4s#json4s-native_2.10;3.2.6 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#core_2.10;1.0.0->org.json4s#json4s-native_2.10;3.2.6 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#core_2.10;1.0.0->com.novus#salat_2.10;1.9.2 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#core_2.10;1.0.0->com.novus#salat_2.10;1.9.2 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#core_2.10;1.0.0->com.novus#salat_2.10;1.9.2 [compile->compile][0m
@@ -1278,29 +1405,9 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#casbah-core_2.10;2.6.2->org.slf4j#slf4j-api;1.6.0 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#casbah-core_2.10;2.6.2->org.slf4j#slf4j-api;1.7.2 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat-core_2.10;1.9.2->org.json4s#json4s-native_2.10;3.1.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat-core_2.10;1.9.2->org.json4s#json4s-native_2.10;3.2.6 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat-core_2.10;1.9.2->org.json4s#json4s-native_2.10;3.1.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.1.0->org.json4s#json4s-core_2.10;3.1.0 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.1.0->org.json4s#json4s-core_2.10;3.1.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.json4s#json4s-ast_2.10;3.1.0 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.json4s#json4s-ast_2.10;3.1.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.1.0->org.scala-lang#scala-library;2.10.0 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.1.0->org.scala-lang#scala-library;2.10.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scala-library;2.10.0 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scala-library;2.10.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->com.thoughtworks.paranamer#paranamer;2.5.2 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->com.thoughtworks.paranamer#paranamer;2.5.2 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scalap;2.10.0 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scalap;2.10.2 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scalap;2.10.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scalap;2.10.2 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.1.0->org.scala-lang#scala-library;2.10.0 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.1.0->org.scala-lang#scala-library;2.10.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat-core_2.10;1.9.2->org.json4s#json4s-native_2.10;3.2.6 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat_2.10;1.9.2->org.scala-lang#scala-library;2.10.2 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat_2.10;1.9.2->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat_2.10;1.9.2->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
@@ -1371,25 +1478,8 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#casbah-core_2.10;2.6.2->org.slf4j#slf4j-api;1.7.2 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#casbah-core_2.10;2.6.2->org.slf4j#slf4j-api;1.7.2 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat-core_2.10;1.9.2->org.json4s#json4s-native_2.10;3.1.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat-core_2.10;1.9.2->org.json4s#json4s-native_2.10;3.1.0 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.1.0->org.json4s#json4s-core_2.10;3.1.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.1.0->org.json4s#json4s-core_2.10;3.1.0 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.json4s#json4s-ast_2.10;3.1.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.json4s#json4s-ast_2.10;3.1.0 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.1.0->org.scala-lang#scala-library;2.10.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scala-library;2.10.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->com.thoughtworks.paranamer#paranamer;2.5.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->com.thoughtworks.paranamer#paranamer;2.5.2 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scalap;2.10.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scalap;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scalap;2.10.2 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.1.0->org.scala-lang#scala-library;2.10.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat-core_2.10;1.9.2->org.json4s#json4s-native_2.10;3.2.6 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat-core_2.10;1.9.2->org.json4s#json4s-native_2.10;3.2.6 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat_2.10;1.9.2->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat_2.10;1.9.2->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat_2.10;1.9.2->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
@@ -1585,6 +1675,65 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->com.gensler#scalavro_2.10;0.4.0 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.json4s#json4s-native_2.10;3.2.6 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.json4s#json4s-native_2.10;3.2.6 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.json4s#json4s-native_2.10;3.2.6 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.2.6->org.scala-lang#scala-library;2.10.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.2.6->org.scala-lang#scala-library;2.10.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.2.6->org.json4s#json4s-core_2.10;3.2.6 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.2.6->org.json4s#json4s-core_2.10;3.2.6 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.scala-lang#scala-library;2.10.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.scala-lang#scala-library;2.10.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.json4s#json4s-ast_2.10;3.2.6 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.json4s#json4s-ast_2.10;3.2.6 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.2.6->org.scala-lang#scala-library;2.10.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.2.6->org.scala-lang#scala-library;2.10.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->com.thoughtworks.paranamer#paranamer;2.6 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->com.thoughtworks.paranamer#paranamer;2.6 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.scala-lang#scalap;2.10.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.scala-lang#scalap;2.10.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scalap;2.10.0->org.scala-lang#scala-compiler;2.10.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scalap;2.10.0->org.scala-lang#scala-compiler;2.10.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-library;2.10.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-library;2.10.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-reflect;2.10.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-reflect;2.10.3 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-reflect;2.10.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-reflect;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.2.6->org.scala-lang#scala-library;2.10.0 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.2.6->org.json4s#json4s-core_2.10;3.2.6 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.2.6->org.json4s#json4s-core_2.10;3.2.6 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.scala-lang#scala-library;2.10.0 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.json4s#json4s-ast_2.10;3.2.6 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.json4s#json4s-ast_2.10;3.2.6 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.2.6->org.scala-lang#scala-library;2.10.0 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->com.thoughtworks.paranamer#paranamer;2.6 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->com.thoughtworks.paranamer#paranamer;2.6 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.scala-lang#scalap;2.10.0 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.scala-lang#scalap;2.10.0 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scalap;2.10.0->org.scala-lang#scala-compiler;2.10.0 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scalap;2.10.0->org.scala-lang#scala-compiler;2.10.0 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-library;2.10.0 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-reflect;2.10.0 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-reflect;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-reflect;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.json4s#json4s-native_2.10;3.2.6 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.3 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.3 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.3 [compile->compile][0m
@@ -1597,6 +1746,10 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#core_2.10;1.0.0->com.gensler#scalavro_2.10;0.4.0 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#core_2.10;1.0.0->com.gensler#scalavro_2.10;0.4.0 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#core_2.10;1.0.0->com.gensler#scalavro_2.10;0.4.0 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#core_2.10;1.0.0->org.json4s#json4s-native_2.10;3.2.6 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#core_2.10;1.0.0->org.json4s#json4s-native_2.10;3.2.6 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#core_2.10;1.0.0->org.json4s#json4s-native_2.10;3.2.6 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#core_2.10;1.0.0->org.json4s#json4s-native_2.10;3.2.6 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#core_2.10;1.0.0->com.novus#salat_2.10;1.9.2 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#core_2.10;1.0.0->com.novus#salat_2.10;1.9.2 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#core_2.10;1.0.0->com.novus#salat_2.10;1.9.2 [compile->compile][0m
@@ -1676,29 +1829,9 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#casbah-core_2.10;2.6.2->org.slf4j#slf4j-api;1.6.0 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#casbah-core_2.10;2.6.2->org.slf4j#slf4j-api;1.7.2 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat-core_2.10;1.9.2->org.json4s#json4s-native_2.10;3.1.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat-core_2.10;1.9.2->org.json4s#json4s-native_2.10;3.2.6 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat-core_2.10;1.9.2->org.json4s#json4s-native_2.10;3.1.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.1.0->org.json4s#json4s-core_2.10;3.1.0 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.1.0->org.json4s#json4s-core_2.10;3.1.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.json4s#json4s-ast_2.10;3.1.0 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.json4s#json4s-ast_2.10;3.1.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.1.0->org.scala-lang#scala-library;2.10.0 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.1.0->org.scala-lang#scala-library;2.10.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scala-library;2.10.0 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scala-library;2.10.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->com.thoughtworks.paranamer#paranamer;2.5.2 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->com.thoughtworks.paranamer#paranamer;2.5.2 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scalap;2.10.0 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scalap;2.10.2 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scalap;2.10.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scalap;2.10.2 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.1.0->org.scala-lang#scala-library;2.10.0 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.1.0->org.scala-lang#scala-library;2.10.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat-core_2.10;1.9.2->org.json4s#json4s-native_2.10;3.2.6 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat_2.10;1.9.2->org.scala-lang#scala-library;2.10.2 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat_2.10;1.9.2->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat_2.10;1.9.2->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
@@ -1769,25 +1902,8 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#casbah-core_2.10;2.6.2->org.slf4j#slf4j-api;1.7.2 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#casbah-core_2.10;2.6.2->org.slf4j#slf4j-api;1.7.2 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat-core_2.10;1.9.2->org.json4s#json4s-native_2.10;3.1.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat-core_2.10;1.9.2->org.json4s#json4s-native_2.10;3.1.0 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.1.0->org.json4s#json4s-core_2.10;3.1.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.1.0->org.json4s#json4s-core_2.10;3.1.0 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.json4s#json4s-ast_2.10;3.1.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.json4s#json4s-ast_2.10;3.1.0 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.1.0->org.scala-lang#scala-library;2.10.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scala-library;2.10.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->com.thoughtworks.paranamer#paranamer;2.5.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->com.thoughtworks.paranamer#paranamer;2.5.2 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scalap;2.10.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scalap;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scalap;2.10.2 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.1.0->org.scala-lang#scala-library;2.10.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat-core_2.10;1.9.2->org.json4s#json4s-native_2.10;3.2.6 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat-core_2.10;1.9.2->org.json4s#json4s-native_2.10;3.2.6 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat_2.10;1.9.2->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat_2.10;1.9.2->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat_2.10;1.9.2->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
@@ -1982,6 +2098,65 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->com.gensler#scalavro_2.10;0.4.0 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.json4s#json4s-native_2.10;3.2.6 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.json4s#json4s-native_2.10;3.2.6 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.json4s#json4s-native_2.10;3.2.6 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.2.6->org.scala-lang#scala-library;2.10.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.2.6->org.scala-lang#scala-library;2.10.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.2.6->org.json4s#json4s-core_2.10;3.2.6 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.2.6->org.json4s#json4s-core_2.10;3.2.6 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.scala-lang#scala-library;2.10.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.scala-lang#scala-library;2.10.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.json4s#json4s-ast_2.10;3.2.6 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.json4s#json4s-ast_2.10;3.2.6 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.2.6->org.scala-lang#scala-library;2.10.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.2.6->org.scala-lang#scala-library;2.10.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->com.thoughtworks.paranamer#paranamer;2.6 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->com.thoughtworks.paranamer#paranamer;2.6 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.scala-lang#scalap;2.10.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.scala-lang#scalap;2.10.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scalap;2.10.0->org.scala-lang#scala-compiler;2.10.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scalap;2.10.0->org.scala-lang#scala-compiler;2.10.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-library;2.10.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-library;2.10.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-reflect;2.10.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-reflect;2.10.3 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-reflect;2.10.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-reflect;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.2.6->org.scala-lang#scala-library;2.10.0 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.2.6->org.json4s#json4s-core_2.10;3.2.6 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.2.6->org.json4s#json4s-core_2.10;3.2.6 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.scala-lang#scala-library;2.10.0 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.json4s#json4s-ast_2.10;3.2.6 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.json4s#json4s-ast_2.10;3.2.6 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.2.6->org.scala-lang#scala-library;2.10.0 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->com.thoughtworks.paranamer#paranamer;2.6 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->com.thoughtworks.paranamer#paranamer;2.6 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.scala-lang#scalap;2.10.0 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.scala-lang#scalap;2.10.0 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scalap;2.10.0->org.scala-lang#scala-compiler;2.10.0 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scalap;2.10.0->org.scala-lang#scala-compiler;2.10.0 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-library;2.10.0 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-reflect;2.10.0 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-reflect;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-reflect;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.json4s#json4s-native_2.10;3.2.6 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.3 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.3 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.3 [compile->compile][0m
@@ -1994,6 +2169,10 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#core_2.10;1.0.0->com.gensler#scalavro_2.10;0.4.0 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#core_2.10;1.0.0->com.gensler#scalavro_2.10;0.4.0 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#core_2.10;1.0.0->com.gensler#scalavro_2.10;0.4.0 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#core_2.10;1.0.0->org.json4s#json4s-native_2.10;3.2.6 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#core_2.10;1.0.0->org.json4s#json4s-native_2.10;3.2.6 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#core_2.10;1.0.0->org.json4s#json4s-native_2.10;3.2.6 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#core_2.10;1.0.0->org.json4s#json4s-native_2.10;3.2.6 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#core_2.10;1.0.0->com.novus#salat_2.10;1.9.2 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#core_2.10;1.0.0->com.novus#salat_2.10;1.9.2 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#core_2.10;1.0.0->com.novus#salat_2.10;1.9.2 [compile->compile][0m
@@ -2073,29 +2252,9 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#casbah-core_2.10;2.6.2->org.slf4j#slf4j-api;1.6.0 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#casbah-core_2.10;2.6.2->org.slf4j#slf4j-api;1.7.2 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat-core_2.10;1.9.2->org.json4s#json4s-native_2.10;3.1.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat-core_2.10;1.9.2->org.json4s#json4s-native_2.10;3.2.6 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat-core_2.10;1.9.2->org.json4s#json4s-native_2.10;3.1.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.1.0->org.json4s#json4s-core_2.10;3.1.0 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.1.0->org.json4s#json4s-core_2.10;3.1.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.json4s#json4s-ast_2.10;3.1.0 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.json4s#json4s-ast_2.10;3.1.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.1.0->org.scala-lang#scala-library;2.10.0 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.1.0->org.scala-lang#scala-library;2.10.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scala-library;2.10.0 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scala-library;2.10.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->com.thoughtworks.paranamer#paranamer;2.5.2 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->com.thoughtworks.paranamer#paranamer;2.5.2 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scalap;2.10.0 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scalap;2.10.2 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scalap;2.10.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scalap;2.10.2 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.1.0->org.scala-lang#scala-library;2.10.0 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.1.0->org.scala-lang#scala-library;2.10.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat-core_2.10;1.9.2->org.json4s#json4s-native_2.10;3.2.6 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat_2.10;1.9.2->org.scala-lang#scala-library;2.10.2 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat_2.10;1.9.2->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat_2.10;1.9.2->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
@@ -2166,25 +2325,8 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#casbah-core_2.10;2.6.2->org.slf4j#slf4j-api;1.7.2 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#casbah-core_2.10;2.6.2->org.slf4j#slf4j-api;1.7.2 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat-core_2.10;1.9.2->org.json4s#json4s-native_2.10;3.1.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat-core_2.10;1.9.2->org.json4s#json4s-native_2.10;3.1.0 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.1.0->org.json4s#json4s-core_2.10;3.1.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.1.0->org.json4s#json4s-core_2.10;3.1.0 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.json4s#json4s-ast_2.10;3.1.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.json4s#json4s-ast_2.10;3.1.0 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.1.0->org.scala-lang#scala-library;2.10.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scala-library;2.10.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->com.thoughtworks.paranamer#paranamer;2.5.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->com.thoughtworks.paranamer#paranamer;2.5.2 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scalap;2.10.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scalap;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scalap;2.10.2 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.1.0->org.scala-lang#scala-library;2.10.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat-core_2.10;1.9.2->org.json4s#json4s-native_2.10;3.2.6 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat-core_2.10;1.9.2->org.json4s#json4s-native_2.10;3.2.6 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat_2.10;1.9.2->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat_2.10;1.9.2->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat_2.10;1.9.2->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
@@ -2379,6 +2521,65 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.gensler#scalavro_2.10;0.4.0->ch.qos.logback#logback-classic;1.0.9 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->com.gensler#scalavro_2.10;0.4.0 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.json4s#json4s-native_2.10;3.2.6 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.json4s#json4s-native_2.10;3.2.6 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.json4s#json4s-native_2.10;3.2.6 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.2.6->org.scala-lang#scala-library;2.10.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.2.6->org.scala-lang#scala-library;2.10.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.2.6->org.json4s#json4s-core_2.10;3.2.6 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.2.6->org.json4s#json4s-core_2.10;3.2.6 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.scala-lang#scala-library;2.10.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.scala-lang#scala-library;2.10.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.json4s#json4s-ast_2.10;3.2.6 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.json4s#json4s-ast_2.10;3.2.6 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.2.6->org.scala-lang#scala-library;2.10.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.2.6->org.scala-lang#scala-library;2.10.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->com.thoughtworks.paranamer#paranamer;2.6 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->com.thoughtworks.paranamer#paranamer;2.6 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.scala-lang#scalap;2.10.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.scala-lang#scalap;2.10.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scalap;2.10.0->org.scala-lang#scala-compiler;2.10.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scalap;2.10.0->org.scala-lang#scala-compiler;2.10.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-library;2.10.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-library;2.10.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-reflect;2.10.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-reflect;2.10.3 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-reflect;2.10.0 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-reflect;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.2.6->org.scala-lang#scala-library;2.10.0 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.2.6->org.json4s#json4s-core_2.10;3.2.6 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.2.6->org.json4s#json4s-core_2.10;3.2.6 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.scala-lang#scala-library;2.10.0 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.json4s#json4s-ast_2.10;3.2.6 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.json4s#json4s-ast_2.10;3.2.6 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.2.6->org.scala-lang#scala-library;2.10.0 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.2.6->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->com.thoughtworks.paranamer#paranamer;2.6 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->com.thoughtworks.paranamer#paranamer;2.6 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.scala-lang#scalap;2.10.0 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.2.6->org.scala-lang#scalap;2.10.0 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scalap;2.10.0->org.scala-lang#scala-compiler;2.10.0 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scalap;2.10.0->org.scala-lang#scala-compiler;2.10.0 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-library;2.10.0 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-reflect;2.10.0 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-reflect;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-reflect;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.json4s#json4s-native_2.10;3.2.6 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.3 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.3 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.3 [compile->compile][0m
@@ -2391,6 +2592,10 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#core_2.10;1.0.0->com.gensler#scalavro_2.10;0.4.0 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#core_2.10;1.0.0->com.gensler#scalavro_2.10;0.4.0 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#core_2.10;1.0.0->com.gensler#scalavro_2.10;0.4.0 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#core_2.10;1.0.0->org.json4s#json4s-native_2.10;3.2.6 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#core_2.10;1.0.0->org.json4s#json4s-native_2.10;3.2.6 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#core_2.10;1.0.0->org.json4s#json4s-native_2.10;3.2.6 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#core_2.10;1.0.0->org.json4s#json4s-native_2.10;3.2.6 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#core_2.10;1.0.0->com.novus#salat_2.10;1.9.2 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#core_2.10;1.0.0->com.novus#salat_2.10;1.9.2 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#core_2.10;1.0.0->com.novus#salat_2.10;1.9.2 [compile->compile][0m
@@ -2470,29 +2675,9 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#casbah-core_2.10;2.6.2->org.slf4j#slf4j-api;1.6.0 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#casbah-core_2.10;2.6.2->org.slf4j#slf4j-api;1.7.2 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat-core_2.10;1.9.2->org.json4s#json4s-native_2.10;3.1.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat-core_2.10;1.9.2->org.json4s#json4s-native_2.10;3.2.6 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat-core_2.10;1.9.2->org.json4s#json4s-native_2.10;3.1.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.1.0->org.json4s#json4s-core_2.10;3.1.0 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.1.0->org.json4s#json4s-core_2.10;3.1.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.json4s#json4s-ast_2.10;3.1.0 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.json4s#json4s-ast_2.10;3.1.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.1.0->org.scala-lang#scala-library;2.10.0 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.1.0->org.scala-lang#scala-library;2.10.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scala-library;2.10.0 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scala-library;2.10.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->com.thoughtworks.paranamer#paranamer;2.5.2 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->com.thoughtworks.paranamer#paranamer;2.5.2 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scalap;2.10.0 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scalap;2.10.2 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scalap;2.10.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scalap;2.10.2 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.1.0->org.scala-lang#scala-library;2.10.0 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.1.0->org.scala-lang#scala-library;2.10.0 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat-core_2.10;1.9.2->org.json4s#json4s-native_2.10;3.2.6 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat_2.10;1.9.2->org.scala-lang#scala-library;2.10.2 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat_2.10;1.9.2->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat_2.10;1.9.2->org.scala-lang#scala-library;2.10.2 [compile->compile(*)][0m
@@ -2563,25 +2748,8 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#casbah-core_2.10;2.6.2->org.slf4j#slf4j-api;1.7.2 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.mongodb#casbah-core_2.10;2.6.2->org.slf4j#slf4j-api;1.7.2 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat-core_2.10;1.9.2->org.json4s#json4s-native_2.10;3.1.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat-core_2.10;1.9.2->org.json4s#json4s-native_2.10;3.1.0 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.1.0->org.json4s#json4s-core_2.10;3.1.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.1.0->org.json4s#json4s-core_2.10;3.1.0 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.json4s#json4s-ast_2.10;3.1.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.json4s#json4s-ast_2.10;3.1.0 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.1.0->org.scala-lang#scala-library;2.10.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-ast_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scala-library;2.10.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->com.thoughtworks.paranamer#paranamer;2.5.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->com.thoughtworks.paranamer#paranamer;2.5.2 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scalap;2.10.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scalap;2.10.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-core_2.10;3.1.0->org.scala-lang#scalap;2.10.2 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.1.0->org.scala-lang#scala-library;2.10.0 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.1.0->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat-core_2.10;1.9.2->org.json4s#json4s-native_2.10;3.2.6 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat-core_2.10;1.9.2->org.json4s#json4s-native_2.10;3.2.6 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat_2.10;1.9.2->org.scala-lang#scala-library;2.10.2 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat_2.10;1.9.2->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.novus#salat_2.10;1.9.2->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
@@ -2684,6 +2852,7 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-library;2.10.3!scala-library.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] io.spray#spray-json_2.10;1.2.5!spray-json_2.10.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.gensler#scalavro_2.10;0.4.0!scalavro_2.10.jar[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.json4s#json4s-native_2.10;3.2.6!json4s-native_2.10.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-reflect;2.10.3!scala-reflect.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.parboiled#parboiled-scala_2.10;1.1.5!parboiled-scala_2.10.jar(bundle)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.parboiled#parboiled-core;1.1.5!parboiled-core.jar(bundle)[0m
@@ -2704,26 +2873,25 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.xerial.snappy#snappy-java;1.0.5!snappy-java.jar(bundle)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.apache.commons#commons-compress;1.4.1!commons-compress.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.tukaani#xz;1.0!xz.jar[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.json4s#json4s-core_2.10;3.2.6!json4s-core_2.10.jar[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.json4s#json4s-ast_2.10;3.2.6!json4s-ast_2.10.jar[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.thoughtworks.paranamer#paranamer;2.6!paranamer.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.novus#salat-util_2.10;1.9.2!salat-util_2.10.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.novus#salat-core_2.10;1.9.2!salat-core_2.10.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scalap;2.10.2!scalap.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-compiler;2.10.2!scala-compiler.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.mongodb#casbah-core_2.10;2.6.2!casbah-core_2.10.jar[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.json4s#json4s-native_2.10;3.1.0!json4s-native_2.10.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.mongodb#casbah-commons_2.10;2.6.2!casbah-commons_2.10.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.mongodb#casbah-query_2.10;2.6.2!casbah-query_2.10.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.github.nscala-time#nscala-time_2.10;0.2.0!nscala-time_2.10.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.mongodb#mongo-java-driver;2.11.2!mongo-java-driver.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] joda-time#joda-time;2.1!joda-time.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.joda#joda-convert;1.2!joda-convert.jar[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.json4s#json4s-core_2.10;3.1.0!json4s-core_2.10.jar[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.json4s#json4s-ast_2.10;3.1.0!json4s-ast_2.10.jar[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.thoughtworks.paranamer#paranamer;2.5.2!paranamer.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scalamacros#paradise_2.10.3;2.0.0-M2!paradise_2.10.3.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-compiler;2.10.3!scala-compiler.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#jline;2.10.3!jline.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.fusesource.jansi#jansi;1.4!jansi.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 3692ms :: artifacts dl 109ms[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 1565ms :: artifacts dl 33ms[0m
 [0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#core_2.10;1.0.0 compile produced in /home/julianpeeters/Dropbox/macro-annotation-example/core/target/resolution-cache/reports/org.scala-lang.macroparadise-core_2.10-compile.xml[0m
 [0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#core_2.10;1.0.0 runtime produced in /home/julianpeeters/Dropbox/macro-annotation-example/core/target/resolution-cache/reports/org.scala-lang.macroparadise-core_2.10-runtime.xml[0m
 [0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#core_2.10;1.0.0 test produced in /home/julianpeeters/Dropbox/macro-annotation-example/core/target/resolution-cache/reports/org.scala-lang.macroparadise-core_2.10-test.xml[0m
@@ -2737,5 +2905,5 @@
 [0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#core_2.10;1.0.0 docs produced in /home/julianpeeters/Dropbox/macro-annotation-example/core/target/resolution-cache/reports/org.scala-lang.macroparadise-core_2.10-docs.xml[0m
 [0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#core_2.10;1.0.0 pom produced in /home/julianpeeters/Dropbox/macro-annotation-example/core/target/resolution-cache/reports/org.scala-lang.macroparadise-core_2.10-pom.xml[0m
 [0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#core_2.10;1.0.0 scala-tool produced in /home/julianpeeters/Dropbox/macro-annotation-example/core/target/resolution-cache/reports/org.scala-lang.macroparadise-core_2.10-scala-tool.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (3692ms resolve - 109ms download)[0m
+[0m[[0mdebug[0m] [0m	resolve done (1565ms resolve - 33ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m

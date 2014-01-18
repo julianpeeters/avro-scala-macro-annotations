@@ -10,6 +10,7 @@ object BuildSettings {
     resolvers += Resolver.sonatypeRepo("snapshots"),
     libraryDependencies += "io.spray" %%  "spray-json" % "1.2.5",
     libraryDependencies += "com.gensler" %% "scalavro" % "0.4.0",
+    libraryDependencies += "org.json4s" %% "json4s-native" % "3.2.6",
     resolvers += "spray" at "http://repo.spray.io/",
     addCompilerPlugin("org.scalamacros" % "paradise" % "2.0.0-M2" cross CrossVersion.full)
   )
