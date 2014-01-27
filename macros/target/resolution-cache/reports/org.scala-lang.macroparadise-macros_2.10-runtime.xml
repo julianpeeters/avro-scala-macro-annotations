@@ -7,15 +7,15 @@
 		revision="1.0.0"
 		conf="runtime"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-		date="20140127004042"/>
+		date="20140127024859"/>
 	<dependencies>
 		<module organisation="org.scalamacros" name="quasiquotes_2.10.3">
-			<revision name="2.0.0-M3" status="release" pubdate="20140124061457" resolver="public" artresolver="public" homepage="https://github.com/scalamacros/paradise" downloaded="true" searched="true" default="false" conf="default(compile), default, compile, runtime, master" position="29">
+			<revision name="2.0.0-M3" status="release" pubdate="20140124061457" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/scalamacros/paradise" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="29">
 				<license name="BSD-like" url="http://www.scala-lang.org/downloads/license.html"/>
-				<metadata-artifact status="successful" details="" size="1846" time="435" location="/home/julianpeeters/.ivy2/cache/org.scalamacros/quasiquotes_2.10.3/ivy-2.0.0-M3.xml" searched="true" original-local-location="/home/julianpeeters/.ivy2/cache/org.scalamacros/quasiquotes_2.10.3/ivy-2.0.0-M3.xml.original" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/scalamacros/quasiquotes_2.10.3/2.0.0-M3/quasiquotes_2.10.3-2.0.0-M3.pom"/>
+				<metadata-artifact status="no" details="" size="2737" time="0" location="/home/julianpeeters/.ivy2/cache/org.scalamacros/quasiquotes_2.10.3/ivy-2.0.0-M3.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/scalamacros/quasiquotes_2.10.3/2.0.0-M3/quasiquotes_2.10.3-2.0.0-M3.pom"/>
 				<caller organisation="org.scala-lang.macroparadise" name="macros_2.10" conf="compile, runtime" rev="2.0.0-M3" rev-constraint-default="2.0.0-M3" rev-constraint-dynamic="2.0.0-M3" callerrev="1.0.0"/>
 				<artifacts>
-					<artifact name="quasiquotes_2.10.3" type="jar" ext="jar" status="successful" details="" size="149778" time="727" location="/home/julianpeeters/.ivy2/cache/org.scalamacros/quasiquotes_2.10.3/jars/quasiquotes_2.10.3-2.0.0-M3.jar">
+					<artifact name="quasiquotes_2.10.3" type="jar" ext="jar" status="no" details="" size="149778" time="0" location="/home/julianpeeters/.ivy2/cache/org.scalamacros/quasiquotes_2.10.3/jars/quasiquotes_2.10.3-2.0.0-M3.jar">
 						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/scalamacros/quasiquotes_2.10.3/2.0.0-M3/quasiquotes_2.10.3-2.0.0-M3.jar"/>
 					</artifact>
 				</artifacts>

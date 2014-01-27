@@ -15,8 +15,8 @@ object valProviderMacro {
     import c.universe._
     import Flag._
 
-    //val infile = new File("enron_head.avro")
-    val infile = new File("input.avro")
+    val infile = new File("enron_head.avro")
+    //val infile = new File("input.avro")
     //val infile = new File("twitter.avro")
 
     def getSchemaAsString(infile: java.io.File): String = {
@@ -40,15 +40,21 @@ object valProviderMacro {
               ClassFieldStore.fields.get(className).get.map(field => {
                 val providerMods  = Modifiers(DEFAULTPARAM)
                 val fieldTermName = newTermName(field.fieldName)
-                val fieldTypeName = newTypeName(field.fieldType)
-                if (fieldTypeName.toString.endsWith("]")) {
+
+
+                if (field.fieldType.endsWith("]")) {
+                  val box = newTypeName(field.fieldType.takeWhile(c => c != '['))
+                  val boxed = newTypeName(DefaultParamMatcher.getBoxed(field.fieldType))
+                  val fieldTypeName = tq"$box[$boxed]"
                   val defaultParam  = DefaultParamMatcher.asParameterizedDefaultParam(fieldTypeName.toString, c)
                   q"""$providerMods val $fieldTermName: $fieldTypeName = $defaultParam"""
                 }
                 else {
+                  val fieldTypeName = newTypeName(field.fieldType)
                   val defaultParam  = DefaultParamMatcher.asDefaultParam(fieldTypeName.toString, c)
                   q"""$providerMods val $fieldTermName: $fieldTypeName = $defaultParam"""
                 }
+
               })
             }
             else error("No entry found in the ClassFieldStore for this class. Perhaps class and record names do not correspond.")
