@@ -7,8 +7,20 @@
 		revision="1.0.0"
 		conf="test"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-		date="20140118000244"/>
+		date="20140127004042"/>
 	<dependencies>
+		<module organisation="org.scalamacros" name="quasiquotes_2.10.3">
+			<revision name="2.0.0-M3" status="release" pubdate="20140124061457" resolver="public" artresolver="public" homepage="https://github.com/scalamacros/paradise" downloaded="true" searched="true" default="false" conf="default(compile), default, compile, runtime, master" position="29">
+				<license name="BSD-like" url="http://www.scala-lang.org/downloads/license.html"/>
+				<metadata-artifact status="successful" details="" size="1846" time="435" location="/home/julianpeeters/.ivy2/cache/org.scalamacros/quasiquotes_2.10.3/ivy-2.0.0-M3.xml" searched="true" original-local-location="/home/julianpeeters/.ivy2/cache/org.scalamacros/quasiquotes_2.10.3/ivy-2.0.0-M3.xml.original" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/scalamacros/quasiquotes_2.10.3/2.0.0-M3/quasiquotes_2.10.3-2.0.0-M3.pom"/>
+				<caller organisation="org.scala-lang.macroparadise" name="macros_2.10" conf="test, compile, runtime" rev="2.0.0-M3" rev-constraint-default="2.0.0-M3" rev-constraint-dynamic="2.0.0-M3" callerrev="1.0.0"/>
+				<artifacts>
+					<artifact name="quasiquotes_2.10.3" type="jar" ext="jar" status="successful" details="" size="149778" time="727" location="/home/julianpeeters/.ivy2/cache/org.scalamacros/quasiquotes_2.10.3/jars/quasiquotes_2.10.3-2.0.0-M3.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/scalamacros/quasiquotes_2.10.3/2.0.0-M3/quasiquotes_2.10.3-2.0.0-M3.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
 		<module organisation="org.json4s" name="json4s-native_2.10">
 			<revision name="3.2.6" status="release" pubdate="20131130224750" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/json4s/json4s" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="23">
 				<license name="ASL" url="http://github.com/json4s/json4s/raw/HEAD/LICENSE"/>
@@ -89,10 +101,11 @@
 			</revision>
 		</module>
 		<module organisation="org.scala-lang" name="scala-reflect">
-			<revision name="2.10.3" status="release" pubdate="20130927024529" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master, master(*), compile(*), runtime(*)" position="7">
+			<revision name="2.10.3" status="release" pubdate="20130927024529" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, master(*), runtime, compile(*), runtime(*), master" position="7">
 				<license name="BSD-like" url="http://www.scala-lang.org/downloads/license.html    "/>
 				<metadata-artifact status="no" details="" size="2647" time="0" location="/home/julianpeeters/.ivy2/cache/org.scala-lang/scala-reflect/ivy-2.10.3.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.10.3/scala-reflect-2.10.3.pom"/>
 				<caller organisation="com.gensler" name="scalavro-core_2.10" conf="compile, runtime" rev="2.10.2" rev-constraint-default="2.10.2" rev-constraint-dynamic="2.10.2" callerrev="0.4.0"/>
+				<caller organisation="org.scalamacros" name="quasiquotes_2.10.3" conf="default, compile, runtime, master" rev="2.10.3" rev-constraint-default="2.10.3" rev-constraint-dynamic="2.10.3" callerrev="2.0.0-M3"/>
 				<caller organisation="com.gensler" name="scalavro-util_2.10" conf="compile, runtime" rev="2.10.2" rev-constraint-default="2.10.2" rev-constraint-dynamic="2.10.2" callerrev="0.4.0"/>
 				<caller organisation="org.scala-lang.macroparadise" name="macros_2.10" conf="test, compile, runtime" rev="2.10.3" rev-constraint-default="2.10.3" rev-constraint-dynamic="2.10.3" callerrev="1.0.0"/>
 				<caller organisation="com.gensler" name="scalavro_2.10" conf="default, compile, runtime, master" rev="2.10.2" rev-constraint-default="2.10.2" rev-constraint-dynamic="2.10.2" callerrev="0.4.0"/>
@@ -389,6 +402,7 @@
 				<caller organisation="org.json4s" name="json4s-core_2.10" conf="compile, runtime" rev="2.10.0" rev-constraint-default="2.10.0" rev-constraint-dynamic="2.10.0" callerrev="3.2.6"/>
 				<caller organisation="io.spray" name="spray-json_2.10" conf="default, compile, runtime, master" rev="2.10.1" rev-constraint-default="2.10.1" rev-constraint-dynamic="2.10.1" callerrev="1.2.5"/>
 				<caller organisation="com.gensler" name="scalavro-core_2.10" conf="compile, runtime" rev="2.10.2" rev-constraint-default="2.10.2" rev-constraint-dynamic="2.10.2" callerrev="0.4.0"/>
+				<caller organisation="org.scalamacros" name="quasiquotes_2.10.3" conf="default, compile, runtime, master" rev="2.10.3" rev-constraint-default="2.10.3" rev-constraint-dynamic="2.10.3" callerrev="2.0.0-M3"/>
 				<caller organisation="org.json4s" name="json4s-native_2.10" conf="default, compile, runtime, master" rev="2.10.0" rev-constraint-default="2.10.0" rev-constraint-dynamic="2.10.0" callerrev="3.2.6"/>
 				<caller organisation="com.gensler" name="scalavro-util_2.10" conf="compile, runtime" rev="2.10.2" rev-constraint-default="2.10.2" rev-constraint-dynamic="2.10.2" callerrev="0.4.0"/>
 				<caller organisation="org.scala-lang.macroparadise" name="macros_2.10" conf="test, compile, runtime" rev="2.10.3" rev-constraint-default="2.10.3" rev-constraint-dynamic="2.10.3" callerrev="1.0.0"/>

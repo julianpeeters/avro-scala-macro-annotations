@@ -7,16 +7,16 @@
 		revision="1.0.0"
 		conf="plugin"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-		date="20140118000244"/>
+		date="20140127004042"/>
 	<dependencies>
 		<module organisation="org.scalamacros" name="paradise_2.10.3">
-			<revision name="2.0.0-M2" status="release" pubdate="20140103020814" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/scalamacros/paradise" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="0">
+			<revision name="2.0.0-M3" status="release" pubdate="20140124053301" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/scalamacros/paradise" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="0">
 				<license name="BSD-like" url="http://www.scala-lang.org/downloads/license.html"/>
-				<metadata-artifact status="no" details="" size="2873" time="0" location="/home/julianpeeters/.ivy2/cache/org.scalamacros/paradise_2.10.3/ivy-2.0.0-M2.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/scalamacros/paradise_2.10.3/2.0.0-M2/paradise_2.10.3-2.0.0-M2.pom"/>
-				<caller organisation="org.scala-lang.macroparadise" name="macros_2.10" conf="plugin" rev="2.0.0-M2" rev-constraint-default="2.0.0-M2" rev-constraint-dynamic="2.0.0-M2" callerrev="1.0.0"/>
+				<metadata-artifact status="no" details="" size="2873" time="0" location="/home/julianpeeters/.ivy2/cache/org.scalamacros/paradise_2.10.3/ivy-2.0.0-M3.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/scalamacros/paradise_2.10.3/2.0.0-M3/paradise_2.10.3-2.0.0-M3.pom"/>
+				<caller organisation="org.scala-lang.macroparadise" name="macros_2.10" conf="plugin" rev="2.0.0-M3" rev-constraint-default="2.0.0-M3" rev-constraint-dynamic="2.0.0-M3" callerrev="1.0.0"/>
 				<artifacts>
-					<artifact name="paradise_2.10.3" type="jar" ext="jar" status="no" details="" size="1170131" time="0" location="/home/julianpeeters/.ivy2/cache/org.scalamacros/paradise_2.10.3/jars/paradise_2.10.3-2.0.0-M2.jar">
-						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/scalamacros/paradise_2.10.3/2.0.0-M2/paradise_2.10.3-2.0.0-M2.jar"/>
+					<artifact name="paradise_2.10.3" type="jar" ext="jar" status="no" details="" size="1146638" time="0" location="/home/julianpeeters/.ivy2/cache/org.scalamacros/paradise_2.10.3/jars/paradise_2.10.3-2.0.0-M3.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/scalamacros/paradise_2.10.3/2.0.0-M3/paradise_2.10.3-2.0.0-M3.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
@@ -25,7 +25,7 @@
 			<revision name="2.10.3" status="release" pubdate="20130927024553" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="1">
 				<license name="BSD-like" url="http://www.scala-lang.org/downloads/license.html    "/>
 				<metadata-artifact status="no" details="" size="2809" time="0" location="/home/julianpeeters/.ivy2/cache/org.scala-lang/scala-compiler/ivy-2.10.3.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.10.3/scala-compiler-2.10.3.pom"/>
-				<caller organisation="org.scalamacros" name="paradise_2.10.3" conf="default, compile, runtime, master" rev="2.10.3" rev-constraint-default="2.10.3" rev-constraint-dynamic="2.10.3" callerrev="2.0.0-M2"/>
+				<caller organisation="org.scalamacros" name="paradise_2.10.3" conf="default, compile, runtime, master" rev="2.10.3" rev-constraint-default="2.10.3" rev-constraint-dynamic="2.10.3" callerrev="2.0.0-M3"/>
 				<artifacts>
 					<artifact name="scala-compiler" type="jar" ext="jar" status="no" details="" size="14429965" time="0" location="/home/julianpeeters/.ivy2/cache/org.scala-lang/scala-compiler/jars/scala-compiler-2.10.3.jar">
 						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.10.3/scala-compiler-2.10.3.jar"/>
@@ -38,7 +38,7 @@
 				<license name="BSD-like" url="http://www.scala-lang.org/downloads/license.html    "/>
 				<metadata-artifact status="no" details="" size="2647" time="0" location="/home/julianpeeters/.ivy2/cache/org.scala-lang/scala-reflect/ivy-2.10.3.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.10.3/scala-reflect-2.10.3.pom"/>
 				<caller organisation="org.scala-lang" name="scala-compiler" conf="compile, runtime" rev="2.10.3" rev-constraint-default="2.10.3" rev-constraint-dynamic="2.10.3" callerrev="2.10.3"/>
-				<caller organisation="org.scalamacros" name="paradise_2.10.3" conf="default, compile, runtime, master" rev="2.10.3" rev-constraint-default="2.10.3" rev-constraint-dynamic="2.10.3" callerrev="2.0.0-M2"/>
+				<caller organisation="org.scalamacros" name="paradise_2.10.3" conf="default, compile, runtime, master" rev="2.10.3" rev-constraint-default="2.10.3" rev-constraint-dynamic="2.10.3" callerrev="2.0.0-M3"/>
 				<artifacts>
 					<artifact name="scala-reflect" type="jar" ext="jar" status="no" details="" size="3206936" time="0" location="/home/julianpeeters/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.10.3.jar">
 						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.10.3/scala-reflect-2.10.3.jar"/>
@@ -52,7 +52,7 @@
 				<metadata-artifact status="no" details="" size="2487" time="0" location="/home/julianpeeters/.ivy2/cache/org.scala-lang/scala-library/ivy-2.10.3.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/scala-lang/scala-library/2.10.3/scala-library-2.10.3.pom"/>
 				<caller organisation="org.scala-lang" name="scala-reflect" conf="compile, runtime" rev="2.10.3" rev-constraint-default="2.10.3" rev-constraint-dynamic="2.10.3" callerrev="2.10.3"/>
 				<caller organisation="org.scala-lang" name="scala-compiler" conf="compile, runtime" rev="2.10.3" rev-constraint-default="2.10.3" rev-constraint-dynamic="2.10.3" callerrev="2.10.3"/>
-				<caller organisation="org.scalamacros" name="paradise_2.10.3" conf="default, compile, runtime, master" rev="2.10.3" rev-constraint-default="2.10.3" rev-constraint-dynamic="2.10.3" callerrev="2.0.0-M2"/>
+				<caller organisation="org.scalamacros" name="paradise_2.10.3" conf="default, compile, runtime, master" rev="2.10.3" rev-constraint-default="2.10.3" rev-constraint-dynamic="2.10.3" callerrev="2.0.0-M3"/>
 				<artifacts>
 					<artifact name="scala-library" type="jar" ext="jar" status="no" details="" size="7126003" time="0" location="/home/julianpeeters/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.10.3.jar">
 						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/scala-lang/scala-library/2.10.3/scala-library-2.10.3.jar"/>

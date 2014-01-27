@@ -14,9 +14,6 @@ import scala.tools.scalap.scalax.rules.scalasig._
 
 object Test extends App {
 
-//Macro Annotations works!
-  println(MyRecord())
-
 
 //Test as a type parameter in Salat
   val myRecord =  MyRecord()

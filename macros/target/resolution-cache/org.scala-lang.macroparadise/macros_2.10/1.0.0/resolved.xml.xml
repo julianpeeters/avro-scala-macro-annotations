@@ -4,7 +4,7 @@
 		module="macros_2.10"
 		revision="1.0.0"
 		status="integration"
-		publication="20140118000244"
+		publication="20140127004042"
 	>
 		<description>
 		macros
@@ -37,7 +37,8 @@
 		<dependency org="io.spray" name="spray-json_2.10" rev="1.2.5" conf="compile->default(compile)"/>
 		<dependency org="com.gensler" name="scalavro_2.10" rev="0.4.0" conf="compile->default(compile)"/>
 		<dependency org="org.json4s" name="json4s-native_2.10" rev="3.2.6" conf="compile->default(compile)"/>
-		<dependency org="org.scalamacros" name="paradise_2.10.3" rev="2.0.0-M2" conf="plugin->default(compile)"/>
+		<dependency org="org.scalamacros" name="quasiquotes_2.10.3" rev="2.0.0-M3" conf="compile->default(compile)"/>
+		<dependency org="org.scalamacros" name="paradise_2.10.3" rev="2.0.0-M3" conf="plugin->default(compile)"/>
 		<dependency org="org.scala-lang" name="scala-reflect" rev="2.10.3" conf="compile->default(compile)"/>
 	</dependencies>
 </ivy-module>

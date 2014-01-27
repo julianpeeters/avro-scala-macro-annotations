@@ -7,7 +7,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-lang.macroparadise#macros_2.10;1.0.0 [compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-library;2.10.3 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving org.scala-lang#scala-library;2.10.3 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@39dc253c[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@14f9e396[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-library;2.10.3[0m
 [0m[[0mdebug[0m] [0m	local: revision in cache: org.scala-lang#scala-library;2.10.3[0m
 [0m[[0mdebug[0m] [0m	found org.scala-lang#scala-library;2.10.3 in sbt-chain[0m
@@ -380,23 +380,52 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.2.6->org.json4s#json4s-core_2.10;3.2.6 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.json4s#json4s-native_2.10;3.2.6->org.json4s#json4s-core_2.10;3.2.6 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.json4s#json4s-native_2.10;3.2.6 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.3 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scalamacros#quasiquotes_2.10.3;2.0.0-M3 [compile->default(compile)][0m
+[0m[[0minfo[0m] [0mResolving org.scalamacros#quasiquotes_2.10.3;2.0.0-M3 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.scalamacros#quasiquotes_2.10.3;2.0.0-M3 {compile=[default(compile)]}[0m
+[0m[[0mdebug[0m] [0m		tried /home/julianpeeters/.ivy2/local/org.scalamacros/quasiquotes_2.10.3/2.0.0-M3/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m	local: no ivy file found for org.scalamacros#quasiquotes_2.10.3;2.0.0-M3[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/scalamacros/quasiquotes_2.10.3/2.0.0-M3/quasiquotes_2.10.3-2.0.0-M3.pom[0m
+[0m[[0mdebug[0m] [0m	public: found md file for org.scalamacros#quasiquotes_2.10.3;2.0.0-M3[0m
+[0m[[0mdebug[0m] [0m		=> http://repo1.maven.org/maven2/org/scalamacros/quasiquotes_2.10.3/2.0.0-M3/quasiquotes_2.10.3-2.0.0-M3.pom (2.0.0-M3)[0m
+[0m[[0mdebug[0m] [0mdownloading http://repo1.maven.org/maven2/org/scalamacros/quasiquotes_2.10.3/2.0.0-M3/quasiquotes_2.10.3-2.0.0-M3.pom ...[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/scalamacros/quasiquotes_2.10.3/2.0.0-M3/quasiquotes_2.10.3-2.0.0-M3.pom[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/scalamacros/quasiquotes_2.10.3/2.0.0-M3/quasiquotes_2.10.3-2.0.0-M3.pom.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/org/scalamacros/quasiquotes_2.10.3/2.0.0-M3/quasiquotes_2.10.3-2.0.0-M3.pom[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.scalamacros#quasiquotes_2.10.3;2.0.0-M3!quasiquotes_2.10.3.pom(pom.original) (435ms)[0m
+[0m[[0mdebug[0m] [0m		tried /home/julianpeeters/.ivy2/local/org.scalamacros/quasiquotes_2.10.3/2.0.0-M3/jars/quasiquotes_2.10.3.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/scalamacros/quasiquotes_2.10.3/2.0.0-M3/quasiquotes_2.10.3-2.0.0-M3.jar[0m
+[0m[[0mdebug[0m] [0m	found org.scalamacros#quasiquotes_2.10.3;2.0.0-M3 in public[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scalamacros#quasiquotes_2.10.3;2.0.0-M3 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scalamacros#quasiquotes_2.10.3;2.0.0-M3 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#quasiquotes_2.10.3;2.0.0-M3->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#quasiquotes_2.10.3;2.0.0-M3->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#quasiquotes_2.10.3;2.0.0-M3->org.scala-lang#scala-reflect;2.10.3 [compile->master(*)][0m
 [0m[[0minfo[0m] [0mResolving org.scala-lang#scala-reflect;2.10.3 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.scala-lang#scala-reflect;2.10.3 {compile=[default(compile)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.scala-lang#scala-reflect;2.10.3 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-reflect;2.10.3[0m
 [0m[[0mdebug[0m] [0m	local: revision in cache: org.scala-lang#scala-reflect;2.10.3[0m
 [0m[[0mdebug[0m] [0m	found org.scala-lang#scala-reflect;2.10.3 in sbt-chain[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.3 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.3 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#quasiquotes_2.10.3;2.0.0-M3->org.scala-lang#scala-reflect;2.10.3 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.3->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.3->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#quasiquotes_2.10.3;2.0.0-M3->org.scala-lang#scala-reflect;2.10.3 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#quasiquotes_2.10.3;2.0.0-M3->org.scala-lang#scala-reflect;2.10.3 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#quasiquotes_2.10.3;2.0.0-M3->org.scala-lang#scala-reflect;2.10.3 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.3->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.3->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.3 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.3 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.3 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.3 [compile->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#quasiquotes_2.10.3;2.0.0-M3->org.scala-lang#scala-reflect;2.10.3 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#quasiquotes_2.10.3;2.0.0-M3->org.scala-lang#scala-reflect;2.10.3 [compile->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#quasiquotes_2.10.3;2.0.0-M3->org.scala-lang#scala-reflect;2.10.3 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#quasiquotes_2.10.3;2.0.0-M3->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#quasiquotes_2.10.3;2.0.0-M3->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#quasiquotes_2.10.3;2.0.0-M3->org.scala-lang#scala-reflect;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#quasiquotes_2.10.3;2.0.0-M3->org.scala-lang#scala-reflect;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scalamacros#quasiquotes_2.10.3;2.0.0-M3 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.3 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.3 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.3 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.3 [compile->master][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'runtime'[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-lang.macroparadise#macros_2.10;1.0.0 [runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-lang.macroparadise#macros_2.10;1.0.0 [compile][0m
@@ -638,6 +667,18 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-reflect;2.10.3 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-reflect;2.10.3 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.json4s#json4s-native_2.10;3.2.6 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scalamacros#quasiquotes_2.10.3;2.0.0-M3 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scalamacros#quasiquotes_2.10.3;2.0.0-M3 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scalamacros#quasiquotes_2.10.3;2.0.0-M3 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#quasiquotes_2.10.3;2.0.0-M3->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#quasiquotes_2.10.3;2.0.0-M3->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#quasiquotes_2.10.3;2.0.0-M3->org.scala-lang#scala-reflect;2.10.3 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#quasiquotes_2.10.3;2.0.0-M3->org.scala-lang#scala-reflect;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#quasiquotes_2.10.3;2.0.0-M3->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#quasiquotes_2.10.3;2.0.0-M3->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#quasiquotes_2.10.3;2.0.0-M3->org.scala-lang#scala-reflect;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#quasiquotes_2.10.3;2.0.0-M3->org.scala-lang#scala-reflect;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scalamacros#quasiquotes_2.10.3;2.0.0-M3 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.3 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.3 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.3 [compile->compile][0m
@@ -884,6 +925,18 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-reflect;2.10.3 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-reflect;2.10.3 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.json4s#json4s-native_2.10;3.2.6 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scalamacros#quasiquotes_2.10.3;2.0.0-M3 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scalamacros#quasiquotes_2.10.3;2.0.0-M3 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scalamacros#quasiquotes_2.10.3;2.0.0-M3 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#quasiquotes_2.10.3;2.0.0-M3->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#quasiquotes_2.10.3;2.0.0-M3->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#quasiquotes_2.10.3;2.0.0-M3->org.scala-lang#scala-reflect;2.10.3 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#quasiquotes_2.10.3;2.0.0-M3->org.scala-lang#scala-reflect;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#quasiquotes_2.10.3;2.0.0-M3->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#quasiquotes_2.10.3;2.0.0-M3->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#quasiquotes_2.10.3;2.0.0-M3->org.scala-lang#scala-reflect;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#quasiquotes_2.10.3;2.0.0-M3->org.scala-lang#scala-reflect;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scalamacros#quasiquotes_2.10.3;2.0.0-M3 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.3 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.3 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.3 [compile->compile][0m
@@ -1133,6 +1186,18 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-reflect;2.10.3 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-reflect;2.10.3 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.json4s#json4s-native_2.10;3.2.6 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scalamacros#quasiquotes_2.10.3;2.0.0-M3 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scalamacros#quasiquotes_2.10.3;2.0.0-M3 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scalamacros#quasiquotes_2.10.3;2.0.0-M3 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#quasiquotes_2.10.3;2.0.0-M3->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#quasiquotes_2.10.3;2.0.0-M3->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#quasiquotes_2.10.3;2.0.0-M3->org.scala-lang#scala-reflect;2.10.3 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#quasiquotes_2.10.3;2.0.0-M3->org.scala-lang#scala-reflect;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#quasiquotes_2.10.3;2.0.0-M3->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#quasiquotes_2.10.3;2.0.0-M3->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#quasiquotes_2.10.3;2.0.0-M3->org.scala-lang#scala-reflect;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#quasiquotes_2.10.3;2.0.0-M3->org.scala-lang#scala-reflect;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scalamacros#quasiquotes_2.10.3;2.0.0-M3 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.3 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.3 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.3 [compile->compile][0m
@@ -1381,6 +1446,18 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-reflect;2.10.3 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-reflect;2.10.3 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.json4s#json4s-native_2.10;3.2.6 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scalamacros#quasiquotes_2.10.3;2.0.0-M3 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scalamacros#quasiquotes_2.10.3;2.0.0-M3 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scalamacros#quasiquotes_2.10.3;2.0.0-M3 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#quasiquotes_2.10.3;2.0.0-M3->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#quasiquotes_2.10.3;2.0.0-M3->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#quasiquotes_2.10.3;2.0.0-M3->org.scala-lang#scala-reflect;2.10.3 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#quasiquotes_2.10.3;2.0.0-M3->org.scala-lang#scala-reflect;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#quasiquotes_2.10.3;2.0.0-M3->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#quasiquotes_2.10.3;2.0.0-M3->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#quasiquotes_2.10.3;2.0.0-M3->org.scala-lang#scala-reflect;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#quasiquotes_2.10.3;2.0.0-M3->org.scala-lang#scala-reflect;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scalamacros#quasiquotes_2.10.3;2.0.0-M3 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.3 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.3 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.3 [compile->compile][0m
@@ -1629,6 +1706,18 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-reflect;2.10.3 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.0->org.scala-lang#scala-reflect;2.10.3 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.json4s#json4s-native_2.10;3.2.6 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scalamacros#quasiquotes_2.10.3;2.0.0-M3 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scalamacros#quasiquotes_2.10.3;2.0.0-M3 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scalamacros#quasiquotes_2.10.3;2.0.0-M3 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#quasiquotes_2.10.3;2.0.0-M3->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#quasiquotes_2.10.3;2.0.0-M3->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#quasiquotes_2.10.3;2.0.0-M3->org.scala-lang#scala-reflect;2.10.3 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#quasiquotes_2.10.3;2.0.0-M3->org.scala-lang#scala-reflect;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#quasiquotes_2.10.3;2.0.0-M3->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#quasiquotes_2.10.3;2.0.0-M3->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#quasiquotes_2.10.3;2.0.0-M3->org.scala-lang#scala-reflect;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#quasiquotes_2.10.3;2.0.0-M3->org.scala-lang#scala-reflect;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scalamacros#quasiquotes_2.10.3;2.0.0-M3 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.3 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.3 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scala-lang#scala-reflect;2.10.3 [compile->compile][0m
@@ -1637,46 +1726,46 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-lang.macroparadise#macros_2.10;1.0.0 [provided][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'plugin'[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-lang.macroparadise#macros_2.10;1.0.0 [plugin][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scalamacros#paradise_2.10.3;2.0.0-M2 [plugin->default(compile)][0m
-[0m[[0minfo[0m] [0mResolving org.scalamacros#paradise_2.10.3;2.0.0-M2 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.scalamacros#paradise_2.10.3;2.0.0-M2 {plugin=[default(compile)]}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scalamacros#paradise_2.10.3;2.0.0-M2[0m
-[0m[[0mdebug[0m] [0m	local: revision in cache: org.scalamacros#paradise_2.10.3;2.0.0-M2[0m
-[0m[[0mdebug[0m] [0m	found org.scalamacros#paradise_2.10.3;2.0.0-M2 in sbt-chain[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scalamacros#paradise_2.10.3;2.0.0-M2 [plugin->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scalamacros#paradise_2.10.3;2.0.0-M2 [plugin->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#paradise_2.10.3;2.0.0-M2->org.scala-lang#scala-compiler;2.10.3 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scalamacros#paradise_2.10.3;2.0.0-M3 [plugin->default(compile)][0m
+[0m[[0minfo[0m] [0mResolving org.scalamacros#paradise_2.10.3;2.0.0-M3 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.scalamacros#paradise_2.10.3;2.0.0-M3 {plugin=[default(compile)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scalamacros#paradise_2.10.3;2.0.0-M3[0m
+[0m[[0mdebug[0m] [0m	local: revision in cache: org.scalamacros#paradise_2.10.3;2.0.0-M3[0m
+[0m[[0mdebug[0m] [0m	found org.scalamacros#paradise_2.10.3;2.0.0-M3 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scalamacros#paradise_2.10.3;2.0.0-M3 [plugin->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scalamacros#paradise_2.10.3;2.0.0-M3 [plugin->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#paradise_2.10.3;2.0.0-M3->org.scala-lang#scala-compiler;2.10.3 [compile->master(*)][0m
 [0m[[0minfo[0m] [0mResolving org.scala-lang#scala-compiler;2.10.3 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.scala-lang#scala-compiler;2.10.3 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-compiler;2.10.3[0m
 [0m[[0mdebug[0m] [0m	local: revision in cache: org.scala-lang#scala-compiler;2.10.3[0m
 [0m[[0mdebug[0m] [0m	found org.scala-lang#scala-compiler;2.10.3 in sbt-chain[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#paradise_2.10.3;2.0.0-M2->org.scala-lang#scala-compiler;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#paradise_2.10.3;2.0.0-M3->org.scala-lang#scala-compiler;2.10.3 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.3->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.3->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.3->org.scala-lang#scala-reflect;2.10.3 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.3->org.scala-lang#scala-reflect;2.10.3 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.3->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.3->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#paradise_2.10.3;2.0.0-M2->org.scala-lang#scala-compiler;2.10.3 [compile->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#paradise_2.10.3;2.0.0-M2->org.scala-lang#scala-compiler;2.10.3 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#paradise_2.10.3;2.0.0-M3->org.scala-lang#scala-compiler;2.10.3 [compile->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#paradise_2.10.3;2.0.0-M3->org.scala-lang#scala-compiler;2.10.3 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.3->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.3->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.3->org.scala-lang#scala-reflect;2.10.3 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.3->org.scala-lang#scala-reflect;2.10.3 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.3->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.3->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#paradise_2.10.3;2.0.0-M2->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#paradise_2.10.3;2.0.0-M2->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#paradise_2.10.3;2.0.0-M2->org.scala-lang#scala-reflect;2.10.3 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#paradise_2.10.3;2.0.0-M2->org.scala-lang#scala-reflect;2.10.3 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#paradise_2.10.3;2.0.0-M2->org.scala-lang#scala-compiler;2.10.3 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#paradise_2.10.3;2.0.0-M2->org.scala-lang#scala-compiler;2.10.3 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#paradise_2.10.3;2.0.0-M2->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#paradise_2.10.3;2.0.0-M2->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#paradise_2.10.3;2.0.0-M2->org.scala-lang#scala-reflect;2.10.3 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#paradise_2.10.3;2.0.0-M2->org.scala-lang#scala-reflect;2.10.3 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scalamacros#paradise_2.10.3;2.0.0-M2 [plugin->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#paradise_2.10.3;2.0.0-M3->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#paradise_2.10.3;2.0.0-M3->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#paradise_2.10.3;2.0.0-M3->org.scala-lang#scala-reflect;2.10.3 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#paradise_2.10.3;2.0.0-M3->org.scala-lang#scala-reflect;2.10.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#paradise_2.10.3;2.0.0-M3->org.scala-lang#scala-compiler;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#paradise_2.10.3;2.0.0-M3->org.scala-lang#scala-compiler;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#paradise_2.10.3;2.0.0-M3->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#paradise_2.10.3;2.0.0-M3->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#paradise_2.10.3;2.0.0-M3->org.scala-lang#scala-reflect;2.10.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scalamacros#paradise_2.10.3;2.0.0-M3->org.scala-lang#scala-reflect;2.10.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.macroparadise#macros_2.10;1.0.0->org.scalamacros#paradise_2.10.3;2.0.0-M3 [plugin->master][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'sources'[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-lang.macroparadise#macros_2.10;1.0.0 [sources][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'docs'[0m
@@ -1732,6 +1821,12 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] io.spray#spray-json_2.10;1.2.5!spray-json_2.10.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.gensler#scalavro_2.10;0.4.0!scalavro_2.10.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.json4s#json4s-native_2.10;3.2.6!json4s-native_2.10.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/scalamacros/quasiquotes_2.10.3/2.0.0-M3/quasiquotes_2.10.3-2.0.0-M3.jar[0m
+[0m[[0minfo[0m] [0mdownloading http://repo1.maven.org/maven2/org/scalamacros/quasiquotes_2.10.3/2.0.0-M3/quasiquotes_2.10.3-2.0.0-M3.jar ...[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/scalamacros/quasiquotes_2.10.3/2.0.0-M3/quasiquotes_2.10.3-2.0.0-M3.jar[0m
+[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/scalamacros/quasiquotes_2.10.3/2.0.0-M3/quasiquotes_2.10.3-2.0.0-M3.jar.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/org/scalamacros/quasiquotes_2.10.3/2.0.0-M3/quasiquotes_2.10.3-2.0.0-M3.jar[0m
+[0m[[0minfo[0m] [0m	[SUCCESSFUL ] org.scalamacros#quasiquotes_2.10.3;2.0.0-M3!quasiquotes_2.10.3.jar (727ms)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-reflect;2.10.3!scala-reflect.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.parboiled#parboiled-scala_2.10;1.1.5!parboiled-scala_2.10.jar(bundle)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.parboiled#parboiled-core;1.1.5!parboiled-core.jar(bundle)[0m
@@ -1757,11 +1852,11 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.thoughtworks.paranamer#paranamer;2.6!paranamer.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scalap;2.10.0!scalap.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-compiler;2.10.0!scala-compiler.jar[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scalamacros#paradise_2.10.3;2.0.0-M2!paradise_2.10.3.jar[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scalamacros#paradise_2.10.3;2.0.0-M3!paradise_2.10.3.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-compiler;2.10.3!scala-compiler.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#jline;2.10.3!jline.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.fusesource.jansi#jansi;1.4!jansi.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 960ms :: artifacts dl 43ms[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 11491ms :: artifacts dl 890ms[0m
 [0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#macros_2.10;1.0.0 compile produced in /home/julianpeeters/Dropbox/macro-annotation-example/macros/target/resolution-cache/reports/org.scala-lang.macroparadise-macros_2.10-compile.xml[0m
 [0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#macros_2.10;1.0.0 runtime produced in /home/julianpeeters/Dropbox/macro-annotation-example/macros/target/resolution-cache/reports/org.scala-lang.macroparadise-macros_2.10-runtime.xml[0m
 [0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#macros_2.10;1.0.0 test produced in /home/julianpeeters/Dropbox/macro-annotation-example/macros/target/resolution-cache/reports/org.scala-lang.macroparadise-macros_2.10-test.xml[0m
@@ -1775,5 +1870,5 @@
 [0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#macros_2.10;1.0.0 docs produced in /home/julianpeeters/Dropbox/macro-annotation-example/macros/target/resolution-cache/reports/org.scala-lang.macroparadise-macros_2.10-docs.xml[0m
 [0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#macros_2.10;1.0.0 pom produced in /home/julianpeeters/Dropbox/macro-annotation-example/macros/target/resolution-cache/reports/org.scala-lang.macroparadise-macros_2.10-pom.xml[0m
 [0m[[0mdebug[0m] [0m	report for org.scala-lang.macroparadise#macros_2.10;1.0.0 scala-tool produced in /home/julianpeeters/Dropbox/macro-annotation-example/macros/target/resolution-cache/reports/org.scala-lang.macroparadise-macros_2.10-scala-tool.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (960ms resolve - 43ms download)[0m
+[0m[[0mdebug[0m] [0m	resolve done (11491ms resolve - 890ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m

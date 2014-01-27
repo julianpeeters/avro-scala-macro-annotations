@@ -491,10 +491,10 @@ clean
 run
 clean
 run
-clean
+exit
 run
-clean
+exit
 run
-clean
+exit
 run
 exit
