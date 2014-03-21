@@ -7,7 +7,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies for com.julianpeeters#core_2.10;0.1-SNAPSHOT [compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.julianpeeters#core_2.10;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.3 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving org.scala-lang#scala-library;2.10.3 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@720a3cc7[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@725737b8[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-library;2.10.3[0m
 [0m[[0mdebug[0m] [0m	local: revision in cache: org.scala-lang#scala-library;2.10.3[0m
 [0m[[0mdebug[0m] [0m	found org.scala-lang#scala-library;2.10.3 in sbt-chain[0m
@@ -439,7 +439,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.julianpeeters#core_2.10;0.1-SNAPSHOT->org.json4s#json4s-native_2.10;3.2.6 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.julianpeeters#core_2.10;0.1-SNAPSHOT->com.novus#salat_2.10;1.9.2 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving com.novus#salat_2.10;1.9.2 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@2c64c754[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@dcb9a59[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.novus#salat_2.10;1.9.2[0m
 [0m[[0mdebug[0m] [0m	local: revision in cache: com.novus#salat_2.10;1.9.2[0m
 [0m[[0mdebug[0m] [0m	found com.novus#salat_2.10;1.9.2 in sbt-chain[0m
@@ -3134,7 +3134,7 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-compiler;2.10.3!scala-compiler.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#jline;2.10.3!jline.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.fusesource.jansi#jansi;1.4!jansi.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 5582ms :: artifacts dl 327ms[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 6873ms :: artifacts dl 224ms[0m
 [0m[[0mdebug[0m] [0m	report for com.julianpeeters#core_2.10;0.1-SNAPSHOT compile produced in /home/julianpeeters/Dropbox/macro-annotation-example/core/target/resolution-cache/reports/com.julianpeeters-core_2.10-compile.xml[0m
 [0m[[0mdebug[0m] [0m	report for com.julianpeeters#core_2.10;0.1-SNAPSHOT runtime produced in /home/julianpeeters/Dropbox/macro-annotation-example/core/target/resolution-cache/reports/com.julianpeeters-core_2.10-runtime.xml[0m
 [0m[[0mdebug[0m] [0m	report for com.julianpeeters#core_2.10;0.1-SNAPSHOT test produced in /home/julianpeeters/Dropbox/macro-annotation-example/core/target/resolution-cache/reports/com.julianpeeters-core_2.10-test.xml[0m
@@ -3148,5 +3148,5 @@
 [0m[[0mdebug[0m] [0m	report for com.julianpeeters#core_2.10;0.1-SNAPSHOT docs produced in /home/julianpeeters/Dropbox/macro-annotation-example/core/target/resolution-cache/reports/com.julianpeeters-core_2.10-docs.xml[0m
 [0m[[0mdebug[0m] [0m	report for com.julianpeeters#core_2.10;0.1-SNAPSHOT pom produced in /home/julianpeeters/Dropbox/macro-annotation-example/core/target/resolution-cache/reports/com.julianpeeters-core_2.10-pom.xml[0m
 [0m[[0mdebug[0m] [0m	report for com.julianpeeters#core_2.10;0.1-SNAPSHOT scala-tool produced in /home/julianpeeters/Dropbox/macro-annotation-example/core/target/resolution-cache/reports/com.julianpeeters-core_2.10-scala-tool.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (5582ms resolve - 327ms download)[0m
+[0m[[0mdebug[0m] [0m	resolve done (6873ms resolve - 224ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m
