@@ -1,3 +1,5 @@
+package avro.provider
+
 package models
 
 import scala.reflect.macros.Context

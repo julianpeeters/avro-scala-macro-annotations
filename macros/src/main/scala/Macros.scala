@@ -1,11 +1,12 @@
-package models
+package avro.provider
+
+import models._
 
 import scala.reflect.macros.Context
 import scala.language.experimental.macros
 import scala.annotation.StaticAnnotation
 
 import java.io.File
-import org.apache.avro.Schema
 
 
 object valProviderMacro {
@@ -15,22 +16,24 @@ object valProviderMacro {
     import c.universe._
     import Flag._
 
-    val infile = new File("enron_head.avro")
-    //val infile = new File("input.avro")
-    //val infile = new File("twitter.avro")
-
-    def getSchemaAsString(infile: java.io.File): String = {
-      val bufferedInfile = scala.io.Source.fromFile(infile, "iso-8859-1")
-      val parsable = new String(bufferedInfile.getLines.mkString.dropWhile(_ != '{').toCharArray)
-      val avroSchema = new Schema.Parser().parse(parsable)
-      avroSchema.toString
+    def boxTypeTrees(typeName: String) = {
+      val unboxedStrings = typeName.dropRight(typeName.count( c => c == ']')).split('[')
+      val types = unboxedStrings.map(g => newTypeName(g)).toList  
+      val typeTrees: List[Tree] = types.map(t => tq"$t")
+      typeTrees.reduceRight((a, b) => tq"$a[$b]")
     }
 
-    val jsonSchema: String = getSchemaAsString(infile)
+    val avroFilePath = c.prefix.tree match {
+      case Apply(_, List(Literal(Constant(x)))) => x.toString
+      case _ => c.abort(c.enclosingPosition, "annotation argument needs to be a constant") //due to Scala as of 2.10?
+    }
+
+    val infile = new File(avroFilePath)
+    val jsonSchema = SchemaString.getSchemaStringFromFile(infile)
 
     JSONParser.storeClassFields(jsonSchema)
 
-    val result = {
+    val result = { 
       annottees.map(_.tree).toList match {
 
         case q"$mods class $name[..$tparams](..$first)(...$rest) extends ..$parents { $self => ..$body }" :: Nil => {
@@ -45,7 +48,7 @@ object valProviderMacro {
                 if (field.fieldType.endsWith("]")) {
                   val box = newTypeName(field.fieldType.takeWhile(c => c != '['))
                   val boxed = newTypeName(DefaultParamMatcher.getBoxed(field.fieldType))
-                  val fieldTypeName = tq"$box[$boxed]"
+                  val fieldTypeName = boxTypeTrees(field.fieldType)
                   val defaultParam  = DefaultParamMatcher.asParameterizedDefaultParam(fieldTypeName.toString, c)
                   q"""$providerMods val $fieldTermName: $fieldTypeName = $defaultParam"""
                 }
@@ -68,6 +71,6 @@ object valProviderMacro {
 }
 
 
-class valProvider extends StaticAnnotation {
+class valProvider(inputPath: String) extends StaticAnnotation {
   def macroTransform(annottees: Any*) = macro valProviderMacro.impl
 }

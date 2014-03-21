@@ -1,3 +1,5 @@
+package avro.provider
+
 package models
 
 import org.json4s._
@@ -9,9 +11,10 @@ object JSONParser {
 
   def storeClassFields(jsonSchema: String) = {
 
-    for {
+    val oneMapPerClass = for {
       JObject(entry) <- parse(jsonSchema)
       val entryMap = entry.toMap
+
       if entryMap("type") == JString("record")
       JField("name", JString(name)) <- entry
       JField("fields", JArray(fieldList)) <- entry
@@ -76,8 +79,9 @@ object JSONParser {
           case x          => error("unsupported avro type")
         }}.toString
       } yield  FieldData(fieldName, fieldType)
-
       val set = ClassFieldStore.fields += (name -> fields)
     } yield Map(name -> fields)
+
+    oneMapPerClass.reduce(_ ++ _) //reduce into a single map of all the classes from a schema
   }
 }

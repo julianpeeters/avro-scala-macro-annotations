@@ -1,3 +1,5 @@
+package avro.provider
+
 package models
 
 import java.util.concurrent.ConcurrentHashMap

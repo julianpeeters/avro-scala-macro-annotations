@@ -1,27 +1,34 @@
+package avro.provider
+
+
 package models
 
-//@valProvider
+
+//import models._
+//@valProvider("data/twitter.avro")
 //case class twitter_schema
-/*
-@valProvider
+
+
+@valProvider("data/input.avro")
 case class rec
 
-@valProvider
+@valProvider("data/input.avro")
 case class MyRecord
-*/
-@valProvider
+
+  /*
+@valProvider("data/enron_head.avro")
 case class TUPLE_0
 
-@valProvider
+@valProvider("data/enron_head.avro")
 case class TUPLE_1
 
-@valProvider
+@valProvider("data/enron_head.avro")
 case class TUPLE_2
 
-@valProvider
+@valProvider("data/enron_head.avro")
 case class TUPLE_3
 
-@valProvider
+@valProvider("data/enron_head.avro")
 case class TUPLE_4
 
-
+*/
