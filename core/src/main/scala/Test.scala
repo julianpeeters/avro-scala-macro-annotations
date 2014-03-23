@@ -1,6 +1,5 @@
 //This code was adapted from the original example in the Macro Paradise plugin, and from the refletion docs at http://docs.scala-lang.org/overviews/reflection/overview.html
 
-package avro.annotations
 import avro.provider._
 import models._
 import com.novus.salat._
@@ -20,13 +19,13 @@ object Test extends App {
 
 //Test as a type parameter in Salat
   val myRecord =  MyRecord()
-println(myRecord)
+    println(myRecord)
   val dbo = grater[MyRecord].asDBObject(myRecord)
     println(dbo)
   val obj = grater[MyRecord].asObject(dbo)
     println(obj)
 
-  println(myRecord == obj)
+    println(myRecord == obj)
 
 
 //Test as type-parameter in Scalavro

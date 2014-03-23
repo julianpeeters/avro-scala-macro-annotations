@@ -7,7 +7,7 @@ import scala.language.experimental.macros
 import scala.annotation.StaticAnnotation
 
 import java.io.File
-
+import scala.reflect.runtime.{universe => ru}
 
 object valProviderMacro {
 
@@ -25,7 +25,7 @@ object valProviderMacro {
 
     val avroFilePath = c.prefix.tree match {
       case Apply(_, List(Literal(Constant(x)))) => x.toString
-      case _ => c.abort(c.enclosingPosition, "annotation argument needs to be a constant") //due to Scala as of 2.10?
+      case _ => c.abort(c.enclosingPosition, "file path not found, annotations argument must be a constant")
     }
 
     val infile = new File(avroFilePath)
@@ -38,7 +38,7 @@ object valProviderMacro {
 
         case q"$mods class $name[..$tparams](..$first)(...$rest) extends ..$parents { $self => ..$body }" :: Nil => {
           val className = name.toString 
-          val classFields = {           //prep each field to be spliced as a list of ValDefs
+          val classFields = { //prep each field to be spliced as a list of ValDefs
             if ( ClassFieldStore.fields.get(className).isDefined ) { 
               ClassFieldStore.fields.get(className).get.map(field => {
                 val providerMods  = Modifiers(DEFAULTPARAM)

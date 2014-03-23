@@ -3,7 +3,6 @@ package avro.provider
 
 package models
 
-
 //import models._
 //@valProvider("data/twitter.avro")
 //case class twitter_schema
@@ -32,3 +31,5 @@ case class TUPLE_3
 case class TUPLE_4
 
 */
+
+
