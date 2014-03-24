@@ -9,7 +9,7 @@ import scala.annotation.StaticAnnotation
 import java.io.File
 import scala.reflect.runtime.{universe => ru}
 
-object valProviderMacro {
+object AvroTypeProviderMacro {
 
   def impl(c: Context)(annottees: c.Expr[Any]*): c.Expr[Any] = {
 
@@ -24,7 +24,7 @@ object valProviderMacro {
     val infile = new File(avroFilePath)
     val jsonSchema = SchemaString.getSchemaStringFromFile(infile)
 
-    JSONParser.storeClassFields(jsonSchema)
+    JSONParser.storeClassFields(jsonSchema) //parses avro schema and stores record info into ClassFieldStore
 
     val result = { 
       annottees.map(_.tree).toList match {
@@ -36,9 +36,6 @@ object valProviderMacro {
                                                                          
               ClassFieldStore.fields.get(name.toString).get.map(field => { 
 
-                val providerMods  = Modifiers(DEFAULTPARAM)
-                val fieldTermName = newTermName(field.fieldName)
-
                 def boxTypeTrees(typeName: String) = {
                   val unboxedStrings = typeName.dropRight(typeName.count( c => c == ']')).split('[')
                   val types = unboxedStrings.map(g => newTypeName(g)).toList  
@@ -49,14 +46,16 @@ object valProviderMacro {
                 if (field.fieldType.endsWith("]")) { //if the field is a parameterized type
                   val box = newTypeName(field.fieldType.takeWhile(c => c != '['))
                   val boxed = newTypeName(DefaultParamMatcher.getBoxed(field.fieldType))
+                  val fieldTermName = newTermName(field.fieldName)
                   val fieldTypeName = boxTypeTrees(field.fieldType)
                   val defaultParam  = DefaultParamMatcher.asParameterizedDefaultParam(fieldTypeName.toString, c)
-                  q"""$providerMods val $fieldTermName: $fieldTypeName = $defaultParam"""
+                  q"""val $fieldTermName: $fieldTypeName = $defaultParam"""
                 }
                 else {
+                  val fieldTermName = newTermName(field.fieldName)
                   val fieldTypeName = newTypeName(field.fieldType)
                   val defaultParam  = DefaultParamMatcher.asDefaultParam(fieldTypeName.toString, c)
-                  q"""$providerMods val $fieldTermName: $fieldTypeName = $defaultParam"""
+                  q"""val $fieldTermName: $fieldTypeName = $defaultParam"""
                 }
               })
             }
@@ -72,7 +71,6 @@ object valProviderMacro {
   }
 }
 
-
-class valProvider(inputPath: String) extends StaticAnnotation {
-  def macroTransform(annottees: Any*) = macro valProviderMacro.impl
+class AvroTypeProvider(inputPath: String) extends StaticAnnotation {
+  def macroTransform(annottees: Any*) = macro AvroTypeProviderMacro.impl
 }
