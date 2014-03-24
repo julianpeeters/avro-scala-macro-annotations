@@ -6,7 +6,7 @@ import scala.reflect.macros.Context
 
 object ApplyMatcher {
 
-  def getApplyParams(typeName: String, c: Context) = {
+  def getApplyParams(typeName: String, c: Context): List[c.universe.Literal] = {
     import c.universe._
     import Flag._
 
@@ -24,10 +24,10 @@ object ApplyMatcher {
     }
 
     if (ClassFieldStore.fields.get(typeName).isDefined) {
-      ClassFieldStore.fields.get(typeName).get.map(f => {
-        if (f.fieldType.endsWith("]"))  DefaultParamMatcher.asParameterizedDefaultParam(f.fieldType, c)
-        else  scalaTypeToLiteral(f.fieldType)
-      })
+      ClassFieldStore.fields.get(typeName).get.map(field => {
+        if (field.fieldType.endsWith("]"))  newTypeName(field.fieldType)//DefaultParamMatcher.asParameterizedDefaultParam(field.fieldType, c)
+        else  scalaTypeToLiteral(field.fieldType)
+      }).asInstanceOf[List[c.universe.Literal]]
     }
     else List(scalaTypeToLiteral(typeName))
   }

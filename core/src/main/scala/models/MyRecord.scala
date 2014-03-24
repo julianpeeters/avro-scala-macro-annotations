@@ -3,10 +3,10 @@ package avro.provider
 
 package models
 
-//import models._
-//@valProvider("data/twitter.avro")
-//case class twitter_schema
-
+/*
+@valProvider("data/twitter.avro")
+case class twitter_schema
+*/
 
 @valProvider("data/input.avro")
 case class rec
@@ -14,7 +14,7 @@ case class rec
 @valProvider("data/input.avro")
 case class MyRecord
 
-  /*
+/*
 @valProvider("data/enron_head.avro")
 case class TUPLE_0
 
@@ -29,7 +29,6 @@ case class TUPLE_3
 
 @valProvider("data/enron_head.avro")
 case class TUPLE_4
-
 */
 
 
