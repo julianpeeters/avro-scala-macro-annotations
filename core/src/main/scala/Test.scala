@@ -17,19 +17,19 @@ import scala.tools.scalap.scalax.rules.scalasig._
 object Test extends App {
 
 
-//Test as a type parameter in Salat
-  val myRecord =  MyRecord()
+//Test as a type parameter in Salat (Salat serialization of Option[List[_]] not supported)
+  val myRecord =  TUPLE_0()
     println(myRecord)
-  val dbo = grater[MyRecord].asDBObject(myRecord)
-    println(dbo)
-  val obj = grater[MyRecord].asObject(dbo)
-    println(obj)
+ // val dbo = grater[TUPLE_0].asDBObject(myRecord)
+ //   println(dbo)
+ // val obj = grater[TUPLE_0].asObject(dbo)
+ //   println(obj)
 
-    println(myRecord == obj)
+ //   println(myRecord == obj)
 
 
 //Test as type-parameter in Scalavro
-  val myRecordType = AvroType[MyRecord]
+  val myRecordType = AvroType[TUPLE_0]
     println("schema: " + myRecordType.schema)
 }
 

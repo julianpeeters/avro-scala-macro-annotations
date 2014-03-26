@@ -7,7 +7,6 @@ import scala.language.experimental.macros
 import scala.annotation.StaticAnnotation
 
 import java.io.File
-import scala.reflect.runtime.{universe => ru}
 
 object AvroTypeProviderMacro {
 
@@ -22,9 +21,9 @@ object AvroTypeProviderMacro {
     }
 
     val infile = new File(avroFilePath)
-    val jsonSchema = SchemaString.getSchemaStringFromFile(infile)
+    val schema = AvroSchema.getSchemaFromFile(infile)
 
-    JSONParser.storeClassFields(jsonSchema) //parses avro schema and stores record info into ClassFieldStore
+    ClassFieldStore.storeClassFields(schema)
 
     val result = { 
       annottees.map(_.tree).toList match {
@@ -61,7 +60,7 @@ object AvroTypeProviderMacro {
             }
             else error("No entry found in the ClassFieldStore for this class. Perhaps class and record names do not correspond.")
           }
-
+          //Here's the updated class def:
           q"$mods class $name[..$tparams](..$newFields)(...$rest) extends ..$parents { $self => ..$body }"
         }
       }

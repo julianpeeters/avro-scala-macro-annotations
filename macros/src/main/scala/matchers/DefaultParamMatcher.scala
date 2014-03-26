@@ -29,10 +29,10 @@ object DefaultParamMatcher {
     import Flag._
 
     fieldTypeName match {
-      case  l: String if l.startsWith("List[")   => q"""List(${asParameterizedDefaultParam(getBoxed(l), c)})"""
+      case  l: String if l.startsWith("List[")   =>  q"""List(${asParameterizedDefaultParam(getBoxed(l), c)})"""
       case  o: String if o.startsWith("Option[") => { 
-        if(getBoxed(o).endsWith("]"))  q"""Some(${asParameterizedDefaultParam(getBoxed(o), c)})"""
-        else   q"""Some(${asDefaultParam(getBoxed(o), c)})"""
+        if(getBoxed(o).endsWith("]")) q"""Some(${asParameterizedDefaultParam(getBoxed(o), c)})"""
+        else q"""Some(${asDefaultParam(getBoxed(o), c)})"""
       }
       case _ => error("not a parameterized type")
     }

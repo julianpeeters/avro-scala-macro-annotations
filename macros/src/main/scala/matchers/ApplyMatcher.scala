@@ -25,7 +25,7 @@ object ApplyMatcher {
 
     if (ClassFieldStore.fields.get(typeName).isDefined) {
       ClassFieldStore.fields.get(typeName).get.map(field => {
-        if (field.fieldType.endsWith("]"))  newTypeName(field.fieldType)//DefaultParamMatcher.asParameterizedDefaultParam(field.fieldType, c)
+        if (field.fieldType.endsWith("]")) DefaultParamMatcher.asParameterizedDefaultParam(field.fieldType, c)
         else  scalaTypeToLiteral(field.fieldType)
       }).asInstanceOf[List[c.universe.Literal]]
     }
