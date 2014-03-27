@@ -20,7 +20,12 @@ import TDsl._
 
 
 @AvroTypeProvider("data/input.avro")
-class WordCountJob(args : Args) extends Job(args) {
+case class MyRecord
+@AvroTypeProvider("data/input.avro")
+case class rec
+
+
+class WordCountJob(args : Args) extends Job(args) { println(MyRecord())
   TypedTsv[String]("data/grimm.txt")
     .filter(s => s != null && s.length > 0)
     .flatMap(tokenize)

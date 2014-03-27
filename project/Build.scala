@@ -66,10 +66,13 @@ object MyBuild extends Build {
         Libraries.scaldingCore,
         Libraries.scaldingAvro,
         Libraries.hadoopCore,
-        Libraries.specs2
+        Libraries.specs2,
         // Add your additional libraries here (comma-separated)...
-      )
-    ) dependsOn(macros) settings(
+        "org.scalamacros" % "quasiquotes" % "2.0.0-M4" cross CrossVersion.full)
+    
+     )
+     .settings(addCompilerPlugin("org.scalamacros" % "paradise" % "2.0.0-M4" cross CrossVersion.full)
+     ) dependsOn(macros) settings(
    // include the macro classes and resources in the main jar
    mappings in (Compile, packageBin) ++= mappings.in(macros, Compile, packageBin).value,
    // include the macro sources in the main source jar
