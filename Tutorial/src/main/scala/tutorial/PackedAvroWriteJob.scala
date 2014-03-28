@@ -12,14 +12,20 @@
  */
 package tutorial
 
+
+import avro.provider._
 import com.twitter.scalding._
 import com.twitter.scalding.avro.{PackedAvroSource, UnpackedAvroSource}
+import TDsl._
 
 import org.apache.avro.Schema
 import org.apache.avro.specific.{SpecificRecord, SpecificRecordBase}
 
-import TDsl._
+import scala.reflect.runtime.{universe => ru}
 
+
+@AvroRecord
+case class MyTwitter_Schema(var username: String, var tweet: String, var timestamp: Long) 
 
 case class Twitter_Schema(var username: String, var tweet: String, var timestamp: Long) extends SpecificRecordBase with SpecificRecord {
 
@@ -52,6 +58,8 @@ case class Twitter_Schema(var username: String, var tweet: String, var timestamp
  *
  */
 class PackedAvroWriteJob(args: Args) extends Job(args) {
+
+println(ru.typeOf[MyTwitter_Schema].members)
 
   /**
    * Dummy data
