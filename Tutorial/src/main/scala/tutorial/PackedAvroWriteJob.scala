@@ -18,6 +18,8 @@ import com.twitter.scalding._
 import com.twitter.scalding.avro.{PackedAvroSource, UnpackedAvroSource}
 import TDsl._
 
+import com.gensler.scalavro.types._
+
 import org.apache.avro.Schema
 import org.apache.avro.specific.{SpecificRecord, SpecificRecordBase}
 
@@ -32,17 +34,13 @@ case class Twitter_Schema(var username: String, var tweet: String, var timestamp
   def this() = this("","", 0L)
 
 
-  def getSchema: Schema = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"twitter_schema\",\"namespace\":\"com.miguno.avro\",\"fields\":[{\"name\":\"username\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"doc\":\"Name of the user account on Twitter.com\"},{\"name\":\"tweet\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"doc\":\"The content of the user's Twitter message\"},{\"name\":\"timestamp\",\"type\":\"long\",\"doc\":\"Unix epoch time in seconds\"}],\"doc:\":\"A basic schema for storing Twitter messages\"}")//new Schema.Parser().parse(AvroType[Person].schema.toString)
+//The methods getSchema, get, and put were adapted from https://github.com/scalding-io/ProgrammingMapReduceWithScalding/blob/master/chapter3/src/main/scala/AvroExample.scala by @antwnis
+  //def getSchema: Schema = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"twitter_schema\",\"namespace\":\"com.miguno.avro\",\"fields\":[{\"name\":\"username\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"doc\":\"Name of the user account on Twitter.com\"},{\"name\":\"tweet\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"doc\":\"The content of the user's Twitter message\"},{\"name\":\"timestamp\",\"type\":\"long\",\"doc\":\"Unix epoch time in seconds\"}],\"doc:\":\"A basic schema for storing Twitter messages\"}")//
+  def getSchema: Schema = new Schema.Parser().parse(AvroType[Twitter_Schema].schema.toString)
 
-  def get(field: Int): AnyRef = {
-    if (field == 1)
-      username
-    if (field == 2)
-      tweet
-    else
-      timestamp
-  val fields = this.getClass.getDeclaredFields()
-  fields(field).get(this)
+  def get(field: Int): AnyRef = { 
+    val fields = this.getClass.getDeclaredFields()
+    fields(field).get(this)
   }
 
   def put(field: Int, value: scala.Any) = {
