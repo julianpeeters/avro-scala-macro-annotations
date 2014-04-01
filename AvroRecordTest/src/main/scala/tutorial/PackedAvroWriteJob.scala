@@ -12,7 +12,6 @@
  */
 package tutorial
 
-
 import com.julianpeeters.avro.annotations._
 import com.twitter.scalding._
 import com.twitter.scalding.avro.{PackedAvroSource, UnpackedAvroSource}
@@ -23,26 +22,15 @@ import com.gensler.scalavro.types._
 import org.apache.avro.Schema
 import org.apache.avro.specific.{SpecificRecord, SpecificRecordBase}
 
-import scala.reflect.runtime.{universe => ru}
-
-import scala.reflect.BeanProperty
-
-
 
 @AvroRecord
 case class Twitter_Schema(var username: String, var tweet: String, var timestamp: Long) 
-case class MyTwitter_Schema(var username: String, var tweet: String, var timestamp: Long) 
-
-
 
 /**
  * hadoop jar chapter3-0-jar-with-dependencies.jar com.twitter.scalding.Tool -Dmapred.output.compress=true AvroExample --hdfs
  *
  */
 class PackedAvroWriteJob(args: Args) extends Job(args) {
-
-println("members of Twitter_Schema: " + ru.typeOf[Twitter_Schema].members)
-println("members of MyTwitter_Schema: " + ru.typeOf[MyTwitter_Schema].members)
 
   /**
    * Dummy data
