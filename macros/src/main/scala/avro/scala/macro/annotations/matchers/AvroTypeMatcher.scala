@@ -1,7 +1,8 @@
-package avro.provider
+package com.julianpeeters.avro.annotations
+package matchers
 
-package models
-
+import models.FieldData
+import store.ClassFieldStore
 import org.apache.avro.Schema
 import scala.collection.JavaConversions._
 

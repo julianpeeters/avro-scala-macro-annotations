@@ -1,4 +1,4 @@
-package avro.provider
+package com.julianpeeters.avro.annotations
 
 package models
 

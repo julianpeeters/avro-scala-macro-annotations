@@ -1,7 +1,7 @@
-package avro.provider
+package com.julianpeeters.avro.annotations
+package matchers
 
-package models
-
+import store.ClassFieldStore
 import scala.reflect.macros.Context
 
 object ApplyMatcher {

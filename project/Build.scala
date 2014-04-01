@@ -32,10 +32,10 @@ object MyBuild extends Build {
     "avro-scala-macro-annotations",
     file("."),
     settings = buildSettings ++ Seq(
-      run <<= run in Compile in core,
-      run <<= run in Compile in Tutorial
+      run <<= run in Compile in AvroTypeProviderTest
+      //run <<= run in Compile in AvroRecordTest
     )
-  ) aggregate(macros, core, Tutorial)
+  ) aggregate(macros, AvroTypeProviderTest, AvroRecordTest)
 
   lazy val macros: Project = Project(
     "macros",
@@ -44,9 +44,9 @@ object MyBuild extends Build {
       libraryDependencies <+= (scalaVersion)("org.scala-lang" % "scala-reflect" % _))
   )
 
-  lazy val core: Project = Project(
-    "core",
-    file("core"),
+  lazy val AvroTypeProviderTest: Project = Project(
+    "AvroTypeProviderTest",
+    file("AvroTypeProviderTest"),
     settings = buildSettings ++ Seq(
       libraryDependencies ++=   Seq(
         "com.novus" %% "salat" % "1.9.7-SNAPSHOT"))
@@ -59,11 +59,11 @@ object MyBuild extends Build {
 
 
   /*
-  *Tutorials project build def was added to the macros build, and could probably be "re-styled" to integrate more cleanly
+  *AvroRecordTests project build def was added to the macros build, and could probably be "re-styled" to integrate more cleanly
   */
-  lazy val Tutorial: Project = Project(
-    "Tutorial",
-    file("Tutorial"))
+  lazy val AvroRecordTest: Project = Project(
+    "AvroRecordTest",
+    file("AvroRecordTest"))
     .settings(ScaldingBuildSettings.buildSettings: _*)
     .settings(
       libraryDependencies ++= Seq(

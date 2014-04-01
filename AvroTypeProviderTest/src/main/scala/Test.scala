@@ -1,6 +1,6 @@
 //This code was adapted from the original example in the Macro Paradise plugin, and from the refletion docs at http://docs.scala-lang.org/overviews/reflection/overview.html
 
-import avro.provider._
+//import com.julianpeeters.avro.annotations._
 import models._
 import com.novus.salat._
 import com.novus.salat.global._
@@ -18,7 +18,7 @@ object Test extends App {
 
 
 //Test as a type parameter in Salat (Salat serialization of Option[List[_]] not supported)
-  val myRecord =  TUPLE_0()
+  val myRecord = TUPLE_0()
     println(myRecord)
  // val dbo = grater[TUPLE_0].asDBObject(myRecord)
  //   println(dbo)

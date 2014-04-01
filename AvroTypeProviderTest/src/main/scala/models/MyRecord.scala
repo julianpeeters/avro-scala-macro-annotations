@@ -1,8 +1,8 @@
-package avro.provider
+
 
 
 package models
-
+import com.julianpeeters.avro.annotations._
 
 //@AvroTypeProvider("data/twitter.avro")
 // class twitter_schema

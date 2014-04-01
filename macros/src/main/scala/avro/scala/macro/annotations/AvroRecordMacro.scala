@@ -1,6 +1,4 @@
-package avro.provider
-
-import models._
+package com.julianpeeters.avro.annotations
 
 import scala.reflect.macros.Context
 import scala.language.experimental.macros
@@ -23,10 +21,6 @@ object AvroRecordMacro {
       annottees.map(_.tree).toList match {
 
         case q"$mods class $name[..$tparams](..$first)(...$rest) extends ..$parents { $self => ..$body }" :: Nil => {
-println(rest)
-//println(c.eval(body))
-//body.map(x => x match {case y=> println(y)})
-println(mods)
 
           //Extender
           val baseClasses = List( tq"SpecificRecordBase", tq"SpecificRecord" )

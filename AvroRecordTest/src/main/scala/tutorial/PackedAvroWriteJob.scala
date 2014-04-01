@@ -13,7 +13,7 @@
 package tutorial
 
 
-import avro.provider._
+import com.julianpeeters.avro.annotations._
 import com.twitter.scalding._
 import com.twitter.scalding.avro.{PackedAvroSource, UnpackedAvroSource}
 import TDsl._
@@ -31,6 +31,7 @@ import scala.reflect.BeanProperty
 
 @AvroRecord
 case class Twitter_Schema(var username: String, var tweet: String, var timestamp: Long) 
+case class MyTwitter_Schema(var username: String, var tweet: String, var timestamp: Long) 
 
 
 
@@ -41,6 +42,7 @@ case class Twitter_Schema(var username: String, var tweet: String, var timestamp
 class PackedAvroWriteJob(args: Args) extends Job(args) {
 
 println("members of Twitter_Schema: " + ru.typeOf[Twitter_Schema].members)
+println("members of MyTwitter_Schema: " + ru.typeOf[MyTwitter_Schema].members)
 
   /**
    * Dummy data

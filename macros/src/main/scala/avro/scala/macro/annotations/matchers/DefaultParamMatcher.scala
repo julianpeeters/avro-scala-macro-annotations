@@ -1,6 +1,5 @@
-package avro.provider
-
-package models
+package com.julianpeeters.avro.annotations
+package matchers
 
 import scala.reflect.macros.Context
 
@@ -21,7 +20,6 @@ object DefaultParamMatcher {
       case x         => q"""${newTermName(x)}(..${ApplyMatcher.getApplyParams(x, c)})"""
     }
   }
-
 
   def asParameterizedDefaultParam(fieldTypeName: String, c: Context) : c.Tree = {
     import c.universe._

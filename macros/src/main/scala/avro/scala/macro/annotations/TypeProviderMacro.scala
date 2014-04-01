@@ -1,0 +1,53 @@
+package com.julianpeeters.avro.annotations
+
+import util._
+import store.ClassFieldStore
+
+import scala.reflect.macros.Context
+import scala.language.experimental.macros
+import scala.annotation.StaticAnnotation
+
+import java.io.File
+
+object AvroTypeProviderMacro {
+
+  def impl(c: Context)(annottees: c.Expr[Any]*): c.Expr[Any] = {
+
+    import c.universe._
+    import Flag._
+
+    val avroFilePath = c.prefix.tree match {
+      case Apply(_, List(Literal(Constant(x)))) => x.toString
+      case _ => c.abort(c.enclosingPosition, "file path not found, annotations argument must be a constant")
+    }
+
+    val infile = new File(avroFilePath)
+    val schema = SchemaParser.getSchemaFromFile(infile)
+
+    ClassFieldStore.storeClassFields(schema)
+
+    val result = { 
+      annottees.map(_.tree).toList match {
+
+        case q"$mods class $name[..$tparams](..$first)(...$rest) extends ..$parents { $self => ..$body }" :: Nil => {
+          val newFields: List[c.Tree] = {      
+            //Prep each field for splicing. If there is an entry for an annotee, get the fields and map each to a quasiquote
+            if ( ClassFieldStore.fields.get(name.toString).isDefined ) { 
+              ClassFieldStore.fields.get(name.toString).get.map( field => Quasiquoter.quotifyField(field, c) ) 
+            }
+            else error("No entry found in the ClassFieldStore for this class. Perhaps class and record names do not correspond.")
+          }
+
+          //Here's the updated class def:
+          q"$mods class $name[..$tparams](..$newFields)(...$rest) extends ..$parents { $self => ..$body }"
+        }
+      }
+    }
+
+    c.Expr[Any](result)
+  }
+}
+
+class AvroTypeProvider(inputPath: String) extends StaticAnnotation {
+  def macroTransform(annottees: Any*) = macro AvroTypeProviderMacro.impl
+}
