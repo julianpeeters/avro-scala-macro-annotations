@@ -1,6 +1,6 @@
 package com.julianpeeters.avro.annotations
 
-import util._
+import provider._
 import store.ClassFieldStore
 
 import scala.reflect.macros.Context

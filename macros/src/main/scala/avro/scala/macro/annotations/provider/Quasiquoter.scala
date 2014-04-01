@@ -1,5 +1,5 @@
 package com.julianpeeters.avro.annotations
-package util
+package provider
 
 import models.FieldData
 import matchers.DefaultParamMatcher

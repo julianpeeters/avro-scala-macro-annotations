@@ -1,4 +1,5 @@
 package com.julianpeeters.avro.annotations
+package provider
 
 import org.apache.avro.Schema
 

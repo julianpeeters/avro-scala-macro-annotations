@@ -32,8 +32,8 @@ object MyBuild extends Build {
     "avro-scala-macro-annotations",
     file("."),
     settings = buildSettings ++ Seq(
-      run <<= run in Compile in AvroTypeProviderTest
-      //run <<= run in Compile in AvroRecordTest
+     // run <<= run in Compile in AvroTypeProviderTest
+      run <<= run in Compile in AvroRecordTest
     )
   ) aggregate(macros, AvroTypeProviderTest, AvroRecordTest)
 
