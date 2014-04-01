@@ -3,7 +3,6 @@ package avro.provider
 package models
 
 import scala.reflect.macros.Context
-import scala.quasiquotes.RuntimeLiftables._
 
 object DefaultParamMatcher {
 

@@ -25,30 +25,13 @@ import org.apache.avro.specific.{SpecificRecord, SpecificRecordBase}
 
 import scala.reflect.runtime.{universe => ru}
 
+import scala.reflect.BeanProperty
+
+
 
 @AvroRecord
-case class MyTwitter_Schema(var username: String, var tweet: String, var timestamp: Long) 
+case class Twitter_Schema(var username: String, var tweet: String, var timestamp: Long) 
 
-case class Twitter_Schema(var username: String, var tweet: String, var timestamp: Long) extends SpecificRecordBase with SpecificRecord {
-
-  def this() = this("","", 0L)
-
-
-//The methods getSchema, get, and put were adapted from https://github.com/scalding-io/ProgrammingMapReduceWithScalding/blob/master/chapter3/src/main/scala/AvroExample.scala by @antwnis
-  //def getSchema: Schema = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"twitter_schema\",\"namespace\":\"com.miguno.avro\",\"fields\":[{\"name\":\"username\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"doc\":\"Name of the user account on Twitter.com\"},{\"name\":\"tweet\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"doc\":\"The content of the user's Twitter message\"},{\"name\":\"timestamp\",\"type\":\"long\",\"doc\":\"Unix epoch time in seconds\"}],\"doc:\":\"A basic schema for storing Twitter messages\"}")//
-  def getSchema: Schema = new Schema.Parser().parse(AvroType[Twitter_Schema].schema.toString)
-
-  def get(field: Int): AnyRef = { 
-    val fields = this.getClass.getDeclaredFields()
-    fields(field).get(this)
-  }
-
-  def put(field: Int, value: scala.Any) = {
-    val fields = (this.getClass.getDeclaredFields())
-    fields(field).set(this,value)
-  }
-
-}
 
 
 /**
@@ -57,7 +40,7 @@ case class Twitter_Schema(var username: String, var tweet: String, var timestamp
  */
 class PackedAvroWriteJob(args: Args) extends Job(args) {
 
-println(ru.typeOf[MyTwitter_Schema].members)
+println("members of Twitter_Schema: " + ru.typeOf[Twitter_Schema].members)
 
   /**
    * Dummy data

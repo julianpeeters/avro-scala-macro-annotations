@@ -13,9 +13,9 @@ object BuildSettings {
     libraryDependencies += "com.gensler" %% "scalavro" % "0.4.0",
     libraryDependencies += "org.json4s" %% "json4s-native" % "3.2.6",
     libraryDependencies += "org.specs2" %% "specs2" % "2.2" % "test",
-    libraryDependencies += "com.novus" %% "salat" % "1.9.6-SNAPSHOT" % "test",
-    libraryDependencies += "org.scalamacros" % "quasiquotes" % "2.0.0-M4" cross CrossVersion.full,
-    addCompilerPlugin("org.scalamacros" % "paradise" % "2.0.0-M4" cross CrossVersion.full)
+    libraryDependencies += "com.novus" %% "salat" % "1.9.7-SNAPSHOT" % "test",
+    libraryDependencies += "org.scalamacros" % "quasiquotes" % "2.0.0-M6" cross CrossVersion.full,
+    addCompilerPlugin("org.scalamacros" % "paradise" % "2.0.0-M6" cross CrossVersion.full)
   )
 }
 
@@ -49,7 +49,7 @@ object MyBuild extends Build {
     file("core"),
     settings = buildSettings ++ Seq(
       libraryDependencies ++=   Seq(
-        "com.novus" %% "salat" % "1.9.6-SNAPSHOT"))
+        "com.novus" %% "salat" % "1.9.7-SNAPSHOT"))
   ) dependsOn(macros) settings(
    // include the macro classes and resources in the main jar
    mappings in (Compile, packageBin) ++= mappings.in(macros, Compile, packageBin).value,
@@ -57,6 +57,10 @@ object MyBuild extends Build {
    mappings in (Compile, packageSrc) ++= mappings.in(macros, Compile, packageSrc).value
   )
 
+
+  /*
+  *Tutorials project build def was added to the macros build, and could probably be "re-styled" to integrate more cleanly
+  */
   lazy val Tutorial: Project = Project(
     "Tutorial",
     file("Tutorial"))
@@ -68,10 +72,10 @@ object MyBuild extends Build {
         Libraries.hadoopCore,
         Libraries.specs2,
         // Add your additional libraries here (comma-separated)...
-        "org.scalamacros" % "quasiquotes" % "2.0.0-M4" cross CrossVersion.full)
+        "org.scalamacros" % "quasiquotes" % "2.0.0-M6" cross CrossVersion.full)
     
      )
-     .settings(addCompilerPlugin("org.scalamacros" % "paradise" % "2.0.0-M4" cross CrossVersion.full)
+     .settings(addCompilerPlugin("org.scalamacros" % "paradise" % "2.0.0-M6" cross CrossVersion.full)
      ) dependsOn(macros) settings(
    // include the macro classes and resources in the main jar
    mappings in (Compile, packageBin) ++= mappings.in(macros, Compile, packageBin).value,
