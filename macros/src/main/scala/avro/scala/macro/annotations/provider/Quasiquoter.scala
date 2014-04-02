@@ -29,7 +29,7 @@ object Quasiquoter {
       val defaultParam  = DefaultParamMatcher.asParameterizedDefaultParam(fieldTypeName.toString, c)
       q"""val $fieldTermName: $fieldTypeName = $defaultParam"""
     }
-    else {
+    else { //if the field is a type that doesn't take type parameters
       val fieldTermName = newTermName(field.fieldName)
       val fieldTypeName = newTypeName(field.fieldType)
       val defaultParam  = DefaultParamMatcher.asDefaultParam(fieldTypeName.toString, c)

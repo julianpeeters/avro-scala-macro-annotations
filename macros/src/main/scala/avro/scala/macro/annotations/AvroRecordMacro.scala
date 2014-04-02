@@ -22,9 +22,15 @@ object AvroRecordMacro {
 
         case q"$mods class $name[..$tparams](..$first)(...$rest) extends ..$parents { $self => ..$body }" :: Nil => {
 println(first)
-          val newCtors = CtorGen.generateNewCtors(c)                     //a no-arge ctor so `newInstance()` can be used
-          val newDefs = MethodGen.generateNewMethods(c)                  //`get`, `put`, and `getSchema` methods 
-          val newBody = body ::: newCtors ::: newDefs                    //add new members to the body 
+first.map(_.tpe).foreach(println)
+first.map(_.name).foreach(println)
+first.map(_.symbol).foreach(println)
+first.map(_.freeTypes).foreach(println)
+first.map(_.tpt).foreach(println)
+          val typeNames   = first.map(_.tpt.toString)                    //list of types (Strings to reuse a JSON parsing tool)
+          val newCtors    = CtorGen.generateNewCtors(typeNames, c)       //a no-arge ctor so `newInstance()` can be used
+          val newDefs     = MethodGen.generateNewMethods(c)              //`get`, `put`, and `getSchema` methods 
+          val newBody     = body ::: newCtors ::: newDefs                //add new members to the body 
           val newParents  = parents ::: Extender.generateNewBaseTypes(c) //extend SpecificRecord and SpecificRecordBase
           
           //return an updated class def

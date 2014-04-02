@@ -8,7 +8,7 @@ import scala.reflect.macros.Context
 
 object ApplyParamMatcher {
 
-  def getApplyParams(typeName: String, c: Context): List[c.universe.Literal] = {
+  def getApplyParams(typeName: String, c: Context): List[c.universe.Tree] = {
     import c.universe._
     import Flag._
 
@@ -22,7 +22,7 @@ object ApplyParamMatcher {
     * map each field to a its apply parameter, giving a list of q"Literals".
     */
     if (ClassFieldStore.fields.get(typeName).isDefined) {
-      ClassFieldStore.fields.get(typeName).get.map(field => asApplyParam(field, c)).asInstanceOf[List[c.universe.Literal]]
+      ClassFieldStore.fields.get(typeName).get.map(field => asApplyParam(field, c))
     }
     else error("uh oh, didn't find a class corresponding to that type name in the ClassFieldStore")
   }
