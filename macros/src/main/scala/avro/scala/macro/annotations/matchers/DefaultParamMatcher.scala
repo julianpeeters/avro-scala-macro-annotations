@@ -17,7 +17,7 @@ object DefaultParamMatcher {
       case "Float"   => q"1F"
       case "Double"  => q"1D"
       case "String"  => q""" "" """
-      case x         => q"""${newTermName(x)}(..${ApplyMatcher.getApplyParams(x, c)})"""
+      case x         => q"""${newTermName(x)}(..${ApplyParamMatcher.getApplyParams(x, c)})"""
     }
   }
 
@@ -26,12 +26,21 @@ object DefaultParamMatcher {
     import Flag._
 
     fieldTypeName match {
-      case  l: String if l.startsWith("List[")   =>  q"""List(${asParameterizedDefaultParam(getBoxed(l), c)})"""
+      //List
+      case  l: String if l.startsWith("List[") => {
+        if (getBoxed(l).endsWith("]")) q"""List(${asParameterizedDefaultParam(getBoxed(l), c)})"""
+        else q"""List(${asDefaultParam(getBoxed(l), c)})"""
+      }
+      //Option
       case  o: String if o.startsWith("Option[") => { 
         if(getBoxed(o).endsWith("]")) q"""Some(${asParameterizedDefaultParam(getBoxed(o), c)})"""
         else q"""Some(${asDefaultParam(getBoxed(o), c)})"""
       }
-      case _ => error("not a parameterized type")
+      //User-Defined
+      case  x: String if x.startsWith(x + "[") => { 
+        if(getBoxed(x).endsWith("]")) q"""${newTermName(x)}(${asParameterizedDefaultParam(getBoxed(x), c)})"""
+        else q"""${newTermName(x)}(${asDefaultParam(getBoxed(x), c)})"""
+      }
     }
   }
 

@@ -30,8 +30,8 @@ object AvroTypeProviderMacro {
       annottees.map(_.tree).toList match {
 
         case q"$mods class $name[..$tparams](..$first)(...$rest) extends ..$parents { $self => ..$body }" :: Nil => {
-          val newFields: List[c.Tree] = {      
-            //Prep each field for splicing. If there is an entry for an annotee, get the fields and map each to a quasiquote
+
+          val newFields: List[c.Tree] = {//Prep fields for splicing by getting fields and mapping each to a quasiquote
             if ( ClassFieldStore.fields.get(name.toString).isDefined ) { 
               ClassFieldStore.fields.get(name.toString).get.map( field => Quasiquoter.quotifyField(field, c) ) 
             }

@@ -10,11 +10,13 @@ import scala.language.experimental.macros
 
 object Quasiquoter {
 
+  //wraps a single field in a quasiquote
   def quotifyField(field: FieldData, c: Context) = { 
     import c.universe._
     import Flag._
 
-    def boxTypeTrees(typeName: String) = {
+
+    def boxTypeTrees(typeName: String) = {//"boxing" in this case is wrapping the string in [] so it looks correct for splicing
       val unboxedStrings = typeName.dropRight(typeName.count( c => c == ']')).split('[')
       val types = unboxedStrings.map(g => newTypeName(g)).toList  
       val typeTrees: List[Tree] = types.map(t => tq"$t")
@@ -22,8 +24,6 @@ object Quasiquoter {
     }
 
     if (field.fieldType.endsWith("]")) { //if the field is a parameterized type
-      val box = newTypeName(field.fieldType.takeWhile(c => c != '['))
-      val boxed = newTypeName(DefaultParamMatcher.getBoxed(field.fieldType))
       val fieldTermName = newTermName(field.fieldName)
       val fieldTypeName = boxTypeTrees(field.fieldType)
       val defaultParam  = DefaultParamMatcher.asParameterizedDefaultParam(fieldTypeName.toString, c)

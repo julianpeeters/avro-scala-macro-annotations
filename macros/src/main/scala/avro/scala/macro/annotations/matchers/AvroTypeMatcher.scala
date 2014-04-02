@@ -23,11 +23,13 @@ object AvroTypeMatcher {
         //case Schema.Type.MAP      => //TODO
         case Schema.Type.NULL     => "Null"
         case Schema.Type.RECORD   => { 
+
           field.schema.getName match {
             //cases where a record is found as a field vs found as a member of a union
             case "union"    => ClassFieldStore.storeClassFields(schema);       schema.getName
             case recordName => ClassFieldStore.storeClassFields(field.schema); recordName 
           }
+
         }
         case Schema.Type.STRING   => "String"
         case Schema.Type.UNION    => { 

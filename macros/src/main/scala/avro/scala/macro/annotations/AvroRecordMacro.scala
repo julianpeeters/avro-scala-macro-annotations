@@ -21,7 +21,7 @@ object AvroRecordMacro {
       annottees.map(_.tree).toList match {
 
         case q"$mods class $name[..$tparams](..$first)(...$rest) extends ..$parents { $self => ..$body }" :: Nil => {
-
+println(first)
           val newCtors = CtorGen.generateNewCtors(c)                     //a no-arge ctor so `newInstance()` can be used
           val newDefs = MethodGen.generateNewMethods(c)                  //`get`, `put`, and `getSchema` methods 
           val newBody = body ::: newCtors ::: newDefs                    //add new members to the body 

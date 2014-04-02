@@ -20,9 +20,9 @@ object Test extends App {
 //Test as a type parameter in Salat (Salat serialization of Option[List[_]] not supported)
   val myRecord = TUPLE_0()
     println(myRecord)
- // val dbo = grater[TUPLE_0].asDBObject(myRecord)
+ // val dbo = grater[MyRecord].asDBObject(myRecord)
  //   println(dbo)
- // val obj = grater[TUPLE_0].asObject(dbo)
+ // val obj = grater[MyRecord].asObject(dbo)
  //   println(obj)
 
  //   println(myRecord == obj)

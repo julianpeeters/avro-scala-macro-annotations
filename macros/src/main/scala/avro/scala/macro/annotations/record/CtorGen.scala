@@ -5,10 +5,6 @@ import scala.reflect.macros.Context
 import scala.language.experimental.macros
 
 
-
-
-import org.apache.avro.specific.{SpecificRecord, SpecificRecordBase}
-
 object CtorGen {
 
   def generateNewCtors(c: Context) = {
