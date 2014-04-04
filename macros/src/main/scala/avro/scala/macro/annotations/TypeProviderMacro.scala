@@ -1,6 +1,6 @@
 package com.julianpeeters.avro.annotations
 
-import provider._
+import util._
 import store.ClassFieldStore
 
 import scala.reflect.macros.Context
@@ -16,19 +16,16 @@ object AvroTypeProviderMacro {
     import c.universe._
     import Flag._
 
-    val avroFilePath = c.prefix.tree match {
+    val avroFilePath = c.prefix.tree match { //here's how we get the value of the filepath, it's the arg to the annotation
       case Apply(_, List(Literal(Constant(x)))) => x.toString
       case _ => c.abort(c.enclosingPosition, "file path not found, annotations argument must be a constant")
     }
-
     val infile = new File(avroFilePath)
     val schema = SchemaParser.getSchemaFromFile(infile)
-
     ClassFieldStore.storeClassFields(schema)
 
     val result = { 
       annottees.map(_.tree).toList match {
-
         case q"$mods class $name[..$tparams](..$first)(...$rest) extends ..$parents { $self => ..$body }" :: Nil => {
 
           val newFields: List[c.Tree] = {//Prep fields for splicing by getting fields and mapping each to a quasiquote

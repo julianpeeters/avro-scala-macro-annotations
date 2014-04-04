@@ -1,5 +1,5 @@
 package com.julianpeeters.avro.annotations
-package provider
+package util
 
 import models.FieldData
 import matchers.DefaultParamMatcher
@@ -14,7 +14,6 @@ object Quasiquoter {
   def quotifyField(field: FieldData, c: Context) = { 
     import c.universe._
     import Flag._
-
 
     def boxTypeTrees(typeName: String) = {//"boxing" in this case is wrapping the string in [] so it looks correct for splicing
       val unboxedStrings = typeName.dropRight(typeName.count( c => c == ']')).split('[')
@@ -36,5 +35,4 @@ object Quasiquoter {
       q"""val $fieldTermName: $fieldTypeName = $defaultParam"""
     }
   }
-
 }
