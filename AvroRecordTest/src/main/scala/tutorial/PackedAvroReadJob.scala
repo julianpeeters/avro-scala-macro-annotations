@@ -23,31 +23,31 @@ import org.apache.avro.Schema
 import org.apache.avro.specific.{SpecificRecord, SpecificRecordBase}
 
 
-@AvroRecord
-case class Twitter_Schema(var username: String, var tweet: String, var timestamp: Long) 
+//@AvroRecord
+//case class Twitter_Schema(var username: String, var tweet: String, var timestamp: Long) 
 //object Twitter_Schema {}
 /**
  * hadoop jar chapter3-0-jar-with-dependencies.jar com.twitter.scalding.Tool -Dmapred.output.compress=true AvroExample --hdfs
  *
  */
-class PackedAvroWriteJob(args: Args) extends Job(args) {
+class PackedAvroReadJob(args: Args) extends Job(args) {
 
   /**
-   * Dummy data
-   */
-  val testList = List(
-    Twitter_Schema("name1", "tweet1", 10L),
-    Twitter_Schema("name2", "tweet2", 20L),
-    Twitter_Schema("name3", "tweet3", 30L))
-
-  /**
-    * Write dummy data to PackedAvro
+    * Read data from PackedAvro
     */
+  PackedAvroSource[Twitter_Schema]( """data/PackedAvroOutput.avro""")
+     .read.write(Tsv("""data/TEST-READING-PACKED"""))
+
+
+
+/*
   val twitter_schemas: TypedPipe[Twitter_Schema] = TypedPipe.from(testList)//getTwitter_SchemaPipe 
   val writeToPackedAvro = 
     twitter_schemas
       .map{twitter_schema => twitter_schema.copy(username = "My new name is " + twitter_schema.username) }
       .debug
       .write(PackedAvroSource[Twitter_Schema]("data/PackedAvroOutput.avro"))
+*/
+
 
 }
