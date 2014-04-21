@@ -10,8 +10,8 @@ import scala.language.experimental.macros
 
 object Quasiquoter {
 
-  //wraps a single field in a quasiquote
-  def quotifyField(field: FieldData, c: Context) = { 
+  //wraps a single field in a quasiquote, returning immutable field defs if immutable flag is true
+  def quotifyField(field: FieldData, immutable: Boolean, c: Context) = { 
     import c.universe._
     import Flag._
 
@@ -26,13 +26,15 @@ object Quasiquoter {
       val fieldTermName = newTermName(field.fieldName)
       val fieldTypeName = boxTypeTrees(field.fieldType)
       val defaultParam  = DefaultParamMatcher.asParameterizedDefaultParam(fieldTypeName.toString, c)
-      q"""val $fieldTermName: $fieldTypeName = $defaultParam"""
+      if (immutable == false) q"""var $fieldTermName: $fieldTypeName = $defaultParam""" 
+      else q"""val $fieldTermName: $fieldTypeName = $defaultParam"""
     }
     else { //if the field is a type that doesn't take type parameters
       val fieldTermName = newTermName(field.fieldName)
       val fieldTypeName = newTypeName(field.fieldType)
       val defaultParam  = DefaultParamMatcher.asDefaultParam(fieldTypeName.toString, c)
-      q"""val $fieldTermName: $fieldTypeName = $defaultParam"""
+      if (immutable == false) q"""var $fieldTermName: $fieldTypeName = $defaultParam""" 
+      else q"""val $fieldTermName: $fieldTypeName = $defaultParam"""
     }
   }
 }
