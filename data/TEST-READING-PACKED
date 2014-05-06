@@ -1,3 +1,2 @@
-{"username": "My new name is name1", "tweet": "tweet1", "timestamp": 10}
-{"username": "My new name is name2", "tweet": "tweet2", "timestamp": 20}
-{"username": "My new name is name3", "tweet": "tweet3", "timestamp": 30}
+{"tweet": [[1, 2]]}
+{"tweet": [null]}

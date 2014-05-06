@@ -13,19 +13,19 @@
 
 
 package tutorial
-
+//import scala.collection.JavaConversions._
 import com.julianpeeters.avro.annotations._
 import com.twitter.scalding._
 import com.twitter.scalding.avro.{PackedAvroSource, UnpackedAvroSource}
 import TDsl._
 
-import com.gensler.scalavro.types._
+//import com.gensler.scalavro.types._
 
 import org.apache.avro.Schema
 import org.apache.avro.specific.{SpecificRecord, SpecificRecordBase}
-import conversions._
+//import conversions._
 @AvroRecord
-case class Twitter_Schema(var username: String, var tweet: Option[String], var timestamp: Option[Long])
+case class Twitter_Schema(var tweet: Option[List[Option[List[Option[Int]]]]])
 
 //@AvroTypeProvider("data/twitter.avro")
 //@AvroRecord
@@ -47,9 +47,8 @@ class PackedAvroWriteJob(args: Args) extends Job(args) {
     twitter_schema("name3", "tweet3", 30L))
 */
 val testList = List(
-    Twitter_Schema("name1", Some("tweet1"), Some(10L)),
-    Twitter_Schema("name2", Some("tweet2"), Some(20L)),
-    Twitter_Schema("name3", Some("tweet3"), Some(30L)))
+    Twitter_Schema( Some(List(Some(List(Some(1), Some(2))))) ),
+    Twitter_Schema(Some(List(None) ))   )
 
   /**
     * Write dummy data to PackedAvro
@@ -57,7 +56,7 @@ val testList = List(
   val twitter_schemas: TypedPipe[Twitter_Schema] = TypedPipe.from(testList)//gettwitter_schemaPipe 
   val writeToPackedAvro = 
     twitter_schemas
-      .map{twitter_schema => twitter_schema.copy(username = "My new name is " + twitter_schema.username) }
+      .map{twitter_schema => twitter_schema}//.copy(username = List("My new name is " + twitter_schema.username.head)) }
 //      .map{twitter_schema => twitter_schema.copy(username = ("My new name is " + twitter_schema.username.get)) }
       .debug
       .write(PackedAvroSource[Twitter_Schema]("data/twitter.avro"))

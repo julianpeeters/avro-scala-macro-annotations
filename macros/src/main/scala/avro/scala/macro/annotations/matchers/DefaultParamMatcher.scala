@@ -28,7 +28,7 @@ object DefaultParamMatcher {
     fieldTypeName match {
       //List
       case  l: String if l.startsWith("List[") => {
-        if (getBoxed(l).endsWith("]")) q"""List(${asParameterizedDefaultParam(getBoxed(l), c)})"""
+        if (getBoxed(l).endsWith("]")) q"""scala.List(${asParameterizedDefaultParam(getBoxed(l), c)})"""
         else q"""List(${asDefaultParam(getBoxed(l), c)})"""
       }
       //Option
