@@ -15,7 +15,7 @@ object BuildSettings {
     libraryDependencies += "org.specs2" %% "specs2" % "2.2" % "test",
     libraryDependencies += "com.novus" %% "salat" % "1.9.7" % "test",
     libraryDependencies += "org.scalamacros" % "quasiquotes" % "2.0.0-M6" cross CrossVersion.full,
-    addCompilerPlugin("org.scalamacros" % "paradise" % "2.0.0-M6" cross CrossVersion.full)
+    addCompilerPlugin("org.scalamacros" % "paradise" % "2.0.0" cross CrossVersion.full)
   )
 }
 
@@ -75,7 +75,7 @@ object MyBuild extends Build {
         "org.scalamacros" % "quasiquotes" % "2.0.0-M6" cross CrossVersion.full)
     
      )
-     .settings(addCompilerPlugin("org.scalamacros" % "paradise" % "2.0.0-M6" cross CrossVersion.full)
+     .settings(addCompilerPlugin("org.scalamacros" % "paradise" % "2.0.0" cross CrossVersion.full)
      ) dependsOn(macros) settings(
    // include the macro classes and resources in the main jar
    mappings in (Compile, packageBin) ++= mappings.in(macros, Compile, packageBin).value,

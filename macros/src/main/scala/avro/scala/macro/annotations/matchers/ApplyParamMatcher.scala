@@ -24,6 +24,6 @@ object ApplyParamMatcher {
     if (ClassFieldStore.fields.get(typeName).isDefined) {
       ClassFieldStore.fields.get(typeName).get.map(field => asApplyParam(field, c))
     }
-    else error("uh oh, didn't find a class corresponding to that type name in the ClassFieldStore")
+    else error("uh oh, didn't find a class corresponding to that type name in the ClassFieldStore: " + typeName)
   }
 }

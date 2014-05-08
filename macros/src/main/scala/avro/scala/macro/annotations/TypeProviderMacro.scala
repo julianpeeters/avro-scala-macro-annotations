@@ -28,7 +28,9 @@ object AvroTypeProviderMacro {
       annottees.map(_.tree).toList match {
         case q"$mods class $name[..$tparams](..$first)(...$rest) extends ..$parents { $self => ..$body }" :: Nil => {
           //Currently, having a `@AvroRecord` the only thing that will trigger the writing of vars instead of vals
-          val isImmutable: Boolean = !mods.annotations.exists(mod => mod.toString == "new AvroRecord()")
+          val isImmutable: Boolean = {
+            !mods.annotations.exists(mod => mod.toString == "new AvroRecord()" | mod.toString =="new AvroRecord(null)")
+          }
 
           val newFields: List[c.Tree] = {//Prep fields for splicing by getting fields and mapping each to a quasiquote
             if ( ClassFieldStore.fields.get(name.toString).isDefined ) { 

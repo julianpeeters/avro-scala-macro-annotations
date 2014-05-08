@@ -24,8 +24,16 @@ import TDsl._
 import org.apache.avro.Schema
 import org.apache.avro.specific.{SpecificRecord, SpecificRecordBase}
 //import conversions._
+
+//@AvroRecord
+//case class Twitter_Schema(var tweet: Int)
+
 @AvroRecord
-case class Twitter_Schema(var tweet: Option[List[Option[List[Option[Int]]]]])
+case class A(var i: Int)
+
+@AvroRecord
+case class B(var a: Option[A])
+
 
 //@AvroTypeProvider("data/twitter.avro")
 //@AvroRecord
@@ -46,19 +54,23 @@ class PackedAvroWriteJob(args: Args) extends Job(args) {
     twitter_schema("name2", "tweet2", 20L),
     twitter_schema("name3", "tweet3", 30L))
 */
-val testList = List(
-    Twitter_Schema( Some(List(Some(List(Some(1), Some(2))))) ),
-    Twitter_Schema(Some(List(None) ))   )
+val aa = A(1)
+val bb = B(Some(aa))
+val testList = List(bb )
+   // Twitter_Schema( Some(List(Some(List(Some(1), Some(2))))) ),
+    //Twitter_Schema(Some(List(None) ))   )
 
   /**
     * Write dummy data to PackedAvro
     */
-  val twitter_schemas: TypedPipe[Twitter_Schema] = TypedPipe.from(testList)//gettwitter_schemaPipe 
+//  val twitter_schemas: TypedPipe[Twitter_Schema] = TypedPipe.from(testList)//gettwitter_schemaPipe 
+  val twitter_schemas: TypedPipe[B] = TypedPipe.from(testList)//gettwitter_schemaPipe 
   val writeToPackedAvro = 
     twitter_schemas
       .map{twitter_schema => twitter_schema}//.copy(username = List("My new name is " + twitter_schema.username.head)) }
 //      .map{twitter_schema => twitter_schema.copy(username = ("My new name is " + twitter_schema.username.get)) }
       .debug
-      .write(PackedAvroSource[Twitter_Schema]("data/twitter.avro"))
+//      .write(PackedAvroSource[Twitter_Schema]("data/twitter.avro"))
+      .write(PackedAvroSource[B]("data/B.avro"))
 
 }

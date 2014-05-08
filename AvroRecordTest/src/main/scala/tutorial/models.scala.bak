@@ -1,0 +1,29 @@
+package `<empty>`
+
+import com.julianpeeters.avro.annotations._
+import org.apache.avro.specific.SpecificRecordBase
+import org.apache.avro.Schema
+
+
+@AvroTypeProvider("data/enron_head.avro")
+@AvroRecord
+case class TUPLE_0()
+
+@AvroTypeProvider("data/enron_head.avro")
+@AvroRecord
+case class TUPLE_1()
+
+@AvroTypeProvider("data/enron_head.avro")
+@AvroRecord
+case class TUPLE_2()
+
+@AvroTypeProvider("data/enron_head.avro")
+@AvroRecord
+case class TUPLE_3()
+
+@AvroTypeProvider("data/enron_head.avro")
+@AvroRecord
+case class TUPLE_4()
+
+
+

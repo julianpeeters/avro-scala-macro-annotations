@@ -1,6 +1,8 @@
 package com.julianpeeters.avro.annotations
 
 import matchers.DefaultParamMatcher
+import store.ClassFieldStore
+
 import scala.reflect.macros.Context
 
 import scala.language.experimental.macros
@@ -49,12 +51,20 @@ object AvroRecordMacro {
       List( atPos(newCtorPos)(newCtorDef) ) //Return a list of new CtorDefs
     }
 
-      val freshName = c.fresh(newTypeName("Probe$"))
-      val probe = c.typeCheck(q""" {class $freshName; ()} """)
-      val freshSymbol = probe match {
-        case Block(List(t), r) => t.symbol
+    //NamespaceGen                                    
+    val freshName = c.fresh(newTypeName("Probe$")) 
+    val probe = c.typeCheck(q""" {class $freshName; ()} """)  // Thanks again to Eugene Burmako 
+    val freshSymbol = probe match {
+      case Block(List(t), r) => t.symbol
+    }
+    val fullFreshName = freshSymbol.fullName.toString
+    val namespace = c.prefix.tree match { 
+      case Apply(_, List(Literal(Constant(x)))) => null //if there's an arg, force the omission of a namespace in the schema
+      case _ => {      
+        if (fullFreshName.contains('.')) { fullFreshName.replace("." + freshName.toString, "")} //strips dot and class name
+        else null
       }
-      val namespace = freshSymbol.fullName.toString.replace("." + freshName.toString, "") //strips dot and class name
+    }
 
     //SchemaGen
     def generateSchema(className: String, namespace: String, first: List[c.universe.ValDef]) = {  
@@ -92,6 +102,7 @@ object AvroRecordMacro {
     
       def createSchema(tpt: String) : Schema = { //TODO prefer no Strings, but how to match on the value of c.universe.Tree
         val fieldTypeName = tpt.toString 
+
         if (primitiveClasses.contains(fieldTypeName)) {
           primitiveClasses(fieldTypeName)
         } 
@@ -115,6 +126,7 @@ object AvroRecordMacro {
       val avroFields = first.map(v => new Field(v.name.toString.trim, createSchema(v.tpt.toString), "Auto-Generated Field", null))  
       val avroSchema = Schema.createRecord(className, "Auto-generated schema", namespace, false)
       avroSchema.setFields(JArrays.asList(avroFields.toArray:_*))
+      ClassFieldStore.storeClassFields(avroSchema) //store the field data using the new schema
       schemas += ((namespace + "." + className) -> avroSchema)
       val newVal = q""" val schema = ${avroSchema.toString} """ //TODO add liftable[Schema] so we don't have to call .toString
       List(newVal)
@@ -270,7 +282,7 @@ object AvroRecordMacro {
               .map(f => FieldData(f._1, f._2, f._3)) //(name, type, index)
           } 
 
-          val newVals = generateSchema(name.toString, namespace, first) //TODO add to module?
+          val newVals = generateSchema(name.toString, namespace, first)
 
           val newCtors       = generateNewCtors(indexed(first))   //a no-arge ctor so `newInstance()` can be used
           val newDefs        = generateNewMethods(name, indexed(first)) //`get`, `put`, and `getSchema` methods 
