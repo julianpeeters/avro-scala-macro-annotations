@@ -1,11 +1,11 @@
-###This is a work in progress. Criticism appreciated.
+####This is a work in progress. Criticism is appreciated.
 
-####Herein lie two macro annotations for making your favorite Avro runtime easier to use:
+###Herein lie two macro annotations for making your favorite Avro runtime easier to use:
 
 1) `@AvroTypeProvider` - "Data-first", Avro Schemas to Scala case class definitions
 
 
-2) `@AvroRecord` - Use Scala case classes as Avro `SpecificRecord`s
+2) `@AvroRecord` - Make Scala case classes Avro-serializable (a port of [Avro-Scala-Compiler-Plugin](https://code.google.com/p/avro-scala-compiler-plugin/))
 
 
 Use them separately, or together like this:
@@ -20,7 +20,7 @@ Use them separately, or together like this:
 
 
 
-Planning to publish to Sonatype sometime soon, for now please  `publish-local`.
+Planning to publish to Sonatype sometime soon, for now please use `publish-local`.
 
 ##1) Avro-Type-Provider: Automatically define case classes based on Avro Schemas at compile time
 If your use-case is "data-first" and you're using an Avro runtime library that allows you to use Scala case classes to represent your Avro records, then you are probably a little weary of transcribing Avro Schemas into their Scala case class equivalents. 

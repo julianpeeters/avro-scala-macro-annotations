@@ -67,7 +67,7 @@ case class TUPLE_0()
  *
  */
 class PackedAvroReadJob(args: Args) extends Job(args) {
-
+//B
   /**
     * Read data from PackedAvro
     */
