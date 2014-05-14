@@ -27,7 +27,7 @@ import org.apache.avro.specific.SpecificRecordBase
 //import conversions._
 
 ///import `<empty>`._
-/*
+
 @AvroTypeProvider("data/input.avro")
 @AvroRecord
 case class rec()
@@ -36,9 +36,9 @@ case class rec()
 @AvroRecord
 case class MyRecord()
 
-*/
 
 
+/*
 @AvroTypeProvider("data/enron_head.avro")
 @AvroRecord(null)
 case class TUPLE_4()
@@ -60,7 +60,7 @@ case class TUPLE_1()
 case class TUPLE_0()
 
 
-
+*/
 
 /**
  * hadoop jar chapter3-0-jar-with-dependencies.jar com.twitter.scalding.Tool -Dmapred.output.compress=true AvroExample --hdfs
@@ -73,8 +73,8 @@ class PackedAvroReadJob(args: Args) extends Job(args) {
     */
 //  PackedAvroSource[Twitter_Schema]( """data/PackedAvroOutput.avro""")
  // PackedAvroSource[Twitter_Schema]( """data/twitter.avro""")
-  PackedAvroSource[TUPLE_0]( """data/enron_head.avro""")
- // PackedAvroSource[B]( """data/B.avro""")
+ // PackedAvroSource[TUPLE_0]( """data/enron_head.avro""")
+  PackedAvroSource[MyRecord]( """data/input.avro""")
      .read.debug.write(Tsv("""data/TEST-READING-PACKED"""))
    //  .read.debug.write(TypedTsv[Option[String]]("""data/TEST-READING-PACKED"""))
 
