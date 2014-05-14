@@ -39,7 +39,7 @@ Now you can annotate an "empty" case class and it's members will be generated au
         case class MyRecord()
 
 
-  and the schema automatically read from `input.avro`:
+  given the schema automatically found in `input.avro`:
         
 
         {"type":"record","name":"MyRecord","namespace":"tutorial","doc":"Auto-generated schema","fields":[{"name":"x","type":{"type":"record","name":"Rec","doc":"Auto-generated schema","fields":[{"name":"i","type":"int","doc":"Auto-Generated Field"}]},"doc":"Auto-Generated Field"}]}}
@@ -58,8 +58,11 @@ Now you can annotate an "empty" case class and it's members will be generated au
 
 ####Please note:
 1) The datafile *must be available at compile time.
+
 2) The filepath *must be a String literal
+
 3) The name of the empty case class *must match the record name exactly 
+
 4) The order of class definition *must be such that the classes that represent the most-nested records are expanded first
 
 ##2) Avro-Record: Implement `SpecificRecord` at compile time 
@@ -76,11 +79,12 @@ Now you can annotate a case class that youd like to serve as your Avro record:
         case class B(var a: Option[A])
 
 
-  expands to implement `SpecificRecord`, with the schema:
+  expands to implement `SpecificRecord` with the schema:
 
         {"type":"record","name":"B","namespace":"sample","doc":"Auto-generated schema","fields":[{"name":"a","type":["null",{"type":"record","name":"A","doc":"Auto-generated schema","fields":[{"name":"i","type":"int","doc":"Auto-Generated Field"}]}],"doc":"Auto-Generated Field"}]}}
 
 
 ####Please note:
 1) Works with Avro Primitives, Arrays, Nullable fields represented by Option (Map, Fixed, and true unions not yet supported)
+
 2) Provide a `null` argument (`@AvroRecord(null)`) to force the omission of a namespace in the generated schema, and thus read and write Avros regardless of the package of the case class.
