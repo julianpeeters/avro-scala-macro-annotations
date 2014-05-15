@@ -87,4 +87,4 @@ Now you can annotate a case class that youd like to serve as your Avro record:
 ####Please note:
 1) Works with Avro Primitives, Arrays, Nullable fields represented by Option (Map, Fixed, and true unions not yet supported)
 
-2) Provide a `null` argument (`@AvroRecord(null)`) to force the omission of a namespace in the generated schema, and thus read and write Avros regardless of the package of the case class.
+2) Provide a `null` argument (e.g. `@AvroRecord(null)` ) to force the omission of a namespace in the generated schema. This must be done in order to read files with no namespace in the schema, and also allows the reading and writing of Avros irrespecitive of the package of the case class.

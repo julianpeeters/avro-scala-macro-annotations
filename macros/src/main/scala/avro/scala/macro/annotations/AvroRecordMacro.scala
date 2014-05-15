@@ -8,7 +8,7 @@ import scala.reflect.macros.Context
 import scala.language.experimental.macros
 import scala.annotation.StaticAnnotation
 
-import com.gensler.scalavro.types._
+//import com.gensler.scalavro.types._
 import org.apache.avro.util.Utf8
 import org.apache.avro.Schema
 import org.apache.avro.Schema.Field
@@ -34,7 +34,7 @@ object AvroRecordMacro {
     case class FieldData(nme: TermName, tpt: Tree, idx: Int)//holds info about the fields of the annotee
 
     //Extender
-    def generateNewBaseTypes =  List( tq"SpecificRecordBase")
+    def generateNewBaseTypes =  List( tq"org.apache.avro.specific.SpecificRecordBase")
 
     //CtorGen
     def generateNewCtors(indexedFields: List[FieldData]) = {
@@ -281,6 +281,7 @@ object AvroRecordMacro {
               .toList 
               .map(f => FieldData(f._1, f._2, f._3)) //(name, type, index)
           } 
+          val newImports = List(q" import org.apache.avro.Schema")
 
           val newVals = generateSchema(name.toString, namespace, first)
 
@@ -288,7 +289,7 @@ object AvroRecordMacro {
           val newDefs        = generateNewMethods(name, indexed(first)) //`get`, `put`, and `getSchema` methods 
 
           val newParents     = parents ::: generateNewBaseTypes   //extend SpecificRecord and SpecificRecordBase
-          val newBody        = body ::: newCtors ::: newVals ::: newDefs      //add new members to the body
+          val newBody        = body ::: newImports ::: newCtors ::: newVals ::: newDefs      //add new members to the body
 
           //return an updated class def
           q"$mods class $name[..$tparams](..$first)(...$rest) extends ..$newParents { $self => ..$newBody }" 

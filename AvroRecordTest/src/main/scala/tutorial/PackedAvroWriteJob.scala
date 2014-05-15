@@ -13,17 +13,12 @@
 
 
 package tutorial
-//import scala.collection.JavaConversions._
+
 import com.julianpeeters.avro.annotations._
 import com.twitter.scalding._
 import com.twitter.scalding.avro.{PackedAvroSource, UnpackedAvroSource}
 import TDsl._
 
-//import com.gensler.scalavro.types._
-
-import org.apache.avro.Schema
-import org.apache.avro.specific.{SpecificRecord, SpecificRecordBase}
-//import conversions._
 
 //@AvroRecord
 //case class Twitter_Schema(var tweet: Int)

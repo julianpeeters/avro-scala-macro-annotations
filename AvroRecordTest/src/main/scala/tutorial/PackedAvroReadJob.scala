@@ -19,10 +19,10 @@ import com.twitter.scalding._
 import com.twitter.scalding.avro.{PackedAvroSource, UnpackedAvroSource}
 import TDsl._
 
-import com.gensler.scalavro.types._
 
-import org.apache.avro.Schema
-import org.apache.avro.specific.SpecificRecordBase
+
+//import org.apache.avro.Schema
+//import org.apache.avro.specific.SpecificRecordBase
 
 //import conversions._
 
