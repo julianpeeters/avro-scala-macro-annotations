@@ -2,11 +2,15 @@
 
 ###Herein lie two macro annotations for making your favorite Avro runtime easier to use:
 
-1) `@AvroTypeProvider` - "Data-first", Avro Schemas to Scala case class definitions
+1) `@AvroTypeProvider` - Defines fields at compile-time, Avro Schemas to Scala case class definitions
 
 
-2) `@AvroRecord` - Make Scala case classes Avro-serializable (a port of [Avro-Scala-Compiler-Plugin](https://code.google.com/p/avro-scala-compiler-plugin/))
+2) `@AvroRecord` - Make Scala case classes Avro-serializable by the Apache Avro runtime (a port of [Avro-Scala-Compiler-Plugin](https://code.google.com/p/avro-scala-compiler-plugin/))
 
+Get the dependency with:
+
+        //planning to publish to Sonatype, for now please use `publish-local`
+        "org.julianpeeters" % "avro-scala-macro-annotations" % "0.1-SNAPSHOT"
 
 Use them separately, or together like this:
 
@@ -19,8 +23,7 @@ Use them separately, or together like this:
         case class MyRecord()
 
 
-
-Planning to publish to Sonatype sometime soon, for now please use `publish-local`.
+Now you can use a case class as your Avro record, skipping IDL/Avro code-gen steps, and let the macro define the fields for you if you give it a path to an Avro schema.
 
 ##1) Avro-Type-Provider: Automatically define case classes based on Avro Schemas at compile time
 If your use-case is "data-first" and you're using an Avro runtime library that allows you to use Scala case classes to represent your Avro records, then you are probably a little weary of transcribing Avro Schemas into their Scala case class equivalents. 
@@ -57,18 +60,19 @@ Now you can annotate an "empty" case class and it's members will be generated au
 
 
 ####Please note:
-1) The datafile *must be available at compile time.
+1) The datafile *must* be available at compile time.
 
-2) The filepath *must be a String literal
+2) The filepath *must* be a String literal
 
-3) The name of the empty case class *must match the record name exactly 
+3) The name of the empty case class *must* match the record name exactly 
 
-4) The order of class definition *must be such that the classes that represent the most-nested records are expanded first
+4) The order of class definition *must* be such that the classes that represent the most-nested records are expanded first
 
-##2) Avro-Record: Implement `SpecificRecord` at compile time 
-If you are using Avro `SpecificRecord`, then you are probably a little sad that the Avro-Scala-Compiler-Plugin doesn't work with Scala 2.10+. I was, but the compiler still stumps me, so I ported the serialization essentials over to use Scala Macro Annotations instead.
+##2) Avro-Record: Implement `SpecificRecord` at compile time: 
 
-Now you can annotate a case class that youd like to serve as your Avro record:
+Use Scala case classes to represent Avro records a la [Scalavro](https://github.com/GenslerAppsPod/scalavro) or [Salat-Avro](https://github.com/julianpeeters/salat-avro/tree/master), but for the Apache Avro runtime - so that it runs on your cluster. Since Avro-Scala-Compiler-Plugin doesn't work with Scala 2.10+ but the compiler still stumps me, I ported the serialization essentials over to use Scala Macro Annotations instead of a compiler plugin. 
+
+Now you can annotate a case class that you'd like to have serve as your Avro record:
 
         package sample
 
@@ -83,8 +87,11 @@ Now you can annotate a case class that youd like to serve as your Avro record:
 
         {"type":"record","name":"B","namespace":"sample","doc":"Auto-generated schema","fields":[{"name":"a","type":["null",{"type":"record","name":"A","doc":"Auto-generated schema","fields":[{"name":"i","type":"int","doc":"Auto-Generated Field"}]}],"doc":"Auto-Generated Field"}]}}
 
+Use the expanded class as you would any other code-gen'd class with the SpecificRecord API, e.g.:
+        val sdw = SpecificDatumWriter[B]
+
 
 ####Please note:
-1) Works with Avro Primitives, Arrays, Nullable fields represented by Option (Map, Fixed, and true unions not yet supported)
+1) Works with Avro Primitives, Nullable fields (represented by Option), and Lists for Arrays. Map, Fixed, other collections besides List, and true unions not yet supported.
 
 2) Provide a `null` argument (e.g. `@AvroRecord(null)` ) to force the omission of a namespace in the generated schema. This must be done in order to read files with no namespace in the schema, and also allows the reading and writing of Avros irrespecitive of the package of the case class.
