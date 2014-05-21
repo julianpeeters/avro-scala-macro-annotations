@@ -1,5 +1,5 @@
 package com.julianpeeters.avro.annotations
-package store
+package util
 
 import models.FieldData
 import matchers.AvroTypeMatcher

@@ -1,13 +1,10 @@
 package com.julianpeeters.avro.annotations
 
 import util._
-import store.ClassFieldStore
-
 
 import scala.reflect.macros.Context
 import scala.language.experimental.macros
 import scala.annotation.StaticAnnotation
-
 
 import java.io.File
 

@@ -1,7 +1,7 @@
 package com.julianpeeters.avro.annotations
 
 import matchers.DefaultParamMatcher
-import store.ClassFieldStore
+import util.ClassFieldStore
 
 import scala.reflect.macros.Context
 
@@ -272,7 +272,7 @@ object AvroRecordMacro {
               .toList 
               .map(f => FieldData(f._1, f._2, f._3)) //(name, type, index)
           } 
-println(mods)
+
           val newImports = List(q" import org.apache.avro.Schema")
           val newVals    = generateSchema(name.toString, namespace, first)
           val newCtors   = generateNewCtors(indexed(first))   //a no-arge ctor so `newInstance()` can be used
