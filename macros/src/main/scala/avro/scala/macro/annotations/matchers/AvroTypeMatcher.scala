@@ -2,7 +2,7 @@ package com.julianpeeters.avro.annotations
 package matchers
 
 import models.FieldData
-import store.ClassFieldStore
+import util.ClassFieldStore
 import org.apache.avro.Schema
 import scala.collection.JavaConversions._
 

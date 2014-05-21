@@ -19,6 +19,7 @@ import org.specs2.mutable.Specification
 import com.twitter.scalding._
 import java.io.File
 
+import org.apache.avro.generic._
 import org.apache.avro.specific._
 import org.apache.avro.Schema
 import org.apache.avro.Schema.{Type => AvroType}
@@ -29,31 +30,26 @@ class WordCountTest extends Specification {
   "A specific record represented by a case class" should {
     "serialize and deserialize correctly" in {
 
-val record1 = MyRecord(rec(2))
-println(record1)
+val record1 = MyRecord(rec(1))
+val record2 = MyRecord(rec(2))
+
 val file = new File("data/users.avro");
 val userDatumWriter = new SpecificDatumWriter[MyRecord];
 val dataFileWriter = new DataFileWriter[MyRecord](userDatumWriter);
 dataFileWriter.create(record1.getSchema(), file);
-//dataFileWriter.create(Schema.create(AvroType.INT), file);
 dataFileWriter.append(record1);
-//ataFileWriter.append(user2);
-//dataFileWriter.append(user3);
+dataFileWriter.append(record2);
+//dataFileWriter.append(record3);
 dataFileWriter.close();
 
-println(record1.getSchema)
-val userDatumReader = new SpecificDatumReader[MyRecord](new DataFileReader(file, new SpecificDatumReader[MyRecord]).getSchema);
-println(record1.SCHEMA$)
-println(classOf[MyRecord].getDeclaredField("""SCHEMA$"""))
+val schema = new DataFileReader(file, new GenericDatumReader[GenericRecord]).getSchema
+val userDatumReader = new SpecificDatumReader[MyRecord](schema);
 val dataFileReader = new DataFileReader[MyRecord](file, userDatumReader);
-//var user = null;
-//while (dataFileReader.hasNext()) {
-// Reuse user object by passing it to next(). This saves us from
-// allocating and garbage collecting many objects for files with
-// many items.
-// def user: tutorial.MyRecord = dataFileReader.next(user);
-//System.out.println(user);
-//}
+var user: tutorial.MyRecord = null;
+while (dataFileReader.hasNext()) {
+  user = dataFileReader.next(user);
+  System.out.println(user);
+}
 
       "ions".length must ===(4)
     }

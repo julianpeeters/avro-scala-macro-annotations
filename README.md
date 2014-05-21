@@ -86,11 +86,24 @@ Now you can annotate a case class that you'd like to have serve as your Avro rec
 
         {"type":"record","name":"B","namespace":"sample","doc":"Auto-generated schema","fields":[{"name":"a","type":["null",{"type":"record","name":"A","doc":"Auto-generated schema","fields":[{"name":"i","type":"int","doc":"Auto-Generated Field"}]}],"doc":"Auto-Generated Field"}]}}
 
-Use the expanded class as you would any other code-gen'd class with the SpecificRecord API, e.g.:
-        val sdw = SpecificDatumWriter[B]
+
+Use the expanded class as you would a regular code-gen'd class with the SpecificRecord API, e.g.:
+
+
+        //Writing avros - no reflection
+        val datumWriter = new SpecificDatumWriter[B];
+        val dataFileWriter = new DataFileWriter[B](datumWriter);
+
+
+        //Reading avros - no reflection
+        val schema = new DataFileReader(file, new GenericDatumReader[GenericRecord]).getSchema 
+        val userDatumReader = new SpecificDatumReader[B](schema);
+        val dataFileReader = new DataFileReader[B](file, userDatumReader);
 
 
 ####Please note:
-1) Works with Avro Primitives, Nullable fields (represented by Option), and Lists for Arrays. Map, Fixed, other collections besides List, and true unions not yet supported.
+1) Scala Macros is not fully compatible with Java reflection. To preempt Avro from trying to get the `Schema` reflectively, use the no-argument constructor for `SpecificDatumWriter`, and provide an Avro `Schema` when constructing a `SpecificDatumReader` 
 
-2) Provide a `null` argument (e.g. `@AvroRecord(null)` ) to force the omission of a namespace in the generated schema. This must be done in order to read files with no namespace in the schema, and also allows the reading and writing of Avros irrespecitive of the package of the case class.
+2) Works with Avro Primitives, Nullable fields (represented by Option), and Lists for Arrays. Map, Fixed, other collections besides List, and unions (beyond nullable fields) are not yet supported.
+
+3) Provide a `null` argument (e.g. `@AvroRecord(null)` ) to force the omission of a namespace in the generated schema. This must be done in order to read files with no namespace in the schema, and also allows the reading and writing of Avros irrespecitive of the package of the case class.
