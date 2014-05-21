@@ -1,13 +1,23 @@
 package com.julianpeeters.avro.annotations
 package util
 
+import store.ClassFieldStore
 import org.apache.avro.Schema
+import org.apache.avro.file._
+import org.apache.avro.generic._
+import org.apache.avro.Schema.Type._
+
+import scala.collection.JavaConverters._
 
 object SchemaParser { 
-    def getSchemaFromFile(infile: java.io.File): Schema = {
-      val bufferedInfile = scala.io.Source.fromFile(infile, "iso-8859-1")
-      val parsable = new String(bufferedInfile.getLines.mkString.dropWhile(_ != '{').toCharArray)
-      val avroSchema = new Schema.Parser().parse(parsable) //parse(infile) finds an unexpected character, it expects a .avsc?
-      avroSchema
+  def getSchema(infile: java.io.File) = {
+    val gdr = new GenericDatumReader[GenericRecord]
+    val dfr = new DataFileReader(infile, gdr)
+    val schema = dfr.getSchema//.getTypes.asScala
+    schema.getType match {
+      case UNION  => schema.getTypes.asScala.foreach(s => ClassFieldStore.storeClassFields(s))
+      case RECORD => ClassFieldStore.storeClassFields(schema)
+      case _      => error("The Schema in the datafile is not neither a record nor a union of records, nothing to map to case class.")
     }
+  }
 }

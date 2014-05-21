@@ -21,7 +21,8 @@ import java.util.{Arrays => JArrays}
 
 
 object AvroRecordMacro {
-
+  
+  //A map to store the generated schemas
   val schemas: scala.collection.concurrent.Map[String, Schema] = {
     scala.collection.convert.Wrappers.JConcurrentMapWrapper(new ConcurrentHashMap[String, Schema]())
   }
@@ -66,7 +67,7 @@ object AvroRecordMacro {
       }
     }
 
-    //SchemaGen
+    //SchemaGen - generates schemas, stores them, and defines "val SCHEMA$ = ..." 
     def generateSchema(className: String, namespace: String, first: List[c.universe.ValDef]) = {  
       //map is from https://github.com/radlab/avro-scala-compiler-plugin/blob/master/src/main/scala/plugin/SchemaGen.scala
       val primitiveClasses = Map(
@@ -87,17 +88,6 @@ object AvroRecordMacro {
         /** Primitives in the Avro sense */
         "ByteBuffer" -> Schema.create(AvroType.BYTES),
         "Utf8"       -> Schema.create(AvroType.STRING)
-
-        /** Boxed primitives 
-        BoxedIntClass       -> Schema.create(AvroType.INT),
-        BoxedByteClass      -> Schema.create(AvroType.INT),
-        BoxedShortClass     -> Schema.create(AvroType.INT),
-        BoxedCharacterClass -> Schema.create(AvroType.INT),
-        BoxedBooleanClass   -> Schema.create(AvroType.BOOLEAN),
-        BoxedFloatClass     -> Schema.create(AvroType.FLOAT),
-        BoxedLongClass      -> Schema.create(AvroType.LONG),
-        BoxedDoubleClass    -> Schema.create(AvroType.DOUBLE)
-        */
       )
     
       def createSchema(tpt: String) : Schema = { //TODO prefer no Strings, but how to match on the value of c.universe.Tree
@@ -123,17 +113,18 @@ object AvroRecordMacro {
         else throw new UnsupportedOperationException("Cannot support yet: " + tpt)
       }  
 
-      val avroFields = first.map(v => new Field(v.name.toString.trim, createSchema(v.tpt.toString), "Auto-Generated Field", null))  
+      val avroFields = first.map(v => new Field(v.name.toString.trim, createSchema(v.tpt.toString), "Auto-Generated Field", null)) 
       val avroSchema = Schema.createRecord(className, "Auto-generated schema", namespace, false)
       avroSchema.setFields(JArrays.asList(avroFields.toArray:_*))
       ClassFieldStore.storeClassFields(avroSchema) //store the field data using the new schema
       schemas += ((namespace + "." + className) -> avroSchema)
-      val newVal = q""" val schema = ${avroSchema.toString} """ //TODO add liftable[Schema] so we don't have to call .toString
+      val valName = newTermName("SCHEMA$")
+      val newVal = q""" val $valName = ${avroSchema.toString} """ //TODO add liftable[Schema] so we don't have to call .toString
       List(newVal)
     }
 
 
-    //MethodGen
+    //MethodGen - generates put, get, and getSchema needed to implement SpecificRecord for serialization
     def generateNewMethods(name: TypeName, indexedFields: List[FieldData]) = {
 
       val getDef = { //expands to cases that are to be used in a pattern match, e.g. case 1 => username.asInstanceOf[AnyRef]
@@ -281,15 +272,13 @@ object AvroRecordMacro {
               .toList 
               .map(f => FieldData(f._1, f._2, f._3)) //(name, type, index)
           } 
+println(mods)
           val newImports = List(q" import org.apache.avro.Schema")
-
-          val newVals = generateSchema(name.toString, namespace, first)
-
-          val newCtors       = generateNewCtors(indexed(first))   //a no-arge ctor so `newInstance()` can be used
-          val newDefs        = generateNewMethods(name, indexed(first)) //`get`, `put`, and `getSchema` methods 
-
-          val newParents     = parents ::: generateNewBaseTypes   //extend SpecificRecord and SpecificRecordBase
-          val newBody        = body ::: newImports ::: newCtors ::: newVals ::: newDefs      //add new members to the body
+          val newVals    = generateSchema(name.toString, namespace, first)
+          val newCtors   = generateNewCtors(indexed(first))   //a no-arge ctor so `newInstance()` can be used
+          val newDefs    = generateNewMethods(name, indexed(first)) //`get`, `put`, and `getSchema` methods 
+          val newParents = parents ::: generateNewBaseTypes   //extend SpecificRecord and SpecificRecordBase
+          val newBody    = body ::: newImports ::: newCtors ::: newVals ::: newDefs      //add new members to the body
 
           //return an updated class def
           q"$mods class $name[..$tparams](..$first)(...$rest) extends ..$newParents { $self => ..$newBody }" 

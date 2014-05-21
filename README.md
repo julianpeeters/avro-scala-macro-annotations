@@ -1,18 +1,18 @@
-####This is a work in progress. Criticism is appreciated.
+This is a work in progress. Criticism is appreciated.
 
-###Herein lie two macro annotations for making your favorite Avro runtime easier to use:
+##Herein lie two macro annotations that will generate boilerplate for you when using Avro from Scala:
 
-1) `@AvroTypeProvider` - Defines fields at compile-time, Avro Schemas to Scala case class definitions
+1) `@AvroTypeProvider("path/to/schema")` - Automatically convert Avro Schemas to Scala case class definitions at compile time
 
 
-2) `@AvroRecord` - Make Scala case classes Avro-serializable by the Apache Avro runtime (a port of [Avro-Scala-Compiler-Plugin](https://code.google.com/p/avro-scala-compiler-plugin/))
+2) `@AvroRecord` - Use Scala classes to represent your Avro records, serializable by the Apache Avro runtime without bulky IDL/code-gen steps (a port of [Avro-Scala-Compiler-Plugin](https://code.google.com/p/avro-scala-compiler-plugin/))
 
 Get the dependency with:
 
         //planning to publish to Sonatype, for now please use `publish-local`
         "org.julianpeeters" % "avro-scala-macro-annotations" % "0.1-SNAPSHOT"
 
-Use them separately, or together like this:
+Use the annotations separately, or together like this:
 
         package sample
         
@@ -23,9 +23,9 @@ Use them separately, or together like this:
         case class MyRecord()
 
 
-Now you can use a case class as your Avro record, skipping IDL/Avro code-gen steps, and let the macro define the fields for you if you give it a path to an Avro schema.
+Now the fields and methods necessary for de/serialization are generated for you at compile time.
 
-##1) Avro-Type-Provider: Automatically define case classes based on Avro Schemas at compile time
+##1) Avro-Type-Provider
 If your use-case is "data-first" and you're using an Avro runtime library that allows you to use Scala case classes to represent your Avro records, then you are probably a little weary of transcribing Avro Schemas into their Scala case class equivalents. 
 
 Now you can annotate an "empty" case class and it's members will be generated automatically at compile time, using the data found in the Schema of a given file:
@@ -68,9 +68,8 @@ Now you can annotate an "empty" case class and it's members will be generated au
 
 4) The order of class definition *must* be such that the classes that represent the most-nested records are expanded first
 
-##2) Avro-Record: Implement `SpecificRecord` at compile time: 
-
-Use Scala case classes to represent Avro records a la [Scalavro](https://github.com/GenslerAppsPod/scalavro) or [Salat-Avro](https://github.com/julianpeeters/salat-avro/tree/master), but for the Apache Avro runtime - so that it runs on your cluster. Since Avro-Scala-Compiler-Plugin doesn't work with Scala 2.10+ but the compiler still stumps me, I ported the serialization essentials over to use Scala Macro Annotations instead of a compiler plugin. 
+##2) Avro-Record: 
+Implements `SpecificRecord` at compile time so you can use Scala case classes to represent Avro records (like [Scalavro](https://github.com/GenslerAppsPod/scalavro) or [Salat-Avro](https://github.com/julianpeeters/salat-avro/tree/master), but for the Apache Avro runtime so that it runs on your cluster). Since Avro-Scala-Compiler-Plugin doesn't work with Scala 2.10+ but the compiler still stumps me, I ported the serialization essentials over to use Scala Macro Annotations instead of a compiler plugin. 
 
 Now you can annotate a case class that you'd like to have serve as your Avro record:
 

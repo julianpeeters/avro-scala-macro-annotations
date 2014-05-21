@@ -21,13 +21,6 @@ import TDsl._
 
 
 
-//import org.apache.avro.Schema
-//import org.apache.avro.specific.SpecificRecordBase
-
-//import conversions._
-
-///import `<empty>`._
-
 @AvroTypeProvider("data/input.avro")
 @AvroRecord
 case class rec()
@@ -67,7 +60,7 @@ case class TUPLE_0()
  *
  */
 class PackedAvroReadJob(args: Args) extends Job(args) {
-//B
+
   /**
     * Read data from PackedAvro
     */

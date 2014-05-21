@@ -3,9 +3,11 @@ package com.julianpeeters.avro.annotations
 import util._
 import store.ClassFieldStore
 
+
 import scala.reflect.macros.Context
 import scala.language.experimental.macros
 import scala.annotation.StaticAnnotation
+
 
 import java.io.File
 
@@ -21,8 +23,7 @@ object AvroTypeProviderMacro {
       case _ => c.abort(c.enclosingPosition, "file path not found, annotations argument must be a constant")
     }
     val infile = new File(avroFilePath)
-    val schema = SchemaParser.getSchemaFromFile(infile)
-    ClassFieldStore.storeClassFields(schema)
+    SchemaParser.getSchema(infile)
 
     val result = { 
       annottees.map(_.tree).toList match {
