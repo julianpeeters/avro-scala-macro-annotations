@@ -17,6 +17,7 @@ object DefaultParamMatcher {
       case "Float"   => q"1F"
       case "Double"  => q"1D"
       case "String"  => q""" "" """
+      case "Null"    => q"null"
       case x         => q"""${newTermName(x)}(..${ApplyParamMatcher.getApplyParams(x, c)})"""
     }
   }

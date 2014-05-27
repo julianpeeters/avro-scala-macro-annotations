@@ -8,7 +8,6 @@ import scala.reflect.macros.Context
 import scala.language.experimental.macros
 import scala.annotation.StaticAnnotation
 
-//import com.gensler.scalavro.types._
 import org.apache.avro.util.Utf8
 import org.apache.avro.Schema
 import org.apache.avro.Schema.Field
@@ -41,7 +40,8 @@ object AvroRecordMacro {
     def generateNewCtors(indexedFields: List[FieldData]) = {
       def asCtorParam(typeName: String, c: Context): c.universe.Tree = {
         if (typeName.endsWith("]")) DefaultParamMatcher.asParameterizedDefaultParam(typeName, c)
-        else  DefaultParamMatcher.asDefaultParam(typeName, c)}
+        else  DefaultParamMatcher.asDefaultParam(typeName, c)
+      }
       val defaultParams = indexedFields.map(field => asCtorParam(field.tpt.toString, c)) //toString to reuse DefaultParamMatcher
       val newCtorDef = q"""def this() = this(..$defaultParams)"""
       val defaultCtorPos = c.enclosingPosition //thanks to Eugene Burmako for the workaround to position the ctor correctly
@@ -80,11 +80,6 @@ object AvroRecordMacro {
         "String"  -> Schema.create(AvroType.STRING),
         "Null"    -> Schema.create(AvroType.NULL),
 
-        /** Types which are primitives in Scala, but have no exact match in Avro */
-        "Short"   -> Schema.create(AvroType.INT),
-        "Byte"    -> Schema.create(AvroType.INT),
-        "Char"    -> Schema.create(AvroType.INT),
-
         /** Primitives in the Avro sense */
         "ByteBuffer" -> Schema.create(AvroType.BYTES),
         "Utf8"       -> Schema.create(AvroType.STRING)
@@ -116,10 +111,11 @@ object AvroRecordMacro {
       val avroFields = first.map(v => new Field(v.name.toString.trim, createSchema(v.tpt.toString), "Auto-Generated Field", null)) 
       val avroSchema = Schema.createRecord(className, "Auto-generated schema", namespace, false)
       avroSchema.setFields(JArrays.asList(avroFields.toArray:_*))
-      ClassFieldStore.storeClassFields(avroSchema) //store the field data using the new schema
+      ClassFieldStore.storeClassFields(avroSchema) //store the field data from the new schema
       schemas += ((namespace + "." + className) -> avroSchema)
+
       val valName = newTermName("SCHEMA$")
-      val newVal = q""" val $valName = ${avroSchema.toString} """ //TODO add liftable[Schema] so we don't have to call .toString
+      val newVal = q"""val $valName = ${avroSchema.toString} """ //TODO add liftable[Schema] so we don't have to call .toString
       List(newVal)
     }
 
@@ -163,7 +159,7 @@ object AvroRecordMacro {
                   //null case covers a None
                   q"""$convertable match {
                     case null => null
-                    case x => java.util.Arrays.asList( ${convertElements(boxedTree, convertable)} :_*)
+                    case _ => java.util.Arrays.asList( ${convertElements(boxedTree, convertable)} :_*)
                   }"""
                 }
               }  

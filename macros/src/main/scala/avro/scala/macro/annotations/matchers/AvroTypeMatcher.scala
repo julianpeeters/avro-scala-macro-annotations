@@ -25,9 +25,9 @@ object AvroTypeMatcher {
         case Schema.Type.RECORD   => { 
 
           field.schema.getName match {
-            //cases where a record is found as a field vs found as a member of a union
-            case "union"    => ClassFieldStore.storeClassFields(schema);       schema.getName
-            case recordName => ClassFieldStore.storeClassFields(field.schema); recordName 
+            //cases where a record is found as a field vs found as a member of a union vs found as an element of an array
+            case "array" | "union" => ClassFieldStore.storeClassFields(schema);        schema.getName
+            case recordName        => ClassFieldStore.storeClassFields(field.schema);  recordName 
           }
 
         }

@@ -18,7 +18,7 @@ object ApplyParamMatcher {
     }
 
     /*
-    * Use the typename (here a class name) as a key to get a list of its fields,
+    * Uses the typename (here a class name) as a key to get a list of its fields,
     * map each field to a its apply parameter, giving a list of q"Literals".
     */
     if (ClassFieldStore.fields.get(typeName).isDefined) {

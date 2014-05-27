@@ -10,7 +10,6 @@ object BuildSettings {
     libraryDependencies += "org.apache.avro" % "avro" % "1.7.6",
     libraryDependencies += "org.json4s" %% "json4s-native" % "3.2.6",
     libraryDependencies += "org.specs2" %% "specs2" % "2.2" % "test",
-    libraryDependencies += "com.novus" %% "salat" % "1.9.7" % "test",
     libraryDependencies += "org.scalamacros" % "quasiquotes" % "2.0.0-M6" cross CrossVersion.full,
     addCompilerPlugin("org.scalamacros" % "paradise" % "2.0.0" cross CrossVersion.full)
   )
@@ -29,10 +28,9 @@ object MyBuild extends Build {
     "avro-scala-macro-annotations",
     file("."),
     settings = buildSettings ++ Seq(
-     // run <<= run in Compile in AvroTypeProviderTest
-       run <<= run in Compile in AvroRecordTest
+       run <<= run in Compile in tests
     )
-  ) aggregate(macros, AvroTypeProviderTest, AvroRecordTest)
+  ) aggregate(macros, tests)
 
   lazy val macros: Project = Project(
     "macros",
@@ -41,32 +39,15 @@ object MyBuild extends Build {
       libraryDependencies <+= (scalaVersion)("org.scala-lang" % "scala-reflect" % _))
   )
 
-  lazy val AvroTypeProviderTest: Project = Project(
-    "AvroTypeProviderTest",
-    file("AvroTypeProviderTest"),
-    settings = buildSettings ++ Seq(
-      libraryDependencies ++=   Seq(
-        "com.novus" %% "salat" % "1.9.7"))
-  ) dependsOn(macros) settings(
-   // include the macro classes and resources in the main jar
-   mappings in (Compile, packageBin) ++= mappings.in(macros, Compile, packageBin).value,
-   // include the macro sources in the main source jar
-   mappings in (Compile, packageSrc) ++= mappings.in(macros, Compile, packageSrc).value
-  )
-
-
   /*
-  *AvroRecordTests project build def was added to the macros build, and could probably be "re-styled" to integrate more cleanly
+  *tests project build def was added to the macros build, and could probably be "re-styled" to integrate more cleanly
   */
-  lazy val AvroRecordTest: Project = Project(
-    "AvroRecordTest",
-    file("AvroRecordTest"))
+  lazy val tests: Project = Project(
+    "tests",
+    file("tests"))
     .settings(ScaldingBuildSettings.buildSettings: _*)
     .settings(
       libraryDependencies ++= Seq(
-        Libraries.scaldingCore,
-        Libraries.scaldingAvro,
-        Libraries.hadoopCore,
         Libraries.specs2,
         // Add your additional libraries here (comma-separated)...
         "org.scalamacros" % "quasiquotes" % "2.0.0-M6" cross CrossVersion.full)
