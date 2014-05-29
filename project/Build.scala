@@ -11,13 +11,37 @@ object BuildSettings {
     libraryDependencies += "org.json4s" %% "json4s-native" % "3.2.6",
     libraryDependencies += "org.specs2" %% "specs2" % "2.2" % "test",
     libraryDependencies += "org.scalamacros" % "quasiquotes" % "2.0.0-M6" cross CrossVersion.full,
-    addCompilerPlugin("org.scalamacros" % "paradise" % "2.0.0" cross CrossVersion.full)
+    addCompilerPlugin("org.scalamacros" % "paradise" % "2.0.0" cross CrossVersion.full),
+    publishMavenStyle := true,
+    publishArtifact in Test := false,
+    publishTo <<= version { (v: String) =>
+      val nexus = "https://oss.sonatype.org/"
+      if (v.trim.endsWith("SNAPSHOT"))
+        Some("snapshots" at nexus + "content/repositories/snapshots")
+      else
+        Some("releases" at nexus + "service/local/staging/deploy/maven2")
+    },
+    pomIncludeRepository := { _ => false },
+    licenses := Seq("Apache 2.0" -> url("http://www.apache.org/licenses/LICENSE-2.0")),
+    homepage := Some(url("https://github.com/julianpeeters/avro-scala-macro-annotations")),
+    pomExtra := (
+      <scm>
+        <url>git://github.com/julianpeeters/avro-scala-macro-annotations.git</url>
+        <connection>scm:git://github.com/julianpeeters/avro-scala-macro-annotations.git</connection>
+      </scm>
+      <developers>
+        <developer>
+          <id>julianpeeters</id>
+          <name>Julian Peeters</name>
+          <url>http://github.com/julianpeeters</url>
+        </developer>
+      </developers>)
   )
+
 }
 
 object MyBuild extends Build {
   import BuildSettings._
-  import Dependencies._
 
   // Configure prompt to show current project
   override lazy val settings = super.settings :+ {
@@ -25,15 +49,16 @@ object MyBuild extends Build {
   }
 
   lazy val root: Project = Project(
-    "avro-scala-macro-annotations",
+    "root",
     file("."),
     settings = buildSettings ++ Seq(
-       run <<= run in Compile in tests
+      publishArtifact := false,
+      run <<= run in Compile in tests
     )
   ) aggregate(macros, tests)
 
   lazy val macros: Project = Project(
-    "macros",
+    "avro-scala-macro-annotations",
     file("macros"),
     settings = buildSettings ++ Seq(
       libraryDependencies <+= (scalaVersion)("org.scala-lang" % "scala-reflect" % _))
@@ -44,14 +69,12 @@ object MyBuild extends Build {
   */
   lazy val tests: Project = Project(
     "tests",
-    file("tests"))
-    .settings(ScaldingBuildSettings.buildSettings: _*)
+    file("tests"), 
+    settings = buildSettings)
     .settings(
-      libraryDependencies ++= Seq(
-        Libraries.specs2,
+      publishArtifact := false,
+      libraryDependencies ++= Seq("org.specs2" %% "specs2" % "1.13" % "test")
         // Add your additional libraries here (comma-separated)...
-        "org.scalamacros" % "quasiquotes" % "2.0.0-M6" cross CrossVersion.full)
-    
      )
      .settings(addCompilerPlugin("org.scalamacros" % "paradise" % "2.0.0" cross CrossVersion.full)
      ) dependsOn(macros) settings(
@@ -61,3 +84,5 @@ object MyBuild extends Build {
    mappings in (Compile, packageSrc) ++= mappings.in(macros, Compile, packageSrc).value
   )
 }
+
+
