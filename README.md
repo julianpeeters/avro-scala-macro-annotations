@@ -30,7 +30,7 @@ First the fields are added automatically from an Avro Schema in a file, then the
 ##1) Avro-Type-Provider
 If your use-case is "data-first" and you're using an Avro runtime library that allows you to use Scala case classes to represent your Avro records, then you are probably a little weary of transcribing Avro Schemas into their Scala case class equivalents. 
 
-Now you can annotate an "empty" case class and it's members will be generated automatically at compile time, using the data found in the Schema of a given file:
+Now you can annotate an "empty" case class, and its members will be generated automatically at compile time using the data found in the Schema of a given file:
 
   given the schema automatically found in `input.avro`:
         
@@ -65,9 +65,9 @@ Now you can annotate an "empty" case class and it's members will be generated au
 ####Please note:
 1) The datafile *must* be available at compile time.
 
-2) The filepath *must* be a String literal
+2) The filepath *must* be a String literal.
 
-3) The name of the empty case class *must* match the record name exactly 
+3) The name of the empty case class *must* match the record name exactly (peek at the schema in the file, if needed).
 
 4) The order of class definition *must* be such that the classes that represent the most-nested records are expanded first
 
@@ -101,19 +101,29 @@ Use the expanded class as you would a code-gen'd class with any SpecificRecord A
         val dataFileWriter = new DataFileWriter[B](datumWriter)
 
 
-        //Reading avros - no reflection
+        //Reading avros - no reflection allowed since Scala fields are always private
         val schema = new DataFileReader(file, new GenericDatumReader[GenericRecord]).getSchema 
         val userDatumReader = new SpecificDatumReader[B](schema)
         val dataFileReader = new DataFileReader[B](file, userDatumReader)
 
 
 ####Please note:
-1) Seamlessly compatible with Scalding(reading/writing) and Spark(writing). However, since Scala fields are always private, standard Apache Avro's APIs are limited to only those constructors that do not rely on reflection to get the schema. Therefore one must use the no-argument constructor for `SpecificDatumWriter`, and provide an Avro `Schema` when constructing a `SpecificDatumReader` as in the example above.
+1) One must use the no-argument constructor for `SpecificDatumWriter` and provide an Avro `Schema` when constructing a `SpecificDatumReader`, as in the example above. Compatiblity with other Scala Avro APIs is limited to only those using constructors that do not rely on reflection to get the schema: Scalding is compatible, Spark is not.
 
 2) Fields must be `var`s in order to be compatible with the SpecificRecord API
 
-3) Works with Avro Primitives (`Int`, `Float`, `Long`, `Double`, `Boolean`, `String`, `Null`), Nullable fields (represented by Options), and Lists for Arrays. Map, Fixed, other collections besides List, and unions (beyond nullable fields) are not yet supported.
+3) Works with the following Avro Primitives:  
+`Int`
+`Float`
+`Long`
+`Double`
+`Boolean`
+`String`
+`Null`
 
-4) Provide a `null` argument (e.g. `@AvroRecord(null)` ) to force the omission of a namespace in the generated schema. This must be done in order to read files with no namespace in the schema into records with a namespace in Scalding, Spark, or any other tool that avoids reflection on the record (i.e. not vanilla Avro).
+Nullable fields are represented by `Option[T]`, and Arrays by `List`. Map, Fixed, other collections besides List, and unions (beyond nullable fields) are not yet supported.
 
-5) A class that is doubly annotated with `@AvroTypeProvider` and `@AvroRecord` will automatically be updated with vars instead of vals
+4) A class that is doubly annotated with `@AvroTypeProvider` and `@AvroRecord` will automatically be updated with vars instead of vals
+
+5) -*For Scalding Only- Provide a `null` argument (e.g. `@AvroRecord(null)` ) to force the omission of a namespace in the generated schema. This must be done in order to read files with no namespace in the schema into case classes.
+

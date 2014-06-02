@@ -26,6 +26,7 @@ import com.julianpeeters.avro.annotations.AvroRecord
 
 @AvroRecord
 case class AvroRecordTestNoNamespace(var x: Int)
+object AvroRecordTestNoNamespace {val y: Int = 3}
 
 class AvroRecordNoNamespaceTest extends Specification {
 

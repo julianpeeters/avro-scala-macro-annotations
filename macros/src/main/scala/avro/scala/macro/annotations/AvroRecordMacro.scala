@@ -273,12 +273,13 @@ object AvroRecordMacro {
           val newVals    = generateSchema(name.toString, namespace, first)
           val newCtors   = generateNewCtors(indexed(first))   //a no-arge ctor so `newInstance()` can be used
           val newDefs    = generateNewMethods(name, indexed(first)) //`get`, `put`, and `getSchema` methods 
-          val newParents = parents ::: generateNewBaseTypes   //extend SpecificRecord and SpecificRecordBase
+          val newParents = parents ::: generateNewBaseTypes   //extend SpecificRecordBase
           val newBody    = body ::: newImports ::: newCtors ::: newVals ::: newDefs      //add new members to the body
 
           //return an updated class def
           q"$mods class $name[..$tparams](..$first)(...$rest) extends ..$newParents { $self => ..$newBody }" 
         }
+        case List(classDef, objectDef) => objectDef
       } 
     }
 
