@@ -279,7 +279,6 @@ object AvroRecordMacro {
           //return an updated class def
           q"$mods class $name[..$tparams](..$first)(...$rest) extends ..$newParents { $self => ..$newBody }" 
         }
-        case List(classDef, objectDef) => objectDef
       } 
     }
 
