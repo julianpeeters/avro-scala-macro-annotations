@@ -8,7 +8,7 @@
 Get the dependency with:
 
 
-        libraryDependencies += "com.julianpeeters" % "avro-scala-macro-annotations_2.10" % "0.1-SNAPSHOT"
+        libraryDependencies += "com.julianpeeters" % "avro-scala-macro-annotations_2.10" % "0.1"
 
         //"Macro annotations are only available in Scala 2.10.x and 2.11.x with the macro paradise plugin. Their inclusion in official Scala might happen in Scala 2.12 - official [docs](http://docs.scala-lang.org/overviews/macros/annotations.html)" 
         addCompilerPlugin("org.scalamacros" % "paradise" % "2.0.0" cross CrossVersion.full)
@@ -108,7 +108,7 @@ Use the expanded class as you would a code-gen'd class with any SpecificRecord A
 
 
 ####Please note:
-1) One must use the no-argument constructor for `SpecificDatumWriter` and provide an Avro `Schema` when constructing a `SpecificDatumReader`, as in the example above. Compatiblity with other Scala Avro APIs is limited to only those using constructors that do not rely on reflection to get the schema: Scalding is compatible, Spark is not.
+1) If your framework is one that relies on reflection to get the Schema, it will fail since Scala fields are private. Therefore preempt it by passing in a Schema and using no-argument constructors when necessary (as in the Avro example above).
 
 2) Fields must be `var`s in order to be compatible with the SpecificRecord API
 
