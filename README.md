@@ -3,9 +3,11 @@
 1) `@AvroTypeProvider("path/to/schema")` - Automatically convert Avro Schemas to Scala case class definitions for use in your favorite Scala Avro runtime.
 
 
-2) `@AvroRecord` - Use Scala classes to represent your Avro records, serializable by the Apache Avro runtime (a port of [Avro-Scala-Compiler-Plugin](https://code.google.com/p/avro-scala-compiler-plugin/))
+2) `@AvroRecord` - Use Scala classes to represent your Avro records, serializable by the Apache Avro runtime (a port of [Avro-Scala-Compiler-Plugin](https://code.google.com/p/avro-scala-compiler-plugin/)).
 
-Get the dependency with:
+
+
+Get the dependency with (Scala 2.10 or 2.11):
 
 
         libraryDependencies += "com.julianpeeters" % "avro-scala-macro-annotations_2.10" % "0.2"
@@ -52,6 +54,8 @@ Now you can annotate an "empty" case class, and its members will be generated au
 
   expand to:
 
+        
+        package tutorial
 
         import com.julianpeeters.avro.annotations._
 
@@ -63,13 +67,13 @@ Now you can annotate an "empty" case class, and its members will be generated au
 
 
 ####Please note:
-1) The datafile *must* be available at compile time.
+1) The datafile must be available at compile time.
 
-2) The filepath *must* be a String literal.
+2) The filepath must be a String literal.
 
-3) The name of the empty case class *must* match the record name exactly (peek at the schema in the file, if needed).
+3) The name of the empty case class must match the record name exactly (peek at the schema in the file, if needed).
 
-4) The order of class definition *must* be such that the classes that represent the most-nested records are expanded first.
+4) The order of class definition must be such that the classes that represent the most-nested records are expanded first.
 
 5) A class that is doubly annotated with `@AvroTypeProvider` and `@AvroRecord` will be updated with vars instead of vals.
 
