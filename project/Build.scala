@@ -4,9 +4,9 @@ import Keys._
 object BuildSettings {
   val buildSettings = Defaults.defaultSettings ++ Seq(
     organization := "com.julianpeeters",
-    version := "0.2",
+    version := "0.3-SNAPSHOT",
     scalacOptions ++= Seq(),
-    scalaVersion := "2.10.3",
+    scalaVersion := "2.10.4",
     libraryDependencies += "org.apache.avro" % "avro" % "1.7.6",
     libraryDependencies += "org.json4s" %% "json4s-native" % "3.2.6",
     libraryDependencies += "org.specs2" %% "specs2" % "2.2" % "test",
