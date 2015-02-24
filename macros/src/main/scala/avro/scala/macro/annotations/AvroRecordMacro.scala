@@ -67,7 +67,7 @@ object AvroRecordMacro {
       }
     }
 
-    //SchemaGen - generates schemas, stores them, and defines "val SCHEMA$ = ..." 
+    //SchemaGen - generates schemas and stores them
     def generateSchema(className: String, namespace: String, first: List[c.universe.ValDef]) = {  
       //map is from https://github.com/radlab/avro-scala-compiler-plugin/blob/master/src/main/scala/plugin/SchemaGen.scala
       val primitiveClasses = Map(
@@ -113,10 +113,6 @@ object AvroRecordMacro {
       avroSchema.setFields(JArrays.asList(avroFields.toArray:_*))
       ClassFieldStore.storeClassFields(avroSchema) //store the field data from the new schema
       schemas += ((namespace + "." + className) -> avroSchema)
-
-      val valName = newTermName("SCHEMA$")
-      val newVal = q"""val $valName = ${avroSchema.toString} """ //TODO add liftable[Schema] so we don't have to call .toString
-      List(newVal)
     }
 
 
@@ -262,6 +258,8 @@ object AvroRecordMacro {
         //Update ClassDef
         case classDef @ q"$mods class $name[..$tparams](..$first)(...$rest) extends ..$parents { $self => ..$body }" :: Nil => {
 
+          generateSchema(name.toString, namespace, first)
+
           def indexed(fields: List[ValDef]) = { //adds index to the field name and type, loads into a FieldData case class
             (fields.map(_.name), first.map(_.tpt), 0 to fields.length-1)
               .zipped 
@@ -270,11 +268,10 @@ object AvroRecordMacro {
           } 
 
           val newImports = List(q" import org.apache.avro.Schema")
-          val newVals    = generateSchema(name.toString, namespace, first)
           val newCtors   = generateNewCtors(indexed(first))   //a no-arge ctor so `newInstance()` can be used
           val newDefs    = generateNewMethods(name, indexed(first)) //`get`, `put`, and `getSchema` methods 
           val newParents = parents ::: generateNewBaseTypes   //extend SpecificRecordBase
-          val newBody    = body ::: newImports ::: newCtors ::: newVals ::: newDefs      //add new members to the body
+          val newBody    = body ::: newImports ::: newCtors ::: newDefs      //add new members to the body
 
           //return an updated class def
           q"$mods class $name[..$tparams](..$first)(...$rest) extends ..$newParents { $self => ..$newBody }" 

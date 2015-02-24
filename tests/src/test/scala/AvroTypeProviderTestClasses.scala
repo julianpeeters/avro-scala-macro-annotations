@@ -185,11 +185,10 @@ case class AvroTypeProviderTest45()
 @AvroRecord
 case class AvroTypeProviderTest46()
 
-/* //TODO make readable file for this class - not very urgent since this field type is tested in other contexts also
 @AvroTypeProvider("tests/src/test/resources/AvroTypeProviderTest47.avro")
 @AvroRecord
 case class AvroTypeProviderTest47()
-*/
+
 
 //Primitive, 2-arity, heterogenous members
 @AvroTypeProvider("tests/src/test/resources/AvroTypeProviderTest48.avro")

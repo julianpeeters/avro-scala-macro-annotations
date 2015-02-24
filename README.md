@@ -32,7 +32,7 @@ First the fields are added automatically from an Avro Schema in a file, then the
 ##1) Avro-Type-Provider
 If your use-case is "data-first" and you're using an Avro runtime library that allows you to use Scala case classes to represent your Avro records, then you are probably a little weary of transcribing Avro Schemas into their Scala case class equivalents. 
 
-Now you can annotate an "empty" case class, and its members will be generated automatically at compile time using the data found in the Schema of a given file:
+Annotate an "empty" case class, and its members will be generated automatically at compile time using the data found in the Schema of a given file:
 
   given the schema automatically found in `input.avro` or `input.avsc`:
         
@@ -78,7 +78,7 @@ Now you can annotate an "empty" case class, and its members will be generated au
 5) A class that is doubly annotated with `@AvroTypeProvider` and `@AvroRecord` will be updated with vars instead of vals.
 
 ##2) Avro-Record: 
-Implements `SpecificRecord` at compile time so you can use Scala case classes to represent Avro records (like [Scalavro](https://github.com/GenslerAppsPod/scalavro) or [Salat-Avro](https://github.com/julianpeeters/salat-avro/tree/master), but for the Apache Avro runtime so that it runs on your cluster). Since Avro-Scala-Compiler-Plugin doesn't work with Scala 2.10+ but the compiler still stumps me, I ported the serialization essentials over to use [Scala Macro Annotations](http://docs.scala-lang.org/overviews/macros/annotations.html) instead of a compiler plugin. 
+Implements `SpecificRecord` at compile time so you can use Scala case classes to represent Avro records (like [Scalavro](https://github.com/GenslerAppsPod/scalavro) or [Salat-Avro](https://github.com/julianpeeters/salat-avro/tree/master), but for the Apache Avro runtime so that it runs on your cluster). Since Avro-Scala-Compiler-Plugin doesn't work with Scala 2.10+ and the compiler still stumps me, I ported the serialization essentials over to use [Scala Macro Annotations](http://docs.scala-lang.org/overviews/macros/annotations.html) instead. 
 
 Now you can annotate a case class that you'd like to have serve as your Avro record:
 
@@ -97,7 +97,7 @@ Now you can annotate a case class that you'd like to have serve as your Avro rec
         {"type":"record","name":"B","namespace":"sample","doc":"Auto-generated schema","fields":[{"name":"a","type":["null",{"type":"record","name":"A","doc":"Auto-generated schema","fields":[{"name":"i","type":"int","doc":"Auto-Generated Field"}]}],"doc":"Auto-Generated Field"}]}}
 
 
-Use the expanded class as you would a code-gen'd class with any SpecificRecord API. E.g.:
+Use the expanded class as you would a code-gen'd class with any `SpecificRecord` API. E.g.:
 
 
         //Writing avros - no reflection

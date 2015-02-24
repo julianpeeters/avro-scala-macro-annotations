@@ -163,7 +163,7 @@ class AvroRecord05Test extends Specification {
       val record = AvroRecordTest05("hello world")
 
       val file = File.createTempFile("AvroRecordTest05", "avro")
-        file.deleteOnExit()
+        
 
       val userDatumWriter = new SpecificDatumWriter[AvroRecordTest05]
       val dataFileWriter = new DataFileWriter[AvroRecordTest05](userDatumWriter)
@@ -354,7 +354,7 @@ class AvroRecord13Test extends Specification {
       val record = AvroRecordTest13(Some(1))
 
       val file = File.createTempFile("AvroRecordTest13", "avro")
-        file.deleteOnExit()
+        
 
       val userDatumWriter = new SpecificDatumWriter[AvroRecordTest13]
       val dataFileWriter = new DataFileWriter[AvroRecordTest13](userDatumWriter)
