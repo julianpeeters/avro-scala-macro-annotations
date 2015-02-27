@@ -46,7 +46,7 @@ Annotate an "empty" case class, and its members will be generated automatically 
         import com.julianpeeters.avro.annotations._
 
         @AvroTypeProvider("data/input.avro")
-        case class rec()
+        case class Rec()
          
         @AvroTypeProvider("data/input.avro")
         case class MyRecord()
@@ -97,7 +97,7 @@ Now you can annotate a case class that you'd like to have serve as your Avro rec
         {"type":"record","name":"B","namespace":"sample","doc":"Auto-generated schema","fields":[{"name":"a","type":["null",{"type":"record","name":"A","doc":"Auto-generated schema","fields":[{"name":"i","type":"int","doc":"Auto-Generated Field"}]}],"doc":"Auto-Generated Field"}]}}
 
 
-Use the expanded class as you would a code-gen'd class with any `SpecificRecord` API. E.g.:
+Use the expanded class as you would a code-gen'd class with any `SpecificRecord` API. e.g.:
 
 
         //Writing avros - no reflection
@@ -116,18 +116,20 @@ Use the expanded class as you would a code-gen'd class with any `SpecificRecord`
 
 2) Fields must be `var`s in order to be compatible with the SpecificRecord API
 
-3) Works with the following Avro Primitives:  
-`Int`
-`Float`
-`Long`
-`Double`
-`Boolean`
-`String`
-`Null`
+3) Works with the following Avro datatypes:  
+`int`
+`float`
+`long`
+`double`
+`boolean`
+`string`
+`null`
 
-Nullable fields are represented by `Option[T]`, and Arrays by `List`. Map, Fixed, other collections besides List, and unions (beyond nullable fields) are not yet supported.
+Nullable fields are represented by `Option`, and `array` by `List`. `map`, `fixed`, `enum`, and `union` (beyond nullable fields) are not yet supported.
 
 4) A class that is doubly annotated with `@AvroTypeProvider` and `@AvroRecord` will automatically be updated with vars instead of vals
 
-5) -*For Scalding Only- Provide a `null` argument (e.g. `@AvroRecord(null)` ) to force the omission of a namespace in the generated schema. This must be done in order to read files with no namespace in the schema into case classes.
+5) *For Scalding Only: Provide a `null` argument (e.g. `@AvroRecord(null)` ) to force the omission of a namespace in the generated schema. This must be done in order to read files with no namespace in the schema into case classes.
+
+6) There currently is no way to specify the order of macro expansions, and if an annotated class is referenced in another .scala file before the class itself expands, then it's schema will not have been registered and any nested record types will not be found. A workaround for correct expansion order is to rename A.scala to Z.scala so it follows Test.scala alphabetically. Renaming packages is also a strategy.
 

@@ -105,7 +105,7 @@ object AvroRecordMacro {
         else if (schemas.keys.toList.contains(namespace + "." + fieldTypeName.toString) ) { //if it's a record type
           schemas(namespace + "." + fieldTypeName.toString)
         }
-        else throw new UnsupportedOperationException("Cannot support yet: " + tpt)
+        else throw new UnsupportedOperationException("Cannot support yet: " + tpt + "\nIf " + tpt + "is a record type, check that macro expansion happens in a file that is lexicographically before the file that references it.")
       }  
 
       val avroFields = first.map(v => new Field(v.name.toString.trim, createSchema(v.tpt.toString), "Auto-Generated Field", null)) 

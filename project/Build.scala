@@ -4,14 +4,27 @@ import Keys._
 object BuildSettings {
   val buildSettings = Defaults.defaultSettings ++ Seq(
     organization := "com.julianpeeters",
-    version := "0.3-SNAPSHOT",
+    version := "0.4-SNAPSHOT",
     scalacOptions ++= Seq(),
     scalaVersion := "2.10.4",
+    crossScalaVersions := Seq("2.10.4", "2.11.5"),
+    resolvers += Resolver.sonatypeRepo("releases"),
+    addCompilerPlugin("org.scalamacros" % "paradise" % "2.1.0-M5" cross CrossVersion.full),
     libraryDependencies += "org.apache.avro" % "avro" % "1.7.6",
-    libraryDependencies += "org.json4s" %% "json4s-native" % "3.2.6",
-    libraryDependencies += "org.specs2" %% "specs2" % "2.2" % "test",
-    libraryDependencies += "org.scalamacros" % "quasiquotes" % "2.0.0-M6" cross CrossVersion.full,
-    addCompilerPlugin("org.scalamacros" % "paradise" % "2.0.0" cross CrossVersion.full),
+    libraryDependencies := {
+      CrossVersion.partialVersion(scalaVersion.value) match {
+        // if scala 2.11+ is used, quasiquotes are merged into scala-reflect
+        case Some((2, scalaMajor)) if scalaMajor >= 11 =>
+          libraryDependencies.value ++ Seq (
+            "org.specs2" %% "specs2" % "2.3.11" % "test")
+        // in Scala 2.10, quasiquotes are provided by macro paradise
+        case Some((2, 10)) =>
+          libraryDependencies.value ++ Seq(
+            "org.scalamacros" %% "quasiquotes" % "2.0.0" cross CrossVersion.binary,
+            "org.specs2" %% "specs2" % "2.2" % "test")
+      }
+    },
+    // publishing
     publishMavenStyle := true,
     publishArtifact in Test := false,
     publishTo <<= version { (v: String) =>
