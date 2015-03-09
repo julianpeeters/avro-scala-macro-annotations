@@ -1,7 +1,7 @@
 package com.julianpeeters.avro.annotations
 
 import matchers.DefaultParamMatcher
-import util.ClassFieldStore
+import util.{ClassFieldStore, SchemaStore}
 
 import scala.reflect.macros.Context
 
@@ -20,12 +20,12 @@ import java.util.{Arrays => JArrays}
 
 
 object AvroRecordMacro {
-  
+  /*
   //A map to store the generated schemas
   val schemas: scala.collection.concurrent.Map[String, Schema] = {
     scala.collection.convert.Wrappers.JConcurrentMapWrapper(new ConcurrentHashMap[String, Schema]())
   }
-
+*/
   def impl(c: Context)(annottees: c.Expr[Any]*): c.Expr[Any] = {
     
     import c.universe._
@@ -68,59 +68,63 @@ object AvroRecordMacro {
     }
 
     //SchemaGen - generates schemas and stores them
-    def generateSchema(className: String, namespace: String, first: List[c.universe.ValDef]) = {  
+    def generateSchema(className: String, namespace: String, first: List[c.universe.ValDef]): Schema = {  
       //map is from https://github.com/radlab/avro-scala-compiler-plugin/blob/master/src/main/scala/plugin/SchemaGen.scala
-      val primitiveClasses = Map(
+      val primitiveClasses: Map[Type, Schema] = Map(
         /** Primitives in the Scala and Avro sense */
-        "Int"     -> Schema.create(AvroType.INT),
-        "Float"   -> Schema.create(AvroType.FLOAT),
-        "Long"    -> Schema.create(AvroType.LONG),
-        "Double"  -> Schema.create(AvroType.DOUBLE),
-        "Boolean" -> Schema.create(AvroType.BOOLEAN),
-        "String"  -> Schema.create(AvroType.STRING),
-        "Null"    -> Schema.create(AvroType.NULL),
-
+        typeOf[Int]    -> Schema.create(AvroType.INT),
+        typeOf[Float]   -> Schema.create(AvroType.FLOAT),
+        typeOf[Long]    -> Schema.create(AvroType.LONG),
+        typeOf[Double]  -> Schema.create(AvroType.DOUBLE),
+        typeOf[Boolean] -> Schema.create(AvroType.BOOLEAN),
+        typeOf[String]  -> Schema.create(AvroType.STRING),
+        typeOf[Null]    -> Schema.create(AvroType.NULL),
         /** Primitives in the Avro sense */
-        "ByteBuffer" -> Schema.create(AvroType.BYTES),
-        "Utf8"       -> Schema.create(AvroType.STRING)
+        typeOf[java.nio.ByteBuffer] -> Schema.create(AvroType.BYTES),
+        typeOf[Utf8]       -> Schema.create(AvroType.STRING)
       )
     
-      def createSchema(tpt: String) : Schema = { //TODO prefer no Strings, but how to match on the value of c.universe.Tree
-        val fieldTypeName = tpt.toString 
-
-        if (primitiveClasses.contains(fieldTypeName)) {
-          primitiveClasses(fieldTypeName)
-        } 
-        else if (fieldTypeName.startsWith("List[")) { 
-          val boxedType = DefaultParamMatcher.getBoxed(fieldTypeName) //TODO move `getBoxed` to a Utility object?
-          Schema.createArray(createSchema(boxedType))
-        } 
-        else if (fieldTypeName.startsWith("Option[")) { 
-          val boxed = DefaultParamMatcher.getBoxed(fieldTypeName) //TODO move `getBoxed` to a Utility object?
-          if (boxed.startsWith("Option[")) { 
-            throw new UnsupportedOperationException("Implementation limitation: Cannot immediately nest Option types")
-          } else
-            Schema.createUnion(JArrays.asList(Array(createSchema("Null"), createSchema(boxed)):_*))
-        } 
-        else if (schemas.keys.toList.contains(namespace + "." + fieldTypeName.toString) ) { //if it's a record type
-          schemas(namespace + "." + fieldTypeName.toString)
+      def createSchema(tpt: c.universe.Type) : Schema = {
+        tpt match {
+          case x if (primitiveClasses.contains(x)) => primitiveClasses(x)
+          case x @ TypeRef(pre, symbol, args) if (x <:< typeOf[List[Any]] && args.length == 1)  => {
+            Schema.createArray(createSchema(args.head))
+          }
+          case x @ TypeRef(pre, symbol, args) if (x <:< typeOf[Option[Any]] && args.length == 1) => {
+            if (args.head <:< typeOf[Option[Any]]) { 
+              throw new UnsupportedOperationException("Implementation limitation: Cannot immediately nest Option types")
+            } 
+            else Schema.createUnion(JArrays.asList(Array(createSchema(typeOf[Null]), createSchema(args.head)):_*))
+          }
+          //if a record is found
+          case x @ TypeRef(pre, symbol, args) if (x <:< typeOf[Product with Serializable] ) => { 
+            SchemaStore.schemas(x.toString)
+          }
+          case x => throw new UnsupportedOperationException("Cannot support yet: " + x )
         }
-        else throw new UnsupportedOperationException("Cannot support yet: " + tpt + "\nIf " + tpt + "is a record type, check that macro expansion happens in a file that is lexicographically before the file that references it.")
       }  
-
-      val avroFields = first.map(v => new Field(v.name.toString.trim, createSchema(v.tpt.toString), "Auto-Generated Field", null)) 
+ 
+      val avroFields = first.map(v =>{
+        // Since macro annotations are untyped, we must typecheck each field so the 
+        // tree's tpe field is not null. The typecheck also has the virtue of   
+        // expanding a field's type on demand.
+        val typeCheckedField = c.typeCheck(q"type T = ${v.tpt}") match {
+          case x @ TypeDef(mods, name, tparams, rhs)  => rhs
+        }    
+        new Field(v.name.toString.trim, createSchema(typeCheckedField.tpe), "Auto-Generated Field", null)
+      })
       val avroSchema = Schema.createRecord(className, "Auto-generated schema", namespace, false)
       avroSchema.setFields(JArrays.asList(avroFields.toArray:_*))
       ClassFieldStore.storeClassFields(avroSchema) //store the field data from the new schema
-      schemas += ((namespace + "." + className) -> avroSchema)
+      SchemaStore.schemas += ((namespace + "." + className) -> avroSchema)
+      avroSchema
     }
 
 
     //MethodGen - generates put, get, and getSchema needed to implement SpecificRecord for serialization
     def generateNewMethods(name: TypeName, indexedFields: List[FieldData]) = {
-
-      val getDef = { //expands to cases that are to be used in a pattern match, e.g. case 1 => username.asInstanceOf[AnyRef]
-
+      //expands to cases for a pattern match, e.g. case 1 => username.asInstanceOf[AnyRef]
+      val getDef = { 
         def asGetCase(fd: FieldData) = {
           def convertToJava(typeTree: Tree, convertable: Tree): Tree = {
             if (!typeTree.children.isEmpty) { 
@@ -169,9 +173,8 @@ object AvroRecordMacro {
         val getCases = indexedFields.map(f => asGetCase(f)) :+ cq"""_ => new org.apache.avro.AvroRuntimeException("Bad index")"""
         q"""def get(field: Int): AnyRef = field match {case ..$getCases}"""
       }
-
       //TODO make liftable[Schema] so we don't have to toString.
-      val getSchemaDef = q"""def getSchema: Schema = new Schema.Parser().parse(${schemas(namespace + "." + name).toString})""" 
+      val getSchemaDef = q"""def getSchema: Schema = new Schema.Parser().parse(${SchemaStore.schemas(namespace + "." + name).toString})""" 
 
       val putDef = {//expands to cases used in a pattern match, e.g. case 1 => this.username = value.asInstanceOf[String]
         def asPutCase(fd: FieldData) = {
@@ -253,7 +256,10 @@ object AvroRecordMacro {
 
     //Update ClassDef and ModuleDef
     val result = { 
+
+
       annottees.map(_.tree).toList match {
+
 
         //Update ClassDef
         case classDef @ q"$mods class $name[..$tparams](..$first)(...$rest) extends ..$parents { $self => ..$body }" :: Nil => {
@@ -268,20 +274,22 @@ object AvroRecordMacro {
           } 
 
           val newImports = List(q" import org.apache.avro.Schema")
-          val newCtors   = generateNewCtors(indexed(first))   //a no-arge ctor so `newInstance()` can be used
+          val newCtors   = generateNewCtors(indexed(first))   //a no-arg ctor so `newInstance()` can be used
           val newDefs    = generateNewMethods(name, indexed(first)) //`get`, `put`, and `getSchema` methods 
           val newParents = parents ::: generateNewBaseTypes   //extend SpecificRecordBase
           val newBody    = body ::: newImports ::: newCtors ::: newDefs      //add new members to the body
 
           //return an updated class def
-          q"$mods class $name[..$tparams](..$first)(...$rest) extends ..$newParents { $self => ..$newBody }" 
+          q"""$mods class $name[..$tparams](..$first)(...$rest) extends ..$newParents { $self => ..$newBody }""" 
         }
+
       } 
     }
 
     c.Expr[Any](result)
   }
-  schemas.clear() //remove schemas so we can reuse the object on a new record(s)
+
+ // schemas.clear() //remove schemas so we can reuse the object on a new record(s)
 }
 
 class AvroRecord extends StaticAnnotation {

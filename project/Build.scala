@@ -6,7 +6,7 @@ object BuildSettings {
     organization := "com.julianpeeters",
     version := "0.4-SNAPSHOT",
     scalacOptions ++= Seq(),
-    scalaVersion := "2.10.4",
+    scalaVersion := "2.11.5",
     crossScalaVersions := Seq("2.10.4", "2.11.5"),
     resolvers += Resolver.sonatypeRepo("releases"),
     addCompilerPlugin("org.scalamacros" % "paradise" % "2.1.0-M5" cross CrossVersion.full),

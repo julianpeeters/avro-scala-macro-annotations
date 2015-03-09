@@ -1,6 +1,9 @@
 package test
 
 import com.julianpeeters.avro.annotations._
+//user-defined, nested class not defined first
+@AvroRecord
+case class AvroRecordTest58(var x: AvroRecordTest00) 
 
 //Primitive Types
 @AvroRecord
@@ -127,8 +130,6 @@ case class AvroRecordTest57(var x: List[Option[List[Option[Int]]]], var y: List[
 
 
 //User-defined types
-@AvroRecord
-case class AvroRecordTest58(var x: AvroRecordTest00) 
 @AvroRecord
 case class AvroRecordTest59(var x: AvroRecordTest58) 
 @AvroRecord
