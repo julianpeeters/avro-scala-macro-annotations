@@ -6,8 +6,8 @@ object BuildSettings {
     organization := "com.julianpeeters",
     version := "0.4-SNAPSHOT",
     scalacOptions ++= Seq(),
-    scalaVersion := "2.11.5",
-    crossScalaVersions := Seq("2.10.4", "2.11.5"),
+    scalaVersion := "2.10.5",
+    crossScalaVersions := Seq("2.10.5", "2.11.5"),
     resolvers += Resolver.sonatypeRepo("releases"),
     addCompilerPlugin("org.scalamacros" % "paradise" % "2.1.0-M5" cross CrossVersion.full),
     libraryDependencies += "org.apache.avro" % "avro" % "1.7.6",
@@ -85,16 +85,14 @@ object MyBuild extends Build {
     file("tests"), 
     settings = buildSettings)
     .settings(
-      publishArtifact := false,
-      libraryDependencies ++= Seq("org.specs2" %% "specs2" % "1.13" % "test")
+      publishArtifact := false//,
+      //libraryDependencies ++= Seq("org.specs2" %% "specs2" % "1.13" % "test")
         // Add your additional libraries here (comma-separated)...
-     )
-     .settings(addCompilerPlugin("org.scalamacros" % "paradise" % "2.0.0" cross CrossVersion.full)
-     ) dependsOn(macros) settings(
-   // include the macro classes and resources in the main jar
-   mappings in (Compile, packageBin) ++= mappings.in(macros, Compile, packageBin).value,
-   // include the macro sources in the main source jar
-   mappings in (Compile, packageSrc) ++= mappings.in(macros, Compile, packageSrc).value
+    ) dependsOn(macros) settings(
+    // include the macro classes and resources in the main jar
+    mappings in (Compile, packageBin) ++= mappings.in(macros, Compile, packageBin).value,
+    // include the macro sources in the main source jar
+    mappings in (Compile, packageSrc) ++= mappings.in(macros, Compile, packageSrc).value
   )
 }
 

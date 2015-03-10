@@ -7,7 +7,7 @@
 
 
 
-Get the dependency with (Scala 2.10 or 2.11):
+Get the dependency ([for Scala 2.10.5](https://github.com/julianpeeters/avro-scala-macro-annotations/issues/6#issuecomment-77973333) or 2.11.x):
 
 
         libraryDependencies += "com.julianpeeters" % "avro-scala-macro-annotations_2.10" % "0.4-SNAPSHOT"
@@ -126,10 +126,14 @@ Use the expanded class as you would a code-gen'd class with any `SpecificRecord`
 `boolean`
 `string`
 `null`
+`array`
+`record`
 
 Nullable fields are represented by `Option`, and `array` by `List`. `map`, `fixed`, `enum`, and `union` (beyond nullable fields) are not yet supported.
 
 4) A class that is doubly annotated with `@AvroTypeProvider` and `@AvroRecord` will automatically be updated with vars instead of vals
 
 5) *For Scalding Only: Provide a `null` argument (e.g. `@AvroRecord(null)` ) to force the omission of a namespace in the generated schema. This must be done in order to read files with no namespace in the schema into case classes.
+
+6) *For Scala 2.10.5: The order of class definition must be such that the classes that represent the most-nested records are defined and annotated first.
 

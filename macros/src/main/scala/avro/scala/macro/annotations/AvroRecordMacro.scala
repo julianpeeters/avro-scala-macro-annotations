@@ -20,12 +20,7 @@ import java.util.{Arrays => JArrays}
 
 
 object AvroRecordMacro {
-  /*
-  //A map to store the generated schemas
-  val schemas: scala.collection.concurrent.Map[String, Schema] = {
-    scala.collection.convert.Wrappers.JConcurrentMapWrapper(new ConcurrentHashMap[String, Schema]())
-  }
-*/
+
   def impl(c: Context)(annottees: c.Expr[Any]*): c.Expr[Any] = {
     
     import c.universe._
@@ -72,7 +67,7 @@ object AvroRecordMacro {
       //map is from https://github.com/radlab/avro-scala-compiler-plugin/blob/master/src/main/scala/plugin/SchemaGen.scala
       val primitiveClasses: Map[Type, Schema] = Map(
         /** Primitives in the Scala and Avro sense */
-        typeOf[Int]    -> Schema.create(AvroType.INT),
+        typeOf[Int]     -> Schema.create(AvroType.INT),
         typeOf[Float]   -> Schema.create(AvroType.FLOAT),
         typeOf[Long]    -> Schema.create(AvroType.LONG),
         typeOf[Double]  -> Schema.create(AvroType.DOUBLE),
@@ -288,8 +283,6 @@ object AvroRecordMacro {
 
     c.Expr[Any](result)
   }
-
- // schemas.clear() //remove schemas so we can reuse the object on a new record(s)
 }
 
 class AvroRecord extends StaticAnnotation {
