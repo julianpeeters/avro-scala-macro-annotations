@@ -6,22 +6,18 @@ object BuildSettings {
     organization := "com.julianpeeters",
     version := "0.4-SNAPSHOT",
     scalacOptions ++= Seq(),
-    scalaVersion := "2.10.5",
-    crossScalaVersions := Seq("2.10.5", "2.11.5"),
+    scalaVersion := "2.11.6",
+    crossScalaVersions := Seq("2.11.6"),
     resolvers += Resolver.sonatypeRepo("releases"),
     addCompilerPlugin("org.scalamacros" % "paradise" % "2.1.0-M5" cross CrossVersion.full),
     libraryDependencies += "org.apache.avro" % "avro" % "1.7.6",
     libraryDependencies := {
       CrossVersion.partialVersion(scalaVersion.value) match {
-        // if scala 2.11+ is used, quasiquotes are merged into scala-reflect
         case Some((2, scalaMajor)) if scalaMajor >= 11 =>
           libraryDependencies.value ++ Seq (
             "org.specs2" %% "specs2" % "2.3.11" % "test")
-        // in Scala 2.10, quasiquotes are provided by macro paradise
-        case Some((2, 10)) =>
-          libraryDependencies.value ++ Seq(
-            "org.scalamacros" %% "quasiquotes" % "2.0.0" cross CrossVersion.binary,
-            "org.specs2" %% "specs2" % "2.2" % "test")
+        case Some((2, 12)) =>
+          libraryDependencies.value ++ Seq()
       }
     },
     // publishing
@@ -77,23 +73,18 @@ object MyBuild extends Build {
       libraryDependencies <+= (scalaVersion)("org.scala-lang" % "scala-reflect" % _))
   )
 
-  /*
-  *tests project build def was added to the macros build, and could probably be "re-styled" to integrate more cleanly
-  */
   lazy val tests: Project = Project(
     "tests",
     file("tests"), 
     settings = buildSettings)
     .settings(
-      publishArtifact := false//,
-      //libraryDependencies ++= Seq("org.specs2" %% "specs2" % "1.13" % "test")
+      publishArtifact := false
         // Add your additional libraries here (comma-separated)...
-    ) dependsOn(macros) settings(
-    // include the macro classes and resources in the main jar
-    mappings in (Compile, packageBin) ++= mappings.in(macros, Compile, packageBin).value,
-    // include the macro sources in the main source jar
-    mappings in (Compile, packageSrc) ++= mappings.in(macros, Compile, packageSrc).value
+     ) dependsOn(macros) settings(
+   // include the macro classes and resources in the main jar
+   mappings in (Compile, packageBin) ++= mappings.in(macros, Compile, packageBin).value,
+   // include the macro sources in the main source jar
+   mappings in (Compile, packageSrc) ++= mappings.in(macros, Compile, packageSrc).value
   )
 }
-
 

@@ -1,23 +1,17 @@
 package com.julianpeeters.avro.annotations
 
-import matchers.DefaultParamMatcher
-import util.{ClassFieldStore, SchemaStore}
-
 import scala.reflect.macros.Context
-
 import scala.language.experimental.macros
 import scala.annotation.StaticAnnotation
 
 import org.apache.avro.util.Utf8
 import org.apache.avro.Schema
 import org.apache.avro.Schema.Field
-
-import java.util.concurrent.ConcurrentHashMap
-
 import org.apache.avro.Schema.{Type => AvroType}
 
+import collection.JavaConversions._
+import java.util.concurrent.ConcurrentHashMap
 import java.util.{Arrays => JArrays}
-
 
 object AvroRecordMacro {
 
@@ -26,18 +20,58 @@ object AvroRecordMacro {
     import c.universe._
     import Flag._
 
-    case class FieldData(nme: TermName, tpt: Tree, idx: Int)//holds info about the fields of the annotee
+    case class IndexedField(nme: TermName, tpe: Type, idx: Int)//holds info about the fields of the annotee
+
+    // from Connor Doyle, per http://stackoverflow.com/questions/16079113/scala-2-10-reflection-how-do-i-extract-the-field-values-from-a-case-class
+    def caseClassParamsOf(tpe: Type): scala.collection.immutable.ListMap[TermName, Type] = {
+      val constructorSymbol = tpe.declaration(nme.CONSTRUCTOR)
+      val defaultConstructor =
+        if (constructorSymbol.isMethod) constructorSymbol.asMethod
+        else {
+          val ctors = constructorSymbol.asTerm.alternatives
+          ctors.map { _.asMethod }.find { _.isPrimaryConstructor }.get
+        }
+
+      scala.collection.immutable.ListMap[TermName, Type]() ++ defaultConstructor.paramss.reduceLeft(_ ++ _).map {
+        sym => newTermName(sym.name.toString) -> tpe.member(sym.name).asMethod.returnType
+      }
+    }
+
+    def asDefaultParam(fieldType: c.universe.Type): c.universe.Tree = {
+      fieldType match {
+        case x if x =:= typeOf[Unit]    => q"()"
+        case x if x =:= typeOf[Boolean] => q""" true """
+        case x if x =:= typeOf[Int]     => q"1"
+        case x if x =:= typeOf[Long]    => q"1L"
+        case x if x =:= typeOf[Float]   => q"1F"
+        case x if x =:= typeOf[Double]  => q"1D"
+        case x if x =:= typeOf[String]  => q""" "" """
+        case x if x =:= typeOf[Null]    => q"null"
+        // List
+        case x @ TypeRef(pre, symbol, args) if (x <:< typeOf[List[Any]] && args.length == 1)  => {
+          q"""List(${asDefaultParam(args.head)})"""
+        }
+        // Option
+        case x @ TypeRef(pre, symbol, args) if (x <:< typeOf[Option[Any]] && args.length == 1)  => {
+          q"""Some(${asDefaultParam(args.head)})"""
+        }
+        // User-Defined
+        case x @ TypeRef(pre, symbol, args) if (x <:< typeOf[Product with Serializable] ) => { 
+          val defaultParams = caseClassParamsOf(x).map(p => asDefaultParam(p._2))
+          q"""${newTermName(symbol.name.toString)}(..$defaultParams)"""
+        }
+        case x => sys.error("cannot support yet: " + x)
+      }
+    }
 
     //Extender
     def generateNewBaseTypes =  List( tq"org.apache.avro.specific.SpecificRecordBase")
 
     //CtorGen
-    def generateNewCtors(indexedFields: List[FieldData]) = {
-      def asCtorParam(typeName: String, c: Context): c.universe.Tree = {
-        if (typeName.endsWith("]")) DefaultParamMatcher.asParameterizedDefaultParam(typeName, c)
-        else  DefaultParamMatcher.asDefaultParam(typeName, c)
-      }
-      val defaultParams = indexedFields.map(field => asCtorParam(field.tpt.toString, c)) //toString to reuse DefaultParamMatcher
+    def generateNewCtors(indexedFields: List[IndexedField]) = {
+      val defaultParams = indexedFields.map(field => {
+        asDefaultParam(field.tpe)
+      }) 
       val newCtorDef = q"""def this() = this(..$defaultParams)"""
       val defaultCtorPos = c.enclosingPosition //thanks to Eugene Burmako for the workaround to position the ctor correctly
       val newCtorPos = defaultCtorPos
@@ -63,7 +97,8 @@ object AvroRecordMacro {
     }
 
     //SchemaGen - generates schemas and stores them
-    def generateSchema(className: String, namespace: String, first: List[c.universe.ValDef]): Schema = {  
+    def generateSchema(className: String, namespace: String, indexedFields: List[IndexedField]): Schema = { 
+
       //map is from https://github.com/radlab/avro-scala-compiler-plugin/blob/master/src/main/scala/plugin/SchemaGen.scala
       val primitiveClasses: Map[Type, Schema] = Map(
         /** Primitives in the Scala and Avro sense */
@@ -76,11 +111,11 @@ object AvroRecordMacro {
         typeOf[Null]    -> Schema.create(AvroType.NULL),
         /** Primitives in the Avro sense */
         typeOf[java.nio.ByteBuffer] -> Schema.create(AvroType.BYTES),
-        typeOf[Utf8]       -> Schema.create(AvroType.STRING)
+        typeOf[Utf8]    -> Schema.create(AvroType.STRING)
       )
     
-      def createSchema(tpt: c.universe.Type) : Schema = {
-        tpt match {
+      def createSchema(tpe: c.universe.Type) : Schema = {
+        tpe match {
           case x if (primitiveClasses.contains(x)) => primitiveClasses(x)
           case x @ TypeRef(pre, symbol, args) if (x <:< typeOf[List[Any]] && args.length == 1)  => {
             Schema.createArray(createSchema(args.head))
@@ -92,155 +127,91 @@ object AvroRecordMacro {
             else Schema.createUnion(JArrays.asList(Array(createSchema(typeOf[Null]), createSchema(args.head)):_*))
           }
           //if a record is found
-          case x @ TypeRef(pre, symbol, args) if (x <:< typeOf[Product with Serializable] ) => { 
-            SchemaStore.schemas(x.toString)
+          case x @ TypeRef(pre, symbol, args) if (x <:< typeOf[Product with Serializable] ) => {
+            val sym = c.mirror.staticClass(x.toString)
+            val cls = symbol.asClass
+            val tpe = cls.toType
+            generateSchema(
+              symbol.name.toString, 
+              namespace, 
+              (caseClassParamsOf(x), 0 to caseClassParamsOf(x).size-1)
+            .zipped 
+            .toList 
+            .map(f => IndexedField(f._1._1, f._1._2, f._2))) //(nme, tpe, idx)
           }
           case x => throw new UnsupportedOperationException("Cannot support yet: " + x )
         }
       }  
  
-      val avroFields = first.map(v =>{
-        // Since macro annotations are untyped, we must typecheck each field so the 
-        // tree's tpe field is not null. The typecheck also has the virtue of   
-        // expanding a field's type on demand.
-        val typeCheckedField = c.typeCheck(q"type T = ${v.tpt}") match {
-          case x @ TypeDef(mods, name, tparams, rhs)  => rhs
-        }    
-        new Field(v.name.toString.trim, createSchema(typeCheckedField.tpe), "Auto-Generated Field", null)
+      val avroFields = indexedFields.map(v =>{  
+        new Field(v.nme.toString.trim, createSchema(v.tpe), "Auto-Generated Field", null)
       })
       val avroSchema = Schema.createRecord(className, "Auto-generated schema", namespace, false)
       avroSchema.setFields(JArrays.asList(avroFields.toArray:_*))
-      ClassFieldStore.storeClassFields(avroSchema) //store the field data from the new schema
-      SchemaStore.schemas += ((namespace + "." + className) -> avroSchema)
+
       avroSchema
     }
 
-
     //MethodGen - generates put, get, and getSchema needed to implement SpecificRecord for serialization
-    def generateNewMethods(name: TypeName, indexedFields: List[FieldData]) = {
+    def generateNewMethods(name: TypeName, indexedFields: List[IndexedField]) = {
+
       //expands to cases for a pattern match, e.g. case 1 => username.asInstanceOf[AnyRef]
       val getDef = { 
-        def asGetCase(fd: FieldData) = {
-          def convertToJava(typeTree: Tree, convertable: Tree): Tree = {
-            if (!typeTree.children.isEmpty) { 
-              val container = typeTree.children.head.toString
-              val boxedTree = typeTree.children.last
-
-              container match {
-                case "Option" => convertToJava(boxedTree, q"""$convertable match {
-                  case Some(x) => x
-                  case None    => null
-                }"""  ) 
-                case "List" => {
-
-                  def convertElements(typeTree: Tree, listArg: Tree): Tree  = {
-                    if (!typeTree.children.isEmpty) { 
-                      typeTree.children.head.toString match {
-                        case "Option" => q"""$listArg.map(x=> x match {
-                            case Some(x) => ${convertToJava(typeTree.children.last, q"x")}
-                            case None    => null
-                          })"""   
-                        case "List"   => { 
-                          //the map function's input parameter with the same name as the field makes codegen easier, cleaner
-                          q"""$listArg.map( (${fd.nme}:$typeTree) => {
-                              java.util.Arrays.asList(( ${convertElements(typeTree.children.last, q"${fd.nme}: $typeTree" )} ):_* )
-                          }) """
-                        }
-                      }                      
-                    }
-                    else q""" $listArg """
-                  } 
-
-                  //null case covers a None
-                  q"""$convertable match {
-                    case null => null
-                    case _ => java.util.Arrays.asList( ${convertElements(boxedTree, convertable)} :_*)
-                  }"""
-                }
-              }  
+        def asGetCase(fd: IndexedField) = {
+          def convertToJava(typeTree: Type, convertable: Tree): Tree = {
+            typeTree match { 
+              case o @ TypeRef(pre, symbol, args) if (o <:< typeOf[Option[Any]] && args.length == 1) => {
+                if (args.head <:< typeOf[Option[Any]]) { 
+                  throw new UnsupportedOperationException("Implementation limitation: Cannot immediately nest Option types")
+                } 
+                else q"""$convertable match {
+                      case Some(x) => ${convertToJava(args.head, q"x")}
+                      case None    => null
+                    }"""  
+              }
+              case x @ TypeRef(pre, symbol, args) if (x <:< typeOf[List[Any]] && args.length == 1) => {
+                q"""java.util.Arrays.asList($convertable.map(x => ${convertToJava(args.head, q"x")}):_*)"""
+              }
+              case x => convertable
             }
-            else convertable
-          }
-          val convertedToJava = convertToJava(fd.tpt, q"${fd.nme}") //recursively checks tree and unboxes appropriately
+          } 
+          val convertedToJava = convertToJava(fd.tpe, q"${fd.nme}") 
           cq"""pos if (pos == ${fd.idx}) => $convertedToJava.asInstanceOf[AnyRef]"""
         }
-
         val getCases = indexedFields.map(f => asGetCase(f)) :+ cq"""_ => new org.apache.avro.AvroRuntimeException("Bad index")"""
         q"""def get(field: Int): AnyRef = field match {case ..$getCases}"""
       }
-      //TODO make liftable[Schema] so we don't have to toString.
-      val getSchemaDef = q"""def getSchema: Schema = new Schema.Parser().parse(${SchemaStore.schemas(namespace + "." + name).toString})""" 
+
+      val getSchemaDef = q"""def getSchema: Schema = new Schema.Parser().parse(${generateSchema(name.toString, namespace, indexedFields).toString})""" 
 
       val putDef = {//expands to cases used in a pattern match, e.g. case 1 => this.username = value.asInstanceOf[String]
-        def asPutCase(fd: FieldData) = {
-
-          if (!fd.tpt.children.isEmpty) { //handle paramerterized types (e.g. Option, List, or Map) separately 
-            val toContainer = newTermName(fd.tpt.children.head.toString match {
-              case "Option"   => "toList" //kind of a hack, serves as a dummy type
-              case "List"     => "toList"
-           //   case "Seq"      => "toSeq"//TODO
-              case _ =>  sys.error("Cannot support parameterized yet: " + fd.tpt)
-            } )
- 
-            val parameterizedTypeTrees: List[Tree] = fd.tpt.children
-            val splicableTypeTrees = parameterizedTypeTrees.reduceRight((a, b) => tq"$a[$b]")
-
-            val utf8ResultExpr = q"utf8.toString"
-            val identityResultExpr = q"x"
-
-            val utf8Case     = cq"""utf8: org.apache.avro.util.Utf8 => $utf8ResultExpr"""
-            val defaultCase  = cq"""x => $identityResultExpr"""
-            val baseConversionCases  = List(utf8Case, defaultCase)
-
-            def listContainerTypes(typeTree: Tree, types: List[Tree]): List[Tree] = {
-              if (!typeTree.children.isEmpty) {
-                val updatedTypes = types :+ typeTree.children.head
-                listContainerTypes(typeTree.children.last, updatedTypes)
+        def asPutCase(fd: IndexedField) = {
+          def convertToScala(fieldType: Type, tree: Tree): Tree = {  
+            fieldType match {
+              case s @ TypeRef(pre, symbol, args) if (s =:= typeOf[String]) => {
+                q"""$tree match {
+                  case x: org.apache.avro.util.Utf8 => $tree.toString
+                  case _     => $tree
+                } """
               }
-              else types
-            }
-
-            val reversed = listContainerTypes(fd.tpt, List()).map(f => f.toString).reverse
-            val reversedTypes = reversed.iterator
-
-            def convertToScala(container: String, conversionCases: List[Tree]): List[Tree] = {  
-              val updatedCases  = container match {
-                case "Option" => {
-                  conversionCases.map(x => x match{
-                    case cq"$pattern => $returnExpr" => cq"$pattern => Option($returnExpr)"
-                  })
-                }
-                case "List"   => {
-                  List(
-                    cq"""null => null""",  //a guard in case the list is an optional/nullable list
-                    cq"""array: org.apache.avro.generic.GenericData.Array[_] => {
-                      scala.collection.JavaConversions.asScalaIterator(array.iterator).${toContainer}.map(n => n match { 
-                        case ..$conversionCases 
-                      })
-                    }"""
-                  )
-                }
-              } 
-
-              if (reversedTypes.hasNext) { 
-                convertToScala(reversedTypes.next, updatedCases) 
+              case o @ TypeRef(pre, symbol, args) if (o <:< typeOf[Option[Any]] && args.length == 1) => {
+                if (args.head <:< typeOf[Option[Any]]) { 
+                  throw new UnsupportedOperationException("Implementation limitation: Cannot immediately nest Option types")
+                } 
+                else  q"""Option(${convertToScala(args.head, tree)})""" 
               }
-              else updatedCases
+              case o @ TypeRef(pre, symbol, args) if (o <:< typeOf[List[Any]] && args.length == 1) => {
+                q"""$tree match {
+                  case null => null
+                  case array: org.apache.avro.generic.GenericData.Array[_] => {
+                    scala.collection.JavaConversions.asScalaIterator(array.iterator).toList.map(e => ${convertToScala(args.head, q"e")}) 
+                  }
+                }"""
+              }
+              case _ => tree
             }
-
-            val putConversionCases = convertToScala(reversedTypes.next, baseConversionCases)
-            cq"""pos if (pos == ${fd.idx}) => this.${fd.nme} = (value match { 
-              case ..$putConversionCases
-            }).asInstanceOf[$splicableTypeTrees] """  
           }
-
-          else { //children empty, Oh, to be a simple type
-            cq"""pos if (pos == ${fd.idx}) => this.${fd.nme} = (value match {
-              case utf8: org.apache.avro.util.Utf8 => utf8.toString
-              case x => x
-            }).asInstanceOf[${fd.tpt}] """ 
-          }    
-
+          cq"""pos if (pos == ${fd.idx}) => this.${fd.nme} = ${convertToScala(fd.tpe, q"value")}.asInstanceOf[${fd.tpe}] """
         }
         val putCases = indexedFields.map(f => asPutCase(f)) :+ cq"""_ => new org.apache.avro.AvroRuntimeException("Bad index")"""
         q"""def put(field: Int, value: scala.Any): Unit = field match {case ..$putCases}"""
@@ -252,25 +223,23 @@ object AvroRecordMacro {
     //Update ClassDef and ModuleDef
     val result = { 
 
-
       annottees.map(_.tree).toList match {
-
 
         //Update ClassDef
         case classDef @ q"$mods class $name[..$tparams](..$first)(...$rest) extends ..$parents { $self => ..$body }" :: Nil => {
 
-          generateSchema(name.toString, namespace, first)
-
-          def indexed(fields: List[ValDef]) = { //adds index to the field name and type, loads into a FieldData case class
-            (fields.map(_.name), first.map(_.tpt), 0 to fields.length-1)
-              .zipped 
-              .toList 
-              .map(f => FieldData(f._1, f._2, f._3)) //(name, type, index)
+          def indexFields(fields: List[ValDef]) = { //adds index to the field name and type, loads into a FieldData case class
+            (fields.map(_.name), first.map(f => c.typeCheck(q"type T = ${f.tpt}") match {
+              case x @ TypeDef(mods, name, tparams, rhs)  => rhs.tpe
+            }    ), 0 to fields.length-1)
+            .zipped 
+            .toList 
+            .map(f => IndexedField(f._1, f._2, f._3)) //(nme, tpe, idx)
           } 
 
           val newImports = List(q" import org.apache.avro.Schema")
-          val newCtors   = generateNewCtors(indexed(first))   //a no-arg ctor so `newInstance()` can be used
-          val newDefs    = generateNewMethods(name, indexed(first)) //`get`, `put`, and `getSchema` methods 
+          val newCtors   = generateNewCtors(indexFields(first))   //a no-arg ctor so `newInstance()` can be used
+          val newDefs    = generateNewMethods(name, indexFields(first)) //`get`, `put`, and `getSchema` methods 
           val newParents = parents ::: generateNewBaseTypes   //extend SpecificRecordBase
           val newBody    = body ::: newImports ::: newCtors ::: newDefs      //add new members to the body
 
@@ -280,7 +249,6 @@ object AvroRecordMacro {
 
       } 
     }
-
     c.Expr[Any](result)
   }
 }

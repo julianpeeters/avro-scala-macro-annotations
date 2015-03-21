@@ -7,10 +7,10 @@
 
 
 
-Get the dependency ([for Scala 2.10.5](https://github.com/julianpeeters/avro-scala-macro-annotations/issues/6#issuecomment-77973333) or 2.11.x):
+Get the dependency for 2.11.x ([for Scala 2.10.5](https://github.com/julianpeeters/avro-scala-macro-annotations/issues/6#issuecomment-77973333) please use version 0.4):
 
 
-        libraryDependencies += "com.julianpeeters" % "avro-scala-macro-annotations_2.10" % "0.4-SNAPSHOT"
+        libraryDependencies += "com.julianpeeters" % "avro-scala-macro-annotations_2.11" % "0.5"
 
 
 Macro annotations are only available in Scala 2.10.x and 2.11.x with the macro paradise plugin. Their inclusion in official Scala might happen in Scala 2.12 - [official docs](http://docs.scala-lang.org/overviews/macros/annotations.html). To use the plugin, add the following `build.sbt`:

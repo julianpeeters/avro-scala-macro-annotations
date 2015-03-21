@@ -28,6 +28,7 @@ case class AvroTypeProviderTest04()
 @AvroRecord
 case class AvroTypeProviderTest05() 
 
+
 @AvroTypeProvider("tests/src/test/resources/AvroTypeProviderTest06.avro")
 @AvroRecord
 case class AvroTypeProviderTest06() 
@@ -39,7 +40,6 @@ case class AvroTypeProviderTest07()
 @AvroTypeProvider("tests/src/test/resources/AvroTypeProviderTest08.avro")
 @AvroRecord
 case class AvroTypeProviderTest08()
-
 
 @AvroTypeProvider("tests/src/test/resources/AvroTypeProviderTest10.avro")
 @AvroRecord
@@ -279,4 +279,3 @@ case class AvroTypeProviderTest67()
 @AvroTypeProvider("tests/src/test/resources/AvroTypeProviderTest68.avro")
 @AvroRecord
 case class AvroTypeProviderTest68()
-
