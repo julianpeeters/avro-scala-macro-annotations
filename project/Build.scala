@@ -4,10 +4,10 @@ import Keys._
 object BuildSettings {
   val buildSettings = Defaults.defaultSettings ++ Seq(
     organization := "com.julianpeeters",
-    version := "0.4-SNAPSHOT",
+    version := "0.4",
     scalacOptions ++= Seq(),
     scalaVersion := "2.10.4",
-    crossScalaVersions := Seq("2.10.4", "2.11.5"),
+    crossScalaVersions := Seq("2.10.4", "2.11.6"),
     resolvers += Resolver.sonatypeRepo("releases"),
     addCompilerPlugin("org.scalamacros" % "paradise" % "2.1.0-M5" cross CrossVersion.full),
     libraryDependencies += "org.apache.avro" % "avro" % "1.7.6",
@@ -77,19 +77,13 @@ object MyBuild extends Build {
       libraryDependencies <+= (scalaVersion)("org.scala-lang" % "scala-reflect" % _))
   )
 
-  /*
-  *tests project build def was added to the macros build, and could probably be "re-styled" to integrate more cleanly
-  */
   lazy val tests: Project = Project(
     "tests",
     file("tests"), 
     settings = buildSettings)
     .settings(
-      publishArtifact := false,
-      libraryDependencies ++= Seq("org.specs2" %% "specs2" % "1.13" % "test")
+      publishArtifact := false
         // Add your additional libraries here (comma-separated)...
-     )
-     .settings(addCompilerPlugin("org.scalamacros" % "paradise" % "2.0.0" cross CrossVersion.full)
      ) dependsOn(macros) settings(
    // include the macro classes and resources in the main jar
    mappings in (Compile, packageBin) ++= mappings.in(macros, Compile, packageBin).value,

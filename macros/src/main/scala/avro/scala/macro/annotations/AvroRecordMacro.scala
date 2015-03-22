@@ -88,6 +88,19 @@ object AvroRecordMacro {
       def createSchema(tpt: String) : Schema = { //TODO prefer no Strings, but how to match on the value of c.universe.Tree
         val fieldTypeName = tpt.toString 
 
+        // If a field's type is a record (i.e. a case class), then expand its macro annotation
+        try {
+          val sym = c.mirror.staticClass(namespace + "." + fieldTypeName)
+          val cls = sym.asClass
+          val tpe = cls.toType
+          val members = tpe.members
+        } 
+        catch {
+          case e: scala.ScalaReflectionException                 => //continue 
+          case e: scala.reflect.internal.MissingRequirementError => //continue 
+          case x: Throwable => sys.error("couldn't create schema because type-checking "  + tpt + " threw an unexpected error: " + x)
+        }
+
         if (primitiveClasses.contains(fieldTypeName)) {
           primitiveClasses(fieldTypeName)
         } 
@@ -105,7 +118,7 @@ object AvroRecordMacro {
         else if (schemas.keys.toList.contains(namespace + "." + fieldTypeName.toString) ) { //if it's a record type
           schemas(namespace + "." + fieldTypeName.toString)
         }
-        else throw new UnsupportedOperationException("Cannot support yet: " + tpt + "\nIf " + tpt + "is a record type, check that macro expansion happens in a file that is lexicographically before the file that references it.")
+        else throw new UnsupportedOperationException("Cannot support yet: " + tpt)
       }  
 
       val avroFields = first.map(v => new Field(v.name.toString.trim, createSchema(v.tpt.toString), "Auto-Generated Field", null)) 

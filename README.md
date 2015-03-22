@@ -10,7 +10,7 @@
 Get the dependency with (Scala 2.10 or 2.11):
 
 
-        libraryDependencies += "com.julianpeeters" % "avro-scala-macro-annotations_2.10" % "0.2"
+        libraryDependencies += "com.julianpeeters" % "avro-scala-macro-annotations_2.10" % "0.4"
 
         //"Macro annotations are only available in Scala 2.10.x and 2.11.x with the macro paradise plugin. Their inclusion in official Scala might happen in Scala 2.12 - [official docs](http://docs.scala-lang.org/overviews/macros/annotations.html)" 
         addCompilerPlugin("org.scalamacros" % "paradise" % "2.0.0" cross CrossVersion.full)
@@ -130,6 +130,3 @@ Nullable fields are represented by `Option`, and `array` by `List`. `map`, `fixe
 4) A class that is doubly annotated with `@AvroTypeProvider` and `@AvroRecord` will automatically be updated with vars instead of vals
 
 5) *For Scalding Only: Provide a `null` argument (e.g. `@AvroRecord(null)` ) to force the omission of a namespace in the generated schema. This must be done in order to read files with no namespace in the schema into case classes.
-
-6) There currently is no way to specify the order of macro expansions, and if an annotated class is referenced in another .scala file before the class itself expands, then it's schema will not have been registered and any nested record types will not be found. A workaround for correct expansion order is to rename A.scala to Z.scala so it follows Test.scala alphabetically. Renaming packages is also a strategy.
-
