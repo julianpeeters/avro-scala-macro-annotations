@@ -237,14 +237,20 @@ object AvroRecordMacro {
             .map(f => IndexedField(f._1, f._2, f._3)) //(nme, tpe, idx)
           } 
 
-          val newImports = List(q" import org.apache.avro.Schema")
+          // updates to the class
+          val newImports = List(q"import org.apache.avro.Schema")
           val newCtors   = generateNewCtors(indexFields(first))   //a no-arg ctor so `newInstance()` can be used
           val newDefs    = generateNewMethods(name, indexFields(first)) //`get`, `put`, and `getSchema` methods 
           val newParents = parents ::: generateNewBaseTypes   //extend SpecificRecordBase
           val newBody    = body ::: newImports ::: newCtors ::: newDefs      //add new members to the body
 
-          //return an updated class def
-          q"""$mods class $name[..$tparams](..$first)(...$rest) extends ..$newParents { $self => ..$newBody }""" 
+          // updates to the companion object
+          val schema     = q"${generateSchema(name.toString, namespace, indexFields(first)).toString}"
+          val newVal     = q"val SCHEMA$$ = new org.apache.avro.Schema.Parser().parse($schema)"
+
+          //return an updated class def and module def
+          q"""$mods class $name[..$tparams](..$first)(...$rest) extends ..$newParents { $self => ..$newBody };
+              object ${newTermName(name.toString)} { $newVal }""" 
         }
 
       } 
