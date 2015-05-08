@@ -182,7 +182,7 @@ object AvroRecordMacro {
         q"""def get(field: Int): AnyRef = field match {case ..$getCases}"""
       }
 
-      val getSchemaDef = q"""def getSchema: Schema = new Schema.Parser().parse(${generateSchema(name.toString, namespace, indexedFields).toString})""" 
+      val getSchemaDef = q""" def getSchema: Schema = ${name.toTermName}.SCHEMA$$ """
 
       val putDef = {//expands to cases used in a pattern match, e.g. case 1 => this.username = value.asInstanceOf[String]
         def asPutCase(fd: IndexedField) = {
