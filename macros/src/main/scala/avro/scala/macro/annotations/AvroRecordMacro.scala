@@ -142,11 +142,12 @@ object AvroRecordMacro {
           case x => throw new UnsupportedOperationException("Cannot support yet: " + x )
         }
       }  
- 
+
       val avroFields = indexedFields.map(v =>{  
         new Field(v.nme.toString.trim, createSchema(v.tpe), "Auto-Generated Field", null)
       })
       val avroSchema = Schema.createRecord(className, "Auto-generated schema", namespace, false)
+
       avroSchema.setFields(JArrays.asList(avroFields.toArray:_*))
 
       avroSchema
@@ -154,7 +155,6 @@ object AvroRecordMacro {
 
     //MethodGen - generates put, get, and getSchema needed to implement SpecificRecord for serialization
     def generateNewMethods(name: TypeName, indexedFields: List[IndexedField]) = {
-
       //expands to cases for a pattern match, e.g. case 1 => username.asInstanceOf[AnyRef]
       val getDef = { 
         def asGetCase(fd: IndexedField) = {
@@ -220,14 +220,15 @@ object AvroRecordMacro {
       List(getDef, getSchemaDef, putDef)
     }
 
-    //Update ClassDef and ModuleDef
+    // Update ClassDef and Add Companion Object
     val result = { 
-
+      
+      // match the annotated class
       annottees.map(_.tree).toList match {
 
-        //Update ClassDef
+        // Update ClassDef and add companion object
         case classDef @ q"$mods class $name[..$tparams](..$first)(...$rest) extends ..$parents { $self => ..$body }" :: Nil => {
-
+         
           def indexFields(fields: List[ValDef]) = { //adds index to the field name and type, loads into a FieldData case class
             (fields.map(_.name), first.map(f => c.typeCheck(q"type T = ${f.tpt}") match {
               case x @ TypeDef(mods, name, tparams, rhs)  => rhs.tpe
@@ -235,7 +236,7 @@ object AvroRecordMacro {
             .zipped 
             .toList 
             .map(f => IndexedField(f._1, f._2, f._3)) //(nme, tpe, idx)
-          } 
+          }
 
           // updates to the class
           val newImports = List(q"import org.apache.avro.Schema")
@@ -246,9 +247,9 @@ object AvroRecordMacro {
 
           // updates to the companion object
           val schema     = q"${generateSchema(name.toString, namespace, indexFields(first)).toString}"
-          val newVal     = q"val SCHEMA$$ = new org.apache.avro.Schema.Parser().parse($schema)"
+          val newVal     = q"lazy val SCHEMA$$ = new org.apache.avro.Schema.Parser().parse($schema)"
 
-          //return an updated class def and module def
+          // return an updated class def and companion def
           q"""$mods class $name[..$tparams](..$first)(...$rest) extends ..$newParents { $self => ..$newBody };
               object ${newTermName(name.toString)} { $newVal }""" 
         }

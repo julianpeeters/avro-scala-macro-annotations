@@ -9,14 +9,13 @@ import scala.collection.JavaConversions._
 
 object AvroTypeMatcher {
 
-  def avroToScalaType(schema: org.apache.avro.Schema, c: Context): c.universe.Type = {
-
+  def avroToScalaType(namespace: String, schema: org.apache.avro.Schema, c: Context): c.universe.Type = {
     import c.universe._
     import Flag._
 
       schema.getType match { 
         case Schema.Type.ARRAY    => {
-          val t = tq"List[${avroToScalaType(schema.getElementType, c)}]"
+          val t = tq"List[${avroToScalaType(namespace, schema.getElementType, c)}]"
           c.typeCheck(q"type T = $t") match {
             case x @ TypeDef(mods, name, tparams, rhs)  => rhs.tpe
           }
@@ -28,12 +27,25 @@ object AvroTypeMatcher {
         case Schema.Type.INT      => typeOf[Int]
         case Schema.Type.NULL     => typeOf[Null]
         case Schema.Type.RECORD   => { 
+
+
           schema.getName match {
             //cases where a record is found as a field vs found as a member of a union vs found as an element of an array
             case "array" | "union" => tq"schema.getName".tpe
             case recordName        => {
-               c.mirror.staticClass(schema.getNamespace + "." + recordName).toType
-             }
+              val fullName = namespace match {
+                case null       => recordName
+                case ns: String => (ns + "." + recordName)
+              }
+              try {
+                c.mirror.staticClass(fullName).toType
+              }
+              catch {
+                case scala.ScalaReflectionException(_) => {
+                  sys.error("no case class " + fullName +  " corresponds to field type: " + recordName + ": record")
+                }
+              }
+            }
           }
         }
         case Schema.Type.STRING   => typeOf[String]
@@ -43,9 +55,9 @@ object AvroTypeMatcher {
               unionSchemas.exists(schema => schema.getType == Schema.Type.NULL) &&
               unionSchemas.exists(schema => schema.getType != Schema.Type.NULL)) {
             val maybeSchema = unionSchemas.find(schema => schema.getType != Schema.Type.NULL)
-            val t = tq"Option[${avroToScalaType(maybeSchema.get, c)}]"
+            val t = tq"Option[${avroToScalaType(namespace, maybeSchema.get, c)}]"
             if (maybeSchema.isDefined) c.typeCheck(q"""type T = $t""") match {
-              case x @ TypeDef(mods, name, tparams, rhs)  => rhs.tpe
+              case x @ TypeDef(mods, name, tparams, rhs) => rhs.tpe
             }
             else error("no avro type found in this union")  
           }

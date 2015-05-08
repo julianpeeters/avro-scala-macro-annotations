@@ -7,10 +7,10 @@
 
 
 
-Get the dependency for 2.11.x ([for Scala 2.10.5](https://github.com/julianpeeters/avro-scala-macro-annotations/issues/6#issuecomment-77973333) please use version 0.4):
+Get the dependency for 2.11.x ([for Scala 2.10.X](https://github.com/julianpeeters/avro-scala-macro-annotations/issues/6#issuecomment-77973333) please use version 0.4):
 
 
-        libraryDependencies += "com.julianpeeters" % "avro-scala-macro-annotations_2.11" % "0.5"
+        libraryDependencies += "com.julianpeeters" % "avro-scala-macro-annotations_2.11" % "0.6-SNAPSHOT"
 
 
 Macro annotations are only available in Scala 2.10.x and 2.11.x with the macro paradise plugin. Their inclusion in official Scala might happen in Scala 2.12 - [official docs](http://docs.scala-lang.org/overviews/macros/annotations.html). To use the plugin, add the following `build.sbt`:
@@ -107,8 +107,8 @@ Use the expanded class as you would a code-gen'd class with any `SpecificRecord`
         val dataFileWriter = new DataFileWriter[B](datumWriter)
 
 
-        //Reading avros - no reflection allowed since Scala fields are always private
-        val schema = new DataFileReader(file, new GenericDatumReader[GenericRecord]).getSchema 
+        //Reading avros - no reflection allowed since Scala fields are always private, so pass in a schema
+        val schema = B.SCHEMA$
         val userDatumReader = new SpecificDatumReader[B](schema)
         val dataFileReader = new DataFileReader[B](file, userDatumReader)
 
@@ -133,7 +133,5 @@ Nullable fields are represented by `Option`, and `array` by `List`. `map`, `fixe
 
 4) A class that is doubly annotated with `@AvroTypeProvider` and `@AvroRecord` will automatically be updated with vars instead of vals
 
-5) *For Scalding Only: Provide a `null` argument (e.g. `@AvroRecord(null)` ) to force the omission of a namespace in the generated schema. This must be done in order to read files with no namespace in the schema into case classes.
-
-6) *For Scala 2.10.5: The order of class definition must be such that the classes that represent the most-nested records are defined and annotated first.
+5) *For Scala 2.10.5: The order of class definition must be such that the classes that represent the most-nested records are defined and annotated first.
 

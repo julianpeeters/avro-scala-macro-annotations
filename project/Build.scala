@@ -4,10 +4,11 @@ import Keys._
 object BuildSettings {
   val buildSettings = Defaults.defaultSettings ++ Seq(
     organization := "com.julianpeeters",
-    version := "0.6-SNAPSHOT",
+    version := "0.6",
     scalacOptions ++= Seq(),
     scalaVersion := "2.11.6",
     crossScalaVersions := Seq("2.11.6"),
+    resolvers += "scalaz-bintray" at "http://dl.bintray.com/scalaz/releases",
     resolvers += Resolver.sonatypeRepo("releases"),
     addCompilerPlugin("org.scalamacros" % "paradise" % "2.1.0-M5" cross CrossVersion.full),
     libraryDependencies += "org.apache.avro" % "avro" % "1.7.6",
@@ -15,7 +16,7 @@ object BuildSettings {
       CrossVersion.partialVersion(scalaVersion.value) match {
         case Some((2, scalaMajor)) if scalaMajor >= 11 =>
           libraryDependencies.value ++ Seq (
-            "org.specs2" %% "specs2" % "2.3.11" % "test")
+          "org.specs2" %% "specs2-core" % "3.2" % "test")
         case Some((2, 12)) =>
           libraryDependencies.value ++ Seq()
       }
