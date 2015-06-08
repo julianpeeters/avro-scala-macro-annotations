@@ -32,7 +32,7 @@ class AvroRecord48Test extends Specification {
       val file = File.createTempFile("AvroRecordTest48", "avro")
         file.deleteOnExit()
 
-      val userDatumWriter = new SpecificDatumWriter[AvroRecordTest48]
+      val userDatumWriter = new SpecificDatumWriter[AvroRecordTest48](record.getSchema)
       val dataFileWriter = new DataFileWriter[AvroRecordTest48](userDatumWriter)
         dataFileWriter.create(record.getSchema(), file);
         dataFileWriter.append(record);

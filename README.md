@@ -7,7 +7,8 @@
 
 
 
-Get the dependency for 2.11.x ([for Scala 2.10.X](https://github.com/julianpeeters/avro-scala-macro-annotations/issues/6#issuecomment-77973333) please use version 0.4):
+####Get the dependency:
+For Scala 2.11.x ([for Scala 2.10.x](https://github.com/julianpeeters/avro-scala-macro-annotations/issues/6#issuecomment-77973333) please use version 0.4 with sbt 0.13.8+):
 
 
         libraryDependencies += "com.julianpeeters" % "avro-scala-macro-annotations_2.11" % "0.7"
@@ -17,6 +18,9 @@ Macro annotations are only available in Scala 2.10.x and 2.11.x with the macro p
 
         addCompilerPlugin("org.scalamacros" % "paradise" % "2.1.0-M5" cross CrossVersion.full)
 
+
+
+####Usage:
 Use the annotations separately, or together like this:
 
         package sample
@@ -102,19 +106,18 @@ Now you can annotate a case class that you'd like to have serve as your Avro rec
 Use the expanded class as you would a code-gen'd class with any `SpecificRecord` API. e.g.:
 
 
-        //Writing avros - no reflection
-        val datumWriter = new SpecificDatumWriter[B]
+        //Writing avros 
+        val datumWriter = new SpecificDatumWriter[B](B.SCHEMA$)
         val dataFileWriter = new DataFileWriter[B](datumWriter)
 
 
-        //Reading avros - no reflection allowed since Scala fields are always private, so pass in a schema
-        val schema = B.SCHEMA$
-        val userDatumReader = new SpecificDatumReader[B](schema)
+        //Reading avros
+        val userDatumReader = new SpecificDatumReader[B](B.SCHEMA$)
         val dataFileReader = new DataFileReader[B](file, userDatumReader)
 
 
 ####Please note:
-1) If your framework is one that relies on reflection to get the Schema, it will fail since Scala fields are private. Therefore preempt it by passing in a Schema and using no-argument constructors when necessary (as in the Avro example above).
+1) If your framework is one that relies on reflection to get the Schema, it will fail since Scala fields are private. Therefore preempt it by passing in a Schema to DatumReaders and DatumWriters (as in the Avro example above).
 
 2) Fields must be `var`s in order to be compatible with the SpecificRecord API
 
@@ -128,8 +131,11 @@ Use the expanded class as you would a code-gen'd class with any `SpecificRecord`
 `null`
 `array`
 `record`
+`union`*
 
-Nullable fields are represented by `Option`, and `array` by `List`. `map`, `fixed`, `enum`, and `union` (beyond nullable fields) are not yet supported.
+*Nullable fields are represented by `Option` 
+
+The remaining avro types, `map`, `fixed`, `enum`, and `union` (beyond nullable fields), are not yet supported.
 
 4) A class that is doubly annotated with `@AvroTypeProvider` and `@AvroRecord` will automatically be updated with vars instead of vals
 
