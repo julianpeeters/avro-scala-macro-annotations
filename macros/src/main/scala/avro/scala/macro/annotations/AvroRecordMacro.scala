@@ -137,7 +137,7 @@ object AvroRecordMacro {
               (caseClassParamsOf(x), 0 to caseClassParamsOf(x).size-1)
             .zipped 
             .toList 
-            .map(f => IndexedField(f._1._1, f._1._2, f._2))) //(nme, tpe, idx)
+            .map(f => IndexedField(nme=f._1._1, tpe=f._1._2, idx=f._2)))
           }
           case x => throw new UnsupportedOperationException("Cannot support yet: " + x )
         }
@@ -235,7 +235,7 @@ object AvroRecordMacro {
             }    ), 0 to fields.length-1)
             .zipped 
             .toList 
-            .map(f => IndexedField(f._1, f._2, f._3)) //(nme, tpe, idx)
+            .map(f => IndexedField(nme=f._1, tpe=f._2, idx=f._3))
           }
 
           // updates to the class
@@ -251,7 +251,7 @@ object AvroRecordMacro {
 
           // return an updated class def and companion def
           q"""$mods class $name[..$tparams](..$first)(...$rest) extends ..$newParents { $self => ..$newBody };
-              object ${newTermName(name.toString)} { $newVal }""" 
+              object ${name.toTermName} {$newVal}""" 
         }
 
       } 
