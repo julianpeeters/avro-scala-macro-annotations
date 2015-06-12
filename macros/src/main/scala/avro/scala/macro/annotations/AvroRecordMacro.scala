@@ -53,7 +53,7 @@ object AvroRecordMacro {
         }
         // Option
         case x @ TypeRef(pre, symbol, args) if (x <:< typeOf[Option[Any]] && args.length == 1)  => {
-          q"""Some(${asDefaultParam(args.head)})"""
+          q"""None"""
         }
         // User-Defined
         case x @ TypeRef(pre, symbol, args) if (x <:< typeOf[Product with Serializable] ) => { 
