@@ -11,7 +11,7 @@
 For Scala 2.11.x ([for Scala 2.10.x](https://github.com/julianpeeters/avro-scala-macro-annotations/issues/6#issuecomment-77973333) please use version 0.4 with sbt 0.13.8+):
 
 
-        libraryDependencies += "com.julianpeeters" % "avro-scala-macro-annotations_2.11" % "0.7"
+        libraryDependencies += "com.julianpeeters" % "avro-scala-macro-annotations_2.11" % "0.8.0-SNAPSHOT" //SNAPSHOT IS UNPUBLISHED 
 
 
 Macro annotations are only available in Scala 2.10.x and 2.11.x with the macro paradise plugin. Their inclusion in official Scala might happen in Scala 2.12 - [official docs](http://docs.scala-lang.org/overviews/macros/annotations.html). To use the plugin, add the following `build.sbt`:
@@ -42,13 +42,13 @@ Annotate an "empty" case class, and its members will be generated automatically 
 
   given the schema automatically found in `input.avro` or `input.avsc`:
         
-
+```
         {"type":"record","name":"MyRecord","namespace":"tutorial","doc":"Auto-generated schema","fields":[{"name":"x","type":{"type":"record","name":"Rec","doc":"Auto-generated schema","fields":[{"name":"i","type":"int","doc":"Auto-Generated Field"}]},"doc":"Auto-Generated Field"}]}}
-
+```
 
   annotated empty case classes:
 
-
+```scala
         import com.julianpeeters.avro.annotations._
 
         @AvroTypeProvider("data/input.avro")
@@ -56,11 +56,11 @@ Annotate an "empty" case class, and its members will be generated automatically 
          
         @AvroTypeProvider("data/input.avro")
         case class MyRecord()
-
+```
 
   expand to:
 
-        
+ ```scala       
         package tutorial
 
         import com.julianpeeters.avro.annotations._
@@ -70,7 +70,7 @@ Annotate an "empty" case class, and its members will be generated automatically 
          
         @AvroTypeProvider("data/input.avro")
         case class MyRecord(x: Rec)
-
+```
 
 ####Please note:
 1) The datafile must be available at compile time.
@@ -88,7 +88,7 @@ Implements `SpecificRecord` at compile time so you can use Scala case classes to
 
 Now you can annotate a case class that you'd like to have serve as your Avro record:
 
-```sample
+```scala
         package sample
 
         @AvroRecord
@@ -99,13 +99,14 @@ Now you can annotate a case class that you'd like to have serve as your Avro rec
 ```
 
   expands to implement `SpecificRecord` with `put`, `get`, and `getSchema` methods, with the schema:
+
 ```
         {"type":"record","name":"B","namespace":"sample","doc":"Auto-generated schema","fields":[{"name":"a","type":["null",{"type":"record","name":"A","doc":"Auto-generated schema","fields":[{"name":"i","type":"int","doc":"Auto-Generated Field"}]}],"doc":"Auto-Generated Field",default: null}]}
 ```
 
 Use the expanded class as you would a code-gen'd class with any `SpecificRecord` API. e.g.:
 
-
+```scala
         //Writing avros 
         val datumWriter = new SpecificDatumWriter[B](B.SCHEMA$)
         val dataFileWriter = new DataFileWriter[B](datumWriter)
@@ -114,7 +115,7 @@ Use the expanded class as you would a code-gen'd class with any `SpecificRecord`
         //Reading avros
         val userDatumReader = new SpecificDatumReader[B](B.SCHEMA$)
         val dataFileReader = new DataFileReader[B](file, userDatumReader)
-
+```
 
 ####Please note:
 1) If your framework is one that relies on reflection to get the Schema, it will fail since Scala fields are private. Therefore preempt it by passing in a Schema to DatumReaders and DatumWriters (as in the Avro example above).
@@ -133,11 +134,18 @@ Use the expanded class as you would a code-gen'd class with any `SpecificRecord`
 `record`
 `union`*
 
-*Optional fields of type `[null, _ ]` are represented by `Option` 
+*Optional fields of type `[null, t]` are represented by `Option[T]` 
 
 The remaining avro types, `map`, `fixed`, `enum`, and `union` (beyond nullable fields), are not yet supported.
 
 4) A class that is doubly annotated with `@AvroTypeProvider` and `@AvroRecord` will automatically be updated with vars instead of vals
 
-5) *For Scala 2.10.5: The order of class definition must be such that the classes that represent the most-nested records are defined and annotated first.
+5) *For Scala 2.10.5: 
+  a) The order of class definition must be such that the classes that represent the most-nested records are defined and annotated first.
+  b) Default values not yet supported for Scala 2.10
+  c) The schema must be obtainted via an instance of the record: 
+  ```scala
+     val rec = MyRecord(1)
+     val schema = rec.getSchema
+  ``` 
 
