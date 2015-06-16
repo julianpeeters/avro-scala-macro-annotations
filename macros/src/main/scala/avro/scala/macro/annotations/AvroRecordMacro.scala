@@ -1,5 +1,7 @@
 package com.julianpeeters.avro.annotations
 
+import util.SchemaStore
+
 import scala.reflect.macros.Context
 import scala.language.experimental.macros
 import scala.annotation.StaticAnnotation
@@ -8,6 +10,8 @@ import org.apache.avro.util.Utf8
 import org.apache.avro.Schema
 import org.apache.avro.Schema.Field
 import org.apache.avro.Schema.{Type => AvroType}
+import org.codehaus.jackson.JsonNode
+import org.codehaus.jackson.node._
 
 import collection.JavaConversions._
 import java.util.concurrent.ConcurrentHashMap
@@ -20,7 +24,8 @@ object AvroRecordMacro {
     import c.universe._
     import Flag._
 
-    case class IndexedField(nme: TermName, tpe: Type, idx: Int)//holds info about the fields of the annotee
+    //holds info about the fields of the annotee
+    case class IndexedField(nme: TermName, tpe: Type, dv: Tree, idx: Int)
 
     // from Connor Doyle, per http://stackoverflow.com/questions/16079113/scala-2-10-reflection-how-do-i-extract-the-field-values-from-a-case-class
     def caseClassParamsOf(tpe: Type): scala.collection.immutable.ListMap[TermName, Type] = {
@@ -37,7 +42,7 @@ object AvroRecordMacro {
       }
     }
 
-    def asDefaultParam(fieldType: c.universe.Type): c.universe.Tree = {
+    def asDefaultCtorParam(fieldType: c.universe.Type): c.universe.Tree = {
       fieldType match {
         case x if x =:= typeOf[Unit]    => q"()"
         case x if x =:= typeOf[Boolean] => q""" true """
@@ -49,7 +54,7 @@ object AvroRecordMacro {
         case x if x =:= typeOf[Null]    => q"null"
         // List
         case x @ TypeRef(pre, symbol, args) if (x <:< typeOf[List[Any]] && args.length == 1)  => {
-          q"""List(${asDefaultParam(args.head)})"""
+          q"""List(${asDefaultCtorParam(args.head)})"""
         }
         // Option
         case x @ TypeRef(pre, symbol, args) if (x <:< typeOf[Option[Any]] && args.length == 1)  => {
@@ -57,7 +62,7 @@ object AvroRecordMacro {
         }
         // User-Defined
         case x @ TypeRef(pre, symbol, args) if (x <:< typeOf[Product with Serializable] ) => { 
-          val defaultParams = caseClassParamsOf(x).map(p => asDefaultParam(p._2))
+          val defaultParams = caseClassParamsOf(x).map(p => asDefaultCtorParam(p._2))
           q"""${newTermName(symbol.name.toString)}(..$defaultParams)"""
         }
         case x => sys.error("cannot support yet: " + x)
@@ -70,7 +75,7 @@ object AvroRecordMacro {
     //CtorGen
     def generateNewCtors(indexedFields: List[IndexedField]) = {
       val defaultParams = indexedFields.map(field => {
-        asDefaultParam(field.tpe)
+        asDefaultCtorParam(field.tpe)
       }) 
       val newCtorDef = q"""def this() = this(..$defaultParams)"""
       val defaultCtorPos = c.enclosingPosition //thanks to Eugene Burmako for the workaround to position the ctor correctly
@@ -126,30 +131,57 @@ object AvroRecordMacro {
             } 
             else Schema.createUnion(JArrays.asList(Array(createSchema(typeOf[Null]), createSchema(args.head)):_*))
           }
-          //if a record is found
           case x @ TypeRef(pre, symbol, args) if (x <:< typeOf[Product with Serializable] ) => {
-            val sym = c.mirror.staticClass(x.toString)
-            val cls = symbol.asClass
-            val tpe = cls.toType
-            generateSchema(
-              symbol.name.toString, 
-              namespace, 
-              (caseClassParamsOf(x), 0 to caseClassParamsOf(x).size-1)
-            .zipped 
-            .toList 
-            .map(f => IndexedField(nme=f._1._1, tpe=f._1._2, idx=f._2)))
+            // if a case class (a nested record) is found, reuse the schema that was made and stored when its macro was expanded.
+            // unsuccessful alternatives: reflectively getting the schema from its companion (can't get a tree from a Symbol),
+            // or regenerating the schema (no clean way to get default params, hack default accessor appears empty in this case).
+            SchemaStore.schemas(x.toString)
           }
           case x => throw new UnsupportedOperationException("Cannot support yet: " + x )
         }
-      }  
+      } 
 
-      val avroFields = indexedFields.map(v =>{  
-        new Field(v.nme.toString.trim, createSchema(v.tpe), "Auto-Generated Field", null)
+      def toJsonDefault(dv: Tree) : JsonNode = {
+        lazy val jsonNodeFactory = JsonNodeFactory.instance 
+        dv match {
+          case EmptyTree                               => null // builds Avro FieldConstructor w/o default
+          case Literal(Constant(x: Unit))              => jsonNodeFactory.nullNode
+          case Literal(Constant(x: Boolean))           => jsonNodeFactory.booleanNode(x)
+          case Literal(Constant(x: Int))               => jsonNodeFactory.numberNode(x)
+          case Literal(Constant(x: Long))              => jsonNodeFactory.numberNode(x)
+          case Literal(Constant(x: Float))             => jsonNodeFactory.numberNode(x)
+          case Literal(Constant(x: Double))            => jsonNodeFactory.numberNode(x)
+          case Literal(Constant(x: String))            => jsonNodeFactory.textNode(x)
+          case Literal(Constant(x)) if x == null       => jsonNodeFactory.nullNode
+          case Ident(TermName("None"))                 => jsonNodeFactory.nullNode
+          case Apply(Ident(TermName("Some")), List(x)) => toJsonDefault(x)
+          case Apply(Ident(TermName("List")), xs)      => {
+            val jsonArray = jsonNodeFactory.arrayNode
+            xs.map(x => toJsonDefault(x)).map(v => jsonArray.add(v))
+            jsonArray
+          }
+          // if the default value is another (i.e. nested) record/case class
+          case Apply(Ident(TermName(name)), xs) if SchemaStore.schemas.contains(namespace + "." + name) => {
+            val jsonObject = jsonNodeFactory.objectNode
+            xs.zipWithIndex.map( x => {
+              val value = x._1
+              val index = x._2
+              val nestedRecordField = SchemaStore.schemas(namespace + "." + name).getFields()(index)
+              // Values from the tree, field name comes from cross referencing trees pos with schema field pos 
+              jsonObject.put(nestedRecordField.name, toJsonDefault(value))
+            })
+            jsonObject
+          }
+          case x => sys.error("Could not extract default value. What the heck kinda tree is this?" + x)
+        }
+      }   
+
+      val avroFields = indexedFields.map(v =>{
+        new Field(v.nme.toString.trim, createSchema(v.tpe), "Auto-Generated Field", toJsonDefault(v.dv))
       })
-      val avroSchema = Schema.createRecord(className, "Auto-generated schema", namespace, false)
-
+      val avroSchema = Schema.createRecord(className, "Auto-Generated Schema", namespace, false)
       avroSchema.setFields(JArrays.asList(avroFields.toArray:_*))
-
+      SchemaStore.accept(avroSchema)
       avroSchema
     }
 
@@ -228,21 +260,27 @@ object AvroRecordMacro {
 
         // Update ClassDef and add companion object
         case classDef @ q"$mods class $name[..$tparams](..$first)(...$rest) extends ..$parents { $self => ..$body }" :: Nil => {
-         
-          def indexFields(fields: List[ValDef]) = { //adds index to the field name and type, loads into a FieldData case class
-            (fields.map(_.name), first.map(f => c.typeCheck(q"type T = ${f.tpt}") match {
-              case x @ TypeDef(mods, name, tparams, rhs)  => rhs.tpe
-            }    ), 0 to fields.length-1)
-            .zipped 
-            .toList 
-            .map(f => IndexedField(nme=f._1, tpe=f._2, idx=f._3))
-          }
 
-          // updates to the class
+          def indexFields(fields: List[ValDef]) = {
+            fields.map(f => {
+              val fieldName = f.name
+              val fieldType = c.typeCheck(q"type T = ${f.tpt}") match {
+                case x @ TypeDef(mods, name, tparams, rhs)  => rhs.tpe
+              }
+              val defaultValue = f.rhs//extractValue(f.rhs) 
+              val position = fields.indexWhere(f => f.name == fieldName)
+              IndexedField(fieldName, fieldType, defaultValue, position)
+            })
+          }
+        
+          //prep fields from annotee
+          val indexedFields = indexFields(first)
+
+          // updates to the annotated class
           val newImports = List(q"import org.apache.avro.Schema")
-          val newCtors   = generateNewCtors(indexFields(first))   //a no-arg ctor so `newInstance()` can be used
-          val newDefs    = generateNewMethods(name, indexFields(first)) //`get`, `put`, and `getSchema` methods 
-          val newParents = parents ::: generateNewBaseTypes   //extend SpecificRecordBase
+          val newCtors   = generateNewCtors(indexedFields)   //a no-arg ctor so `newInstance()` can be used
+          val newDefs    = generateNewMethods(name, indexedFields) // `get`, `put`, and `getSchema` methods 
+          val newParents = parents ::: generateNewBaseTypes        // extend SpecificRecordBase
           val newBody    = body ::: newImports ::: newCtors ::: newDefs      //add new members to the body
 
           // updates to the companion object
@@ -253,7 +291,6 @@ object AvroRecordMacro {
           q"""$mods class $name[..$tparams](..$first)(...$rest) extends ..$newParents { $self => ..$newBody };
               object ${name.toTermName} {$newVal}""" 
         }
-
       } 
     }
     c.Expr[Any](result)

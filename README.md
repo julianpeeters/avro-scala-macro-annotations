@@ -88,20 +88,20 @@ Implements `SpecificRecord` at compile time so you can use Scala case classes to
 
 Now you can annotate a case class that you'd like to have serve as your Avro record:
 
-
+```sample
         package sample
 
         @AvroRecord
         case class A(var i: Int)
 
         @AvroRecord
-        case class B(var a: Option[A])
-
+        case class B(var a: Option[A] = None)
+```
 
   expands to implement `SpecificRecord` with `put`, `get`, and `getSchema` methods, with the schema:
-
-        {"type":"record","name":"B","namespace":"sample","doc":"Auto-generated schema","fields":[{"name":"a","type":["null",{"type":"record","name":"A","doc":"Auto-generated schema","fields":[{"name":"i","type":"int","doc":"Auto-Generated Field"}]}],"doc":"Auto-Generated Field"}]}}
-
+```
+        {"type":"record","name":"B","namespace":"sample","doc":"Auto-generated schema","fields":[{"name":"a","type":["null",{"type":"record","name":"A","doc":"Auto-generated schema","fields":[{"name":"i","type":"int","doc":"Auto-Generated Field"}]}],"doc":"Auto-Generated Field",default: null}]}
+```
 
 Use the expanded class as you would a code-gen'd class with any `SpecificRecord` API. e.g.:
 
@@ -133,7 +133,7 @@ Use the expanded class as you would a code-gen'd class with any `SpecificRecord`
 `record`
 `union`*
 
-*Nullable fields are represented by `Option` 
+*Optional fields of type `[null, _ ]` are represented by `Option` 
 
 The remaining avro types, `map`, `fixed`, `enum`, and `union` (beyond nullable fields), are not yet supported.
 

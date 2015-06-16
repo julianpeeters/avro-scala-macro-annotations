@@ -71,7 +71,8 @@ object MyBuild extends Build {
     "macros",
     file("macros"),
     settings = buildSettings ++ Seq(
-      libraryDependencies <+= (scalaVersion)("org.scala-lang" % "scala-reflect" % _))
+      libraryDependencies <+= (scalaVersion)("org.scala-lang" % "scala-reflect" % _),
+      libraryDependencies += "org.codehaus.jackson" % "jackson-core-asl" % "1.9.13")
   )
 
   lazy val tests: Project = Project(
