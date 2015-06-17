@@ -14,7 +14,6 @@ import org.codehaus.jackson.JsonNode
 import org.codehaus.jackson.node._
 
 import collection.JavaConversions._
-import java.util.concurrent.ConcurrentHashMap
 import java.util.{Arrays => JArrays}
 
 object AvroRecordMacro {
