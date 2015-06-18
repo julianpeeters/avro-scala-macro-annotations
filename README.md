@@ -11,10 +11,10 @@
 For Scala 2.11.x ([for Scala 2.10.x](https://github.com/julianpeeters/avro-scala-macro-annotations/issues/6#issuecomment-77973333) please use version 0.4 with sbt 0.13.8+):
 
 
-        libraryDependencies += "com.julianpeeters" % "avro-scala-macro-annotations_2.11" % "0.8.0-SNAPSHOT" //SNAPSHOT IS UNPUBLISHED 
+        libraryDependencies += "com.julianpeeters" % "avro-scala-macro-annotations_2.11" % "0.8.0"
 
 
-Macro annotations are only available in Scala 2.10.x and 2.11.x with the macro paradise plugin. Their inclusion in official Scala might happen in Scala 2.12 - [official docs](http://docs.scala-lang.org/overviews/macros/annotations.html). To use the plugin, add the following `build.sbt`:
+Macro annotations are only available in Scala 2.10.x, 2.11.x, and 2.12.x with the macro paradise plugin. Their inclusion in official Scala might happen in Scala 2.13 - [official docs](http://docs.scala-lang.org/overviews/macros/annotations.html). To use the plugin, add the following `build.sbt`:
 
         addCompilerPlugin("org.scalamacros" % "paradise" % "2.1.0-M5" cross CrossVersion.full)
 
@@ -141,9 +141,15 @@ The remaining avro types, `map`, `fixed`, `enum`, and `union` (beyond nullable f
 4) A class that is doubly annotated with `@AvroTypeProvider` and `@AvroRecord` will automatically be updated with vars instead of vals
 
 5) *For Scala 2.10.5: 
-  a) The order of class definition must be such that the classes that represent the most-nested records are defined and annotated first.
-  b) Default values not yet supported for Scala 2.10
-  c) The schema must be obtainted via an instance of the record: 
+
+
+  - The order of class definition must be such that the classes that represent the most-nested records are defined and annotated first.
+
+
+  - Default values not yet supported for Scala 2.10
+
+
+  - The schema must be obtainted via an instance of the record: 
   ```scala
      val rec = MyRecord(1)
      val schema = rec.getSchema

@@ -291,7 +291,7 @@ object AvroRecordMacro {
           val newVal     = q"lazy val SCHEMA$$ = new org.apache.avro.Schema.Parser().parse($schema)"
 
           // return an updated class def and companion def
-          q"""$mods class $name[..$tparams](..$first)(...$rest) extends ..$newParents { $self => ..$newBody };
+          q"""$mods class $name[..$tparams](..$first)(...$rest) extends ..$newParents { $self => ..${body:::newBody} };
               object ${name.toTermName} {$newVal}""" 
         }
       } 
