@@ -1,18 +1,6 @@
-/*
- * Copyright (c) 2012 Twitter, Inc.
- *
- * This program is licensed to you under the Apache License Version 2.0,
- * and you may not use this file except in compliance with the Apache License Version 2.0.
- * You may obtain a copy of the Apache License Version 2.0 at http://www.apache.org/licenses/LICENSE-2.0.
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the Apache License Version 2.0 is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the Apache License Version 2.0 for the specific language governing permissions and limitations there under.
- */
+
 package test
 
-// Specs2
 import org.specs2.mutable.Specification
 
 import java.io.File
@@ -294,6 +282,31 @@ class AvroRecord47Test extends Specification {
       val schema = new DataFileReader(file, new GenericDatumReader[GenericRecord]).getSchema
       val userDatumReader = new SpecificDatumReader[AvroRecordTest47](schema)
       val dataFileReader = new DataFileReader[AvroRecordTest47](file, userDatumReader)
+      val sameRecord = dataFileReader.next()
+
+      sameRecord must ===(record)
+    }
+  }
+}
+
+class AvroRecordMap10Test extends Specification {
+
+  "A case class with two Map[Int, Map[Int, Int]] fields" should {
+    "serialize and deserialize correctly" in {
+
+      val record = AvroRecordTestMap10(Map(1->Map(2->3)), Map(2->Map(3->4)))
+
+      val file = File.createTempFile("AvroRecordTestMap10", "avro")
+        
+
+      val userDatumWriter = new SpecificDatumWriter[AvroRecordTestMap10]
+      val dataFileWriter = new DataFileWriter[AvroRecordTestMap10](userDatumWriter)
+        dataFileWriter.create(record.getSchema(), file);
+        dataFileWriter.append(record);
+        dataFileWriter.close();
+
+      val userDatumReader = new SpecificDatumReader[AvroRecordTestMap10](AvroRecordTestMap10.SCHEMA$)
+      val dataFileReader = new DataFileReader[AvroRecordTestMap10](file, userDatumReader)
       val sameRecord = dataFileReader.next()
 
       sameRecord must ===(record)

@@ -312,3 +312,28 @@ class AvroRecord68Test extends Specification {
     }
   }
 }
+
+class AvroRecordMap12Test extends Specification {
+
+  "A case class with two differeing Map fields that contain user-defined types" should {
+    "serialize and deserialize correctly" in {
+
+      val record = AvroRecordTestMap12(Map(1->Map(2->AvroRecordTest00(1))), "state"->Map(4->AvroRecordTest58(AvroRecordTest00(1))))
+
+      val file = File.createTempFile("AvroRecordTestMap12", "avro")
+        
+
+      val userDatumWriter = new SpecificDatumWriter[AvroRecordTestMap12]
+      val dataFileWriter = new DataFileWriter[AvroRecordTestMap12](userDatumWriter)
+        dataFileWriter.create(record.getSchema(), file);
+        dataFileWriter.append(record);
+        dataFileWriter.close();
+
+      val userDatumReader = new SpecificDatumReader[AvroRecordTestMap12](AvroRecordTestMap12.SCHEMA$)
+      val dataFileReader = new DataFileReader[AvroRecordTestMap12](file, userDatumReader)
+      val sameRecord = dataFileReader.next()
+
+      sameRecord must ===(record)
+    }
+  }
+}
