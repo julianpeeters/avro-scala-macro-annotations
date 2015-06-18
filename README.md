@@ -43,7 +43,7 @@ Annotate an "empty" case class, and its members will be generated automatically 
   given the schema automatically found in `input.avro` or `input.avsc`:
         
 ```
-        {"type":"record","name":"MyRecord","namespace":"tutorial","doc":"Auto-generated schema","fields":[{"name":"x","type":{"type":"record","name":"Rec","doc":"Auto-generated schema","fields":[{"name":"i","type":"int","doc":"Auto-Generated Field"}]},"doc":"Auto-Generated Field"}]}}
+        {"type":"record","name":"MyRecord","namespace":"tutorial","doc":"Auto-generated schema","fields":[{"name":"x","type":{"type":"record","name":"Rec","doc":"Auto-generated schema","fields":[{"name":"i","type":"int","doc":"Auto-Generated Field"}]},"doc":"Auto-Generated Field","default":{"i":4}}]}}
 ```
 
   annotated empty case classes:
@@ -69,7 +69,7 @@ Annotate an "empty" case class, and its members will be generated automatically 
         case class Rec(i: Int)
          
         @AvroTypeProvider("data/input.avro")
-        case class MyRecord(x: Rec)
+        case class MyRecord(x: Rec = Rec(4))
 ```
 
 ####Please note:

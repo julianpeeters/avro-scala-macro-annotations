@@ -74,7 +74,10 @@ object AvroRecordMacro {
     //CtorGen
     def generateNewCtors(indexedFields: List[IndexedField]) = {
       val defaultParams = indexedFields.map(field => {
-        asDefaultCtorParam(field.tpe)
+        field.dv match { //If there are default vals present in the classdef, use those for 0-arg
+          case EmptyTree => asDefaultCtorParam(field.tpe)
+          case defaultValue => defaultValue
+        }
       }) 
       val newCtorDef = q"""def this() = this(..$defaultParams)"""
       val defaultCtorPos = c.enclosingPosition //thanks to Eugene Burmako for the workaround to position the ctor correctly
@@ -133,14 +136,14 @@ object AvroRecordMacro {
           case x @ TypeRef(pre, symbol, args) if (x <:< typeOf[Product with Serializable] ) => {
             // if a case class (a nested record) is found, reuse the schema that was made and stored when its macro was expanded.
             // unsuccessful alternatives: reflectively getting the schema from its companion (can't get a tree from a Symbol),
-            // or regenerating the schema (no clean way to get default params, hack default accessor appears empty in this case).
+            // or regenerating the schema (no way to get default param values from outside the current at compile time).
             SchemaStore.schemas(x.toString)
           }
           case x => throw new UnsupportedOperationException("Cannot support yet: " + x )
         }
       } 
 
-      def toJsonDefault(dv: Tree) : JsonNode = {
+      def toJsonNode(dv: Tree) : JsonNode = {
         lazy val jsonNodeFactory = JsonNodeFactory.instance 
         dv match {
           case EmptyTree                               => null // builds Avro FieldConstructor w/o default
@@ -151,12 +154,12 @@ object AvroRecordMacro {
           case Literal(Constant(x: Float))             => jsonNodeFactory.numberNode(x)
           case Literal(Constant(x: Double))            => jsonNodeFactory.numberNode(x)
           case Literal(Constant(x: String))            => jsonNodeFactory.textNode(x)
-          case Literal(Constant(x)) if x == null       => jsonNodeFactory.nullNode
+          case Literal(Constant(null))                 => jsonNodeFactory.nullNode
           case Ident(TermName("None"))                 => jsonNodeFactory.nullNode
-          case Apply(Ident(TermName("Some")), List(x)) => toJsonDefault(x)
+          case Apply(Ident(TermName("Some")), List(x)) => toJsonNode(x)
           case Apply(Ident(TermName("List")), xs)      => {
             val jsonArray = jsonNodeFactory.arrayNode
-            xs.map(x => toJsonDefault(x)).map(v => jsonArray.add(v))
+            xs.map(x => toJsonNode(x)).map(v => jsonArray.add(v))
             jsonArray
           }
           // if the default value is another (i.e. nested) record/case class
@@ -166,17 +169,18 @@ object AvroRecordMacro {
               val value = x._1
               val index = x._2
               val nestedRecordField = SchemaStore.schemas(namespace + "." + name).getFields()(index)
-              // Values from the tree, field name comes from cross referencing trees pos with schema field pos 
-              jsonObject.put(nestedRecordField.name, toJsonDefault(value))
+              // values from the tree, field names from cross referencing tree's pos with schema field pos
+              // (they always correspond since the schema is defined based on the fields in a class def)
+              jsonObject.put(nestedRecordField.name, toJsonNode(value))
             })
             jsonObject
           }
-          case x => sys.error("Could not extract default value. What the heck kinda tree is this?" + x)
+          case x => sys.error("Could not extract default value. Found: " + x + ", " + showRaw(x))
         }
       }   
 
       val avroFields = indexedFields.map(v =>{
-        new Field(v.nme.toString.trim, createSchema(v.tpe), "Auto-Generated Field", toJsonDefault(v.dv))
+        new Field(v.nme.toString.trim, createSchema(v.tpe), "Auto-Generated Field", toJsonNode(v.dv))
       })
       val avroSchema = Schema.createRecord(className, "Auto-Generated Schema", namespace, false)
       avroSchema.setFields(JArrays.asList(avroFields.toArray:_*))

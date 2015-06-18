@@ -12,6 +12,9 @@ import java.util.concurrent.ConcurrentHashMap
 import java.io.File
 
 import org.apache.avro.Schema
+import org.codehaus.jackson.JsonNode
+import org.codehaus.jackson.node._
+
 
 object AvroTypeProviderMacro {
 
@@ -19,7 +22,7 @@ object AvroTypeProviderMacro {
     import c.universe._
     import Flag._
 
-    case class FieldData(fieldName: String, fieldType: c.universe.Type)  
+    case class FieldData(fieldName: String, fieldType: c.universe.Type, fieldDefault: Tree)  
 
     //here's how we get the value of the filepath, it's the arg to the annotation
     val avroFilePath = c.prefix.tree match { 
@@ -78,73 +81,72 @@ object AvroTypeProviderMacro {
           }
 
           //wraps a single field in a quasiquote, returning immutable field defs if immutable flag is true
-          def quotifyField(fieldName: String, fieldType: c.universe.Type, immutable: Boolean): ValDef = { 
+          def quotifyField(f: FieldData, immutable: Boolean): ValDef = { 
             import c.universe._
             import Flag._
 
-            def asDefaultParam(ft: c.universe.Type): Tree = {
-
-              // from Connor Doyle, per http://stackoverflow.com/questions/16079113/scala-2-10-reflection-how-do-i-extract-the-field-values-from-a-case-class
-              def caseClassParamsOf(tpe: Type): scala.collection.immutable.ListMap[String, Type] = {
-
-                val constructorSymbol = tpe.declaration(nme.CONSTRUCTOR)
-                val defaultConstructor =
-                  if (constructorSymbol.isMethod) constructorSymbol.asMethod
-                  else {
-                    val ctors = constructorSymbol.asTerm.alternatives
-                    ctors.map { _.asMethod }.find { _.isPrimaryConstructor }.get
-                  }
-
-                scala.collection.immutable.ListMap[String, Type]() ++ defaultConstructor.paramss.reduceLeft(_ ++ _).map {
-                  sym => sym.name.toString -> tpe.member(sym.name).asMethod.returnType
-                }
-              }
-
-              ft match {
-                case x if x =:= typeOf[Unit]    => q"()"
-                case x if x =:= typeOf[Boolean] => q""" true """
-                case x if x =:= typeOf[Int]     => q"1"
-                case x if x =:= typeOf[Long]    => q"1L"
-                case x if x =:= typeOf[Float]   => q"1F"
-                case x if x =:= typeOf[Double]  => q"1D"
-                case x if x =:= typeOf[String]  => q""" "" """
-                case x if x =:= typeOf[Null]    => q"null"
-                // List
-                case x @ TypeRef(pre, symbol, args) if (x <:< typeOf[List[Any]] && args.length == 1) => {
-                  q"""List(${asDefaultParam(args.head)})"""
-                }
-                // Option
-                case x @ TypeRef(pre, symbol, args) if (x <:< typeOf[Option[Any]] && args.length == 1) => {
-                  q"""Some(${asDefaultParam(args.head)})"""
-                }
-                // User-Defined
-                case x @ TypeRef(pre, symbol, args) if (x <:< typeOf[Product with Serializable] ) => { 
-                  val defaultParams = caseClassParamsOf(x).map(p => asDefaultParam(p._2))
-                  q"""${newTermName(symbol.name.toString)}(..$defaultParams)"""
-                }
-                case x => sys.error("not yet supported: " + x)
-              }
-            }
-            
-            if (immutable == false) q"""var ${newTermName(fieldName)}: ${q"$fieldType"} = ${asDefaultParam(fieldType)}""" 
-            else q"""val ${newTermName(fieldName)}: ${q"$fieldType"} = ${asDefaultParam(fieldType)}""" 
+            if (immutable == false) q"""var ${newTermName(f.fieldName)}: ${q"${f.fieldType}"} = ${f.fieldDefault}""" 
+            else q"""val ${newTermName(f.fieldName)}: ${q"${f.fieldType}"} = ${f.fieldDefault}""" 
           }
 
-          val newFields: List[ValDef] = {//Prep fields for splicing by getting fields and mapping each to a quasiquote
-            def parseField(field: Schema.Field): FieldData = {
-              FieldData(field.name, AvroTypeMatcher.avroToScalaType(namespace, field.schema, c))
+          val newFields: List[ValDef] = {//Prep fields for splicing by mapping each to a quasiquote
+            def extractFieldData(field: Schema.Field): FieldData = {
+
+              def fromJsonNode(node: JsonNode, schema: Schema): Tree = {
+                schema.getType match {
+                  case _ if node == null   => EmptyTree //not `default=null`, but no default
+                  case Schema.Type.INT     => q"${node.getIntValue}"
+                  case Schema.Type.FLOAT   => q"${node.getDoubleValue.asInstanceOf[Float]}"
+                  case Schema.Type.LONG    => q"${node.getLongValue}"
+                  case Schema.Type.DOUBLE  => q"${node.getDoubleValue}"
+                  case Schema.Type.BOOLEAN => q"${node.getBooleanValue}"
+                  case Schema.Type.STRING  => q"${node.getTextValue}"
+                  case Schema.Type.NULL    => q"null"
+                  case Schema.Type.UNION   => {
+                    val unionSchemas = schema.getTypes.toList
+                    if (unionSchemas.length == 2 && 
+                        unionSchemas.exists(schema => schema.getType == Schema.Type.NULL) &&
+                        unionSchemas.exists(schema => schema.getType != Schema.Type.NULL)) {
+                      val maybeSchema = unionSchemas.find(schema => schema.getType != Schema.Type.NULL)
+                      maybeSchema match {
+                        case Some(unionSchema) => {
+                          node match {
+                            case nn: NullNode => q"None"
+                            case nonNullNode  => q"Some(${fromJsonNode(nonNullNode, unionSchema)})"
+                          }
+                        }
+                        case None => sys.error("no avro type found in this union") 
+                      }
+                    }
+                    else sys.error("not a union field")
+                  }
+                  case Schema.Type.ARRAY   => {
+                    q"List(..${node.getElements.toList.map(e => fromJsonNode(e, schema.getElementType))})"
+                  }
+                  case Schema.Type.RECORD  => {
+                    val fields  = schema.getFields
+                    val fieldValues = fields.map(f => fromJsonNode(node.get(f.name), f.schema))
+                    q"${newTermName(schema.getName)}(..${fieldValues})"
+                  }
+                  case x => sys.error("Can't extract a default field, type not yet supported: " + x)
+                }
+              }
+              val fieldName = field.name
+              val fieldType = AvroTypeMatcher.avroToScalaType(namespace, field.schema, c)
+              val fieldDefault = q"${fromJsonNode(field.defaultValue, field.schema)}"
+              FieldData(fieldName, fieldType, fieldDefault)
             }
 
-            val fieldData = schemas.find(s => {
+            val schema = schemas.find(s => {
               s.getName == name.toString
-              }).getOrElse(sys.error("no type found " + name))
-                .getFields.map( field => parseField(field) ).toList
-                
-            fieldData.map(f => quotifyField(f.fieldName, f.fieldType, isImmutable))
+            }).getOrElse(sys.error("attempted to create new fields, no schema found for type " + name))
+            val fieldData = schema.getFields.map( field => extractFieldData(field) ).toList
+            val valDefs = fieldData.map(f => quotifyField(f, isImmutable))
+            valDefs
           }
 
           //Here's the updated class def:
-          q"$mods class $name[..$tparams](..$newFields)(...$rest) extends ..$parents { $self => ..$body }"
+          q"$mods class $name[..$tparams](..${newFields:::first})(...$rest) extends ..$parents { $self => ..$body }"
         }
       }
     }

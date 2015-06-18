@@ -40,15 +40,16 @@ case class AvroRecordTestDefaultValue10(var x: List[String] = List("Greta", "Lau
 @AvroRecord
 case class AvroRecordTestDefaultValue11(var x: List[Int] = List(1,2))
 
-
-
 @AvroRecord
 case class AvroRecordTestDefaultValue14(var x: AvroRecordTest00 = AvroRecordTest00(4))
 @AvroRecord
 case class AvroRecordTestDefaultValue15(var x: AvroRecordTestDefaultValue00 = AvroRecordTestDefaultValue00(4))
 @AvroRecord
 case class AvroRecordTestDefaultValue16(var x: AvroRecordTestDefaultValue14 = AvroRecordTestDefaultValue14(AvroRecordTest00(5)))
-
+@AvroRecord
+case class AvroRecordTestDefaultValue17(var x: List[Option[AvroRecordTestDefaultValue00]] = List(None, Some(AvroRecordTestDefaultValue00(8))))
+@AvroRecord
+case class AvroRecordTestDefaultValue18(var x: AvroRecordTest00 = AvroRecordTest00(4), var y: AvroRecordTest01 = AvroRecordTest01(3F))
 
 
 class AvroRecordDefaultValueTest extends Specification {
@@ -101,9 +102,9 @@ class AvroRecordDefaultValueTest extends Specification {
 
   "A case class with a String field" should {
     "have a schema that reflects the default value" in {
-      val datumSchema = AvroRecordTestDefaultValue05("ptarmigan").toString
+      val datumSchema = AvroRecordTestDefaultValue05().toString
       val recordSchema = AvroRecordTestDefaultValue05.SCHEMA$.toString
-      datumSchema must ===("""{"x": "ptarmigan"}""")
+      datumSchema must ===("""{"x": ""}""")
       recordSchema must ===("""{"type":"record","name":"AvroRecordTestDefaultValue05","namespace":"test","doc":"Auto-Generated Schema","fields":[{"name":"x","type":"string","doc":"Auto-Generated Field","default":""}]}""")
     }
   }
@@ -135,6 +136,24 @@ class AvroRecordDefaultValueTest extends Specification {
     }
   }
 
+  "A case class with an Option field" should {
+    "have a schema that reflects the default value of List[String]" in {
+      val datumSchema = AvroRecordTestDefaultValue10().toString
+      val recordSchema = AvroRecordTestDefaultValue10.SCHEMA$.toString
+      datumSchema must ===("""{"x": ["Greta", "Lauren"]}""")
+      recordSchema must ===("""{"type":"record","name":"AvroRecordTestDefaultValue10","namespace":"test","doc":"Auto-Generated Schema","fields":[{"name":"x","type":{"type":"array","items":"string"},"doc":"Auto-Generated Field","default":["Greta","Lauren"]}]}""")
+    }
+  }
+
+  "A case class with an Option field" should {
+    "have a schema that reflects the default value List[Int]" in {
+      val datumSchema = AvroRecordTestDefaultValue11().toString
+      val recordSchema = AvroRecordTestDefaultValue11.SCHEMA$.toString
+      datumSchema must ===("""{"x": [1, 2]}""")
+      recordSchema must ===("""{"type":"record","name":"AvroRecordTestDefaultValue11","namespace":"test","doc":"Auto-Generated Schema","fields":[{"name":"x","type":{"type":"array","items":"int"},"doc":"Auto-Generated Field","default":[1,2]}]}""")
+    }
+  }
+
   "A case class with a field that is a nested case class" should {
     "have a schema that reflects the nested datum as default value, and the nested datum has no default" in {
       val datumSchema = AvroRecordTestDefaultValue14().toString
@@ -155,10 +174,28 @@ class AvroRecordDefaultValueTest extends Specification {
 
   "A case class with a field that has a doubly nested case class" should {
     "have a schema that reflects the nested records and their defaults" in {
-      val datumSchema = AvroRecordTestDefaultValue16(AvroRecordTestDefaultValue14()).toString
+      val datumSchema = AvroRecordTestDefaultValue16().toString
       val recordSchema = AvroRecordTestDefaultValue16.SCHEMA$.toString
-      datumSchema must ===("""{"x": {"x": {"x": 4}}}""")
+      datumSchema must ===("""{"x": {"x": {"x": 5}}}""")
       recordSchema must ===("""{"type":"record","name":"AvroRecordTestDefaultValue16","namespace":"test","doc":"Auto-Generated Schema","fields":[{"name":"x","type":{"type":"record","name":"AvroRecordTestDefaultValue14","doc":"Auto-Generated Schema","fields":[{"name":"x","type":{"type":"record","name":"AvroRecordTest00","doc":"Auto-Generated Schema","fields":[{"name":"x","type":"int","doc":"Auto-Generated Field"}]},"doc":"Auto-Generated Field","default":{"x":4}}]},"doc":"Auto-Generated Field","default":{"x":{"x":5}}}]}""")
+    }
+  }
+
+  "A case class with an Option field" should {
+    "have a schema that reflects the default value List[Option[MyRecord]]]" in {
+      val datumSchema = AvroRecordTestDefaultValue17().toString
+      val recordSchema = AvroRecordTestDefaultValue17.SCHEMA$.toString
+      datumSchema must ===("""{"x": [null, {"x": 8}]}""")
+      recordSchema must ===("""{"type":"record","name":"AvroRecordTestDefaultValue17","namespace":"test","doc":"Auto-Generated Schema","fields":[{"name":"x","type":{"type":"array","items":["null",{"type":"record","name":"AvroRecordTestDefaultValue00","doc":"Auto-Generated Schema","fields":[{"name":"x","type":"int","doc":"Auto-Generated Field","default":0}]}]},"doc":"Auto-Generated Field","default":[null,{"x":8}]}]}""")
+    }
+  }
+
+  "A case class with a field that is a different nested case class in each of two fields" should {
+    "have a schema that reflects the nested datum as default value, and the nested datum has no default" in {
+      val datumSchema = AvroRecordTestDefaultValue18().toString
+      val recordSchema = AvroRecordTestDefaultValue18.SCHEMA$.toString
+      datumSchema must ===("""{"x": {"x": 4}, "y": {"x": 3.0}}""")
+      recordSchema must ===("""{"type":"record","name":"AvroRecordTestDefaultValue18","namespace":"test","doc":"Auto-Generated Schema","fields":[{"name":"x","type":{"type":"record","name":"AvroRecordTest00","doc":"Auto-Generated Schema","fields":[{"name":"x","type":"int","doc":"Auto-Generated Field"}]},"doc":"Auto-Generated Field","default":{"x":4}},{"name":"y","type":{"type":"record","name":"AvroRecordTest01","doc":"Auto-Generated Schema","fields":[{"name":"x","type":"float","doc":"Auto-Generated Field"}]},"doc":"Auto-Generated Field","default":{"x":3.0}}]}""")
     }
   }
 
