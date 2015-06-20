@@ -276,7 +276,7 @@ class AvroRecordMap11Test extends Specification {
   "A case class with two differing nested Map fields" should {
     "serialize and deserialize correctly" in {
 
-      val record = AvroRecordTestMap11(Map(1->Map(2->3)), List(Map("state"->Map("knowledge"->4))))
+      val record = AvroRecordTestMap11(Map("one"->Map("two"->3)), List(Map("state"->Map("knowledge"->"power"))))
 
       val file = File.createTempFile("AvroRecordTestMap11", "avro")
         

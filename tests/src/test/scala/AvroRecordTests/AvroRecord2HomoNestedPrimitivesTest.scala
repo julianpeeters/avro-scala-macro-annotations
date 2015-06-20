@@ -291,10 +291,10 @@ class AvroRecord47Test extends Specification {
 
 class AvroRecordMap10Test extends Specification {
 
-  "A case class with two Map[Int, Map[Int, Int]] fields" should {
+  "A case class with two Map[String, Map[String, Int]] fields" should {
     "serialize and deserialize correctly" in {
 
-      val record = AvroRecordTestMap10(Map(1->Map(2->3)), Map(2->Map(3->4)))
+      val record = AvroRecordTestMap10(Map("glory"->Map("kitty"->3)), Map("pride"->Map("doggy"->4)))
 
       val file = File.createTempFile("AvroRecordTestMap10", "avro")
         

@@ -361,10 +361,10 @@ class AvroRecord13Test extends Specification {
 
 class AvroRecordMap01Test extends Specification {
 
-  "A case class with a `Map[Int, Int]` field" should {
+  "A case class with a `Map[String, Int]` field" should {
     "serialize and deserialize correctly" in {
 
-      val record = AvroRecordTestMap01(Map(1->2))
+      val record = AvroRecordTestMap01(Map("bongo"->2))
 
       val file = File.createTempFile("AvroRecordTestMap01", "avro")
         
@@ -386,10 +386,10 @@ class AvroRecordMap01Test extends Specification {
 
 class AvroRecordMap02Test extends Specification {
 
-  "A case class with a `Map[Int, String]` field" should {
+  "A case class with a `Map[String, String]` field" should {
     "serialize and deserialize correctly" in {
 
-      val record = AvroRecordTestMap01(Map(3->"four"))
+      val record = AvroRecordTestMap02(Map("4"->"four"))
 
       val file = File.createTempFile("AvroRecordTestMap02", "avro")
         
@@ -411,10 +411,10 @@ class AvroRecordMap02Test extends Specification {
 
 class AvroRecordMap03Test extends Specification {
 
-  "A case class with a `Map[String, String]` field" should {
+  "A case class with a `Map[String, List[Int]]` field" should {
     "serialize and deserialize correctly" in {
 
-      val record = AvroRecordTestMap03(Map("sherpa"->"autobus"))
+      val record = AvroRecordTestMap03(Map("sherpa"->Some(List(5,6))))
 
       val file = File.createTempFile("AvroRecordTestMap03", "avro")
         

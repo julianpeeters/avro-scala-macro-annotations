@@ -59,12 +59,15 @@ object AvroRecordMacro {
         case x @ TypeRef(pre, symbol, args) if (x <:< typeOf[Option[Any]] && args.length == 1)  => {
           q"""None"""
         }
+        case x @ TypeRef(pre, symbol, args) if (x <:< typeOf[Map[String, Any]] && args.length == 2)  => {
+          q"""Map(""->${asDefaultCtorParam(args(1))})"""
+        }
         // User-Defined
         case x @ TypeRef(pre, symbol, args) if (x <:< typeOf[Product with Serializable] ) => { 
           val defaultParams = caseClassParamsOf(x).map(p => asDefaultCtorParam(p._2))
           q"""${newTermName(symbol.name.toString)}(..$defaultParams)"""
         }
-        case x => sys.error("cannot support yet: " + x)
+        case x => sys.error("Could not create a default. Not support yet: " + x )
       }
     }
 
@@ -133,34 +136,47 @@ object AvroRecordMacro {
             } 
             else Schema.createUnion(JArrays.asList(Array(createSchema(typeOf[Null]), createSchema(args.head)):_*))
           }
+          case x @ TypeRef(pre, symbol, args) if (x <:< typeOf[Map[String, Any]] && args.length == 2)  => {
+            Schema.createMap(createSchema(args(1)))
+          }
           case x @ TypeRef(pre, symbol, args) if (x <:< typeOf[Product with Serializable] ) => {
             // if a case class (a nested record) is found, reuse the schema that was made and stored when its macro was expanded.
             // unsuccessful alternatives: reflectively getting the schema from its companion (can't get a tree from a Symbol),
             // or regenerating the schema (no way to get default param values from outside the current at compile time).
             SchemaStore.schemas(x.toString)
           }
-          case x => throw new UnsupportedOperationException("Cannot support yet: " + x )
+          case x => throw new UnsupportedOperationException("Could not generate schema. Cannot support yet: " + x )
         }
       } 
 
       def toJsonNode(dv: Tree) : JsonNode = {
         lazy val jsonNodeFactory = JsonNodeFactory.instance 
         dv match {
-          case EmptyTree                               => null // builds Avro FieldConstructor w/o default
-          case Literal(Constant(x: Unit))              => jsonNodeFactory.nullNode
-          case Literal(Constant(x: Boolean))           => jsonNodeFactory.booleanNode(x)
-          case Literal(Constant(x: Int))               => jsonNodeFactory.numberNode(x)
-          case Literal(Constant(x: Long))              => jsonNodeFactory.numberNode(x)
-          case Literal(Constant(x: Float))             => jsonNodeFactory.numberNode(x)
-          case Literal(Constant(x: Double))            => jsonNodeFactory.numberNode(x)
-          case Literal(Constant(x: String))            => jsonNodeFactory.textNode(x)
-          case Literal(Constant(null))                 => jsonNodeFactory.nullNode
-          case Ident(TermName("None"))                 => jsonNodeFactory.nullNode
-          case Apply(Ident(TermName("Some")), List(x)) => toJsonNode(x)
-          case Apply(Ident(TermName("List")), xs)      => {
+          // use of null here is for Java interop, builds Avro FieldConstructor w/o default value
+          case EmptyTree                                   => null 
+          case Literal(Constant(x: Unit))                  => jsonNodeFactory.nullNode
+          case Literal(Constant(x: Boolean))               => jsonNodeFactory.booleanNode(x)
+          case Literal(Constant(x: Int))                   => jsonNodeFactory.numberNode(x)
+          case Literal(Constant(x: Long))                  => jsonNodeFactory.numberNode(x)
+          case Literal(Constant(x: Float))                 => jsonNodeFactory.numberNode(x)
+          case Literal(Constant(x: Double))                => jsonNodeFactory.numberNode(x)
+          case Literal(Constant(x: String))                => jsonNodeFactory.textNode(x)
+          case Literal(Constant(null))                     => jsonNodeFactory.nullNode
+          case Ident(TermName("None"))                     => jsonNodeFactory.nullNode
+          case Apply(Ident(TermName("Some")), List(x))     => toJsonNode(x)
+          case Apply(Ident(TermName("List")), xs)          => {
             val jsonArray = jsonNodeFactory.arrayNode
             xs.map(x => toJsonNode(x)).map(v => jsonArray.add(v))
             jsonArray
+          }
+          case Apply(Ident(TermName("Map")), kvps)         => {
+            val jsonObject = jsonNodeFactory.objectNode
+            kvps.foreach(kvp => kvp match {
+              case Apply(Select(Literal(Constant(key: String)), TermName(tn)), List(x)) =>  {
+                jsonObject.put(key, toJsonNode(x))
+              }
+            })
+            jsonObject
           }
           // if the default value is another (i.e. nested) record/case class
           case Apply(Ident(TermName(name)), xs) if SchemaStore.schemas.contains(namespace + "." + name) => {
@@ -178,7 +194,6 @@ object AvroRecordMacro {
           case x => sys.error("Could not extract default value. Found: " + x + ", " + showRaw(x))
         }
       }   
-
       val avroFields = indexedFields.map(v =>{
         new Field(v.nme.toString.trim, createSchema(v.tpe), "Auto-Generated Field", toJsonNode(v.dv))
       })
@@ -199,13 +214,25 @@ object AvroRecordMacro {
                 if (args.head <:< typeOf[Option[Any]]) { 
                   throw new UnsupportedOperationException("Implementation limitation: Cannot immediately nest Option types")
                 } 
-                else q"""$convertable match {
-                      case Some(x) => ${convertToJava(args.head, q"x")}
-                      case None    => null
-                    }"""  
+                else q"""
+                  $convertable match {
+                    case Some(x) => ${convertToJava(args.head, q"x")}
+                    case None    => null
+                  }"""  
               }
               case x @ TypeRef(pre, symbol, args) if (x <:< typeOf[List[Any]] && args.length == 1) => {
                 q"""java.util.Arrays.asList($convertable.map(x => ${convertToJava(args.head, q"x")}):_*)"""
+              }
+              case x @ TypeRef(pre, symbol, args) if (x <:< typeOf[Map[String, Any]] && args.length == 2) => {
+                q"""
+                  val map = new java.util.HashMap[String, Any]()
+                  $convertable.foreach(x => {
+                    val key = x._1 
+                    val value = x._2 
+                    map.put(key, ${convertToJava(args(1), q"value")})
+                  })
+                  map
+                """
               }
               case x => convertable
             }
@@ -226,7 +253,7 @@ object AvroRecordMacro {
               case s @ TypeRef(pre, symbol, args) if (s =:= typeOf[String]) => {
                 q"""$tree match {
                   case x: org.apache.avro.util.Utf8 => $tree.toString
-                  case _     => $tree
+                  case _ => $tree
                 } """
               }
               case o @ TypeRef(pre, symbol, args) if (o <:< typeOf[Option[Any]] && args.length == 1) => {
@@ -240,6 +267,18 @@ object AvroRecordMacro {
                   case null => null
                   case array: org.apache.avro.generic.GenericData.Array[_] => {
                     scala.collection.JavaConversions.asScalaIterator(array.iterator).toList.map(e => ${convertToScala(args.head, q"e")}) 
+                  }
+                }"""
+              }
+              case o @ TypeRef(pre, symbol, args) if (o <:< typeOf[Map[String,Any]] && args.length == 2) => {
+                q"""$tree match {
+                  case null => null
+                  case map: java.util.Map[CharSequence,_] => {
+                    scala.collection.JavaConversions.mapAsScalaMap(map).toMap.map(kvp => {
+                      val key = kvp._1.toString
+                      val value = kvp._2 
+                      (key, ${convertToScala(args(1), q"value")})
+                    }) 
                   }
                 }"""
               }

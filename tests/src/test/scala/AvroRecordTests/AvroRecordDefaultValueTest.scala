@@ -41,6 +41,11 @@ case class AvroRecordTestDefaultValue10(var x: List[String] = List("Greta", "Lau
 case class AvroRecordTestDefaultValue11(var x: List[Int] = List(1,2))
 
 @AvroRecord
+case class AvroRecordTestDefaultValue12(var x: Map[String, Int] = Map("Loiusa"->2), var y: Map[String, String] = Map("criss"->"cross"))
+@AvroRecord
+case class AvroRecordTestDefaultValue13(var x: Map[String, Option[AvroRecordTest00]] = Map("Bull"->Some(AvroRecordTest00(6)), "Snake"->None))
+
+@AvroRecord
 case class AvroRecordTestDefaultValue14(var x: AvroRecordTest00 = AvroRecordTest00(4))
 @AvroRecord
 case class AvroRecordTestDefaultValue15(var x: AvroRecordTestDefaultValue00 = AvroRecordTestDefaultValue00(4))
@@ -151,6 +156,25 @@ class AvroRecordDefaultValueTest extends Specification {
       val recordSchema = AvroRecordTestDefaultValue11.SCHEMA$.toString
       datumSchema must ===("""{"x": [1, 2]}""")
       recordSchema must ===("""{"type":"record","name":"AvroRecordTestDefaultValue11","namespace":"test","doc":"Auto-Generated Schema","fields":[{"name":"x","type":{"type":"array","items":"int"},"doc":"Auto-Generated Field","default":[1,2]}]}""")
+    }
+  }
+
+  "A case class with an Option field" should {
+    "have a schema that reflects the default value List[Int]" in {
+      val datumSchema = AvroRecordTestDefaultValue12().toString
+      val recordSchema = AvroRecordTestDefaultValue12.SCHEMA$.toString
+      println(recordSchema)
+      datumSchema must ===("""{"x": {"Loiusa": 2}, "y": {"criss": "cross"}}""")
+      recordSchema must ===("""{"type":"record","name":"AvroRecordTestDefaultValue12","namespace":"test","doc":"Auto-Generated Schema","fields":[{"name":"x","type":{"type":"map","values":"int"},"doc":"Auto-Generated Field","default":{"Loiusa":2}},{"name":"y","type":{"type":"map","values":"string"},"doc":"Auto-Generated Field","default":{"criss":"cross"}}]}""")
+    }
+  }
+
+  "A case class with an Option field" should {
+    "have a schema that reflects the default value List[Option[AvroRecordTest00]]" in {
+      val datumSchema = AvroRecordTestDefaultValue13().toString
+      val recordSchema = AvroRecordTestDefaultValue13.SCHEMA$.toString
+      datumSchema must ===("""{"x": {"Snake": null, "Bull": {"x": 6}}}""")
+      recordSchema must ===("""{"type":"record","name":"AvroRecordTestDefaultValue13","namespace":"test","doc":"Auto-Generated Schema","fields":[{"name":"x","type":{"type":"map","values":["null",{"type":"record","name":"AvroRecordTest00","doc":"Auto-Generated Schema","fields":[{"name":"x","type":"int","doc":"Auto-Generated Field"}]}]},"doc":"Auto-Generated Field","default":{"Bull":{"x":6},"Snake":null}}]}""")
     }
   }
 
