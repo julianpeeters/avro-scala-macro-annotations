@@ -1,5 +1,5 @@
 package com.julianpeeters.avro.annotations
-package util
+package record
 
 import java.util.concurrent.ConcurrentHashMap
 import collection.JavaConversions._

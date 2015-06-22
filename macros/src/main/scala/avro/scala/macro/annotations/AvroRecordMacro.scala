@@ -1,6 +1,6 @@
 package com.julianpeeters.avro.annotations
 
-import util.SchemaStore
+import record.SchemaStore
 
 import scala.reflect.macros.blackbox.Context
 import scala.language.experimental.macros

@@ -1,5 +1,5 @@
 package com.julianpeeters.avro.annotations
-package util
+package provider
 
 import org.apache.avro.file.DataFileReader
 import org.apache.avro.generic.{GenericDatumReader, GenericRecord}
@@ -9,7 +9,8 @@ import org.apache.avro.Schema.Type._
 
 import scala.collection.JavaConverters._
 
-object SchemaParser {
+object FileParser {
+
   def getSchema(infile: java.io.File): Schema = {
     val schema = infile.getName.split("\\.").last match {
       case "avro" =>
@@ -30,4 +31,5 @@ object SchemaParser {
       case _      => sys.error("The Schema in the datafile is neither a record nor a union of a record type, nothing to map to case class.")
     }
   }
+
 }

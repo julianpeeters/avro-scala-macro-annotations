@@ -1,5 +1,5 @@
 package com.julianpeeters.avro.annotations
-package util
+package provider
 
 import org.apache.avro.Schema
 
@@ -9,7 +9,7 @@ import scala.collection.JavaConversions._
 
 object AvroTypeMatcher {
 
-  def avroToScalaType(namespace: String, schema: org.apache.avro.Schema, c: Context): c.universe.Type = {
+  def toScala(namespace: String, schema: org.apache.avro.Schema, c: Context): c.universe.Type = {
     import c.universe._
     import Flag._
 
@@ -21,7 +21,7 @@ object AvroTypeMatcher {
 
     schema.getType match { 
       case Schema.Type.ARRAY    => {
-        val typeTree = tq"List[${avroToScalaType(namespace, schema.getElementType, c)}]"
+        val typeTree = tq"List[${toScala(namespace, schema.getElementType, c)}]"
         expandNestedTypes(typeTree)
       }
       case Schema.Type.BOOLEAN  => typeOf[Boolean]
@@ -57,14 +57,14 @@ object AvroTypeMatcher {
             unionSchemas.exists(schema => schema.getType == Schema.Type.NULL) &&
             unionSchemas.exists(schema => schema.getType != Schema.Type.NULL)) {
           val maybeSchema = unionSchemas.find(schema => schema.getType != Schema.Type.NULL)
-          val typeTree = tq"Option[${avroToScalaType(namespace, maybeSchema.get, c)}]"
+          val typeTree = tq"Option[${toScala(namespace, maybeSchema.get, c)}]"
           if (maybeSchema.isDefined) expandNestedTypes(typeTree)
           else sys.error("no avro type found in this union")  
         }
         else sys.error("not a union field")
       }
       case Schema.Type.MAP      => {
-        val typeTree = tq"Map[String, ${avroToScalaType(namespace, schema.getValueType, c)}]"
+        val typeTree = tq"Map[String, ${toScala(namespace, schema.getValueType, c)}]"
         expandNestedTypes(typeTree)
       }
       case Schema.Type.BYTES    => sys.error("BYTES is not yet supported")
