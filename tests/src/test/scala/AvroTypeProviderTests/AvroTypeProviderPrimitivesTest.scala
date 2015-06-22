@@ -1,18 +1,5 @@
-/*
- * Copyright (c) 2012 Twitter, Inc.
- *
- * This program is licensed to you under the Apache License Version 2.0,
- * and you may not use this file except in compliance with the Apache License Version 2.0.
- * You may obtain a copy of the Apache License Version 2.0 at http://www.apache.org/licenses/LICENSE-2.0.
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the Apache License Version 2.0 is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the Apache License Version 2.0 for the specific language governing permissions and limitations there under.
- */
 package test
 
-// Specs2
 import org.specs2.mutable.Specification
 
 import java.io.File
@@ -276,5 +263,209 @@ class AvroTypeProvider13Test extends Specification {
       sameRecord must ===(record)
     }
   }
+}
+
+class AvroTypeProviderMapTest extends Specification {
+
+  "A case class with an `Map[String,Int]` field" should {
+    "deserialize correctly" in {
+
+      val record =  AvroTypeProviderTestMap01(Map("justice"->1))
+
+      val file = new File("tests/src/test/resources/AvroTypeProviderTestMap01.avro")
+
+      val schema = new DataFileReader(file, new GenericDatumReader[GenericRecord]).getSchema
+      val userDatumReader = new SpecificDatumReader[AvroTypeProviderTestMap01](schema)
+      val dataFileReader = new DataFileReader[AvroTypeProviderTestMap01](file, userDatumReader)
+      val sameRecord = dataFileReader.next()
+
+      sameRecord must ===(record)
+    }
+  }
+
+
+  "A case class with an `Map[String,String]` field" should {
+    "deserialize correctly" in {
+
+      val record =  AvroTypeProviderTestMap02(Map("justice"->"law"))
+
+      val file = new File("tests/src/test/resources/AvroTypeProviderTestMap02.avro")
+
+      val schema = new DataFileReader(file, new GenericDatumReader[GenericRecord]).getSchema
+      val userDatumReader = new SpecificDatumReader[AvroTypeProviderTestMap02](schema)
+      val dataFileReader = new DataFileReader[AvroTypeProviderTestMap02](file, userDatumReader)
+      val sameRecord = dataFileReader.next()
+
+      sameRecord must ===(record)
+    }
+  }
+
+
+  "A case class with an `Map[String,String]` field" should {
+    "deserialize correctly" in {
+
+      val record =  AvroTypeProviderTestMap03(Map("justice"->Some(List(1,2))))
+
+      val file = new File("tests/src/test/resources/AvroTypeProviderTestMap03.avro")
+
+      val schema = new DataFileReader(file, new GenericDatumReader[GenericRecord]).getSchema
+      val userDatumReader = new SpecificDatumReader[AvroTypeProviderTestMap03](schema)
+      val dataFileReader = new DataFileReader[AvroTypeProviderTestMap03](file, userDatumReader)
+      val sameRecord = dataFileReader.next()
+
+      sameRecord must ===(record)
+    }
+  }
+
+
+
+  "A case class with two `Map[String,Int]` fields" should {
+    "deserialize correctly" in {
+
+      val record = AvroTypeProviderTestMap04(Map("justice"->2, "law"->4), Map("sweet"->1))
+
+      val file = new File("tests/src/test/resources/AvroTypeProviderTestMap04.avro")
+
+      val schema = new DataFileReader(file, new GenericDatumReader[GenericRecord]).getSchema
+      val userDatumReader = new SpecificDatumReader[AvroTypeProviderTestMap04](schema)
+      val dataFileReader = new DataFileReader[AvroTypeProviderTestMap04](file, userDatumReader)
+      val sameRecord = dataFileReader.next()
+
+      sameRecord must ===(record)
+    }
+  }
+
+
+  "A case class with two `Map[String,String]` fields" should {
+    "deserialize correctly" in {
+
+      val record = AvroTypeProviderTestMap05(Map("justice"->"crime", "law"->"order"), Map("sweet"->"sour"))
+
+      val file = new File("tests/src/test/resources/AvroTypeProviderTestMap05.avro")
+
+      val schema = new DataFileReader(file, new GenericDatumReader[GenericRecord]).getSchema
+      val userDatumReader = new SpecificDatumReader[AvroTypeProviderTestMap05](schema)
+      val dataFileReader = new DataFileReader[AvroTypeProviderTestMap05](file, userDatumReader)
+      val sameRecord = dataFileReader.next()
+
+      sameRecord must ===(record)
+    }
+  }
+
+
+  "A case class with fields `x: Map[String, Option[List[Int]]], y: Map[String, Option[List[Int]]]`" should {
+    "deserialize correctly" in {
+
+      val record = AvroTypeProviderTestMap06(Map("justice"->None, "law"->Some(List(1,2))), Map("sweet"->Some(List(3,4))))
+
+      val file = new File("tests/src/test/resources/AvroTypeProviderTestMap06.avro")
+
+      val schema = new DataFileReader(file, new GenericDatumReader[GenericRecord]).getSchema
+      val userDatumReader = new SpecificDatumReader[AvroTypeProviderTestMap06](schema)
+      val dataFileReader = new DataFileReader[AvroTypeProviderTestMap06](file, userDatumReader)
+      val sameRecord = dataFileReader.next()
+
+      sameRecord must ===(record)
+    }
+  }
+
+
+  "A case class with a `Map[String, Map[String, Int]]` field" should {
+    "deserialize correctly" in {
+
+      val record = AvroTypeProviderTestMap07(Map("pepper"->Map("onion"->6)))
+
+      val file = new File("tests/src/test/resources/AvroTypeProviderTestMap07.avro")
+
+      val schema = new DataFileReader(file, new GenericDatumReader[GenericRecord]).getSchema
+      println(schema)
+      val userDatumReader = new SpecificDatumReader[AvroTypeProviderTestMap07](schema)
+      val dataFileReader = new DataFileReader[AvroTypeProviderTestMap07](file, userDatumReader)
+      val sameRecord = dataFileReader.next()
+
+      sameRecord must ===(record)
+    }
+  }
+
+  "A case class with a `List[Map[String, Map[String, String]]]` field" should {
+    "deserialize correctly" in {
+
+      val record = AvroTypeProviderTestMap08(List(Map("pepper"->Map("onion"->"garlic")), Map("bongo"->Map("tabla"->"conga"))))
+
+      val file = new File("tests/src/test/resources/AvroTypeProviderTestMap08.avro")
+
+      val schema = new DataFileReader(file, new GenericDatumReader[GenericRecord]).getSchema
+      val userDatumReader = new SpecificDatumReader[AvroTypeProviderTestMap08](schema)
+      val dataFileReader = new DataFileReader[AvroTypeProviderTestMap08](file, userDatumReader)
+      val sameRecord = dataFileReader.next()
+
+      sameRecord must ===(record)
+    }
+  }
+
+  "A case class with a `Option[Map[String, Option[List[String]]]]` field" should {
+    "deserialize correctly" in {
+
+      val record = AvroTypeProviderTestMap09(Some(Map("pepper"->Some(List("howdy", "doody")))))
+
+      val file = new File("tests/src/test/resources/AvroTypeProviderTestMap09.avro")
+
+      val schema = new DataFileReader(file, new GenericDatumReader[GenericRecord]).getSchema
+      val userDatumReader = new SpecificDatumReader[AvroTypeProviderTestMap09](schema)
+      val dataFileReader = new DataFileReader[AvroTypeProviderTestMap09](file, userDatumReader)
+      val sameRecord = dataFileReader.next()
+
+      sameRecord must ===(record)
+    }
+  }
+
+  "A case class with `x: Map[String, Map[String, Int]], y: Map[String, Map[String, Int]]` fields" should {
+    "deserialize correctly" in {
+
+      val record = AvroTypeProviderTestMap10(Map("pepper"->Map("onion"->6)), Map("salt"->Map("garlic"->7)))
+
+      val file = new File("tests/src/test/resources/AvroTypeProviderTestMap10.avro")
+
+      val schema = new DataFileReader(file, new GenericDatumReader[GenericRecord]).getSchema
+      val userDatumReader = new SpecificDatumReader[AvroTypeProviderTestMap10](schema)
+      val dataFileReader = new DataFileReader[AvroTypeProviderTestMap10](file, userDatumReader)
+      val sameRecord = dataFileReader.next()
+
+      sameRecord must ===(record)
+    }
+  }
+
+  "A case class with `x: Map[String, Map[String, Int]], y: List[Map[String, Map[String, String]]]` fields" should {
+    "deserialize correctly" in {
+
+      val record = AvroTypeProviderTestMap11(Map("pepper"->Map("onion"->6)), List(Map("salt"->Map("garlic"->"oil")), Map("sriracha"->Map("chili"->"oil"))))
+
+      val file = new File("tests/src/test/resources/AvroTypeProviderTestMap11.avro")
+
+      val schema = new DataFileReader(file, new GenericDatumReader[GenericRecord]).getSchema
+      val userDatumReader = new SpecificDatumReader[AvroTypeProviderTestMap11](schema)
+      val dataFileReader = new DataFileReader[AvroTypeProviderTestMap11](file, userDatumReader)
+      val sameRecord = dataFileReader.next()
+
+      sameRecord must ===(record)
+    }
+  }
+
+  "A case class with `x: Map[String, Map[String, AvroTypeProviderTest00]], y: Map[String, AvroTypeProviderTest58]` fields" should {
+    "deserialize correctly" in {
+
+      val record = AvroTypeProviderTestMap12(Map("c1"->Map("00"-> AvroTypeProviderTest00(2))), Map("58"->AvroTypeProviderTest58(AvroTypeProviderTest00(4))))
+
+      val file = new File("tests/src/test/resources/AvroTypeProviderTestMap12.avro")
+
+      val schema = new DataFileReader(file, new GenericDatumReader[GenericRecord]).getSchema
+      val userDatumReader = new SpecificDatumReader[AvroTypeProviderTestMap12](schema)
+      val dataFileReader = new DataFileReader[AvroTypeProviderTestMap12](file, userDatumReader)
+      val sameRecord = dataFileReader.next()
+
+      sameRecord must ===(record)
+    }
+  }
+
 }
 

@@ -43,6 +43,10 @@ case class AvroTypeProviderTestDefaultValue07()//var x: Option[String] = None)
 @AvroRecord
 case class AvroTypeProviderTestDefaultValue08()//var x: Option[Int] = Some(1))
 
+@AvroTypeProvider("tests/src/test/resources/default/AvroTypeProviderTestDefaultValue09.avsc")
+@AvroRecord
+case class AvroTypeProviderTestDefaultValue09()//var x: Map[String, Map[String, Int]] = Map("glory"->Map("kitty"->3)), var y: Map[String, Map[String, Int]] = Map("pride"->Map("doggy"->4)))
+
 
 
 @AvroTypeProvider("tests/src/test/resources/default/AvroTypeProviderTestDefaultValue10.avsc")
@@ -122,9 +126,9 @@ class AvroTypeProviderDefaultValueTest extends Specification {
 
   "A case class with a String field" should {
     "have a schema that reflects the default value" in {
-    //  val datumSchema = AvroTypeProviderTestDefaultValue05("ptarmigan").toString
+      val datumSchema = AvroTypeProviderTestDefaultValue05("").toString
       val recordSchema = AvroTypeProviderTestDefaultValue05.SCHEMA$.toString
-   //   datumSchema must ===("""{"x": "ptarmigan"}""")
+      datumSchema must ===("""{"x": ""}""")
       recordSchema must ===("""{"type":"record","name":"AvroTypeProviderTestDefaultValue05","namespace":"test","doc":"Auto-Generated Schema","fields":[{"name":"x","type":"string","doc":"Auto-Generated Field","default":""}]}""")
     }
   }
@@ -156,6 +160,14 @@ class AvroTypeProviderDefaultValueTest extends Specification {
     }
   }
 
+  "A case class with an Option field" should {
+    "have a schema that reflects the default value of map field types" in {
+      val datumSchema = AvroTypeProviderTestDefaultValue09().toString
+      val recordSchema = AvroTypeProviderTestDefaultValue09.SCHEMA$.toString
+      datumSchema must ===("""{"x": {"glory": {"kitty": 3}}, "y": {"pride": {"doggy": 4}}}""")
+      recordSchema must ===("""{"type":"record","name":"AvroTypeProviderTestDefaultValue09","namespace":"test","doc":"Auto-Generated Schema","fields":[{"name":"x","type":{"type":"map","values":{"type":"map","values":"int"}},"doc":"Auto-Generated Field","default":{"glory":{"kitty":3}}},{"name":"y","type":{"type":"map","values":{"type":"map","values":"int"}},"doc":"Auto-Generated Field","default":{"pride":{"doggy":4}}}]}""")
+    }
+  }
 
   "A case class with an Option field" should {
     "have a schema that reflects the default value Some()" in {

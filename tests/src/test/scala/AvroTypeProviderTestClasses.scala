@@ -56,19 +56,17 @@ case class AvroTypeProviderTest12()
 @AvroTypeProvider("tests/src/test/resources/AvroTypeProviderTest13.avro")
 @AvroRecord
 case class AvroTypeProviderTest13()
-/*
+
 @AvroTypeProvider("tests/src/test/resources/AvroTypeProviderTestMap01.avro")
 @AvroRecord
-case class AvroTypeProviderTestMap01(var x: Map[String, Int])
-
+case class AvroTypeProviderTestMap01()//var x: Map[String, Int])
 @AvroTypeProvider("tests/src/test/resources/AvroTypeProviderTestMap02.avro")
 @AvroRecord
-case class AvroTypeProviderTestMap02(var x: Map[String, String])
-
+case class AvroTypeProviderTestMap02()//var x: Map[String, String])
 @AvroTypeProvider("tests/src/test/resources/AvroTypeProviderTestMap03.avro")
 @AvroRecord
-case class AvroTypeProviderTestMap03(var x: Map[String, Option[List[Int]]])
-*/
+case class AvroTypeProviderTestMap03()//var x: Map[String, Option[List[Int]]])
+
 
 //Primitive, 2-arity records
 
@@ -116,19 +114,17 @@ case class AvroTypeProviderTest26()
 @AvroTypeProvider("tests/src/test/resources/AvroTypeProviderTest27.avro")
 @AvroRecord
 case class AvroTypeProviderTest27()
-/*
+
 @AvroTypeProvider("tests/src/test/resources/AvroTypeProviderTestMap04.avro")
 @AvroRecord
-case class AvroTypeProviderTestMap04(var x: Map[String, Int], var y: Map[String, Int])
-
+case class AvroTypeProviderTestMap04()//var x: Map[String, Int], var y: Map[String, Int])
 @AvroTypeProvider("tests/src/test/resources/AvroTypeProviderTestMap05.avro")
 @AvroRecord
-case class AvroTypeProviderTestMap05(var x: Map[String, String], var y: Map[String, String])
-
+case class AvroTypeProviderTestMap05()//var x: Map[String, String], var y: Map[String, String])
 @AvroTypeProvider("tests/src/test/resources/AvroTypeProviderTestMap06.avro")
 @AvroRecord
-case class AvroTypeProviderTestMap06(var x: Map[String, Option[List[Int]]]], var y: Map[String, Option[List[Int]]]])
-*/
+case class AvroTypeProviderTestMap06()//var x: Map[String, Option[List[Int]]], var y: Map[String, Option[List[Int]]])
+
 
 //Primitive nested
 @AvroTypeProvider("tests/src/test/resources/AvroTypeProviderTest28.avro")
@@ -170,19 +166,20 @@ case class AvroTypeProviderTest36()
 @AvroTypeProvider("tests/src/test/resources/AvroTypeProviderTest37.avro")
 @AvroRecord
 case class AvroTypeProviderTest37()
-/*
+
+
 @AvroTypeProvider("tests/src/test/resources/AvroTypeProviderTestMap07.avro")
 @AvroRecord
-case class AvroTypeProviderTestMap07(var x: Map[String, Map[Int, Int]])
-
+case class AvroTypeProviderTestMap07()//var x: Map[String, Map[String, Int]])
 @AvroTypeProvider("tests/src/test/resources/AvroTypeProviderTestMap08.avro")
 @AvroRecord
-case class AvroTypeProviderTestMap08(var x: List[Map[String, Map[String, String]]])
-
+case class AvroTypeProviderTestMap08()//var x: List[Map[String, Map[String, String]]])
 @AvroTypeProvider("tests/src/test/resources/AvroTypeProviderTestMap09.avro")
 @AvroRecord
-case class AvroTypeProviderTestMap09(var x: Option[Map[String, Option[List[String]]]])
-*/
+case class AvroTypeProviderTestMap09()//var x: Option[Map[String, Option[List[String]]]])
+
+
+
 
 //Primitive nested, 2-arity
 @AvroTypeProvider("tests/src/test/resources/AvroTypeProviderTest38.avro")
@@ -224,11 +221,10 @@ case class AvroTypeProviderTest46()
 @AvroTypeProvider("tests/src/test/resources/AvroTypeProviderTest47.avro")
 @AvroRecord
 case class AvroTypeProviderTest47()
-/*
+
 @AvroTypeProvider("tests/src/test/resources/AvroTypeProviderTestMap10.avro")
 @AvroRecord
-case class AvroTypeProviderTestMap10(var x: Map[String, Map[Int, Int]], var y: Map[String, Map[Int, Int]])
-*/
+case class AvroTypeProviderTestMap10()//var x: Map[String, Map[String, Int]], var y: Map[String, Map[String, Int]])
 
 
 
@@ -272,12 +268,12 @@ case class AvroTypeProviderTest56()
 @AvroTypeProvider("tests/src/test/resources/AvroTypeProviderTest57.avro")
 @AvroRecord
 case class AvroTypeProviderTest57()
-/*
+
 @AvroTypeProvider("tests/src/test/resources/AvroTypeProviderTestMap11.avro")
 @AvroRecord
-case class AvroTypeProviderTestMap11(var x: Map[String, Map[Int, Int]], var y: List[Map[String, Map[Int, String]]])
+case class AvroTypeProviderTestMap11()//var x: Map[String, Map[String, Int]], var y: List[Map[String, Map[String, String]]])
 
-*/
+
 
 //User-defined types
 
@@ -326,8 +322,7 @@ case class AvroTypeProviderTest67()
 @AvroTypeProvider("tests/src/test/resources/AvroTypeProviderTest68.avro")
 @AvroRecord
 case class AvroTypeProviderTest68()
-/*
+
 @AvroTypeProvider("tests/src/test/resources/AvroTypeProviderTestMap12.avro")
 @AvroRecord
-case class AvroTypeProviderTestMap12(var x: Map[String, Map[String, AvroTypeProviderTest00]], var y: Map[String, AvroTypeProviderTest58])
-*/
+case class AvroTypeProviderTestMap12()//var x: Map[String, Map[String, AvroTypeProviderTest00]], var y: Map[String, AvroTypeProviderTest58])

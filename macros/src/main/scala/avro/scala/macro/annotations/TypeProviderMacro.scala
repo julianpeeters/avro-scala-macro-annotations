@@ -2,7 +2,7 @@ package com.julianpeeters.avro.annotations
 
 import util.{AvroTypeMatcher, SchemaParser}
 
-import scala.reflect.macros.Context
+import scala.reflect.macros.blackbox.Context
 import scala.language.experimental.macros
 import scala.annotation.StaticAnnotation
 
@@ -39,7 +39,7 @@ object AvroTypeProviderMacro {
           case Schema.Type.ARRAY  => flattenSchema(fieldSchema.getElementType)
           case Schema.Type.RECORD => getNestedSchemas(fieldSchema); List(fieldSchema)
           case Schema.Type.UNION  => fieldSchema.getTypes.toList.flatMap(x => flattenSchema(x))
-          case _      => List(fieldSchema)
+          case _                  => List(fieldSchema)
         }
       }
 
@@ -57,8 +57,8 @@ object AvroTypeProviderMacro {
 
     // getting the namespace from the scala package instead of the avro schema allows namespace-less 
     // avros to be imported, not stuck in the default package          
-    val freshName = c.fresh(newTypeName("Probe$")) 
-    val probe = c.typeCheck(q""" {class $freshName; ()} """)  // Thanks again to Eugene Burmako 
+    val freshName = c.freshName(TypeName("Probe$")) 
+    val probe = c.typecheck(q""" {class $freshName; ()} """)  // Thanks again to Eugene Burmako 
     val freshSymbol = probe match {
       case Block(List(t), r) => t.symbol
     }
@@ -85,8 +85,8 @@ object AvroTypeProviderMacro {
             import c.universe._
             import Flag._
 
-            if (immutable == false) q"""var ${newTermName(f.fieldName)}: ${q"${f.fieldType}"} = ${f.fieldDefault}""" 
-            else q"""val ${newTermName(f.fieldName)}: ${q"${f.fieldType}"} = ${f.fieldDefault}""" 
+            if (immutable == false) q"""var ${TermName(f.fieldName)}: ${q"${f.fieldType}"} = ${f.fieldDefault}""" 
+            else q"""val ${TermName(f.fieldName)}: ${q"${f.fieldType}"} = ${f.fieldDefault}""" 
           }
 
           val newFields: List[ValDef] = {//Prep fields for splicing by mapping each to a quasiquote
@@ -123,10 +123,14 @@ object AvroTypeProviderMacro {
                   case Schema.Type.ARRAY   => {
                     q"List(..${node.getElements.toList.map(e => fromJsonNode(e, schema.getElementType))})"
                   }
+                  case Schema.Type.MAP   => {
+                  	val kvps = node.getFields.toList.map(e => q"${e.getKey} -> ${fromJsonNode(e.getValue, schema.getValueType)}")
+                    q"Map(..$kvps)"
+                  }
                   case Schema.Type.RECORD  => {
                     val fields  = schema.getFields
                     val fieldValues = fields.map(f => fromJsonNode(node.get(f.name), f.schema))
-                    q"${newTermName(schema.getName)}(..${fieldValues})"
+                    q"${TermName(schema.getName)}(..${fieldValues})"
                   }
                   case x => sys.error("Can't extract a default field, type not yet supported: " + x)
                 }
@@ -156,5 +160,5 @@ object AvroTypeProviderMacro {
 }
 
 class AvroTypeProvider(inputPath: String) extends StaticAnnotation {
-  def macroTransform(annottees: Any*) = macro AvroTypeProviderMacro.impl
+  def macroTransform(annottees: Any*): Any = macro AvroTypeProviderMacro.impl
 }

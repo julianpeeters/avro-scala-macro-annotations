@@ -2,7 +2,7 @@ package com.julianpeeters.avro.annotations
 
 import util.SchemaStore
 
-import scala.reflect.macros.Context
+import scala.reflect.macros.blackbox.Context
 import scala.language.experimental.macros
 import scala.annotation.StaticAnnotation
 
@@ -28,7 +28,7 @@ object AvroRecordMacro {
 
     // from Connor Doyle, per http://stackoverflow.com/questions/16079113/scala-2-10-reflection-how-do-i-extract-the-field-values-from-a-case-class
     def caseClassParamsOf(tpe: Type): scala.collection.immutable.ListMap[TermName, Type] = {
-      val constructorSymbol = tpe.declaration(nme.CONSTRUCTOR)
+      val constructorSymbol = tpe.decl(termNames.CONSTRUCTOR)
       val defaultConstructor =
         if (constructorSymbol.isMethod) constructorSymbol.asMethod
         else {
@@ -36,8 +36,8 @@ object AvroRecordMacro {
           ctors.map { _.asMethod }.find { _.isPrimaryConstructor }.get
         }
 
-      scala.collection.immutable.ListMap[TermName, Type]() ++ defaultConstructor.paramss.reduceLeft(_ ++ _).map {
-        sym => newTermName(sym.name.toString) -> tpe.member(sym.name).asMethod.returnType
+      scala.collection.immutable.ListMap[TermName, Type]() ++ defaultConstructor.paramLists.reduceLeft(_ ++ _).map {
+        sym => TermName(sym.name.toString) -> tpe.member(sym.name).asMethod.returnType
       }
     }
 
@@ -65,7 +65,7 @@ object AvroRecordMacro {
         // User-Defined
         case x @ TypeRef(pre, symbol, args) if (x <:< typeOf[Product with Serializable] ) => { 
           val defaultParams = caseClassParamsOf(x).map(p => asDefaultCtorParam(p._2))
-          q"""${newTermName(symbol.name.toString)}(..$defaultParams)"""
+          q"""${TermName(symbol.name.toString)}(..$defaultParams)"""
         }
         case x => sys.error("Could not create a default. Not support yet: " + x )
       }
@@ -92,8 +92,8 @@ object AvroRecordMacro {
     }
 
     //NamespaceGen                                    
-    val freshName = c.fresh(newTypeName("Probe$")) 
-    val probe = c.typeCheck(q""" {class $freshName; ()} """)  // Thanks again to Eugene Burmako 
+    val freshName = c.freshName(TypeName("Probe$")) 
+    val probe = c.typecheck(q""" {class $freshName; ()} """)  // Thanks again to Eugene Burmako 
     val freshSymbol = probe match {
       case Block(List(t), r) => t.symbol
     }
@@ -273,7 +273,7 @@ object AvroRecordMacro {
               case o @ TypeRef(pre, symbol, args) if (o <:< typeOf[Map[String,Any]] && args.length == 2) => {
                 q"""$tree match {
                   case null => null
-                  case map: java.util.Map[CharSequence,_] => {
+                  case map: java.util.Map[_,_] => {
                     scala.collection.JavaConversions.mapAsScalaMap(map).toMap.map(kvp => {
                       val key = kvp._1.toString
                       val value = kvp._2 
@@ -306,7 +306,7 @@ object AvroRecordMacro {
           def indexFields(fields: List[ValDef]) = {
             fields.map(f => {
               val fieldName = f.name
-              val fieldType = c.typeCheck(q"type T = ${f.tpt}") match {
+              val fieldType = c.typecheck(q"type T = ${f.tpt}") match {
                 case x @ TypeDef(mods, name, tparams, rhs)  => rhs.tpe
               }
               val defaultValue = f.rhs//extractValue(f.rhs) 
@@ -330,7 +330,7 @@ object AvroRecordMacro {
           val newVal     = q"lazy val SCHEMA$$ = new org.apache.avro.Schema.Parser().parse($schema)"
 
           // return an updated class def and companion def
-          q"""$mods class $name[..$tparams](..$first)(...$rest) extends ..$newParents { $self => ..${body:::newBody} };
+          q"""$mods class $name[..$tparams](..$first)(...$rest) extends ..$newParents { $self => ..$newBody};
               object ${name.toTermName} {$newVal}""" 
         }
       } 
@@ -340,5 +340,5 @@ object AvroRecordMacro {
 }
 
 class AvroRecord extends StaticAnnotation {
-  def macroTransform(annottees: Any*) = macro AvroRecordMacro.impl
+  def macroTransform(annottees: Any*): Any = macro AvroRecordMacro.impl
 }

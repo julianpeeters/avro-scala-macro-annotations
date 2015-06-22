@@ -35,7 +35,8 @@ class AvroTypeProviderEvolutionTest extends Specification {
 
 
 
-//Fails:  too many arguments for method apply: (y: String)test.AvroTypeProviderTestEvolution00 in object AvroTypeProviderTestEvolution00
+//Fails: Trying to to evolve with by only adding the new fields, using AvroTypeProvider add the old 
+//too many arguments for method apply: (y: String)test.AvroTypeProviderTestEvolution00 in object AvroTypeProviderTestEvolution00
 //        [error]       val record = AvroTypeProviderTestEvolution00(1, "NONE")
       sameRecord must ===(record)
 

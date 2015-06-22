@@ -4,7 +4,7 @@ import Keys._
 object BuildSettings {
   val buildSettings = Defaults.defaultSettings ++ Seq(
     organization := "com.julianpeeters",
-    version := "0.8.0",
+    version := "0.9.0",
     scalacOptions ++= Seq(),
     scalaVersion := "2.11.6",
     crossScalaVersions := Seq("2.11.6"),
@@ -68,7 +68,7 @@ object MyBuild extends Build {
   ) aggregate(macros, tests)
 
   lazy val macros: Project = Project(
-    "macros",
+    "avro-scala-macro-annotations",
     file("macros"),
     settings = buildSettings ++ Seq(
       libraryDependencies <+= (scalaVersion)("org.scala-lang" % "scala-reflect" % _),
