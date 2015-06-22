@@ -10,7 +10,7 @@ import org.apache.avro.Schema
 import org.codehaus.jackson.JsonNode
 import org.codehaus.jackson.node._
 
-object JsonMatcher {
+object FromJsonMatcher {
 
   def getDefaultValue(field: Schema.Field, c: Context) = {
 

@@ -1,6 +1,6 @@
 package com.julianpeeters.avro.annotations
 
-import record.SchemaStore
+import record._
 
 import scala.reflect.macros.blackbox.Context
 import scala.language.experimental.macros
@@ -10,8 +10,7 @@ import org.apache.avro.util.Utf8
 import org.apache.avro.Schema
 import org.apache.avro.Schema.Field
 import org.apache.avro.Schema.{Type => AvroType}
-import org.codehaus.jackson.JsonNode
-import org.codehaus.jackson.node._
+
 
 import collection.JavaConversions._
 import java.util.{Arrays => JArrays}
@@ -26,59 +25,17 @@ object AvroRecordMacro {
     //holds info about the fields of the annotee
     case class IndexedField(nme: TermName, tpe: Type, dv: Tree, idx: Int)
 
-    // from Connor Doyle, per http://stackoverflow.com/questions/16079113/scala-2-10-reflection-how-do-i-extract-the-field-values-from-a-case-class
-    def caseClassParamsOf(tpe: Type): scala.collection.immutable.ListMap[TermName, Type] = {
-      val constructorSymbol = tpe.decl(termNames.CONSTRUCTOR)
-      val defaultConstructor =
-        if (constructorSymbol.isMethod) constructorSymbol.asMethod
-        else {
-          val ctors = constructorSymbol.asTerm.alternatives
-          ctors.map { _.asMethod }.find { _.isPrimaryConstructor }.get
-        }
-
-      scala.collection.immutable.ListMap[TermName, Type]() ++ defaultConstructor.paramLists.reduceLeft(_ ++ _).map {
-        sym => TermName(sym.name.toString) -> tpe.member(sym.name).asMethod.returnType
-      }
-    }
-
-    def asDefaultCtorParam(fieldType: c.universe.Type): c.universe.Tree = {
-      fieldType match {
-        case x if x =:= typeOf[Unit]    => q"()"
-        case x if x =:= typeOf[Boolean] => q""" true """
-        case x if x =:= typeOf[Int]     => q"1"
-        case x if x =:= typeOf[Long]    => q"1L"
-        case x if x =:= typeOf[Float]   => q"1F"
-        case x if x =:= typeOf[Double]  => q"1D"
-        case x if x =:= typeOf[String]  => q""" "" """
-        case x if x =:= typeOf[Null]    => q"null"
-        // List
-        case x @ TypeRef(pre, symbol, args) if (x <:< typeOf[List[Any]] && args.length == 1)  => {
-          q"""List(${asDefaultCtorParam(args.head)})"""
-        }
-        // Option
-        case x @ TypeRef(pre, symbol, args) if (x <:< typeOf[Option[Any]] && args.length == 1)  => {
-          q"""None"""
-        }
-        case x @ TypeRef(pre, symbol, args) if (x <:< typeOf[Map[String, Any]] && args.length == 2)  => {
-          q"""Map(""->${asDefaultCtorParam(args(1))})"""
-        }
-        // User-Defined
-        case x @ TypeRef(pre, symbol, args) if (x <:< typeOf[Product with Serializable] ) => { 
-          val defaultParams = caseClassParamsOf(x).map(p => asDefaultCtorParam(p._2))
-          q"""${TermName(symbol.name.toString)}(..$defaultParams)"""
-        }
-        case x => sys.error("Could not create a default. Not support yet: " + x )
-      }
-    }
-
     //Extender
     def generateNewBaseTypes =  List( tq"org.apache.avro.specific.SpecificRecordBase")
 
     //CtorGen
     def generateNewCtors(indexedFields: List[IndexedField]) = {
       val defaultParams = indexedFields.map(field => {
-        field.dv match { //If there are default vals present in the classdef, use those for 0-arg
-          case EmptyTree => asDefaultCtorParam(field.tpe)
+        field.dv match { //If there are default vals present in the classdef, use those for 0-arg ctor
+          case EmptyTree => {
+            val dcpm = new { val context: c.type = c } with DefaultCtorParamMatcher
+            dcpm.asDefaultCtorParam(field.tpe)
+          }
           case defaultValue => defaultValue
         }
       }) 
@@ -149,53 +106,13 @@ object AvroRecordMacro {
         }
       } 
 
-      def toJsonNode(dv: Tree) : JsonNode = {
-        lazy val jsonNodeFactory = JsonNodeFactory.instance 
-        dv match {
-          // use of null here is for Java interop, builds Avro FieldConstructor w/o default value
-          case EmptyTree                                   => null 
-          case Literal(Constant(x: Unit))                  => jsonNodeFactory.nullNode
-          case Literal(Constant(x: Boolean))               => jsonNodeFactory.booleanNode(x)
-          case Literal(Constant(x: Int))                   => jsonNodeFactory.numberNode(x)
-          case Literal(Constant(x: Long))                  => jsonNodeFactory.numberNode(x)
-          case Literal(Constant(x: Float))                 => jsonNodeFactory.numberNode(x)
-          case Literal(Constant(x: Double))                => jsonNodeFactory.numberNode(x)
-          case Literal(Constant(x: String))                => jsonNodeFactory.textNode(x)
-          case Literal(Constant(null))                     => jsonNodeFactory.nullNode
-          case Ident(TermName("None"))                     => jsonNodeFactory.nullNode
-          case Apply(Ident(TermName("Some")), List(x))     => toJsonNode(x)
-          case Apply(Ident(TermName("List")), xs)          => {
-            val jsonArray = jsonNodeFactory.arrayNode
-            xs.map(x => toJsonNode(x)).map(v => jsonArray.add(v))
-            jsonArray
-          }
-          case Apply(Ident(TermName("Map")), kvps)         => {
-            val jsonObject = jsonNodeFactory.objectNode
-            kvps.foreach(kvp => kvp match {
-              case Apply(Select(Literal(Constant(key: String)), TermName(tn)), List(x)) =>  {
-                jsonObject.put(key, toJsonNode(x))
-              }
-            })
-            jsonObject
-          }
-          // if the default value is another (i.e. nested) record/case class
-          case Apply(Ident(TermName(name)), xs) if SchemaStore.schemas.contains(namespace + "." + name) => {
-            val jsonObject = jsonNodeFactory.objectNode
-            xs.zipWithIndex.map( x => {
-              val value = x._1
-              val index = x._2
-              val nestedRecordField = SchemaStore.schemas(namespace + "." + name).getFields()(index)
-              // values from the tree, field names from cross referencing tree's pos with schema field pos
-              // (they always correspond since the schema is defined based on the fields in a class def)
-              jsonObject.put(nestedRecordField.name, toJsonNode(value))
-            })
-            jsonObject
-          }
-          case x => sys.error("Could not extract default value. Found: " + x + ", " + showRaw(x))
-        }
-      }   
+      val toJsonMatcher = new {val context: c.type = c; val ns: String = namespace} with ToJsonMatcher
       val avroFields = indexedFields.map(v =>{
-        new Field(v.nme.toString.trim, createSchema(v.tpe), "Auto-Generated Field", toJsonNode(v.dv))
+        new Field(
+          v.nme.toString.trim, 
+          createSchema(v.tpe), "Auto-Generated Field", 
+          toJsonMatcher.toJsonNode(v.dv)
+        )
       })
       val avroSchema = Schema.createRecord(className, "Auto-Generated Schema", namespace, false)
       avroSchema.setFields(JArrays.asList(avroFields.toArray:_*))
