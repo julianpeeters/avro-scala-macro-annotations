@@ -1,15 +1,4 @@
-/*
- * Copyright (c) 2012 Twitter, Inc.
- *
- * This program is licensed to you under the Apache License Version 2.0,
- * and you may not use this file except in compliance with the Apache License Version 2.0.
- * You may obtain a copy of the Apache License Version 2.0 at http://www.apache.org/licenses/LICENSE-2.0.
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the Apache License Version 2.0 is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the Apache License Version 2.0 for the specific language governing permissions and limitations there under.
- */
+
 package test
 
 import org.specs2.mutable.Specification
@@ -32,7 +21,7 @@ class AvroRecord48Test extends Specification {
       val file = File.createTempFile("AvroRecordTest48", "avro")
         file.deleteOnExit()
 
-      val userDatumWriter = new SpecificDatumWriter[AvroRecordTest48]
+      val userDatumWriter = new SpecificDatumWriter[AvroRecordTest48](record.getSchema)
       val dataFileWriter = new DataFileWriter[AvroRecordTest48](userDatumWriter)
         dataFileWriter.create(record.getSchema(), file);
         dataFileWriter.append(record);
@@ -275,6 +264,31 @@ class AvroRecord57Test extends Specification {
       val schema = new DataFileReader(file, new GenericDatumReader[GenericRecord]).getSchema
       val userDatumReader = new SpecificDatumReader[AvroRecordTest57](schema)
       val dataFileReader = new DataFileReader[AvroRecordTest57](file, userDatumReader)
+      val sameRecord = dataFileReader.next()
+
+      sameRecord must ===(record)
+    }
+  }
+}
+
+class AvroRecordMap11Test extends Specification {
+
+  "A case class with two differing nested Map fields" should {
+    "serialize and deserialize correctly" in {
+
+      val record = AvroRecordTestMap11(Map("one"->Map("two"->3)), List(Map("state"->Map("knowledge"->"power"))))
+
+      val file = File.createTempFile("AvroRecordTestMap11", "avro")
+        
+
+      val userDatumWriter = new SpecificDatumWriter[AvroRecordTestMap11]
+      val dataFileWriter = new DataFileWriter[AvroRecordTestMap11](userDatumWriter)
+        dataFileWriter.create(record.getSchema(), file);
+        dataFileWriter.append(record);
+        dataFileWriter.close();
+
+      val userDatumReader = new SpecificDatumReader[AvroRecordTestMap11](AvroRecordTestMap11.SCHEMA$)
+      val dataFileReader = new DataFileReader[AvroRecordTestMap11](file, userDatumReader)
       val sameRecord = dataFileReader.next()
 
       sameRecord must ===(record)

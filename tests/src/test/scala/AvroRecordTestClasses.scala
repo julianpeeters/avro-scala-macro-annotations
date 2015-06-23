@@ -17,11 +17,12 @@ case class AvroRecordTest04(var x: Boolean)
 case class AvroRecordTest05(var x: String) 
 @AvroRecord
 case class AvroRecordTest06(var x: Null) 
+
+//complex
 @AvroRecord
 case class AvroRecordTest07(var x: Option[String])
 @AvroRecord
 case class AvroRecordTest08(var x: Option[Int])
-
 @AvroRecord
 case class AvroRecordTest10(var x: List[String])
 @AvroRecord
@@ -30,6 +31,12 @@ case class AvroRecordTest11(var x: List[Int])
 case class AvroRecordTest12(var x: Option[String])
 @AvroRecord
 case class AvroRecordTest13(var x: Option[Int])
+@AvroRecord
+case class AvroRecordTestMap01(var x: Map[String, Int])
+@AvroRecord
+case class AvroRecordTestMap02(var x: Map[String, String])
+@AvroRecord
+case class AvroRecordTestMap03(var x: Map[String, Option[List[Int]]])
 
 
 //Primitive, 2-arity records
@@ -56,6 +63,12 @@ case class AvroRecordTest25(var x: List[Int], var y: List[Int])
 case class AvroRecordTest26(var x: Option[String], var y: Option[String])
 @AvroRecord
 case class AvroRecordTest27(var x: Option[Int], var y: Option[Int])
+@AvroRecord
+case class AvroRecordTestMap04(var x: Map[String, Int], var y: Map[String, Int])
+@AvroRecord
+case class AvroRecordTestMap05(var x: Map[String, String], var y: Map[String, String])
+@AvroRecord
+case class AvroRecordTestMap06(var x: Map[String, Option[List[Int]]], var y: Map[String, Option[List[Int]]])
 
 
 //Primitive nested
@@ -79,6 +92,12 @@ case class AvroRecordTest35(var x: Option[List[Option[Int]]])
 case class AvroRecordTest36(var x: List[Option[List[Option[String]]]])
 @AvroRecord
 case class AvroRecordTest37(var x: List[Option[List[Option[Int]]]])
+@AvroRecord
+case class AvroRecordTestMap07(var x: Map[String, Map[String, Int]])
+@AvroRecord
+case class AvroRecordTestMap08(var x: List[Map[String, Map[String, String]]])
+@AvroRecord
+case class AvroRecordTestMap09(var x: Option[Map[String, Option[List[String]]]])
 
 //Primitive nested, 2-arity
 @AvroRecord
@@ -101,6 +120,9 @@ case class AvroRecordTest45(var x: Option[List[Option[Int]]], var y: Option[List
 case class AvroRecordTest46(var x: List[Option[List[Option[String]]]], var y: List[Option[List[Option[String]]]])
 @AvroRecord
 case class AvroRecordTest47(var x: List[Option[List[Option[Int]]]], var y: List[Option[List[Option[Int]]]])
+@AvroRecord
+case class AvroRecordTestMap10(var x: Map[String, Map[String, Int]], var y: Map[String, Map[String, Int]])
+
 
 
 //Primitive, 2-arity, heterogenous members
@@ -124,6 +146,8 @@ case class AvroRecordTest55(var x: Option[List[Option[Int]]], var y: Option[List
 case class AvroRecordTest56(var x: List[Option[List[Option[String]]]], var y: List[Option[List[Option[Int]]]])
 @AvroRecord
 case class AvroRecordTest57(var x: List[Option[List[Option[Int]]]], var y: List[Option[List[Option[String]]]])
+@AvroRecord
+case class AvroRecordTestMap11(var x: Map[String, Map[String, Int]], var y: List[Map[String, Map[String, String]]])
 
 
 //User-defined types
@@ -149,4 +173,5 @@ case class AvroRecordTest66(var x: Option[AvroRecordTest58])
 case class AvroRecordTest67(var x: Option[AvroRecordTest00], var y: Option[AvroRecordTest60])
 @AvroRecord
 case class AvroRecordTest68(var x: Option[List[Option[AvroRecordTest00]]], var y: List[Option[List[AvroRecordTest01]]])
-
+@AvroRecord
+case class AvroRecordTestMap12(var x: Map[String, Map[String, AvroRecordTest00]], var y: Map[String, AvroRecordTest58])

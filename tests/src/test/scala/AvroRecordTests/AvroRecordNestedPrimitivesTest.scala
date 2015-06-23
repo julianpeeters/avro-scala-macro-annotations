@@ -1,18 +1,6 @@
-/*
- * Copyright (c) 2012 Twitter, Inc.
- *
- * This program is licensed to you under the Apache License Version 2.0,
- * and you may not use this file except in compliance with the Apache License Version 2.0.
- * You may obtain a copy of the Apache License Version 2.0 at http://www.apache.org/licenses/LICENSE-2.0.
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the Apache License Version 2.0 is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the Apache License Version 2.0 for the specific language governing permissions and limitations there under.
- */
 package test
 
-// Specs2
+
 import org.specs2.mutable.Specification
 
 import java.io.File
@@ -278,6 +266,82 @@ class AvroRecord37Test extends Specification {
       val schema = new DataFileReader(file, new GenericDatumReader[GenericRecord]).getSchema
       val userDatumReader = new SpecificDatumReader[AvroRecordTest37](schema)
       val dataFileReader = new DataFileReader[AvroRecordTest37](file, userDatumReader)
+      val sameRecord = dataFileReader.next()
+
+      sameRecord must ===(record)
+    }
+  }
+}
+
+class AvroRecordMap07Test extends Specification {
+
+  "A case class with a Map[Int, Map[Int, Int]] field" should {
+    "serialize and deserialize correctly" in {
+
+      val record = AvroRecordTestMap07(Map("art"->Map("explode"->4)))
+
+      val file = File.createTempFile("AvroRecordTestMap07", "avro")
+        
+
+      val userDatumWriter = new SpecificDatumWriter[AvroRecordTestMap07]
+      val dataFileWriter = new DataFileWriter[AvroRecordTestMap07](userDatumWriter)
+        dataFileWriter.create(record.getSchema(), file);
+        dataFileWriter.append(record);
+        dataFileWriter.close();
+
+      val userDatumReader = new SpecificDatumReader[AvroRecordTestMap07](AvroRecordTestMap07.SCHEMA$)
+      val dataFileReader = new DataFileReader[AvroRecordTestMap07](file, userDatumReader)
+      val sameRecord = dataFileReader.next()
+
+      sameRecord must ===(record)
+    }
+  }
+}
+
+
+class AvroRecordMap08Test extends Specification {
+
+  "A case class with a List[Map[String, Map[Int, String]]] field" should {
+    "serialize and deserialize correctly" in {
+
+      val record = AvroRecordTestMap08(List(Map("hare"->Map("serpent"->"eagle"))))
+
+      val file = File.createTempFile("AvroRecordTestMap08", "avro")
+        
+
+      val userDatumWriter = new SpecificDatumWriter[AvroRecordTestMap08]
+      val dataFileWriter = new DataFileWriter[AvroRecordTestMap08](userDatumWriter)
+        dataFileWriter.create(record.getSchema(), file);
+        dataFileWriter.append(record);
+        dataFileWriter.close();
+
+      val userDatumReader = new SpecificDatumReader[AvroRecordTestMap08](AvroRecordTestMap08.SCHEMA$)
+      val dataFileReader = new DataFileReader[AvroRecordTestMap08](file, userDatumReader)
+      val sameRecord = dataFileReader.next()
+
+      sameRecord must ===(record)
+    }
+  }
+}
+
+class AvroRecordMap09Test extends Specification {
+
+  "A case class with a Option[Map[String, Option[List[String]]]] field" should {
+    "serialize and deserialize correctly" in {
+
+      val record = AvroRecordTestMap09(Some(Map("Eje"->None)))
+
+      val file = File.createTempFile("AvroRecordTestMap09", "avro")
+        
+
+      val userDatumWriter = new SpecificDatumWriter[AvroRecordTestMap09]
+      val dataFileWriter = new DataFileWriter[AvroRecordTestMap09](userDatumWriter)
+        dataFileWriter.create(record.getSchema(), file);
+        dataFileWriter.append(record);
+        dataFileWriter.close();
+
+      val userDatumReader = new SpecificDatumReader[AvroRecordTestMap09](AvroRecordTestMap09.SCHEMA$)
+      val dataFileReader = new DataFileReader[AvroRecordTestMap09](file, userDatumReader)
       val sameRecord = dataFileReader.next()
 
       sameRecord must ===(record)

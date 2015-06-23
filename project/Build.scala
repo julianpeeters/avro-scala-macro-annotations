@@ -4,24 +4,29 @@ import Keys._
 object BuildSettings {
   val buildSettings = Defaults.defaultSettings ++ Seq(
     organization := "com.julianpeeters",
+<<<<<<< HEAD
     version := "0.4",
     scalacOptions ++= Seq(),
     scalaVersion := "2.10.4",
     crossScalaVersions := Seq("2.10.4", "2.11.6"),
+=======
+    version := "0.4.1",
+    scalacOptions ++= Seq(),
+    scalaVersion := "2.10.5",
+    crossScalaVersions := Seq("2.11.6"),
+    resolvers += "scalaz-bintray" at "http://dl.bintray.com/scalaz/releases",
+>>>>>>> 0.4.1
     resolvers += Resolver.sonatypeRepo("releases"),
     addCompilerPlugin("org.scalamacros" % "paradise" % "2.1.0-M5" cross CrossVersion.full),
     libraryDependencies += "org.apache.avro" % "avro" % "1.7.6",
     libraryDependencies := {
       CrossVersion.partialVersion(scalaVersion.value) match {
-        // if scala 2.11+ is used, quasiquotes are merged into scala-reflect
-        case Some((2, scalaMajor)) if scalaMajor >= 11 =>
+        case Some((2, scalaMajor)) if scalaMajor >= 10 =>
           libraryDependencies.value ++ Seq (
-            "org.specs2" %% "specs2" % "2.3.11" % "test")
-        // in Scala 2.10, quasiquotes are provided by macro paradise
-        case Some((2, 10)) =>
-          libraryDependencies.value ++ Seq(
-            "org.scalamacros" %% "quasiquotes" % "2.0.0" cross CrossVersion.binary,
-            "org.specs2" %% "specs2" % "2.2" % "test")
+          "org.scalamacros" %% "quasiquotes" % "2.0.0" cross CrossVersion.binary,
+          "org.specs2" %% "specs2-core" % "3.2" % "test")
+        case Some((2, 12)) =>
+          libraryDependencies.value ++ Seq()
       }
     },
     // publishing
@@ -74,7 +79,8 @@ object MyBuild extends Build {
     "avro-scala-macro-annotations",
     file("macros"),
     settings = buildSettings ++ Seq(
-      libraryDependencies <+= (scalaVersion)("org.scala-lang" % "scala-reflect" % _))
+      libraryDependencies <+= (scalaVersion)("org.scala-lang" % "scala-reflect" % _),
+      libraryDependencies += "org.codehaus.jackson" % "jackson-core-asl" % "1.9.13")
   )
 
   lazy val tests: Project = Project(
@@ -91,5 +97,4 @@ object MyBuild extends Build {
    mappings in (Compile, packageSrc) ++= mappings.in(macros, Compile, packageSrc).value
   )
 }
-
 
