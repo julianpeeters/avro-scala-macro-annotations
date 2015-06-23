@@ -2,7 +2,7 @@ package com.julianpeeters.avro.annotations
 package provider
 package matchers
 
-import scala.reflect.macros.blackbox.Context
+import scala.reflect.macros.Context
 import collection.JavaConversions._
 
 
@@ -56,7 +56,7 @@ object FromJsonMatcher {
         case Schema.Type.RECORD  => {
           val fields  = schema.getFields
           val fieldValues = fields.map(f => fromJsonNode(node.get(f.name), f.schema))
-          q"${TermName(schema.getName)}(..${fieldValues})"
+          q"${newTermName(schema.getName)}(..${fieldValues})"
         }
         case x => sys.error("Can't extract a default field, type not yet supported: " + x)
       }

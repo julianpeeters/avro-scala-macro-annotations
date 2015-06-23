@@ -4,7 +4,7 @@ import matchers._
 
 import org.apache.avro.Schema
 
-import scala.reflect.macros.blackbox.Context
+import scala.reflect.macros.Context
 import scala.language.experimental.macros
 import scala.collection.JavaConversions._
 
@@ -19,10 +19,15 @@ object ValDefGenerator {
       val fieldType    = AvroTypeMatcher.toScala(namespace, f.schema, c)
       val fieldDefault = FromJsonMatcher.getDefaultValue(f, c)
       isImmutable match {
-        case true  => q"""val ${TermName(fieldName)}: ${q"$fieldType"} = $fieldDefault"""
-        case false => q"""var ${TermName(fieldName)}: ${q"$fieldType"} = $fieldDefault"""
+        case true  => q"""val ${newTermName(fieldName)}: $fieldType = $fieldDefault"""
+        case false => q"""var ${newTermName(fieldName)}: $fieldType = $fieldDefault"""
+
       }
-    })
+
+    } )  
+
+
+
   }
 
 }

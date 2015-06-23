@@ -1,7 +1,7 @@
 package com.julianpeeters.avro.annotations
 package provider
 
-import scala.reflect.macros.blackbox.Context
+import scala.reflect.macros.Context
 
 object NamespaceProbe {
 
@@ -11,8 +11,8 @@ object NamespaceProbe {
     import c.universe._
     import Flag._
 
-    val freshName = c.freshName(TypeName("Probe$")) 
-    val probe = c.typecheck(q""" {class $freshName; ()} """)  // Thanks again to Eugene Burmako 
+    val freshName = c.fresh(newTypeName("Probe$")) 
+    val probe = c.typeCheck(q""" {class $freshName; ()} """)  // Thanks again to Eugene Burmako 
     val freshSymbol = probe match {
       case Block(List(t), r) => t.symbol
     }

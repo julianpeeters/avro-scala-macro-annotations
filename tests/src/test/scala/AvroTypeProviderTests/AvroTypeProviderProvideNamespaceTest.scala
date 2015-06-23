@@ -12,7 +12,7 @@ import org.apache.avro.file._
 import collection.JavaConversions._
 
 import com.julianpeeters.avro.annotations._
-
+/*
 @AvroTypeProvider("tests/src/test/resources/AvroTypeProviderTestNoNamespaceOption.avro")
 @AvroRecord
 case class AvroTypeProviderTestNoNamespaceOption()
@@ -25,7 +25,7 @@ case class AvroTypeProviderTestNoNamespaceDeeplyNested()
 @AvroTypeProvider("tests/src/test/resources/AvroTypeProviderTestNoNamespaceDoubleNested.avro")
 @AvroRecord
 case class AvroTypeProviderTestNoNamespaceDoubleNested()
-
+*/
 @AvroTypeProvider("tests/src/test/resources/AvroTypeProviderTestNoNamespace.avro")
 @AvroRecord
 case class AvroTypeProviderTestNoNamespace()

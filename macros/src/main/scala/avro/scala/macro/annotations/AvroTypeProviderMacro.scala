@@ -2,7 +2,7 @@ package com.julianpeeters.avro.annotations
 
 import provider._
 
-import scala.reflect.macros.blackbox.Context
+import scala.reflect.macros.Context
 import scala.language.experimental.macros
 import scala.annotation.StaticAnnotation
 

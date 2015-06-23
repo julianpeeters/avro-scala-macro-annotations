@@ -1,8 +1,9 @@
 package com.julianpeeters.avro.annotations
 
 import record._
+import provider.matchers.AvroTypeMatcher
 
-import scala.reflect.macros.blackbox.Context
+import scala.reflect.macros.Context
 import scala.language.experimental.macros
 import scala.annotation.StaticAnnotation
 
@@ -49,8 +50,8 @@ object AvroRecordMacro {
     }
 
     //NamespaceGen                                    
-    val freshName = c.freshName(TypeName("Probe$")) 
-    val probe = c.typecheck(q""" {class $freshName; ()} """)  // Thanks again to Eugene Burmako 
+    val freshName = c.fresh(newTypeName("Probe$")) 
+    val probe = c.typeCheck(q""" {class $freshName; ()} """)  // Thanks again to Eugene Burmako 
     val freshSymbol = probe match {
       case Block(List(t), r) => t.symbol
     }
@@ -223,7 +224,7 @@ object AvroRecordMacro {
           def indexFields(fields: List[ValDef]) = {
             fields.map(f => {
               val fieldName = f.name
-              val fieldType = c.typecheck(q"type T = ${f.tpt}") match {
+              val fieldType = c.typeCheck(q"type T = ${f.tpt}") match {
                 case x @ TypeDef(mods, name, tparams, rhs)  => rhs.tpe
               }
               val defaultValue = f.rhs//extractValue(f.rhs) 

@@ -1,6 +1,6 @@
 package com.julianpeeters.avro.annotations
 package record
-import scala.reflect.macros.blackbox.Context
+import scala.reflect.macros.Context
 
 import collection.JavaConversions._
  
@@ -14,7 +14,7 @@ abstract class DefaultCtorParamMatcher {
 
 	// from Connor Doyle, per http://stackoverflow.com/questions/16079113/scala-2-10-reflection-how-do-i-extract-the-field-values-from-a-case-class
     def caseClassParamsOf(tpe: Type): scala.collection.immutable.ListMap[TermName, Type] = {
-      val constructorSymbol = tpe.decl(termNames.CONSTRUCTOR)
+      val constructorSymbol = tpe.declaration(nme.CONSTRUCTOR)
       val defaultConstructor =
         if (constructorSymbol.isMethod) constructorSymbol.asMethod
         else {
@@ -22,8 +22,8 @@ abstract class DefaultCtorParamMatcher {
           ctors.map { _.asMethod }.find { _.isPrimaryConstructor }.get
         }
 
-      scala.collection.immutable.ListMap[TermName, Type]() ++ defaultConstructor.paramLists.reduceLeft(_ ++ _).map {
-        sym => TermName(sym.name.toString) -> tpe.member(sym.name).asMethod.returnType
+      scala.collection.immutable.ListMap[TermName, Type]() ++ defaultConstructor.paramss.reduceLeft(_ ++ _).map {
+        sym => newTermName(sym.name.toString) -> tpe.member(sym.name).asMethod.returnType
       }
     }
 
@@ -51,7 +51,7 @@ abstract class DefaultCtorParamMatcher {
         // User-Defined
         case x @ TypeRef(pre, symbol, args) if (x <:< typeOf[Product with Serializable] ) => { 
           val defaultParams = caseClassParamsOf(x).map(p => asDefaultCtorParam(p._2))
-          q"""${TermName(symbol.name.toString)}(..$defaultParams)"""
+          q"""${newTermName(symbol.name.toString)}(..$defaultParams)"""
         }
         case x => sys.error("Could not create a default. Not support yet: " + x )
       }
