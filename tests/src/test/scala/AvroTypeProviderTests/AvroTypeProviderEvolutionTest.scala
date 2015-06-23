@@ -13,11 +13,9 @@ import org.apache.avro.Schema
 import org.apache.avro.Schema.{Type => AvroType}
 import org.apache.avro.file._
 
+@AvroTypeProvider("tests/src/test/resources/evolution/AvroTypeProviderTestEvolution00.avro")
 @AvroRecord
 case class AvroTypeProviderTestEvolution00(var y: String = "NONE") //field x: Int is provided
-
-//@AvroRecord
-//case class AvroTypeProviderTestEvolution01(var x: Int)
 
 class AvroTypeProviderEvolutionTest extends Specification {
 
@@ -33,14 +31,10 @@ class AvroTypeProviderEvolutionTest extends Specification {
       val dataFileReader = new DataFileReader[AvroTypeProviderTestEvolution00](file, userDatumReader)
       val sameRecord = dataFileReader.next()
 
-
-
-//Fails: Trying to to evolve with by only adding the new fields, using AvroTypeProvider add the old 
-//too many arguments for method apply: (y: String)test.AvroTypeProviderTestEvolution00 in object AvroTypeProviderTestEvolution00
-//        [error]       val record = AvroTypeProviderTestEvolution00(1, "NONE")
       sameRecord must ===(record)
 
     }
   }
+
 
 }
