@@ -8,7 +8,7 @@
 
 
 ####Get the dependency:
-For Scala 2.11.x ([for Scala 2.10.x](https://github.com/julianpeeters/avro-scala-macro-annotations/issues/6#issuecomment-77973333) please use version 0.4 with sbt 0.13.8+):
+For Scala 2.11.x ([for Scala 2.10.x](https://github.com/julianpeeters/avro-scala-macro-annotations/issues/6#issuecomment-77973333) please use version 0.4.1 with sbt 0.13.8+):
 
 
         libraryDependencies += "com.julianpeeters" % "avro-scala-macro-annotations_2.11" % "0.9.0"
@@ -98,7 +98,7 @@ Now you can annotate a case class that you'd like to have serve as your Avro rec
         case class B(var a: Option[A] = None)
 ```
 
-  expands to implement `SpecificRecord` with `put`, `get`, and `getSchema` methods, with the schema:
+  expands to implement `SpecificRecord`,  adding `put`, `get`, and `getSchema` methods, and a static `lazy val SCHEMA$` with the schema:
 
 ```
         {"type":"record","name":"B","namespace":"sample","doc":"Auto-generated schema","fields":[{"name":"a","type":["null",{"type":"record","name":"A","doc":"Auto-generated schema","fields":[{"name":"i","type":"int","doc":"Auto-Generated Field"}]}],"doc":"Auto-Generated Field",default: null}]}
@@ -140,20 +140,3 @@ Use the expanded class as you would a code-gen'd class with any `SpecificRecord`
 The remaining avro types, `fixed`, `enum`, and `union` (beyond nullable fields), are not yet supported.
 
 4) A class that is doubly annotated with `@AvroTypeProvider` and `@AvroRecord` will automatically be updated with vars instead of vals
-
-5) For Scala 2.10.5: 
-
-
-  - The order of class definition must be such that the classes that represent the most-nested records are defined and annotated first.
-
-
-  - Default values are not yet supported for Scala 2.10
-
-  - The map datatype is not yet supported for Scala 2.10
-
-  - The schema must be obtainted via an instance of the record: 
-  ```scala
-     val rec = MyRecord(1)
-     val schema = rec.getSchema
-  ``` 
-
