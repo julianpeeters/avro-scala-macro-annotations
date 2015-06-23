@@ -82,43 +82,7 @@ object AvroRecordMacro {
         typeOf[Utf8]    -> Schema.create(AvroType.STRING)
       )
     
-<<<<<<< HEAD
-      def createSchema(tpt: String) : Schema = { //TODO prefer no Strings, but how to match on the value of c.universe.Tree
-        val fieldTypeName = tpt.toString 
 
-        // If a field's type is a record (i.e. a case class), then expand its macro annotation
-        try {
-          val sym = c.mirror.staticClass(namespace + "." + fieldTypeName)
-          val cls = sym.asClass
-          val tpe = cls.toType
-          val members = tpe.members
-        } 
-        catch {
-          case e: scala.ScalaReflectionException                 => //continue 
-          case e: scala.reflect.internal.MissingRequirementError => //continue 
-          case x: Throwable => sys.error("couldn't create schema because type-checking "  + tpt + " threw an unexpected error: " + x)
-        }
-
-        if (primitiveClasses.contains(fieldTypeName)) {
-          primitiveClasses(fieldTypeName)
-        } 
-        else if (fieldTypeName.startsWith("List[")) { 
-          val boxedType = DefaultParamMatcher.getBoxed(fieldTypeName) //TODO move `getBoxed` to a Utility object?
-          Schema.createArray(createSchema(boxedType))
-        } 
-        else if (fieldTypeName.startsWith("Option[")) { 
-          val boxed = DefaultParamMatcher.getBoxed(fieldTypeName) //TODO move `getBoxed` to a Utility object?
-          if (boxed.startsWith("Option[")) { 
-            throw new UnsupportedOperationException("Implementation limitation: Cannot immediately nest Option types")
-          } else
-            Schema.createUnion(JArrays.asList(Array(createSchema("Null"), createSchema(boxed)):_*))
-        } 
-        else if (schemas.keys.toList.contains(namespace + "." + fieldTypeName.toString) ) { //if it's a record type
-          schemas(namespace + "." + fieldTypeName.toString)
-        }
-        else throw new UnsupportedOperationException("Cannot support yet: " + tpt)
-      }  
-=======
       def createSchema(tpe: c.universe.Type) : Schema = {
         tpe match {
           case x if (primitiveClasses.contains(x)) => primitiveClasses(x)
@@ -143,7 +107,6 @@ object AvroRecordMacro {
           case x => throw new UnsupportedOperationException("Could not generate schema. Cannot support yet: " + x )
         }
       } 
->>>>>>> 0.4.1
 
       val toJsonMatcher = new {val context: c.type = c; val ns: String = namespace} with ToJsonMatcher
       val avroFields = indexedFields.map(v =>{

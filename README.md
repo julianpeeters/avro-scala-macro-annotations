@@ -11,11 +11,8 @@
 For Scala 2.11.x ([for Scala 2.10.x](https://github.com/julianpeeters/avro-scala-macro-annotations/issues/6#issuecomment-77973333) please use version 0.4.1 with sbt 0.13.8+):
 
 
-<<<<<<< HEAD
-        libraryDependencies += "com.julianpeeters" % "avro-scala-macro-annotations_2.10" % "0.4"
-=======
+
         libraryDependencies += "com.julianpeeters" % "avro-scala-macro-annotations_2.11" % "0.9.0"
->>>>>>> 0.4.1
 
 
 Macro annotations are only available in Scala 2.10.x, 2.11.x, and 2.12.x with the macro paradise plugin. Their inclusion in official Scala might happen in Scala 2.13 - [official docs](http://docs.scala-lang.org/overviews/macros/annotations.html). To use the plugin, add the following `build.sbt`:
@@ -143,10 +140,7 @@ Use the expanded class as you would a code-gen'd class with any `SpecificRecord`
 
 The remaining avro types, `fixed`, `enum`, and `union` (beyond nullable fields), are not yet supported.
 
-<<<<<<< HEAD
-5) *For Scalding Only: Provide a `null` argument (e.g. `@AvroRecord(null)` ) to force the omission of a namespace in the generated schema. This must be done in order to read files with no namespace in the schema into case classes.
-=======
+
 4) A class that is doubly annotated with `@AvroTypeProvider` and `@AvroRecord` will automatically be updated with vars instead of vals
 
 
->>>>>>> 0.4.1

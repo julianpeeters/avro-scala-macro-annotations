@@ -4,18 +4,11 @@ import Keys._
 object BuildSettings {
   val buildSettings = Defaults.defaultSettings ++ Seq(
     organization := "com.julianpeeters",
-<<<<<<< HEAD
-    version := "0.4",
-    scalacOptions ++= Seq(),
-    scalaVersion := "2.10.4",
-    crossScalaVersions := Seq("2.10.4", "2.11.6"),
-=======
     version := "0.4.1",
     scalacOptions ++= Seq(),
     scalaVersion := "2.10.5",
     crossScalaVersions := Seq("2.11.6"),
     resolvers += "scalaz-bintray" at "http://dl.bintray.com/scalaz/releases",
->>>>>>> 0.4.1
     resolvers += Resolver.sonatypeRepo("releases"),
     addCompilerPlugin("org.scalamacros" % "paradise" % "2.1.0-M5" cross CrossVersion.full),
     libraryDependencies += "org.apache.avro" % "avro" % "1.7.6",
