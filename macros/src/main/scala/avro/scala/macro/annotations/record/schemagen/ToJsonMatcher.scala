@@ -1,5 +1,7 @@
 package com.julianpeeters.avro.annotations
 package record
+package schemagen
+
 import scala.reflect.macros.blackbox.Context
 
 import org.codehaus.jackson.JsonNode
@@ -10,10 +12,10 @@ import collection.JavaConversions._
 abstract class ToJsonMatcher {
 
     //necessary for type refinement when trying to pass dependent types
-    val context: Context
+    val c: Context
     val ns: String
 
-    import context.universe._
+    import c.universe._
     import Flag._
 
       def toJsonNode(dv: Tree) : JsonNode = {

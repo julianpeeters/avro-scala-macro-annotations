@@ -1,5 +1,7 @@
 package com.julianpeeters.avro.annotations
 package record
+package ctorgen
+
 import scala.reflect.macros.blackbox.Context
 
 import collection.JavaConversions._
@@ -55,6 +57,14 @@ abstract class DefaultCtorParamMatcher {
         }
         case x => sys.error("Could not create a default. Not support yet: " + x )
       }
+    }
+
+
+    def matchDefaultParams(tpe: Type, dv: Tree) = dv match { //If there are default vals present in the classdef, use those for 0-arg ctor
+      case EmptyTree => {
+        asDefaultCtorParam(tpe)
+      }
+      case defaultValue => defaultValue
     }
   
 }
