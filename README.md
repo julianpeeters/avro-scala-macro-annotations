@@ -34,6 +34,36 @@ Use the annotations separately, or together like this:
 
 First the fields are added automatically from an Avro Schema in a file, then the methods necessary for de/serialization are generated for you, all at compile time.
 
+####Supported data types:  
+
+`int`
+
+`float`
+
+`long`
+
+`double`
+
+`boolean`
+
+`string`
+
+`null`
+
+`array`*
+
+`map`
+
+`record`
+
+`union`**
+
+*Arrays are represented by `List[T]`, where T is any other supported type.
+
+**Optional fields of type `[null, t]` are represented by `Option[T]` 
+
+The remaining avro types, `fixed`, `enum`, and `union` (beyond nullable fields), are not yet supported.
+
 
 ##1) Avro-Type-Provider
 If your use-case is "data-first" and you're using an Avro runtime library that allows you to use Scala case classes to represent your Avro records, then you are probably a little weary of transcribing Avro Schemas into their Scala case class equivalents. 
@@ -122,21 +152,4 @@ Use the expanded class as you would a code-gen'd class with any `SpecificRecord`
 
 2) Fields must be `var`s in order to be compatible with the SpecificRecord API
 
-3) Works with the following Avro datatypes:  
-`int`
-`float`
-`long`
-`double`
-`boolean`
-`string`
-`null`
-`array`
-`map`
-`record`
-`union`*
-
-*Optional fields of type `[null, t]` are represented by `Option[T]` 
-
-The remaining avro types, `fixed`, `enum`, and `union` (beyond nullable fields), are not yet supported.
-
-4) A class that is doubly annotated with `@AvroTypeProvider` and `@AvroRecord` will automatically be updated with vars instead of vals
+3) A class that is doubly annotated with `@AvroTypeProvider` and `@AvroRecord` will automatically be updated with vars instead of vals
