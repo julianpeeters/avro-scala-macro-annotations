@@ -28,7 +28,7 @@ object AvroRecordMacro {
     def generateNewBaseTypes =  List( tq"org.apache.avro.specific.SpecificRecordBase")
 
     //CtorGen
-    def generateNewCtors(indexedFields: List[IndexedField]) = {
+    def generateNewCtors(indexedFields: List[IndexedField]): List[c.universe.DefDef] = {
       val dcpm = new { val context: c.type = c } with DefaultCtorParamMatcher
       val defaultParams = indexedFields.map(field => dcpm.matchDefaultParams(field.tpe, field.dv))
       val ctorGenerator = new {val context: c.type = c} with CtorGenerator
