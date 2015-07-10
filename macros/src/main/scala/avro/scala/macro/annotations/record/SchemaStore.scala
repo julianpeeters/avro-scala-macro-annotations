@@ -13,7 +13,7 @@ object SchemaStore {
   def accept(schema: Schema) {
   	val fullName = schema.getFullName
     if (!schemas.contains(fullName)) {
-      schemas += (fullName -> schema)
+      val _ = schemas += (fullName -> schema)
     }
   }
 
