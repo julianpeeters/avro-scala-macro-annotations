@@ -23,6 +23,7 @@ Macro annotations are only available in Scala 2.10.x, 2.11.x, and 2.12.x with th
 ####Usage:
 Use the annotations separately, or together like this:
 
+```scala
         package sample
         
         import com.julianpeeters.avro.annotations._
@@ -30,7 +31,7 @@ Use the annotations separately, or together like this:
         @AvroTypeProvider("data/input.avro")
         @AvroRecord
         case class MyRecord()
-
+```
 
 First the fields are added automatically from an Avro Schema in a file, then the methods necessary for de/serialization are generated for you, all at compile time.
 
