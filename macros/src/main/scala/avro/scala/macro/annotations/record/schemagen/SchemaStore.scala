@@ -1,5 +1,6 @@
 package com.julianpeeters.avro.annotations
 package record
+package schemagen
 
 import java.util.concurrent.ConcurrentHashMap
 import collection.JavaConversions._
@@ -13,7 +14,7 @@ object SchemaStore {
   def accept(schema: Schema) {
   	val fullName = schema.getFullName
     if (!schemas.contains(fullName)) {
-      schemas += (fullName -> schema)
+      val _ = schemas += (fullName -> schema)
     }
   }
 

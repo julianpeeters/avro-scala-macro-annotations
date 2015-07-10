@@ -57,7 +57,7 @@ object AvroRecordMacro {
 
       val putDefCaseGenerator = new { val context: c.type = c } with PutDefCaseGenerator
       val putCases = indexedFields.map(f => putDefCaseGenerator.asPutCase(f.nme, f.tpe, f.idx)) :+ exceptionCase
-      val putDef = q"""def put(field: Int, value: scala.Any): Unit = field match {case ..$putCases}"""
+      val putDef = q"""def put(field: Int, value: scala.Any): Unit = { field match {case ..$putCases}; () }"""
 
       List(getDef, getSchemaDef, putDef)
     }
