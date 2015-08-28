@@ -18,7 +18,7 @@ Macro annotations are only available in Scala 2.10.x, 2.11.x, and 2.12.x with th
 
         addCompilerPlugin("org.scalamacros" % "paradise" % "2.1.0-M5" cross CrossVersion.full)
 
-
+In your IDE of choice you will have to explicitly load this compiler plugin most probably. In Eclipse for example, you can do so by providing the full path under the `Xplugin`, found in the advanced Scala compiler preferences; you should have the jar in a path like `~/.ivy2/cache/org.scalamacros/paradise_2.10.4/jars/paradise_2.10.4-2.0.1.jar`. The Avro schema file path might have to be adjusted - check for eventual macro errors.
 
 ####Usage:
 Use the annotations separately, or together like this:
@@ -33,7 +33,7 @@ Use the annotations separately, or together like this:
         case class MyRecord()
 ```
 
-First the fields are added automatically from an Avro Schema in a file, then the methods necessary for de/serialization are generated for you, all at compile time.
+First the fields are added automatically from an Avro Schema in a file, then the methods necessary for de/serialization are generated for you, all at compile time. Notice that the case class cannot have a companion object nor extend any trait or class.
 
 ####Supported data types:  
 

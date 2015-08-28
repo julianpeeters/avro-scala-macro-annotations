@@ -27,8 +27,9 @@ object AvroTypeProviderMacro {
           val isImmutable: Boolean = {
             !mods.annotations.exists(mod => mod.toString == "new AvroRecord()" | mod.toString =="new AvroRecord(null)")
           }
-           
-          val avroFilePath = FilePathProbe.getPath(c) 
+          
+          println(s"Current path: ${new File(".").getAbsolutePath}")
+          val avroFilePath = FilePathProbe.getPath(c)
           val infile = new File(avroFilePath)
           val schema = FileParser.getSchema(infile)
 
