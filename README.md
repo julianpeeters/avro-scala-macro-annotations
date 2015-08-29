@@ -39,7 +39,8 @@ Use the annotations separately, or together like this:
         case class MyRecord()
 ```
 
-First the fields are added automatically from an Avro Schema in a file, then the methods necessary for de/serialization are generated for you, all at compile time. Notice that the case class cannot have a companion object nor extend any trait or class.
+First the fields are added automatically from an Avro Schema in a file, then the methods necessary for de/serialization are generated for you, all at compile time. Please see warnings below.
+
 
 ####Supported data types:  
 
@@ -120,6 +121,8 @@ Annotate an "empty" case class, and its members will be generated automatically 
 
 5) A class that is doubly annotated with `@AvroTypeProvider` and `@AvroRecord` will be updated with vars instead of vals.
 
+
+
 ##2) Avro-Record:
 Implements `SpecificRecord` at compile time so you can use Scala case classes to represent Avro records (like [Scalavro](https://github.com/GenslerAppsPod/scalavro) or [Salat-Avro](https://github.com/julianpeeters/salat-avro/tree/master), but for the Apache Avro runtime so that it runs on your cluster). Since Avro-Scala-Compiler-Plugin doesn't work with Scala 2.10+ and the compiler still stumps me, I ported the serialization essentials over to use [Scala Macro Annotations](http://docs.scala-lang.org/overviews/macros/annotations.html) instead.
 
@@ -157,6 +160,10 @@ Use the expanded class as you would a code-gen'd class with any `SpecificRecord`
 ####Please note:
 1) If your framework is one that relies on reflection to get the Schema, it will fail since Scala fields are private. Therefore preempt it by passing in a Schema to DatumReaders and DatumWriters (as in the Avro example above).
 
-2) Fields must be `var`s in order to be compatible with the SpecificRecord API
+2) Fields must be `var`s in order to be compatible with the SpecificRecord API.
 
-3) A class that is doubly annotated with `@AvroTypeProvider` and `@AvroRecord` will automatically be updated with vars instead of vals
+3) A class that is doubly annotated with `@AvroTypeProvider` and `@AvroRecord` will automatically be updated with vars instead of vals.
+
+4) An annotatee may extend a trait but not a class, since SpecificRecordBase will need to occupy that position.
+
+5) Notice that the case class cannot have a companion object.
