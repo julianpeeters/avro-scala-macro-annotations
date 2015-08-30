@@ -23,14 +23,14 @@ object AvroTypeProviderMacro extends LazyLogging {
 
     val result = {
       annottees.map(_.tree).toList match {
-        case q"$mods class $name[..$tparams](..$first)(...$rest) extends ..$parents { $self => ..$body }" :: Nil => {
+        case q"$mods class $name[..$tparams](..$first)(...$rest) extends ..$parents { $self => ..$body }" :: tail => {
 
           //currently, having a `@AvroRecord` the only thing that will trigger the writing of vars instead of vals
           val isImmutable: Boolean = {
             !mods.annotations.exists(mod => mod.toString == "new AvroRecord()" | mod.toString =="new AvroRecord(null)")
           }
 
-          //helpful for IDE users who may not be able to easily see where there files live
+          //helpful for IDE users who may not be able to easily see where their files live
           logger.info(s"Current path: ${new File(".").getAbsolutePath}")
 
           val avroFilePath = FilePathProbe.getPath(c)
@@ -40,8 +40,15 @@ object AvroTypeProviderMacro extends LazyLogging {
           //wraps each schema field in a quasiquote, returning immutable val defs if immutable flag is true
           val newFields: List[ValDef] = ValDefGenerator.asScalaFields(schema, namespace, isImmutable, c)
 
-          //Here's the updated class def:
-          q"$mods class $name[..$tparams](..${newFields:::first})(...$rest) extends ..$parents { $self => ..$body }"
+          tail match {
+            // if there is no preexisiting companion
+            case Nil => q"$mods class $name[..$tparams](..${newFields:::first})(...$rest) extends ..$parents { $self => ..$body }"
+            // if there is a preexisting companion, include it with the updated classDef
+            case moduleDef @ q"object $moduleName { ..$moduleBody }" :: Nil => {
+              q"""$mods class $name[..$tparams](..${newFields:::first})(...$rest) extends ..$parents { $self => ..$body }; 
+                object ${name.toTermName} { ..$moduleBody }"""
+            }
+          }
         }
       }
     }

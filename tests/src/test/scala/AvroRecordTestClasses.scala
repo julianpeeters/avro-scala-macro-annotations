@@ -178,7 +178,14 @@ case class AvroRecordTestMap12(var x: Map[String, Map[String, AvroRecordTest00]]
 
 
 // record classes that already extend a trait (results in a mixin with SpecificRecordBase)
-trait Extension01 { val e = 10 }
-
+trait Extension00 { val e = 10 }
 @AvroRecord
-case class AvroRecordExtendedTest01(var x: Int) extends Extension01
+case class AvroRecordExtendedTest00(var x: Int) extends Extension00
+
+
+// preexisting companion object
+@AvroRecord
+case class AvroRecordPreexistingCompanionTest00(var x: Int)
+object AvroRecordPreexistingCompanionTest00 {
+  val o = 5
+}

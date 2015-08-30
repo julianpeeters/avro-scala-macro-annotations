@@ -8,10 +8,10 @@
 
 
 ####Get the dependency:
-For Scala 2.11.x ([for Scala 2.10.x](https://github.com/julianpeeters/avro-scala-macro-annotations/issues/6#issuecomment-77973333) please use version 0.4.2 with sbt 0.13.8+):
+For Scala 2.11.x ([for Scala 2.10.x](https://github.com/julianpeeters/avro-scala-macro-annotations/issues/6#issuecomment-77973333) please use version 0.4.3 with sbt 0.13.8+):
 
 
-        libraryDependencies += "com.julianpeeters" % "avro-scala-macro-annotations_2.11" % "0.10.0-SNAPSHOT"
+        libraryDependencies += "com.julianpeeters" % "avro-scala-macro-annotations_2.11" % "0.10.0"
 
 
 Macro annotations are only available in Scala 2.10.x, 2.11.x, and 2.12.x with the macro paradise plugin. Their inclusion in official Scala might happen in Scala 2.13 - [official docs](http://docs.scala-lang.org/overviews/macros/annotations.html). To use the plugin, add the following `build.sbt`:
@@ -164,6 +164,4 @@ Use the expanded class as you would a code-gen'd class with any `SpecificRecord`
 
 3) A class that is doubly annotated with `@AvroTypeProvider` and `@AvroRecord` will automatically be updated with vars instead of vals.
 
-4) An annotatee may extend a trait but not a class, since SpecificRecordBase will need to occupy that position.
-
-5) Notice that the case class cannot have a companion object.
+4) An annotatee may extend a trait (to become a mixin after expansion) but not a class, since SpecificRecordBase will need to occupy that position.
