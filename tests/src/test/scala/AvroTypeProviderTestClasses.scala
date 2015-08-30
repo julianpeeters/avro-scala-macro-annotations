@@ -6,7 +6,7 @@ import com.julianpeeters.avro.annotations._
 //Primitive Types
 @AvroTypeProvider("tests/src/test/resources/AvroTypeProviderTest00.avro")
 @AvroRecord
-case class AvroTypeProviderTest00() 
+case class AvroTypeProviderTest00()
 
 @AvroTypeProvider("tests/src/test/resources/AvroTypeProviderTest01.avro")
 @AvroRecord
@@ -326,3 +326,22 @@ case class AvroTypeProviderTest68()
 @AvroTypeProvider("tests/src/test/resources/AvroTypeProviderTestMap12.avro")
 @AvroRecord
 case class AvroTypeProviderTestMap12()//var x: Map[String, Map[String, AvroTypeProviderTest00]], var y: Map[String, AvroTypeProviderTest58])
+
+
+
+// record classes that already extend a trait (results in a mixin with SpecificRecordBase)
+trait ProviderExtension00 { val e = 10 }
+@AvroTypeProvider("tests/src/test/resources/AvroTypeProviderExtendedTest00.avro")
+@AvroRecord
+case class AvroTypeProviderExtendedTest00() extends ProviderExtension00
+
+
+
+
+// preexisting companion object
+@AvroTypeProvider("tests/src/test/resources/AvroTypeProviderPreexistingCompanionTest00.avro")
+@AvroRecord
+case class AvroTypeProviderPreexistingCompanionTest00()
+object AvroTypeProviderPreexistingCompanionTest00 {
+  val o = 5
+}

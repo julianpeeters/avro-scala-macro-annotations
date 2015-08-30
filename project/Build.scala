@@ -4,7 +4,7 @@ import Keys._
 object BuildSettings {
   val buildSettings = Defaults.defaultSettings ++ Seq(
     organization := "com.julianpeeters",
-    version := "0.9.1",
+    version := "0.10.0",
     scalaVersion := "2.11.7",
     crossScalaVersions := Seq("2.11.7"),
     scalacOptions ++= Seq("-unchecked", "-deprecation", "-feature", "-Ywarn-value-discard"),
@@ -72,12 +72,14 @@ object MyBuild extends Build {
     file("macros"),
     settings = buildSettings ++ Seq(
       libraryDependencies <+= (scalaVersion)("org.scala-lang" % "scala-reflect" % _),
-      libraryDependencies += "org.codehaus.jackson" % "jackson-core-asl" % "1.9.13")
+      libraryDependencies += "org.codehaus.jackson" % "jackson-core-asl" % "1.9.13",
+      libraryDependencies += "com.typesafe.scala-logging" %% "scala-logging" % "3.1.0",
+      libraryDependencies += "com.typesafe.scala-logging" % "scala-logging-slf4j_2.11" % "2.1.2")
   )
 
   lazy val tests: Project = Project(
     "tests",
-    file("tests"), 
+    file("tests"),
     settings = buildSettings)
     .settings(
       publishArtifact := false
@@ -89,4 +91,3 @@ object MyBuild extends Build {
    mappings in (Compile, packageSrc) ++= mappings.in(macros, Compile, packageSrc).value
   )
 }
-
