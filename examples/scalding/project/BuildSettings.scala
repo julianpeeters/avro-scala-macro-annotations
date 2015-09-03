@@ -18,9 +18,9 @@ object BuildSettings {
   // Basic settings for our app
   lazy val basicSettings = Seq[Setting[_]](
     organization  := "SnowPlow Analytics Ltd",
-    version       := "0.0.4",
+    version       := "0.0.5-SNAPSHOT",
     description   := "The Scalding WordCountJob example as a standalone SBT project, ready for Amazon EMR",
-    scalaVersion  := "2.11.6", 
+    scalaVersion  := "2.11.7",
     scalacOptions := Seq("-deprecation", "-encoding", "utf8"),
     resolvers     ++= Dependencies.resolutionRepos
   )
@@ -35,7 +35,7 @@ object BuildSettings {
 jarName in assembly := {
   name.value + "-" + version.value + ".jar"
 },
-    
+
     // Drop these jars
     excludedJars in assembly <<= (fullClasspath in assembly) map { cp =>
       val excludes = Set(
@@ -48,10 +48,10 @@ jarName in assembly := {
         "commons-beanutils-1.7.0.jar"      // "
 //        "hadoop-core-0.20.2.jar", // Provided by Amazon EMR. Delete this line if you're not on EMR
 //        "hadoop-tools-0.20.2.jar" // "
-      ) 
+      )
       cp filter { jar => excludes(jar.data.getName) }
     },
-    
+
     mergeStrategy in assembly <<= (mergeStrategy in assembly) {
       (old) => {
         case "project.clj" => MergeStrategy.discard // Leiningen build files

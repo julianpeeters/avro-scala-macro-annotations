@@ -3,9 +3,9 @@
 1) `@AvroTypeProvider("path/to/schema")` - Automatically convert Avro Schemas to Scala case class definitions for use in your favorite Scala Avro runtime.
 
 
-2) `@AvroRecord` - Use Scala classes to represent your Avro records, serializable by the Apache Avro runtime (a port of [Avro-Scala-Compiler-Plugin](https://code.google.com/p/avro-scala-compiler-plugin/)).
+2) `@AvroRecord` - Use Scala case classes to represent your Avro records, serializable by the Apache Avro runtime (a port of [Avro-Scala-Compiler-Plugin](https://code.google.com/p/avro-scala-compiler-plugin/)).
 
-
+Macros are an experimental feature of Scala. [Avrohugger](https://github.com/julianpeeters/avrohugger) is a more traditional alternative.
 
 ####Get the dependency:
 For Scala 2.11.x ([for Scala 2.10.x](https://github.com/julianpeeters/avro-scala-macro-annotations/issues/6#issuecomment-77973333) please use version 0.4.3 with sbt 0.13.8+):
@@ -19,11 +19,6 @@ Macro annotations are only available in Scala 2.10.x, 2.11.x, and 2.12.x with th
         addCompilerPlugin("org.scalamacros" % "paradise" % "2.1.0-M5" cross CrossVersion.full)
 
 In your IDE of choice you may have to explicitly load this compiler plugin. In Eclipse for example, you can do so by providing the full path under the `Xplugin`, found in the advanced Scala compiler preferences; you should have the jar in a path like `~/.ivy2/cache/org.scalamacros/paradise_2.10.4/jars/paradise_2.10.4-2.0.1.jar`.
-
-If you are unsure of absolute path of a directory, add a logger dependency to see `info` level logging of the current filepath, and adjust the Avro Schema filepath accordingly: 
-
-
-        libraryDependencies += "ch.qos.logback" % "logback-classic" % "1.1.2"
 
 
 ####Usage:

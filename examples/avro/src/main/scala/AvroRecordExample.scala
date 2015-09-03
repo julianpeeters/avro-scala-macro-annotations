@@ -15,10 +15,8 @@ case class AvroTypeProviderPreexistingCompanionTest00(var x: Int)
 object AvroRecordExample extends App {
   val record = AvroTypeProviderPreexistingCompanionTest00(4)
 
-//  val file = File.createTempFile("record", "avro")
-
-  val file = new File("AvroTypeProviderPreexistingCompanionTest00.avro")
-   // file.deleteOnExit()
+  val file = File.createTempFile("record", "avro")
+    file.deleteOnExit()
 
   val userDatumWriter = new SpecificDatumWriter[AvroTypeProviderPreexistingCompanionTest00]
   val dataFileWriter = new DataFileWriter[AvroTypeProviderPreexistingCompanionTest00](userDatumWriter)
@@ -30,7 +28,7 @@ object AvroRecordExample extends App {
   val userDatumReader = new SpecificDatumReader[AvroTypeProviderPreexistingCompanionTest00](schema)
   val dataFileReader = new DataFileReader[AvroTypeProviderPreexistingCompanionTest00](file, userDatumReader)
   val sameRecord = dataFileReader.next()
- 
+
   println("deserialized record is the same as the pre-serialized record?: " + (sameRecord == record) )
- 
+
 }

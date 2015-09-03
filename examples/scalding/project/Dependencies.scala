@@ -19,15 +19,15 @@ object Dependencies {
   )
 
   object V {
-    val scalding  = "0.15.0"
+    val scalding  = "0.9.0rc4"
     val hadoop    = "1.2.1"
     val specs2    = "2.3.12"
     // Add versions for your additional libraries here...
   }
 
   object Libraries {
-    val scaldingCore= "com.twitter" % "scalding-core_2.11" % V.scalding
-    val scaldingAvro= "com.twitter" % "scalding-avro_2.11" % V.scalding
+    val scaldingCore= "com.twitter" % "scalding-core_2.10" % V.scalding
+    val scaldingAvro= "com.twitter" % "scalding-avro_2.10" % V.scalding
     val hadoopCore= "org.apache.hadoop" % "hadoop-core" % V.hadoop
     // to run on Hadoop cluster you would want val hadoopCore= "org.apache.hadoop" % "hadoop-core" % V.hadoop % "provided"
     // Add additional libraries from mvnrepository.com (SBT syntax) here...

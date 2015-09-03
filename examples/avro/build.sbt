@@ -6,7 +6,7 @@ organization := "com.julianpeeters"
 
 scalaVersion := "2.11.7"
 
-libraryDependencies += "com.julianpeeters" %% "avro-scala-macro-annotations" % "0.9.1"
+libraryDependencies += "com.julianpeeters" %% "avro-scala-macro-annotations" % "0.10.0"
 
 libraryDependencies += "org.apache.avro" % "avro" % "1.7.7"
 
