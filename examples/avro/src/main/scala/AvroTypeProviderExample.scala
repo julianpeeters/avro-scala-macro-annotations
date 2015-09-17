@@ -14,11 +14,7 @@
  * limitations under the License.
  */
 
-
-
- package test
-
- import com.julianpeeters.avro.annotations._
+import com.julianpeeters.avro.annotations._
 
 import org.apache.avro.specific._
 import org.apache.avro.generic._
@@ -26,20 +22,30 @@ import org.apache.avro.file._
 
 import java.io.File
 
-//Primitive Types
-@AvroTypeProvider("src/main/avro/AvroTypeProviderTest00.avro")
+@AvroTypeProvider("src/main/avro/AvroTypeProviderTestNestedSchemaFile.avsc")
 @AvroRecord
-case class AvroTypeProviderTest00()
+case class TestMessage()
+
+@AvroTypeProvider("src/main/avro/AvroTypeProviderTestNestedSchemaFile.avsc")
+@AvroRecord
+case class MetaData()
 
 object AvroTypeProviderExample extends App {
-  val record = AvroTypeProviderTest00(1)
+  val record = TestMessage("Achilles", MetaData("ow", "12345"))
 
- val file = new File("src/main/avro/AvroTypeProviderTest00.avro")
+  val file = File.createTempFile("AvroTypeProviderNestedSchemaFileTest", "avro")
+    file.deleteOnExit()
 
- val schema = new DataFileReader(file, new GenericDatumReader[GenericRecord]).getSchema
- val userDatumReader = new SpecificDatumReader[AvroTypeProviderTest00](schema)
- val dataFileReader = new DataFileReader[AvroTypeProviderTest00](file, userDatumReader)
- val sameRecord = dataFileReader.next()
+  val userDatumWriter = new SpecificDatumWriter[TestMessage]
+  val dataFileWriter = new DataFileWriter[TestMessage](userDatumWriter)
+    dataFileWriter.create(record.getSchema(), file);
+    dataFileWriter.append(record);
+    dataFileWriter.close();
+
+  val schema = new DataFileReader(file, new GenericDatumReader[GenericRecord]).getSchema
+  val userDatumReader = new SpecificDatumReader[TestMessage](schema)
+  val dataFileReader = new DataFileReader[TestMessage](file, userDatumReader)
+  val sameRecord = dataFileReader.next()
 
   println("deserialized record is the same as a new record based on the schema in the file?: " + (sameRecord == record) )
 

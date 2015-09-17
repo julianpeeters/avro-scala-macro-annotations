@@ -16,25 +16,31 @@ import org.apache.avro.file._
 
 @AvroTypeProvider("tests/src/test/resources/default/AvroTypeProviderTestDefaultValue00.avsc")
 @AvroRecord
-case class AvroTypeProviderTestDefaultValue00()//var x: Int =  0) 
+case class AvroTypeProviderTestDefaultValue00()//var x: Int =  0)
+
 @AvroTypeProvider("tests/src/test/resources/default/AvroTypeProviderTestDefaultValue01.avsc")
 @AvroRecord
-case class AvroTypeProviderTestDefaultValue01()//var x: Float = 1.0F) 
+case class AvroTypeProviderTestDefaultValue01()//var x: Float = 1.0F)
+
 @AvroTypeProvider("tests/src/test/resources/default/AvroTypeProviderTestDefaultValue02.avsc")
 @AvroRecord
-case class AvroTypeProviderTestDefaultValue02()//var x: Long = 2L) 
+case class AvroTypeProviderTestDefaultValue02()//var x: Long = 2L)
+
 @AvroTypeProvider("tests/src/test/resources/default/AvroTypeProviderTestDefaultValue03.avsc")
 @AvroRecord
-case class AvroTypeProviderTestDefaultValue03()//var x: Double = 2.0D) 
+case class AvroTypeProviderTestDefaultValue03()//var x: Double = 2.0D)
+
 @AvroTypeProvider("tests/src/test/resources/default/AvroTypeProviderTestDefaultValue04.avsc")
 @AvroRecord
-case class AvroTypeProviderTestDefaultValue04()//var x: Boolean = false) 
+case class AvroTypeProviderTestDefaultValue04()//var x: Boolean = false)
+
 @AvroTypeProvider("tests/src/test/resources/default/AvroTypeProviderTestDefaultValue05.avsc")
 @AvroRecord
-case class AvroTypeProviderTestDefaultValue05()//var x: String = "") 
+case class AvroTypeProviderTestDefaultValue05()//var x: String = "")
+
 @AvroTypeProvider("tests/src/test/resources/default/AvroTypeProviderTestDefaultValue06.avsc")
 @AvroRecord
-case class AvroTypeProviderTestDefaultValue06()//var x: Null = null) 
+case class AvroTypeProviderTestDefaultValue06()//var x: Null = null)
 
 @AvroTypeProvider("tests/src/test/resources/default/AvroTypeProviderTestDefaultValue07.avsc")
 @AvroRecord
@@ -48,14 +54,12 @@ case class AvroTypeProviderTestDefaultValue08()//var x: Option[Int] = Some(1))
 case class AvroTypeProviderTestDefaultValue09()//var x: Map[String, Map[String, Int]] = Map("glory"->Map("kitty"->3)), var y: Map[String, Map[String, Int]] = Map("pride"->Map("doggy"->4)))
 
 
-
 @AvroTypeProvider("tests/src/test/resources/default/AvroTypeProviderTestDefaultValue10.avsc")
 @AvroRecord
 case class AvroTypeProviderTestDefaultValue10()//var x: List[String] = List("Greta", "Lauren"))
 @AvroTypeProvider("tests/src/test/resources/default/AvroTypeProviderTestDefaultValue11.avsc")
 @AvroRecord
 case class AvroTypeProviderTestDefaultValue11()//var x: List[Int] = List(1,2))
-
 
 
 @AvroTypeProvider("tests/src/test/resources/default/AvroTypeProviderTestDefaultValue14.avsc")
@@ -65,12 +69,15 @@ case class AvroTypeProviderTestDefaultValue14()//var x: AvroTypeProviderTest00 =
 @AvroTypeProvider("tests/src/test/resources/default/AvroTypeProviderTestDefaultValue15.avsc")
 @AvroRecord
 case class AvroTypeProviderTestDefaultValue15()//var x: AvroTypeProviderTestDefaultValue00 = AvroTypeProviderTestDefaultValue00(4))
+
 @AvroTypeProvider("tests/src/test/resources/default/AvroTypeProviderTestDefaultValue16.avsc")
 @AvroRecord
 case class AvroTypeProviderTestDefaultValue16()//var x: AvroTypeProviderTestDefaultValue14 = AvroTypeProviderTestDefaultValue14(AvroTypeProviderTest00(5)))
+
 @AvroTypeProvider("tests/src/test/resources/default/AvroTypeProviderTestDefaultValue17.avsc")
 @AvroRecord
 case class AvroTypeProviderTestDefaultValue17()//var x: List[Option[AvroTypeProviderTestDefaultValue00]] = List(None, Some(AvroRecordTestDefaultValue00(AvroRecordTest00(8)))))
+
 @AvroTypeProvider("tests/src/test/resources/default/AvroTypeProviderTestDefaultValue18.avsc")
 @AvroRecord
 case class AvroTypeProviderTestDefaultValue18()//var x: AvroRecordTest00 = AvroRecordTest00(4), var y: AvroRecordTest01 = AvroRecordTest01(3F))

@@ -18,7 +18,7 @@ abstract class FieldSchemaGenerator {
 
   import context.universe._
   import Flag._
- 
+
   //map is from https://github.com/radlab/avro-scala-compiler-plugin/blob/master/src/main/scala/plugin/SchemaGen.scala
   val primitiveClasses: Map[Type, Schema] = Map(
     /** Primitives in the Scala and Avro sense */
@@ -41,9 +41,9 @@ abstract class FieldSchemaGenerator {
         Schema.createArray(createSchema(args.head))
       }
       case x @ TypeRef(pre, symbol, args) if (x <:< typeOf[Option[Any]] && args.length == 1) => {
-        if (args.head <:< typeOf[Option[Any]]) { 
+        if (args.head <:< typeOf[Option[Any]]) {
           throw new UnsupportedOperationException("Implementation limitation: Cannot immediately nest Option types")
-        } 
+        }
         else Schema.createUnion(JArrays.asList(Array(createSchema(typeOf[Null]), createSchema(args.head)):_*))
       }
       case x @ TypeRef(pre, symbol, args) if (x <:< typeOf[Map[String, Any]] && args.length == 2)  => {
@@ -57,15 +57,15 @@ abstract class FieldSchemaGenerator {
       }
       case x => throw new UnsupportedOperationException("Could not generate schema. Cannot support yet: " + x )
     }
-  } 
+  }
 
   def toAvroField(namespace: String, nme: TermName, tpe: Type, dv: Tree) = {
     val toJsonMatcher = new {val c: context.type = context; val ns: String = namespace} with ToJsonMatcher
 
     new Field(
-      nme.toString.trim, 
+      nme.toString.trim,
       createSchema(tpe),
-      "Auto-Generated Field", 
+      "Auto-Generated Field",
       toJsonMatcher.toJsonNode(dv)
     )
   }

@@ -10,28 +10,28 @@ case class AvroTypeProviderTest00()
 
 @AvroTypeProvider("tests/src/test/resources/AvroTypeProviderTest01.avro")
 @AvroRecord
-case class AvroTypeProviderTest01() 
+case class AvroTypeProviderTest01()
 
 @AvroTypeProvider("tests/src/test/resources/AvroTypeProviderTest02.avro")
 @AvroRecord
-case class AvroTypeProviderTest02() 
+case class AvroTypeProviderTest02()
 
 @AvroTypeProvider("tests/src/test/resources/AvroTypeProviderTest03.avro")
 @AvroRecord
-case class AvroTypeProviderTest03() 
+case class AvroTypeProviderTest03()
 
 @AvroTypeProvider("tests/src/test/resources/AvroTypeProviderTest04.avro")
 @AvroRecord
-case class AvroTypeProviderTest04() 
+case class AvroTypeProviderTest04()
 
 @AvroTypeProvider("tests/src/test/resources/AvroTypeProviderTest05.avro")
 @AvroRecord
-case class AvroTypeProviderTest05() 
+case class AvroTypeProviderTest05()
 
 
 @AvroTypeProvider("tests/src/test/resources/AvroTypeProviderTest06.avro")
 @AvroRecord
-case class AvroTypeProviderTest06() 
+case class AvroTypeProviderTest06()
 
 @AvroTypeProvider("tests/src/test/resources/AvroTypeProviderTest07.avro")
 @AvroRecord
@@ -72,31 +72,31 @@ case class AvroTypeProviderTestMap03()//var x: Map[String, Option[List[Int]]])
 
 @AvroTypeProvider("tests/src/test/resources/AvroTypeProviderTest14.avro")
 @AvroRecord
-case class AvroTypeProviderTest14() 
+case class AvroTypeProviderTest14()
 
 @AvroTypeProvider("tests/src/test/resources/AvroTypeProviderTest15.avro")
 @AvroRecord
-case class AvroTypeProviderTest15() 
+case class AvroTypeProviderTest15()
 
 @AvroTypeProvider("tests/src/test/resources/AvroTypeProviderTest16.avro")
 @AvroRecord
-case class AvroTypeProviderTest16() 
+case class AvroTypeProviderTest16()
 
 @AvroTypeProvider("tests/src/test/resources/AvroTypeProviderTest17.avro")
 @AvroRecord
-case class AvroTypeProviderTest17() 
+case class AvroTypeProviderTest17()
 
 @AvroTypeProvider("tests/src/test/resources/AvroTypeProviderTest18.avro")
 @AvroRecord
-case class AvroTypeProviderTest18() 
+case class AvroTypeProviderTest18()
 
 @AvroTypeProvider("tests/src/test/resources/AvroTypeProviderTest19.avro")
 @AvroRecord
-case class AvroTypeProviderTest19() 
+case class AvroTypeProviderTest19()
 
 @AvroTypeProvider("tests/src/test/resources/AvroTypeProviderTest20.avro")
 @AvroRecord
-case class AvroTypeProviderTest20() 
+case class AvroTypeProviderTest20()
 
 
 @AvroTypeProvider("tests/src/test/resources/AvroTypeProviderTest24.avro")
@@ -231,11 +231,11 @@ case class AvroTypeProviderTestMap10()//var x: Map[String, Map[String, Int]], va
 //Primitive, 2-arity, heterogenous members
 @AvroTypeProvider("tests/src/test/resources/AvroTypeProviderTest48.avro")
 @AvroRecord
-case class AvroTypeProviderTest48() 
+case class AvroTypeProviderTest48()
 
 @AvroTypeProvider("tests/src/test/resources/AvroTypeProviderTest49.avro")
 @AvroRecord
-case class AvroTypeProviderTest49() 
+case class AvroTypeProviderTest49()
 
 @AvroTypeProvider("tests/src/test/resources/AvroTypeProviderTest50.avro")
 @AvroRecord
@@ -279,11 +279,11 @@ case class AvroTypeProviderTestMap11()//var x: Map[String, Map[String, Int]], va
 
 @AvroTypeProvider("tests/src/test/resources/AvroTypeProviderTest58.avro")
 @AvroRecord
-case class AvroTypeProviderTest58() 
+case class AvroTypeProviderTest58()
 
 @AvroTypeProvider("tests/src/test/resources/AvroTypeProviderTest59.avro")
 @AvroRecord
-case class AvroTypeProviderTest59() 
+case class AvroTypeProviderTest59()
 
 @AvroTypeProvider("tests/src/test/resources/AvroTypeProviderTest60.avro")
 @AvroRecord
@@ -305,15 +305,15 @@ case class AvroTypeProviderTest63()
 
 @AvroTypeProvider("tests/src/test/resources/AvroTypeProviderTest64.avro")
 @AvroRecord
-case class AvroTypeProviderTest64() 
+case class AvroTypeProviderTest64()
 
 @AvroTypeProvider("tests/src/test/resources/AvroTypeProviderTest65.avro")
 @AvroRecord
-case class AvroTypeProviderTest65() 
+case class AvroTypeProviderTest65()
 
 @AvroTypeProvider("tests/src/test/resources/AvroTypeProviderTest66.avro")
 @AvroRecord
-case class AvroTypeProviderTest66() 
+case class AvroTypeProviderTest66()
 
 @AvroTypeProvider("tests/src/test/resources/AvroTypeProviderTest67.avro")
 @AvroRecord
@@ -328,14 +328,11 @@ case class AvroTypeProviderTest68()
 case class AvroTypeProviderTestMap12()//var x: Map[String, Map[String, AvroTypeProviderTest00]], var y: Map[String, AvroTypeProviderTest58])
 
 
-
 // record classes that already extend a trait (results in a mixin with SpecificRecordBase)
 trait ProviderExtension00 { val e = 10 }
 @AvroTypeProvider("tests/src/test/resources/AvroTypeProviderExtendedTest00.avro")
 @AvroRecord
 case class AvroTypeProviderExtendedTest00() extends ProviderExtension00
-
-
 
 
 // preexisting companion object
@@ -345,3 +342,12 @@ case class AvroTypeProviderPreexistingCompanionTest00()
 object AvroTypeProviderPreexistingCompanionTest00 {
   val o = 5
 }
+
+// nested record from schema file instead of nested record from .avro file
+@AvroTypeProvider("tests/src/test/resources/AvroTypeProviderTestNestedSchemaFile.avsc")
+@AvroRecord
+case class TestMessage()
+
+@AvroTypeProvider("tests/src/test/resources/AvroTypeProviderTestNestedSchemaFile.avsc")
+@AvroRecord
+case class MetaData()
