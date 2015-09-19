@@ -21,6 +21,7 @@ object AvroTypeProviderMacro {
          
           // get the namespace from the context and passing it around instead of using schema.getNamespace
           // in order to read schemas that omit namespace (e.g. nested schemas or python's avrostorage default)
+          // as long as the namespace-less records are not part of a union
           val namespace = NamespaceProbe.getNamespace(c)
 
           val fullName: String = {
@@ -40,8 +41,11 @@ object AvroTypeProviderMacro {
           val infile = new File(avroFilePath)
           val fileSchema = FileParser.getSchema(infile)
           val nestedSchemas = NestedSchemaExtractor.getNestedSchemas(fileSchema)
+          // first try matching schema record full name to class full name, then by the
+          // regular name in case we're trying to read from a non-namespaced schema
           val classSchema = nestedSchemas.find(s => s.getFullName == fullName)
-           .getOrElse(sys.error("no record found with full name " + fullName))
+           .getOrElse(nestedSchemas.find(s => s.getName == name.toString && s.getNamespace == null)
+             .getOrElse(sys.error("no record found with name " + name)))
 
           //wraps each schema field in a quasiquote, returning immutable val defs if immutable flag is true
           val newFields: List[ValDef] = ValDefGenerator.asScalaFields(classSchema, namespace, isImmutable, c)

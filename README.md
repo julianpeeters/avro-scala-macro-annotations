@@ -8,7 +8,7 @@
 
 
 ####Get the dependency:
-For Scala 2.11.x ([for Scala 2.10.x](https://github.com/julianpeeters/avro-scala-macro-annotations/issues/6#issuecomment-77973333) please use version 0.4.4 with sbt 0.13.8+):
+For Scala 2.11.x ([for Scala 2.10.x](https://github.com/julianpeeters/avro-scala-macro-annotations/issues/6#issuecomment-77973333) please use version 0.4.5 with sbt 0.13.8+):
 
 
 
