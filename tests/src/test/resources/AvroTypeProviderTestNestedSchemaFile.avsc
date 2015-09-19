@@ -1,0 +1,19 @@
+{
+  "type": "record",
+  "name": "TestMessage",
+  "namespace": "test",
+  "fields": [
+    {"name": "message", "type": "string"},
+    {
+      "name": "metaData",
+      "type": {
+        "type": "record",
+        "name": "MetaData",
+        "fields": [
+          {"name": "source", "type": "string"},
+          {"name": "timestamp", "type": "string"}
+        ]
+      }
+    }
+  ]
+}

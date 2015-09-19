@@ -1,4 +1,4 @@
-package com.miguno.avro
+package test
 // Specs2
 import org.specs2.mutable.Specification
 
@@ -12,33 +12,31 @@ import org.apache.avro.file._
 
 import com.julianpeeters.avro.annotations._
 
-@AvroTypeProvider("tests/src/test/resources/AvroTypeProviderTestSchemaFile.avsc")
-@AvroRecord
-case class twitter_schema()
 
-class AvroTypeProviderSchemaFileTest extends Specification {
+
+class AvroTypeProviderNestedSchemaFileTest extends Specification {
 
   "A case class with types provided from a .avsc avro schema file" should {
     "serialize and deserialize correctly" in {
 
-      val record = twitter_schema("Achilles", "ow", 2L)
+      val record = TestMessage("Achilles", MetaData("ow", "12345"))
 
-      val file = File.createTempFile("AvroTypeProviderSchemaFileTest", "avro")
+      val file = File.createTempFile("AvroTypeProviderNestedSchemaFileTest", "avro")
         file.deleteOnExit()
 
-      val userDatumWriter = new SpecificDatumWriter[twitter_schema]
-      val dataFileWriter = new DataFileWriter[twitter_schema](userDatumWriter)
+      val userDatumWriter = new SpecificDatumWriter[TestMessage]
+      val dataFileWriter = new DataFileWriter[TestMessage](userDatumWriter)
         dataFileWriter.create(record.getSchema(), file);
         dataFileWriter.append(record);
         dataFileWriter.close();
 
       val schema = new DataFileReader(file, new GenericDatumReader[GenericRecord]).getSchema
-      val userDatumReader = new SpecificDatumReader[twitter_schema](schema)
-      val dataFileReader = new DataFileReader[twitter_schema](file, userDatumReader)
+      val userDatumReader = new SpecificDatumReader[TestMessage](schema)
+      val dataFileReader = new DataFileReader[TestMessage](file, userDatumReader)
       val sameRecord = dataFileReader.next()
 
       sameRecord must ===(record)
+
     }
   }
 }
-

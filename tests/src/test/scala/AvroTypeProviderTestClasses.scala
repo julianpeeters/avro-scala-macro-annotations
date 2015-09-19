@@ -326,3 +326,14 @@ case class AvroTypeProviderTest68()
 @AvroTypeProvider("tests/src/test/resources/AvroTypeProviderTestMap12.avro")
 @AvroRecord
 case class AvroTypeProviderTestMap12()//var x: Map[String, Map[String, AvroTypeProviderTest00]], var y: Map[String, AvroTypeProviderTest58])
+
+
+
+// nested record from schema file instead of nested record from .avro file
+@AvroTypeProvider("tests/src/test/resources/AvroTypeProviderTestNestedSchemaFile.avsc")
+@AvroRecord
+case class MetaData()
+
+@AvroTypeProvider("tests/src/test/resources/AvroTypeProviderTestNestedSchemaFile.avsc")
+@AvroRecord
+case class TestMessage()
