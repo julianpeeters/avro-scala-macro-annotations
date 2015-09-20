@@ -65,7 +65,7 @@ object AvroRecordMacro {
     }
 
     //SchemaGen - generates schemas and stores them
-    def generateSchema(className: String, namespace: String, indexedFields: List[IndexedField]): Schema = { 
+    def generateSchema(name: String, namespace: String, indexedFields: List[IndexedField]): Schema = { 
 
       //map is from https://github.com/radlab/avro-scala-compiler-plugin/blob/master/src/main/scala/plugin/SchemaGen.scala
       val primitiveClasses: Map[Type, Schema] = Map(
@@ -116,7 +116,7 @@ object AvroRecordMacro {
           toJsonMatcher.toJsonNode(v.dv)
         )
       })
-      val avroSchema = Schema.createRecord(className, "Auto-Generated Schema", namespace, false)
+      val avroSchema = Schema.createRecord(name, "Auto-Generated Schema", namespace, false)
       avroSchema.setFields(JArrays.asList(avroFields.toArray:_*))
       SchemaStore.accept(avroSchema)
       avroSchema
@@ -220,7 +220,7 @@ object AvroRecordMacro {
       annottees.map(_.tree).toList match {
 
         // Update ClassDef and add companion object
-        case classDef @ q"$mods class $name[..$tparams](..$first)(...$rest) extends ..$parents { $self => ..$body }" :: Nil => {
+        case classDef @ q"$mods class $name[..$tparams](..$first)(...$rest) extends ..$parents { $self => ..$body }" :: tail => {
 
           def indexFields(fields: List[ValDef]) = {
             fields.map(f => {
@@ -241,16 +241,26 @@ object AvroRecordMacro {
           val newImports = List(q"import org.apache.avro.Schema")
           val newCtors   = generateNewCtors(indexedFields)   //a no-arg ctor so `newInstance()` can be used
           val newDefs    = generateNewMethods(name, indexedFields) // `get`, `put`, and `getSchema` methods 
-          val newParents = parents ::: generateNewBaseTypes        // extend SpecificRecordBase
+          val newParents = generateNewBaseTypes ::: parents        // extend SpecificRecordBase
           val newBody    = body ::: newImports ::: newCtors ::: newDefs      //add new members to the body
 
           // updates to the companion object
           val schema     = q"${generateSchema(name.toString, namespace, indexFields(first)).toString}"
           val newVal     = q"lazy val SCHEMA$$ = new org.apache.avro.Schema.Parser().parse($schema)"
 
+          val companionDef = tail match {
+            // if there is no preexisiting companion then make one with a SCHEMA$ field
+            case Nil => q"object ${name.toTermName} {$newVal}"
+            // if there is a preexisting companion, add a SCHEMA$ field
+            case moduleDef @ q"object $moduleName { ..$moduleBody }" :: Nil => {
+              val newModuleBody = moduleBody ::: List(newVal)
+              q"object ${name.toTermName} { ..$newModuleBody }"
+            }
+          }
+
           // return an updated class def and companion def
           q"""$mods class $name[..$tparams](..$first)(...$rest) extends ..$newParents { $self => ..$newBody};
-              object ${name.toTermName} {$newVal}""" 
+              $companionDef""" 
         }
       } 
     }

@@ -329,6 +329,23 @@ case class AvroTypeProviderTestMap12()//var x: Map[String, Map[String, AvroTypeP
 
 
 
+// record classes that already extend a trait (results in a mixin with SpecificRecordBase)
+trait ProviderExtension00 { val e = 10 }
+@AvroTypeProvider("tests/src/test/resources/AvroTypeProviderExtendedTest00.avro")
+@AvroRecord
+case class AvroTypeProviderExtendedTest00() extends ProviderExtension00
+
+
+// preexisting companion object
+@AvroTypeProvider("tests/src/test/resources/AvroTypeProviderPreexistingCompanionTest00.avro")
+@AvroRecord
+case class AvroTypeProviderPreexistingCompanionTest00()
+object AvroTypeProviderPreexistingCompanionTest00 {
+  val o = 5
+}
+
+
+
 // nested record from schema file instead of nested record from .avro file
 @AvroTypeProvider("tests/src/test/resources/AvroTypeProviderTestNestedSchemaFile.avsc")
 @AvroRecord

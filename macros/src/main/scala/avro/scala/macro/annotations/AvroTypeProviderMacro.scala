@@ -17,7 +17,7 @@ object AvroTypeProviderMacro {
 
     val result = { 
       annottees.map(_.tree).toList match {
-        case q"$mods class $name[..$tparams](..$first)(...$rest) extends ..$parents { $self => ..$body }" :: Nil => {
+        case q"$mods class $name[..$tparams](..$first)(...$rest) extends ..$parents { $self => ..$body }" :: tail => {
          
           // get the namespace from the context and passing it around instead of using schema.getNamespace
           // in order to read schemas that omit namespace (e.g. nested schemas or python's avrostorage default)
@@ -50,8 +50,15 @@ object AvroTypeProviderMacro {
           //wraps each schema field in a quasiquote, returning immutable val defs if immutable flag is true
           val newFields: List[ValDef] = ValDefGenerator.asScalaFields(classSchema, namespace, isImmutable, c)
 
-          //Here's the updated class def:
-          q"$mods class $name[..$tparams](..${newFields:::first})(...$rest) extends ..$parents { $self => ..$body }"
+          tail match {
+            // if there is no preexisiting companion
+            case Nil => q"$mods class $name[..$tparams](..${newFields:::first})(...$rest) extends ..$parents { $self => ..$body }"
+            // if there is a preexisting companion, include it with the updated classDef
+            case moduleDef @ q"object $moduleName { ..$moduleBody }" :: Nil => {
+              q"""$mods class $name[..$tparams](..${newFields:::first})(...$rest) extends ..$parents { $self => ..$body };
+                object ${name.toTermName} { ..$moduleBody }"""
+            }
+          }
         }
       }
     }
