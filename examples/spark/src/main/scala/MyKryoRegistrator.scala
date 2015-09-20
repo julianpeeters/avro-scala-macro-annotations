@@ -17,7 +17,7 @@
  */
 
 package registrator
-import models._
+import com.miguno.avro._
 
 import com.esotericsoftware.kryo.Kryo
 

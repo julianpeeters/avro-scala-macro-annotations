@@ -4,7 +4,7 @@
 package com.miguno.avro
 
 import registrator._
-import models._
+import com.miguno.avro._
 
 import org.apache.spark.SparkConf
 import org.apache.spark.SparkContext

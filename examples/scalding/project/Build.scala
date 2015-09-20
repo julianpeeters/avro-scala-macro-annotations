@@ -33,7 +33,7 @@ object Strata2014ScaldingTutorialBuild extends Build {
         Libraries.hadoopCore,
         Libraries.specs2,
         // Add your additional libraries here (comma-separated)...
-        "com.julianpeeters" % "avro-scala-macro-annotations_2.11" % "0.10.2"
+        "com.julianpeeters" % "avro-scala-macro-annotations_2.11" % "0.10.3"
       ),
       addCompilerPlugin("org.scalamacros" % "paradise" % "2.1.0-M5" cross CrossVersion.full)
     )
