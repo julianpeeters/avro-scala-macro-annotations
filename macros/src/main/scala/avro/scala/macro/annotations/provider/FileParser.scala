@@ -23,7 +23,7 @@ object FileParser {
     }
     schema.getType match {
       case UNION  => {
-        val maybeSchema = schema.getTypes.asScala.toList.collectFirst({case x if x.getType == RECORD => x})
+        val maybeSchema = schema.getTypes.asScala.toList.filter(_.getType == RECORD).lastOption
         if (maybeSchema.isDefined) maybeSchema.get
         else sys.error("no record type found in the union from " + infile)
       }
