@@ -1,0 +1,22 @@
+[
+{
+  "type":"record",
+  "name":"User",
+  "namespace":"com.miguno.avro",
+  "fields": [
+    {"name":"name", "type":"string"},
+    {"name":"id", "type":"long"}
+  ]
+},
+{
+  "type":"record",
+  "name":"Tweet",
+  "namespace":"com.miguno.avro",
+  "fields": [
+    {"name":"text", "type":"string"},
+    {"name":"user", "type":"User", "doc":"The author of the tweet."},
+    {"name":"user_mentions", "type": {"type":"array", "items":"User"}, "doc":" Users mentioned in the tweet."}
+  ],
+  "doc:":"A basic schema for Tweets with repeating elements."
+}
+]
