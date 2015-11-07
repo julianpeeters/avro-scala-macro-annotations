@@ -41,8 +41,8 @@ object AvroTypeProviderMacro extends LazyLogging {
           // get the schema for the record that this class represents
           val avroFilePath = FilePathProbe.getPath(c)
           val infile = new File(avroFilePath)
-          val fileSchema = FileParser.getSchema(infile)
-          val nestedSchemas = NestedSchemaExtractor.getNestedSchemas(fileSchema)
+          val fileSchemas = FileParser.getSchemas(infile)
+          val nestedSchemas = fileSchemas.flatMap(NestedSchemaExtractor.getNestedSchemas)
           // first try matching schema record full name to class full name, then by the
           // regular name in case we're trying to read from a non-namespaced schema
           val classSchema = nestedSchemas.find(s => s.getFullName == fullName)

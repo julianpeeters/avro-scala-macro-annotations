@@ -10,6 +10,16 @@
 },
 {
   "type":"record",
+  "name":"PictureSize",
+  "namespace":"com.miguno.avro",
+  "fields": [
+    {"name":"w", "type":"double"},
+    {"name":"h", "type":"double"}
+  ],
+  "doc":"Width and height of a photo, currently not referenced in the Tweet."
+},
+{
+  "type":"record",
   "name":"Tweet",
   "namespace":"com.miguno.avro",
   "fields": [
