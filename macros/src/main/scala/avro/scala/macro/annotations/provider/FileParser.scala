@@ -20,7 +20,7 @@ object FileParser {
         try {
           new Parser().parse(infile)
         } catch {
-          case e =>
+          case e : Throwable =>
             new Parser().parse(instream)
         }
       case _ => throw new Exception("Invalid file ending. Must be .avsc for plain text json files and .avro for binary files.")
