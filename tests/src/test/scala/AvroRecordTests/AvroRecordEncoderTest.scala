@@ -16,9 +16,7 @@ import org.apache.avro.file._
 @AvroRecord
 case class AvroRecordTestEncoder01(var i: Int, var j: Option[Int])
 
-
 class AvroRecordEncoderTest extends Specification {
-
 
 
   "A case class " should {
@@ -44,7 +42,7 @@ class AvroRecordEncoderTest extends Specification {
       out.close
 
       val reader = new SpecificDatumReader[AvroRecordTest00](schema)
-   
+
       val decoder = DecoderFactory.get().binaryDecoder(ba, null)
       val decoded = reader.read(null, decoder)
 
@@ -79,7 +77,7 @@ class AvroRecordEncoderTest extends Specification {
       out.close
 
       val reader = new SpecificDatumReader[AvroRecordTestEncoder01](schema)
-   
+
       val decoder = DecoderFactory.get().binaryDecoder(ba, null)
       val decoded = reader.read(null, decoder)
 

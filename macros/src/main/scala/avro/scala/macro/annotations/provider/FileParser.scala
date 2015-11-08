@@ -11,7 +11,7 @@ import scala.collection.JavaConverters._
 
 object FileParser {
 
-  def getSchema(infile: java.io.File): Schema = {
+  def getSchemas(infile: java.io.File): List[Schema] = {
     val schema = infile.getName.split("\\.").last match {
       case "avro" =>
         val gdr = new GenericDatumReader[GenericRecord]
@@ -23,11 +23,11 @@ object FileParser {
     }
     schema.getType match {
       case UNION  => {
-        val maybeSchema = schema.getTypes.asScala.toList.collectFirst({case x if x == RECORD => x})
-        if (maybeSchema.isDefined) maybeSchema.get
+        val recordSchemas = schema.getTypes.asScala.toList.filter(_.getType == RECORD)
+        if (recordSchemas.nonEmpty) recordSchemas
         else sys.error("no record type found in the union from " + infile)
       }
-      case RECORD => schema
+      case RECORD => List(schema)
       case _      => sys.error("The Schema in the datafile is neither a record nor a union of a record type, nothing to map to case class.")
     }
   }

@@ -27,7 +27,7 @@ class AvroRecordEvolutionTest extends Specification {
       val record = AvroRecordTestEvolution00(1, "NONE")
 
       val file = new File("tests/src/test/resources/evolution/AvroRecordTestEvolution00.avro")
-        
+
       val schema = AvroRecordTestEvolution00.SCHEMA$
       val userDatumReader = new SpecificDatumReader[AvroRecordTestEvolution00](schema)
       val dataFileReader = new DataFileReader[AvroRecordTestEvolution00](file, userDatumReader)
@@ -46,7 +46,7 @@ class AvroRecordEvolutionTest extends Specification {
       val record = AvroRecordTestEvolution01(1)
 
       val file = new File("tests/src/test/resources/evolution/AvroRecordTestEvolution00.avro")
-        
+
       val schema = AvroRecordTestEvolution01.SCHEMA$
       val userDatumReader = new SpecificDatumReader[AvroRecordTestEvolution01](schema)
       val dataFileReader = new DataFileReader[AvroRecordTestEvolution01](file, userDatumReader)
