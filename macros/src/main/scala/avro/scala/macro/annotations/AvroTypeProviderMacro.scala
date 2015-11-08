@@ -13,12 +13,12 @@ object AvroTypeProviderMacro {
 
   def impl(c: Context)(annottees: c.Expr[Any]*): c.Expr[Any] = {
     import c.universe._
-    import Flag._ 
+    import Flag._
 
-    val result = { 
+    val result = {
       annottees.map(_.tree).toList match {
         case q"$mods class $name[..$tparams](..$first)(...$rest) extends ..$parents { $self => ..$body }" :: tail => {
-         
+
           // get the namespace from the context and passing it around instead of using schema.getNamespace
           // in order to read schemas that omit namespace (e.g. nested schemas or python's avrostorage default)
           // as long as the namespace-less records are not part of a union
@@ -35,12 +35,12 @@ object AvroTypeProviderMacro {
           }
 
           // helpful for IDE users who may not be able to easily see where their files live
-          println(s"Current path: ${new File(".").getAbsolutePath}") 
-           
-          val avroFilePath = FilePathProbe.getPath(c) 
+          println(s"Current path: ${new File(".").getAbsolutePath}")
+
+          val avroFilePath = FilePathProbe.getPath(c)
           val infile = new File(avroFilePath)
-          val fileSchema = FileParser.getSchema(infile)
-          val nestedSchemas = NestedSchemaExtractor.getNestedSchemas(fileSchema)
+          val fileSchemas = FileParser.getSchemas(infile)
+          val nestedSchemas = fileSchemas.flatMap(NestedSchemaExtractor.getNestedSchemas)
           // first try matching schema record full name to class full name, then by the
           // regular name in case we're trying to read from a non-namespaced schema
           val classSchema = nestedSchemas.find(s => s.getFullName == fullName)

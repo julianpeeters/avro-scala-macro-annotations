@@ -4,7 +4,7 @@ import Keys._
 object BuildSettings {
   val buildSettings = Defaults.defaultSettings ++ Seq(
     organization := "com.julianpeeters",
-    version := "0.4.6",
+    version := "0.4.7",
     scalacOptions ++= Seq(),
     scalaVersion := "2.10.5",
     crossScalaVersions := Seq("2.11.6"),
@@ -79,7 +79,7 @@ object MyBuild extends Build {
 
   lazy val tests: Project = Project(
     "tests",
-    file("tests"), 
+    file("tests"),
     settings = buildSettings)
     .settings(
       publishArtifact := false
@@ -91,4 +91,3 @@ object MyBuild extends Build {
    mappings in (Compile, packageSrc) ++= mappings.in(macros, Compile, packageSrc).value
   )
 }
-
