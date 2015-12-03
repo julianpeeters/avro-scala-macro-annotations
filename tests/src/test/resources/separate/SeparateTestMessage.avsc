@@ -1,0 +1,12 @@
+{
+  "type": "record",
+  "name": "SeparateTestMessage",
+  "namespace": "test",
+  "fields": [
+    {"name": "message", "type": "string"},
+    {
+      "name": "metaData",
+      "type": "test.SeperateMetadata"
+    }
+  ]
+}

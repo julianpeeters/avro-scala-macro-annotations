@@ -1,0 +1,9 @@
+{
+  "type": "record",
+  "name": "SeparateMetaData",
+  "namespace": "test",
+  "fields": [
+    {"name": "source", "type": "string"},
+    {"name": "timestamp", "type": "string"}
+  ]
+}
