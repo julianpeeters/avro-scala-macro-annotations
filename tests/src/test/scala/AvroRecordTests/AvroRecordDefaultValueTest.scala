@@ -5,7 +5,6 @@ import com.julianpeeters.avro.annotations._
 
 import java.io.File
 
-import org.apache.avro.io.{DecoderFactory, EncoderFactory}
 import org.apache.avro.generic.GenericData.Record
 import org.apache.avro.generic._
 import org.apache.avro.specific._
@@ -15,19 +14,19 @@ import org.apache.avro.file._
 
 
 @AvroRecord
-case class AvroRecordTestDefaultValue00(var x: Int =  0) 
+case class AvroRecordTestDefaultValue00(var x: Int =  0)
 @AvroRecord
-case class AvroRecordTestDefaultValue01(var x: Float = 1.0F) 
+case class AvroRecordTestDefaultValue01(var x: Float = 1.0F)
 @AvroRecord
-case class AvroRecordTestDefaultValue02(var x: Long = 2L) 
+case class AvroRecordTestDefaultValue02(var x: Long = 2L)
 @AvroRecord
-case class AvroRecordTestDefaultValue03(var x: Double = 2.0D) 
+case class AvroRecordTestDefaultValue03(var x: Double = 2.0D)
 @AvroRecord
-case class AvroRecordTestDefaultValue04(var x: Boolean = false) 
+case class AvroRecordTestDefaultValue04(var x: Boolean = false)
 @AvroRecord
-case class AvroRecordTestDefaultValue05(var x: String = "") 
+case class AvroRecordTestDefaultValue05(var x: String = "")
 @AvroRecord
-case class AvroRecordTestDefaultValue06(var x: Null = null) 
+case class AvroRecordTestDefaultValue06(var x: Null = null)
 
 @AvroRecord
 case class AvroRecordTestDefaultValue07(var x: Option[String] = None)

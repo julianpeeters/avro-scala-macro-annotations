@@ -5,7 +5,7 @@ package methodgen
 import scala.reflect.macros.blackbox.Context
 
 import collection.JavaConversions._
- 
+
 import org.apache.avro.Schema
 
 abstract class PutDefCaseGenerator {
@@ -19,7 +19,7 @@ abstract class PutDefCaseGenerator {
 
 //expands to cases used in a pattern match, e.g. case 1 => this.username = value.asInstanceOf[String]
         def asPutCase(nme: TermName, tpe: Type, idx: Int) = {
-          def convertToScala(fieldType: Type, tree: Tree): Tree = {  
+          def convertToScala(fieldType: Type, tree: Tree): Tree = {
             fieldType match {
               case s @ TypeRef(pre, symbol, args) if (s =:= typeOf[String]) => {
                 q"""$tree match {
@@ -28,16 +28,16 @@ abstract class PutDefCaseGenerator {
                 } """
               }
               case o @ TypeRef(pre, symbol, args) if (o <:< typeOf[Option[Any]] && args.length == 1) => {
-                if (args.head <:< typeOf[Option[Any]]) { 
+                if (args.head <:< typeOf[Option[Any]]) {
                   throw new UnsupportedOperationException("Implementation limitation: Cannot immediately nest Option types")
-                } 
-                else  q"""Option(${convertToScala(args.head, tree)})""" 
+                }
+                else  q"""Option(${convertToScala(args.head, tree)})"""
               }
               case o @ TypeRef(pre, symbol, args) if (o <:< typeOf[List[Any]] && args.length == 1) => {
                 q"""$tree match {
                   case null => null
-                  case array: org.apache.avro.generic.GenericData.Array[_] => {
-                    scala.collection.JavaConversions.asScalaIterator(array.iterator).toList.map(e => ${convertToScala(args.head, q"e")}) 
+                  case array: java.util.List[_] => {
+                    scala.collection.JavaConversions.asScalaIterator(array.iterator).toList.map(e => ${convertToScala(args.head, q"e")})
                   }
                 }"""
               }
@@ -47,9 +47,9 @@ abstract class PutDefCaseGenerator {
                   case map: java.util.Map[_,_] => {
                     scala.collection.JavaConversions.mapAsScalaMap(map).toMap.map(kvp => {
                       val key = kvp._1.toString
-                      val value = kvp._2 
+                      val value = kvp._2
                       (key, ${convertToScala(args(1), q"value")})
-                    }) 
+                    })
                   }
                 }"""
               }
@@ -59,8 +59,8 @@ abstract class PutDefCaseGenerator {
           cq"""pos if (pos == ${idx}) => this.${nme} = ${convertToScala(tpe, q"value")}.asInstanceOf[${tpe}] """
         }
 
-      
 
-  
+
+
 
 }

@@ -5,7 +5,6 @@ import com.julianpeeters.avro.annotations._
 
 import java.io.File
 
-import org.apache.avro.io.{DecoderFactory, EncoderFactory}
 import org.apache.avro.generic.GenericData.Record
 import org.apache.avro.generic._
 import org.apache.avro.specific._

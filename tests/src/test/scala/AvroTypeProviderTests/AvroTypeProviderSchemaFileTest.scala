@@ -14,8 +14,10 @@ class AvroTypeProviderSchemaFileTest extends Specification {
 
   "A case class with types provided from a .avsc avro schema file" should {
     "serialize and deserialize correctly" in {
-      val record = twitter_schema("Achilles", "ow", 2L)
-      TestUtil.verifyWriteAndRead(record)
+      val record1 = twitter_schema("Achilles", "ow", 2L)
+      val record2 = twitter_schema("Tortoise", "ho", 3L)
+      val records = List(record1, record2)
+      TestUtil.verifyWriteAndRead(records)
     }
   }
 }
