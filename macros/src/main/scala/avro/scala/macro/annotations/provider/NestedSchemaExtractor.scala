@@ -2,7 +2,7 @@ package com.julianpeeters.avro.annotations
 package provider
 
 import org.apache.avro.Schema
-import org.apache.avro.Schema.Type.{ARRAY, ENUM, RECORD, UNION}
+import org.apache.avro.Schema.Type.{ARRAY, ENUM, MAP, RECORD, UNION}
 
 import scala.collection.JavaConverters._
 
@@ -20,6 +20,7 @@ object NestedSchemaExtractor {
         def flattenSchema(fieldSchema: Schema): List[Schema] = {
           fieldSchema.getType match {
             case ARRAY => flattenSchema(fieldSchema.getElementType)
+            case MAP => flattenSchema(fieldSchema.getValueType)
             case RECORD => fieldSchema :: extract(fieldSchema)
             case UNION => fieldSchema.getTypes.asScala.toList.flatMap(x => flattenSchema(x))
             case ENUM => List(fieldSchema)
