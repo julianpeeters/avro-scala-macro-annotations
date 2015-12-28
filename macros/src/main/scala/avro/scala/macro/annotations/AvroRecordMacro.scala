@@ -19,7 +19,7 @@ import java.util.{Arrays => JArrays}
 object AvroRecordMacro {
 
   def impl(c: Context)(annottees: c.Expr[Any]*): c.Expr[Any] = {
-    
+
     import c.universe._
     import Flag._
 
@@ -39,7 +39,7 @@ object AvroRecordMacro {
           }
           case defaultValue => defaultValue
         }
-      }) 
+      })
       val newCtorDef = q"""def this() = this(..$defaultParams)"""
       val defaultCtorPos = c.enclosingPosition //thanks to Eugene Burmako for the workaround to position the ctor correctly
       val newCtorPos = defaultCtorPos
@@ -49,23 +49,23 @@ object AvroRecordMacro {
       List( atPos(newCtorPos)(newCtorDef) ) //Return a list of new CtorDefs
     }
 
-    //NamespaceGen                                    
-    val freshName = c.fresh(newTypeName("Probe$")) 
-    val probe = c.typeCheck(q""" {class $freshName; ()} """)  // Thanks again to Eugene Burmako 
+    //NamespaceGen
+    val freshName = c.fresh(newTypeName("Probe$"))
+    val probe = c.typeCheck(q""" {class $freshName; ()} """)  // Thanks again to Eugene Burmako
     val freshSymbol = probe match {
       case Block(List(t), r) => t.symbol
     }
     val fullFreshName = freshSymbol.fullName.toString
-    val namespace = c.prefix.tree match { 
+    val namespace = c.prefix.tree match {
       case Apply(_, List(Literal(Constant(x)))) => null //if there's an arg, force the omission of a namespace in the schema
-      case _ => {      
+      case _ => {
         if (fullFreshName.contains('.')) { fullFreshName.replace("." + freshName.toString, "")} //strips dot and class name
         else null
       }
     }
 
     //SchemaGen - generates schemas and stores them
-    def generateSchema(name: String, namespace: String, indexedFields: List[IndexedField]): Schema = { 
+    def generateSchema(name: String, namespace: String, indexedFields: List[IndexedField]): Schema = {
 
       //map is from https://github.com/radlab/avro-scala-compiler-plugin/blob/master/src/main/scala/plugin/SchemaGen.scala
       val primitiveClasses: Map[Type, Schema] = Map(
@@ -81,7 +81,7 @@ object AvroRecordMacro {
         typeOf[java.nio.ByteBuffer] -> Schema.create(AvroType.BYTES),
         typeOf[Utf8]    -> Schema.create(AvroType.STRING)
       )
-    
+
 
       def createSchema(tpe: c.universe.Type) : Schema = {
         tpe match {
@@ -90,9 +90,9 @@ object AvroRecordMacro {
             Schema.createArray(createSchema(args.head))
           }
           case x @ TypeRef(pre, symbol, args) if (x <:< typeOf[Option[Any]] && args.length == 1) => {
-            if (args.head <:< typeOf[Option[Any]]) { 
+            if (args.head <:< typeOf[Option[Any]]) {
               throw new UnsupportedOperationException("Implementation limitation: Cannot immediately nest Option types")
-            } 
+            }
             else Schema.createUnion(JArrays.asList(Array(createSchema(typeOf[Null]), createSchema(args.head)):_*))
           }
           case x @ TypeRef(pre, symbol, args) if (x <:< typeOf[Map[String, Any]] && args.length == 2)  => {
@@ -106,13 +106,13 @@ object AvroRecordMacro {
           }
           case x => throw new UnsupportedOperationException("Could not generate schema. Cannot support yet: " + x )
         }
-      } 
+      }
 
       val toJsonMatcher = new {val context: c.type = c; val ns: String = namespace} with ToJsonMatcher
       val avroFields = indexedFields.map(v =>{
         new Field(
-          v.nme.toString.trim, 
-          createSchema(v.tpe), "Auto-Generated Field", 
+          v.nme.toString.trim,
+          createSchema(v.tpe), "Auto-Generated Field",
           toJsonMatcher.toJsonNode(v.dv)
         )
       })
@@ -125,29 +125,29 @@ object AvroRecordMacro {
     //MethodGen - generates put, get, and getSchema needed to implement SpecificRecord for serialization
     def generateNewMethods(name: TypeName, indexedFields: List[IndexedField]) = {
       //expands to cases for a pattern match, e.g. case 1 => username.asInstanceOf[AnyRef]
-      val getDef = { 
+      val getDef = {
         def asGetCase(fd: IndexedField) = {
           def convertToJava(typeTree: Type, convertable: Tree): Tree = {
-            typeTree match { 
+            typeTree match {
               case o @ TypeRef(pre, symbol, args) if (o <:< typeOf[Option[Any]] && args.length == 1) => {
-                if (args.head <:< typeOf[Option[Any]]) { 
+                if (args.head <:< typeOf[Option[Any]]) {
                   throw new UnsupportedOperationException("Implementation limitation: Cannot immediately nest Option types")
-                } 
+                }
                 else q"""
                   $convertable match {
                     case Some(x) => ${convertToJava(args.head, q"x")}
                     case None    => null
-                  }"""  
+                  }"""
               }
               case x @ TypeRef(pre, symbol, args) if (x <:< typeOf[List[Any]] && args.length == 1) => {
-                q"""java.util.Arrays.asList($convertable.map(x => ${convertToJava(args.head, q"x")}):_*)"""
+                q"""scala.collection.JavaConversions.bufferAsJavaList($convertable.map(x => ${convertToJava(args.head, q"x")}).toBuffer)"""
               }
               case x @ TypeRef(pre, symbol, args) if (x <:< typeOf[Map[String, Any]] && args.length == 2) => {
                 q"""
                   val map = new java.util.HashMap[String, Any]()
                   $convertable.foreach(x => {
-                    val key = x._1 
-                    val value = x._2 
+                    val key = x._1
+                    val value = x._2
                     map.put(key, ${convertToJava(args(1), q"value")})
                   })
                   map
@@ -155,8 +155,8 @@ object AvroRecordMacro {
               }
               case x => convertable
             }
-          } 
-          val convertedToJava = convertToJava(fd.tpe, q"${fd.nme}") 
+          }
+          val convertedToJava = convertToJava(fd.tpe, q"${fd.nme}")
           cq"""pos if (pos == ${fd.idx}) => $convertedToJava.asInstanceOf[AnyRef]"""
         }
         val getCases = indexedFields.map(f => asGetCase(f)) :+ cq"""_ => new org.apache.avro.AvroRuntimeException("Bad index")"""
@@ -167,7 +167,7 @@ object AvroRecordMacro {
 
       val putDef = {//expands to cases used in a pattern match, e.g. case 1 => this.username = value.asInstanceOf[String]
         def asPutCase(fd: IndexedField) = {
-          def convertToScala(fieldType: Type, tree: Tree): Tree = {  
+          def convertToScala(fieldType: Type, tree: Tree): Tree = {
             fieldType match {
               case s @ TypeRef(pre, symbol, args) if (s =:= typeOf[String]) => {
                 q"""$tree match {
@@ -176,16 +176,16 @@ object AvroRecordMacro {
                 } """
               }
               case o @ TypeRef(pre, symbol, args) if (o <:< typeOf[Option[Any]] && args.length == 1) => {
-                if (args.head <:< typeOf[Option[Any]]) { 
+                if (args.head <:< typeOf[Option[Any]]) {
                   throw new UnsupportedOperationException("Implementation limitation: Cannot immediately nest Option types")
-                } 
-                else  q"""Option(${convertToScala(args.head, tree)})""" 
+                }
+                else  q"""Option(${convertToScala(args.head, tree)})"""
               }
               case o @ TypeRef(pre, symbol, args) if (o <:< typeOf[List[Any]] && args.length == 1) => {
                 q"""$tree match {
                   case null => null
-                  case array: org.apache.avro.generic.GenericData.Array[_] => {
-                    scala.collection.JavaConversions.asScalaIterator(array.iterator).toList.map(e => ${convertToScala(args.head, q"e")}) 
+                  case array: java.util.List[_] => {
+                    scala.collection.JavaConversions.asScalaIterator(array.iterator).toList.map(e => ${convertToScala(args.head, q"e")})
                   }
                 }"""
               }
@@ -195,9 +195,9 @@ object AvroRecordMacro {
                   case map: java.util.Map[_,_] => {
                     scala.collection.JavaConversions.mapAsScalaMap(map).toMap.map(kvp => {
                       val key = kvp._1.toString
-                      val value = kvp._2 
+                      val value = kvp._2
                       (key, ${convertToScala(args(1), q"value")})
-                    }) 
+                    })
                   }
                 }"""
               }
@@ -214,8 +214,8 @@ object AvroRecordMacro {
     }
 
     // Update ClassDef and Add Companion Object
-    val result = { 
-      
+    val result = {
+
       // match the annotated class
       annottees.map(_.tree).toList match {
 
@@ -228,19 +228,19 @@ object AvroRecordMacro {
               val fieldType = c.typeCheck(q"type T = ${f.tpt}") match {
                 case x @ TypeDef(mods, name, tparams, rhs)  => rhs.tpe
               }
-              val defaultValue = f.rhs//extractValue(f.rhs) 
+              val defaultValue = f.rhs//extractValue(f.rhs)
               val position = fields.indexWhere(f => f.name == fieldName)
               IndexedField(fieldName, fieldType, defaultValue, position)
             })
           }
-        
+
           //prep fields from annotee
           val indexedFields = indexFields(first)
 
           // updates to the annotated class
           val newImports = List(q"import org.apache.avro.Schema")
           val newCtors   = generateNewCtors(indexedFields)   //a no-arg ctor so `newInstance()` can be used
-          val newDefs    = generateNewMethods(name, indexedFields) // `get`, `put`, and `getSchema` methods 
+          val newDefs    = generateNewMethods(name, indexedFields) // `get`, `put`, and `getSchema` methods
           val newParents = generateNewBaseTypes ::: parents        // extend SpecificRecordBase
           val newBody    = body ::: newImports ::: newCtors ::: newDefs      //add new members to the body
 
@@ -260,9 +260,9 @@ object AvroRecordMacro {
 
           // return an updated class def and companion def
           q"""$mods class $name[..$tparams](..$first)(...$rest) extends ..$newParents { $self => ..$newBody};
-              $companionDef""" 
+              $companionDef"""
         }
-      } 
+      }
     }
     c.Expr[Any](result)
   }

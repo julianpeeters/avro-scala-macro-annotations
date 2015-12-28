@@ -4,7 +4,7 @@ import Keys._
 object BuildSettings {
   val buildSettings = Defaults.defaultSettings ++ Seq(
     organization := "com.julianpeeters",
-    version := "0.4.7",
+    version := "0.4.8",
     scalacOptions ++= Seq(),
     scalaVersion := "2.10.5",
     crossScalaVersions := Seq("2.11.6"),
