@@ -8,7 +8,7 @@ import schemagen._
 
 import scala.reflect.macros.blackbox.Context
 import scala.language.experimental.macros
-import scala.annotation.StaticAnnotation
+import scala.annotation.{ compileTimeOnly, StaticAnnotation }
 
 import org.apache.avro.Schema
 import org.apache.avro.Schema.Field
@@ -51,13 +51,13 @@ object AvroRecordMacro {
 
       val getDefCaseGenerator = new { val context: c.type = c } with GetDefCaseGenerator
       val getCases = indexedFields.map(f => getDefCaseGenerator.asGetCase(f.nme, f.tpe, f.idx)) :+ exceptionCase
-      val getDef = q"""def get(field: Int): AnyRef = field match {case ..$getCases}"""
+      val getDef = q"""def get(field$$: Int): AnyRef = field$$ match {case ..$getCases}"""
 
       val getSchemaDef = q""" def getSchema: Schema = ${name.toTermName}.SCHEMA$$ """
 
       val putDefCaseGenerator = new { val context: c.type = c } with PutDefCaseGenerator
       val putCases = indexedFields.map(f => putDefCaseGenerator.asPutCase(f.nme, f.tpe, f.idx)) :+ exceptionCase
-      val putDef = q"""def put(field: Int, value: scala.Any): Unit = { field match {case ..$putCases}; () }"""
+      val putDef = q"""def put(field$$: Int, value: scala.Any): Unit = { field$$ match {case ..$putCases}; () }"""
 
       List(getDef, getSchemaDef, putDef)
     }
