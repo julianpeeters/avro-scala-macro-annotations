@@ -4,9 +4,9 @@ import Keys._
 object BuildSettings {
   val buildSettings = Defaults.defaultSettings ++ Seq(
     organization := "com.julianpeeters",
-    version := "0.4.8",
+    version := "0.4.9-SNAPSHOT",
     scalacOptions ++= Seq(),
-    scalaVersion := "2.10.5",
+    scalaVersion := "2.10.6",
     crossScalaVersions := Seq("2.11.6"),
     scalacOptions ++= Seq("-unchecked", "-deprecation", "-feature", "-Ywarn-value-discard"),
     resolvers += "scalaz-bintray" at "http://dl.bintray.com/scalaz/releases",
