@@ -160,7 +160,7 @@ object AvroRecordMacro {
           cq"""pos if (pos == ${fd.idx}) => $convertedToJava.asInstanceOf[AnyRef]"""
         }
         val getCases = indexedFields.map(f => asGetCase(f)) :+ cq"""_ => new org.apache.avro.AvroRuntimeException("Bad index")"""
-        q"""def get(field: Int): AnyRef = field match {case ..$getCases}"""
+        q"""def get(field$$: Int): AnyRef = field$$ match {case ..$getCases}"""
       }
 
       val getSchemaDef = q""" def getSchema: Schema = ${name.toTermName}.SCHEMA$$ """
@@ -207,7 +207,7 @@ object AvroRecordMacro {
           cq"""pos if (pos == ${fd.idx}) => this.${fd.nme} = ${convertToScala(fd.tpe, q"value")}.asInstanceOf[${fd.tpe}] """
         }
         val putCases = indexedFields.map(f => asPutCase(f)) :+ cq"""_ => new org.apache.avro.AvroRuntimeException("Bad index")"""
-        q"""def put(field: Int, value: scala.Any): Unit = { field match {case ..$putCases};() }"""
+        q"""def put(field$$: Int, value: scala.Any): Unit = { field$$ match {case ..$putCases};() }"""
       }
 
       List(getDef, getSchemaDef, putDef)

@@ -11,7 +11,7 @@ object BuildSettings {
     scalacOptions ++= Seq("-unchecked", "-deprecation", "-feature", "-Ywarn-value-discard"),
     resolvers += "scalaz-bintray" at "http://dl.bintray.com/scalaz/releases",
     resolvers += Resolver.sonatypeRepo("releases"),
-    addCompilerPlugin("org.scalamacros" % "paradise" % "2.1.0-M5" cross CrossVersion.full),
+    addCompilerPlugin("org.scalamacros" % "paradise" % "2.1.0" cross CrossVersion.full),
     libraryDependencies += "org.apache.avro" % "avro" % "1.7.6",
     libraryDependencies := {
       CrossVersion.partialVersion(scalaVersion.value) match {
