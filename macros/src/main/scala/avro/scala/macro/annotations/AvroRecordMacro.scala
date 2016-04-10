@@ -113,6 +113,17 @@ object AvroRecordMacro {
   }
 }
 
+/**
+ * From the Macro Paradise Docs...
+ *
+ * note the @compileTimeOnly annotation. It is not mandatory, but is recommended to avoid confusion.
+ * Macro annotations look like normal annotations to the vanilla Scala compiler, so if you forget
+ * to enable the macro paradise plugin in your build, your annotations will silently fail to expand.
+ * The @compileTimeOnly annotation makes sure that no reference to the underlying definition is
+ * present in the program code after typer, so it will prevent the aforementioned situation
+ * from happening.
+ */
+@compileTimeOnly("Enable Macro Paradise for Expansion of Annotations via Macros.")
 class AvroRecord extends StaticAnnotation {
   def macroTransform(annottees: Any*): Any = macro AvroRecordMacro.impl
 }

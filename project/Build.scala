@@ -4,13 +4,13 @@ import Keys._
 object BuildSettings {
   val buildSettings = Defaults.defaultSettings ++ Seq(
     organization := "com.julianpeeters",
-    version := "0.10.5",
-    scalaVersion := "2.11.7",
-    crossScalaVersions := Seq("2.11.6", "2.11.7"),
+    version := "0.10.6",
+    scalaVersion := "2.11.8",
+    crossScalaVersions := Seq("2.11.6", "2.11.7", "2.11.8"),
     scalacOptions ++= Seq("-unchecked", "-deprecation", "-feature", "-Ywarn-value-discard"),
     resolvers += "scalaz-bintray" at "http://dl.bintray.com/scalaz/releases",
     resolvers += Resolver.sonatypeRepo("releases"),
-    addCompilerPlugin("org.scalamacros" % "paradise" % "2.1.0-M5" cross CrossVersion.full),
+    addCompilerPlugin("org.scalamacros" % "paradise" % "2.1.0" cross CrossVersion.full),
     libraryDependencies += "org.apache.avro" % "avro" % "1.7.6",
     libraryDependencies := {
       CrossVersion.partialVersion(scalaVersion.value) match {
