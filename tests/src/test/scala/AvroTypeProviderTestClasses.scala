@@ -343,6 +343,14 @@ object AvroTypeProviderPreexistingCompanionTest00 {
   val o = 5
 }
 
+trait AvroTypeProviderTestCompanionTrait {}
+@AvroTypeProvider("tests/src/test/resources/AvroTypeProviderExtendedCompanionTest00.avsc")
+@AvroRecord
+case class AvroTypeProviderPreexistingCompanionTest01()
+object AvroTypeProviderPreexistingCompanionTest01 extends AvroTypeProviderTestCompanionTrait {
+  val o = 6
+}
+
 // nested record from schema file instead of nested record from .avro file
 @AvroTypeProvider("tests/src/test/resources/AvroTypeProviderTestNestedSchemaFile.avsc")
 @AvroRecord

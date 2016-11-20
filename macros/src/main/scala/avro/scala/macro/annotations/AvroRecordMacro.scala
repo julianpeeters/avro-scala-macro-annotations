@@ -92,14 +92,15 @@ object AvroRecordMacro {
 
           // updates to the companion object
           val schema     = q"${generateSchema(className.toString, generateNamespace, indexedFields).toString}"
-          val newVal     = q"lazy val SCHEMA$$ = new org.apache.avro.Schema.Parser().parse($schema)"
+          val schemaVal  = q"lazy val SCHEMA$$ = new org.apache.avro.Schema.Parser().parse($schema)"
+
           val companionDef = tail match {
             // if there is no preexisiting companion then make one with a SCHEMA$ field
-            case Nil => q"object ${className.toTermName} {$newVal}"
+            case Nil => q"object ${className.toTermName} {$schemaVal}"
             // if there is a preexisting companion, add a SCHEMA$ field
-            case moduleDef @ q"object $moduleName { ..$moduleBody }" :: Nil => {
-              val newModuleBody = moduleBody ::: List(newVal)
-              q"object ${className.toTermName} { ..$newModuleBody }"
+            case List( moduleDef @ q"object $moduleName extends ..$companionParents { ..$moduleBody }") => {
+              val newModuleBody = List(schemaVal) ::: moduleBody
+              q"object ${className.toTermName} extends ..$companionParents { ..$newModuleBody }"
             }
           }
 

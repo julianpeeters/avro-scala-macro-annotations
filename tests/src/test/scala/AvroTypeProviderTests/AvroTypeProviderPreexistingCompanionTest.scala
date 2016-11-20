@@ -34,4 +34,28 @@ class AvroTypeProviderCompanionTest extends Specification {
       sameRecord must ===(record)
     }
   }
+
+  "A case class that has a preexisting companion object with mixins" should {
+    "serialize and deserialize correctly" in {
+
+      val record = AvroRecordPreexistingCompanionTest01(1)
+
+      val file = File.createTempFile("AvroRecordPreexistingCompanionTest01", "avsc")
+      file.deleteOnExit()
+
+      val userDatumWriter = new SpecificDatumWriter[AvroRecordPreexistingCompanionTest01]
+      val dataFileWriter = new DataFileWriter[AvroRecordPreexistingCompanionTest01](userDatumWriter)
+      dataFileWriter.create(record.getSchema(), file);
+      dataFileWriter.append(record);
+      dataFileWriter.close();
+
+      val schema = new DataFileReader(file, new GenericDatumReader[GenericRecord]).getSchema
+      val userDatumReader = new SpecificDatumReader[AvroRecordPreexistingCompanionTest01](schema)
+      val dataFileReader = new DataFileReader[AvroRecordPreexistingCompanionTest01](file, userDatumReader)
+      val sameRecord = dataFileReader.next()
+      AvroRecordPreexistingCompanionTest01.o must ===(6)
+
+      sameRecord must ===(record)
+    }
+  }
 }
