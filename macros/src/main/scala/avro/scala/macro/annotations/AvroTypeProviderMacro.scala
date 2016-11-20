@@ -56,9 +56,9 @@ object AvroTypeProviderMacro extends LazyLogging {
             // if there is no preexisiting companion
             case Nil => q"$mods class $name[..$tparams](..${newFields:::first})(...$rest) extends ..$parents { $self => ..$body }"
             // if there is a preexisting companion, include it with the updated classDef
-            case moduleDef @ q"object $moduleName { ..$moduleBody }" :: Nil => {
+            case moduleDef @ q"object $moduleName extends ..$companionParents { ..$moduleBody }" :: Nil => {
               q"""$mods class $name[..$tparams](..${newFields:::first})(...$rest) extends ..$parents { $self => ..$body };
-                object ${name.toTermName} { ..$moduleBody }"""
+                object ${name.toTermName} extends ..$companionParents { ..$moduleBody }"""
             }
           }
         }

@@ -189,3 +189,10 @@ case class AvroRecordPreexistingCompanionTest00(var x: Int)
 object AvroRecordPreexistingCompanionTest00 {
   val o = 5
 }
+
+trait AvroRecordCompanionTrait {}
+@AvroRecord
+case class AvroRecordPreexistingCompanionTest01(var x: Int)
+object AvroRecordPreexistingCompanionTest01 extends AvroRecordCompanionTrait {
+  val o = 6
+}
