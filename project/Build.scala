@@ -4,9 +4,9 @@ import Keys._
 object BuildSettings {
   val buildSettings = Defaults.defaultSettings ++ Seq(
     organization := "com.julianpeeters",
-    version := "0.10.7",
+    version := "0.11.0",
     scalaVersion := "2.11.8",
-    crossScalaVersions := Seq("2.11.6", "2.11.7", "2.11.8"),
+    crossScalaVersions := Seq("2.11.6", "2.11.7", "2.11.8", "2.12.1"),
     scalacOptions ++= Seq("-unchecked", "-deprecation", "-feature", "-Ywarn-value-discard"),
     resolvers += "scalaz-bintray" at "http://dl.bintray.com/scalaz/releases",
     resolvers += Resolver.sonatypeRepo("releases"),
@@ -16,7 +16,7 @@ object BuildSettings {
       CrossVersion.partialVersion(scalaVersion.value) match {
         case Some((2, scalaMajor)) if scalaMajor >= 11 =>
           libraryDependencies.value ++ Seq (
-          "org.specs2" %% "specs2-core" % "3.2" % "test")
+          "org.specs2" %% "specs2-core" % "3.8.6" % "test")
         case Some((2, 12)) =>
           libraryDependencies.value ++ Seq()
       }
@@ -73,7 +73,7 @@ object MyBuild extends Build {
     settings = buildSettings ++ Seq(
       libraryDependencies <+= (scalaVersion)("org.scala-lang" % "scala-reflect" % _),
       libraryDependencies += "org.codehaus.jackson" % "jackson-core-asl" % "1.9.13",
-      libraryDependencies += "com.typesafe.scala-logging" %% "scala-logging" % "3.1.0",
+      libraryDependencies += "com.typesafe.scala-logging" %% "scala-logging" % "3.5.0",
       libraryDependencies += "com.typesafe.scala-logging" % "scala-logging-slf4j_2.11" % "2.1.2")
   )
 
