@@ -19,7 +19,7 @@ object AvroTypeMatcher {
       }
     }
 
-    schema.getType match { 
+    schema.getType match {
       case Schema.Type.ARRAY    => {
         val typeTree = tq"List[${toScala(namespace, schema.getElementType, c)}]"
         expandNestedTypes(typeTree)
@@ -30,14 +30,18 @@ object AvroTypeMatcher {
       case Schema.Type.LONG     => typeOf[Long]
       case Schema.Type.INT      => typeOf[Int]
       case Schema.Type.NULL     => typeOf[Null]
-      case Schema.Type.RECORD   => { 
+      case Schema.Type.RECORD   => {
         schema.getName match {
           //cases where a record is found as a field vs found as a member of a union vs found as an element of an array
           case "array" | "union" => tq"schema.getName".tpe
           case recordName        => {
-            val fullName = namespace match {
-              case null       => recordName
-              case ns: String => (ns + "." + recordName)
+            // Prefer the namespace of the type, can be different.
+            val ns = Seq(schema.getNamespace, namespace).
+              map(Option(_)).flatten.filterNot(_.isEmpty).headOption
+
+            val fullName = ns match {
+              case None     => recordName
+              case Some(ns) => (ns + "." + recordName)
             }
             try {
               c.mirror.staticClass(fullName).toType
