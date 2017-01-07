@@ -4,7 +4,7 @@ import Keys._
 object BuildSettings {
   val buildSettings = Defaults.defaultSettings ++ Seq(
     organization := "com.julianpeeters",
-    version := "0.10.7",
+    version := "0.11.0",
     scalaVersion := "2.11.8",
     crossScalaVersions := Seq("2.11.6", "2.11.7", "2.11.8", "2.12.1"),
     scalacOptions ++= Seq("-unchecked", "-deprecation", "-feature", "-Ywarn-value-discard"),
