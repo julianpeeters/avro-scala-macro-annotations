@@ -1,0 +1,25 @@
+[
+{ "type":"record",
+  "name":"Person",
+  "namespace":"com.miguno.avro.differentns",
+  "fields":[
+    {"name":"id", "type":"long"},
+    {"name":"name","type":"string"}
+  ],
+  "doc:":"A basic schema for a user, to be reused across namespaces."
+},
+{ "type":"record",
+  "name":"Tweet",
+  "namespace":"com.miguno.avro.differentns.twitter",
+  "fields":[
+    {
+      "name":"author",
+      "type":"com.miguno.avro.differentns.Person"
+    },
+    {
+      "name":"text", "type":"string"
+    }
+  ],
+  "doc:":"A basic schema for storing Twitter messages"
+}
+]

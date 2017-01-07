@@ -1,6 +1,6 @@
 ##Herein lie assorted macro annotations for working with Avro in Scala:
 
-1) `@AvroTypeProvider("path/to/schema")` - Automatically convert Avro Schemas to Scala case class definitions for use in your favorite Scala Avro runtime.
+1) `@AvroTypeProvider("path/to/schema")` - Convert Avro Schemas to Scala case class definitions for use in your favorite Scala Avro runtime.
 
 
 2) `@AvroRecord` - Use Scala case classes to represent your Avro SpecificRecords, serializable by the Apache Avro runtime (a port of [Avro-Scala-Compiler-Plugin](https://code.google.com/p/avro-scala-compiler-plugin/)).
@@ -11,7 +11,7 @@ Macros are an experimental feature of Scala. [Avrohugger](https://github.com/jul
 For Scala 2.11.x and 2.12.x ([for Scala 2.10.x](https://github.com/julianpeeters/avro-scala-macro-annotations/issues/6#issuecomment-77973333) please use version 0.4.9 with sbt 0.13.8+):
 
 
-        libraryDependencies += "com.julianpeeters" % "avro-scala-macro-annotations_2.11" % "0.11.0"
+        libraryDependencies += "com.julianpeeters" % "avro-scala-macro-annotations_2.11" % "0.11.1"
 
 
 Macro annotations are only available in Scala 2.10.x, 2.11.x, and 2.12.x with the macro paradise plugin. Their inclusion in official Scala might happen in Scala 2.13 - [official docs](http://docs.scala-lang.org/overviews/macros/annotations.html). To use the plugin, add the following `build.sbt`:
