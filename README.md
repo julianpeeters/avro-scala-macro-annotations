@@ -1,4 +1,4 @@
-##Herein lie assorted macro annotations for working with Avro in Scala:
+## Herein lie assorted macro annotations for working with Avro in Scala:
 
 1) `@AvroTypeProvider("path/to/schema")` - Convert Avro Schemas to Scala case class definitions for use in your favorite Scala Avro runtime.
 
@@ -7,7 +7,7 @@
 
 Macros are an experimental feature of Scala. [Avrohugger](https://github.com/julianpeeters/avrohugger) is a more traditional alternative.
 
-####Get the dependency:
+#### Get the dependency:
 For Scala 2.11.x and 2.12.x ([for Scala 2.10.x](https://github.com/julianpeeters/avro-scala-macro-annotations/issues/6#issuecomment-77973333) please use version 0.4.9 with sbt 0.13.8+):
 
 
@@ -21,7 +21,7 @@ Macro annotations are only available in Scala 2.10.x, 2.11.x, and 2.12.x with th
 In your IDE of choice you may have to explicitly load this compiler plugin. In Eclipse for example, you can do so by providing the full path under the `Xplugin`, found in the advanced Scala compiler preferences; you should have the jar in a path like `~/.ivy2/cache/org.scalamacros/paradise_2.10.4/jars/paradise_2.10.4-2.0.1.jar`.
 
 
-####Usage:
+#### Usage:
 Use the annotations separately, or together like this:
 
 ```scala
@@ -37,7 +37,7 @@ Use the annotations separately, or together like this:
 First the fields are added automatically from an Avro Schema in a file, then the methods necessary for de/serialization are generated for you, all at compile time. Please see warnings below.
 
 
-####Supported data types:  
+#### Supported data types:  
 
 `int`
 
@@ -68,7 +68,7 @@ First the fields are added automatically from an Avro Schema in a file, then the
 The remaining avro types, `fixed`, `enum`, and `union` (beyond nullable fields), are not yet supported.
 
 
-##1) Avro-Type-Provider
+## 1) Avro-Type-Provider
 If your use-case is "data-first" and you're using an Avro runtime library that allows you to use Scala case classes to represent your Avro records, then you are probably a little weary of transcribing Avro Schemas into their Scala case class equivalents.
 
 Annotate an "empty" case class, and its members will be generated automatically at compile time using the data found in the Schema of a given file:
@@ -105,7 +105,7 @@ Annotate an "empty" case class, and its members will be generated automatically 
         case class MyRecord(x: Rec = Rec(4))
 ```
 
-####Please note:
+#### Please note:
 1) The datafile must be available at compile time.
 
 2) The filepath must be a String literal.
@@ -118,7 +118,7 @@ Annotate an "empty" case class, and its members will be generated automatically 
 
 
 
-##2) Avro-Record:
+##  2) Avro-Record:
 Implements `SpecificRecord` at compile time so you can use Scala case classes to represent Avro records (like [Scalavro](https://github.com/GenslerAppsPod/scalavro) or [Salat-Avro](https://github.com/julianpeeters/salat-avro/tree/master), but for the Apache Avro runtime so that it runs on your cluster). Since Avro-Scala-Compiler-Plugin doesn't work with Scala 2.10+ and the compiler still stumps me, I ported the serialization essentials over to use [Scala Macro Annotations](http://docs.scala-lang.org/overviews/macros/annotations.html) instead.
 
 Now you can annotate a case class that you'd like to have serve as your Avro record:
@@ -152,7 +152,7 @@ Use the expanded class as you would a code-gen'd class with any `SpecificRecord`
         val dataFileReader = new DataFileReader[B](file, userDatumReader)
 ```
 
-####Please note:
+#### Please note:
 1) If your framework is one that relies on reflection to get the Schema, it will fail since Scala fields are private. Therefore preempt it by passing in a Schema to DatumReaders and DatumWriters (as in the Avro example above).
 
 2) Fields must be `var`s in order to be compatible with the SpecificRecord API.
