@@ -359,3 +359,14 @@ case class TestMessage()
 @AvroTypeProvider("tests/src/test/resources/AvroTypeProviderTestNestedSchemaFile.avsc")
 @AvroRecord
 case class MetaData()
+
+@AvroTypeProvider("tests/src/test/resources/separate/SeparateMetaData.avsc")
+@AvroRecord
+case class SeparateMetaData()
+
+// nested record from separate schema files instead of the same schema file
+@AvroTypeProvider(  "tests/src/test/resources/separate/SeparateMetaData.avsc",
+  "tests/src/test/resources/separate/SeparateTestMessage.avsc")
+@AvroRecord
+case class SeparateTestMessage()
+

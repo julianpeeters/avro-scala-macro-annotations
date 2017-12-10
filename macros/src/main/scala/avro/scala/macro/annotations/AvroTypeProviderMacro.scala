@@ -10,6 +10,7 @@ import collection.JavaConversions._
 import java.io.File
 
 import com.typesafe.scalalogging._
+import org.apache.avro.Schema
 
 object AvroTypeProviderMacro extends LazyLogging {
 
@@ -39,9 +40,17 @@ object AvroTypeProviderMacro extends LazyLogging {
           logger.info(s"Current path: ${new File(".").getAbsolutePath}")
 
           // get the schema for the record that this class represents
-          val avroFilePath = FilePathProbe.getPath(c)
-          val infile = new File(avroFilePath)
-          val fileSchemas = FileParser.getSchemas(infile)
+          // along with any nested schemas needed to support it, whose definitions may come from other .avsc files.
+          // these dependendencies must be resolved in order - specify deps first, dependent classes second.
+          val avroFiles = FilePathProbe.getPath(c)
+
+          val myParser = new Schema.Parser()
+          val fileSchemas : List[Schema] = avroFiles.map { fileName =>
+            val inFile = new File(fileName)
+            FileParser.getSchemas(inFile, myParser)
+          }.flatten
+
+
           val nestedSchemas = fileSchemas.flatMap(NestedSchemaExtractor.getNestedSchemas)
           // first try matching schema record full name to class full name, then by the
           // regular name in case we're trying to read from a non-namespaced schema

@@ -1,6 +1,6 @@
 ## Herein lie assorted macro annotations for working with Avro in Scala:
 
-1) `@AvroTypeProvider("path/to/schema")` - Convert Avro Schemas to Scala case class definitions for use in your favorite Scala Avro runtime.
+1) `@AvroTypeProvider("path/to/schema" [, ...])` - Convert Avro Schemas to Scala case class definitions for use in your favorite Scala Avro runtime.
 
 
 2) `@AvroRecord` - Use Scala case classes to represent your Avro SpecificRecords, serializable by the Apache Avro runtime (a port of [Avro-Scala-Compiler-Plugin](https://code.google.com/p/avro-scala-compiler-plugin/)).
@@ -106,7 +106,7 @@ Annotate an "empty" case class, and its members will be generated automatically 
 ```
 
 #### Please note:
-1) The datafile must be available at compile time.
+1) The datafile(s) must be available at compile time.
 
 2) The filepath must be a String literal.
 
@@ -116,6 +116,7 @@ Annotate an "empty" case class, and its members will be generated automatically 
 
 5) A class that is doubly annotated with `@AvroTypeProvider` and `@AvroRecord` will be updated with vars instead of vals.
 
+6) If one of your classes has a member defined in a separate schema file, a) see #4 above, and b) give both schemas (with dependencies listed first) to @AvroTypeProvider().  This is for the Avro parser.
 
 
 ##  2) Avro-Record:
