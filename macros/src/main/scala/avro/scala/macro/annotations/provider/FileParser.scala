@@ -11,14 +11,14 @@ import scala.collection.JavaConverters._
 
 object FileParser {
 
-  def getSchemas(infile: java.io.File): List[Schema] = {
+  def getSchemas(infile: java.io.File, parser : Parser): List[Schema] = {
     val schema = infile.getName.split("\\.").last match {
       case "avro" =>
         val gdr = new GenericDatumReader[GenericRecord]
         val dfr = new DataFileReader(infile, gdr)
         dfr.getSchema
       case "avsc" =>
-        new Parser().parse(infile)
+        parser.parse(infile)
       case _ => throw new Exception("Invalid file ending. Must be .avsc for plain text json files and .avro for binary files.")
     }
     schema.getType match {
